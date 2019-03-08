@@ -121,6 +121,7 @@ class OpenMaintenance(http.Controller):
         request.env['maintenance.request'].sudo().create({
             'equipment_id': post.get('equipment_id'),
             'motif': post.get('motif'),
+            'name': post.get('motif'),
             'create_uid':post.get('user'),
     })
     
