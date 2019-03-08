@@ -118,11 +118,9 @@ class OpenMaintenance(http.Controller):
     
     
     def _process_registration(self, post):
-        request.env['maintenance.intervention'].sudo().create({
+        request.env['maintenance.request'].sudo().create({
             'equipment_id': post.get('equipment_id'),
             'motif': post.get('motif'),
-            'x_studio_estado_del_equipo': post.get('state_id'),
-            'x_studio_solicitado_por':post.get('user'),
             'create_uid':post.get('user'),
     })
     
