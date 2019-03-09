@@ -38,13 +38,47 @@
              <menuitem id="menu_maintenance_checklist_all" name="Lista Completa de Mantenimiento" action="maintenance_action_maintenance_checklist" parent="menu_maintenance_checklist_history" sequence="5" />
 
 
-       <!-- configuration -->
-       <menuitem id="menu_maintenance_configuration" name="Configuración" sequence="8" parent="maintenance.menu_maintenance_title"/>
-    		 <menuitem id="menu_maintenance_zone" name="Zona" parent="menu_maintenance_configuration" action="maintenance_action_view_zone" />
-             <menuitem id="menu_maintenance_failure_type" name="Tipo de Falla" parent="menu_maintenance_configuration" action="open_view_failure_new"/>
-             <menuitem id="menu_maintenance_equi_type" name="Categoria" parent="menu_maintenance_configuration" action="maintenance.hr_equipment_category_action"/>
-             <menuitem id="menu_maintenance_intervention_type" name="Tipo de intervención" parent="menu_maintenance_configuration" action="maintenance_action_intervention_type"/>
-             <menuitem id="menu_maintenance_config" name="Configuración" parent="menu_maintenance_configuration" action="maintenance_action_sale_config_settings"/>
+      <!-- Configuration -->
+       <menuitem 
+        id="menu_maintenance_configuration" 
+        name="Configuración" 
+        sequence="8" 
+        parent="maintenance.menu_maintenance_title"/>
+
+      <!-- Brand -->
+      <menuitem 
+        id="menu_maintenance_brand" 
+        name="Brand" 
+        parent="menu_maintenance_configuration" 
+        action="maintenance_equipment_brand_action_view"
+        sequence="4"/>
+
+      <!-- Zone -->
+    	 <menuitem 
+        id="menu_maintenance_zone" 
+        name="Zona" 
+        parent="menu_maintenance_configuration" 
+        action="maintenance_action_view_zone" />
+
+      <!-- Failure -->        
+      <menuitem 
+        id="menu_maintenance_failure_type" 
+        name="Tipo de Falla" 
+        parent="menu_maintenance_configuration" 
+        action="open_view_failure_new"/>
+
+      <!-- Intervention Type -->
+      <menuitem 
+        id="menu_maintenance_intervention_type" 
+        name="Tipo de intervención" 
+        parent="menu_maintenance_configuration" 
+        action="maintenance_action_intervention_type"/>
+
+      <menuitem 
+        id="menu_maintenance_config" 
+        name="Configuración" 
+        parent="menu_maintenance_configuration" 
+        action="maintenance_action_sale_config_settings"/>
                 
     </data>
 </odoo>
