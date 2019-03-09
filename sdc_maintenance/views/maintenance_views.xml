@@ -520,7 +520,7 @@
         </record>       
         
         
-     <!-- equiment : views -->
+     <!-- equipment : views -->
     <record id="maintenance.hr_equipment_view_form" model="ir.ui.view">
         <field name="name">equipment.form.maint</field>
         <field name="model">maintenance.equipment</field>
@@ -528,14 +528,6 @@
             <form string="Equipments">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                          <button name="%(open_view_intervention_new)d"
-                                type="action"
-                                class="oe_inline oe_stat_button"
-                                icon="fa-book"
-                                context="{'search_default_equipment_id': active_id}"
-                                help="show the Intervention for this Equipement">
-                               <field name="intervention_count" widget="statinfo" string="Interventions"/>
-                            </button>
                             <button name="%(open_view_incident_new)d"
                                 type="action"
                                 class="oe_inline oe_stat_button"
