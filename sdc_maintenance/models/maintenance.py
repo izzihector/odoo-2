@@ -200,58 +200,54 @@ class MaintenanceEquipement(models.Model):
                         record.warranty_func = True
             return True
 
-# Fields Many To Many
-    #Field Brand
+
     brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
-    #Field Team
+
     team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Team', store=True, readonly=True)
-    #Field Leader Team
+
     team_leader_id=fields.Many2one('res.users', related='category_id.team_id.team_leader_id', string='Leader Team', store=True, readonly=True)
-    #Field Leader Team
+
     zone_id=fields.Many2one('maintenance.zone', u'Zone')
-    #Field Client
+
     client_id=fields.Many2one('res.partner', u'Client')
-    #Field Model
+
     model_id=fields.Many2one('maintenance.equipment.model', u'Model')
-    #Field Parent
+
     parent_id=fields.Many2one('maintenance.equipment', u'Equipment Relation')
 
-# Fields One To Many
-    #Field Products
     product_ids=fields.One2many('product.piece','piece_id_equi',u'List of Parts')
-    #Field Intervention 
+ 
     intervention_ids=fields.One2many('maintenance.intervention','equipment_id',u'Intervention')
-    #Field OT 
+
     ot_ids=fields.One2many('maintenance.order','equipment_id',u'Work Order')    
-    #Field Software 
+ 
     software_ids=fields.One2many('maintenance.equipment.software.list','equipment_id',u'Softwares')
-    #Field Network
+
     network_ids=fields.One2many('maintenance.equipment.network','equipment_id',u'Networks')
-    #Field Dicom
+
     dicom_ids=fields.One2many('maintenance.equipment.dicom','equipment_id',u'Dicom')
-    #Field Child
+
     child_ids=fields.One2many('maintenance.equipment','parent_id',u'Accesories')
 
-# Fields Char
-    #Field
+
     trademark=fields.Char(u'Marque')
     number_equipment=fields.Char(u'N°')
 
-# Fields Binary
+
     technique_file=fields.Binary(u'Technical Sheet')
     image=fields.Binary(u'Image')
 
-# Fields Date
+
     startingdate=fields.Date(u"Date of commissioning")
     deadlinegar=fields.Date(u"End of warranty date")
 
-# Fields Boolean
+
     warranty_func=fields.Boolean(string='Under Warranty',compute='_days_waranty')
   
-# Fields Text
+
     safety=fields.Text(u'Security Instruction')
 
-# Fields Integer      
+   
     ot_count=fields.Integer(compute='_ot_count',  string='OT')
     pm_count=fields.Integer(compute='_pm_maintenance_count', string='MP')
     cm_count=fields.Integer(compute='_pm_maintenance_count', string='MC')
