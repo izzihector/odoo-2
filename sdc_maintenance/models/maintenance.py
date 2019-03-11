@@ -270,13 +270,13 @@ class ProductTemplate(models.Model):
 
     is_piece=fields.Boolean(u'Is Parts')
 
-class MaintenanceEquipmentCategory(models.Model):
+class MaintenanceEquipementCategory(models.Model):
     _inherit='maintenance.equipment.category'
 
     team_id=fields.Many2one('maintenance.team', u'Team')
 
 
-class MaintenanceEquipmentTeam(models.Model):
+class MaintenanceEquipementTeam(models.Model):
     _inherit='maintenance.team'
 
     team_leader_id=fields.Many2one('res.users', u'Team Leader')
