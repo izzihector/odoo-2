@@ -568,10 +568,15 @@
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" string="Name" placeholder="Equipment Name"/></h1>
                     </div>
+
+                    <xpath expr="//field[@name='equipment_id']" position="after">
+                        <field name="client_id"/>
+                        <field name="brand_id"/>
+                    </xpath>
+
+
                     <group>
                         <group>
-                            <field name="client_id" string="Client"/>
-                            <field name="brand_id"/>
                             <field name="model_id"/>
                             <field name="serial_no"/>
                             <field name="startingdate"/>
