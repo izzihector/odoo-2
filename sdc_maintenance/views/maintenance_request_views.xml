@@ -21,41 +21,43 @@
         <field name="model">maintenance.request</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
         <field name="arch" type="xml">
-       
-		    		<xpath expr="//header/button[@name='reset_equipment_request']" position="after">
-		            	<button name="mail_notif" string="Envoyer par email" type="object" class="oe_highlight" />
-		            </xpath>
-        
-		    		<xpath expr="//field[@name='priority']" position="after">
-		            	<field name="state_machine"/>
-		                <field name="partner_id"/>
-		            </xpath>
-	
-		        
-		    		<xpath expr="//field[@name='description']" position="after">
-		            	<separator string ="Parametres de maintenance preventive" attrs="{'invisible':[('maintenance_type','=','corrective')]}"/>               
-		                   <group col="2" attrs="{'invisible':[('maintenance_type','=','corrective')]}" >
-			                    <group>
-			                        <field name="days_interval" />
-			                        <field name="days_last_done" />
-			                        <field name="days_next_due" />
-			                        <field name="recurrent" />
-			                    </group>
-			                    <group>
-			                        <field name="meter" />
-			                        <field name="days_warn_period" />
-			                        <field name="days_left" />
-			                        <field name="state" />
-			                    </group>    
-		                    </group>
-				            
-				            <notebook> 
-			                    <page string="Motif">
-			                       <field name="motif" placeholder="Motif"/>
-			                    </page>
-		                    </notebook>   
-		                    
-		            </xpath>
+            <xpath expr="//header/button[@name='reset_equipment_request']" position="after">
+                <button name="mail_notif" string="Send by email" type="object" class="oe_highlight" />
+            </xpath>
+            <xpath expr="//field[@name='equipment_id']" position="after">
+                <field name="client_id"/>
+                <field name="state_machine"/>
+            </xpath>
+
+            <xpath expr="//field[@name='schedule_date']" position="before">
+                <field name="team_id"/>
+                <field name="team_leader_id"/>
+            </xpath>
+    
+            <xpath expr="//field[@name='description']" position="after">
+                <separator string ="Parametres de maintenance preventive" attrs="{'invisible':[('maintenance_type','=','corrective')]}"/>
+
+                    <group col="2" attrs="{'invisible':[('maintenance_type','=','corrective')]}" >
+                        <group>
+                            <field name="days_interval" />
+                            <field name="days_last_done" />
+                            <field name="days_next_due" />
+                            <field name="recurrent" />
+                        </group>
+                        <group>
+                            <field name="meter" />
+                            <field name="days_warn_period" />
+                            <field name="days_left" />
+                            <field name="state" />
+                        </group>    
+                    </group>
+                    <notebook> 
+                        <page string="Motif">
+                            <field name="motif" placeholder="Motif"/>
+                        </page>
+                    </notebook> 
+
+            </xpath>
         </field>
     </record>
     

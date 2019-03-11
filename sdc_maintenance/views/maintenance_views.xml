@@ -33,29 +33,29 @@
               
 
  
-    <!-- intervention -->
+ 	<!-- intervention -->
     <record model="ir.ui.view" id="maintenance_interv_search">
             <field name="name">maintenance.intervention.form</field>
             <field name="model">maintenance.intervention</field>
             <field name="arch" type="xml">
                 <search string="Intervention research">
-                    <group>
-                        <filter  name ="encours" string="In Progress" domain="[('state','=','draft')]" help=""/>
-                        <filter  name ="done" string="Completed" domain="[('state','=','done')]" help=""/>
-                        <filter  name="cancel" string="Canceled" domain="[('state','=','cancel')]" help=""/>
-                    </group>
-                    <newline/>
+                	<group>
+	                	<filter  name ="encours" string="In Progress" domain="[('state','=','draft')]" help=""/>
+	                	<filter  name ="done" string="Completed" domain="[('state','=','done')]" help=""/>
+	                	<filter  name="cancel" string="Canceled" domain="[('state','=','cancel')]" help=""/>
+                	</group>
+                	<newline/>
                     <field name="name" />
                     <field name="equipment_id" />
                     <newline/>
                   <group expand="0" string="Group by ...">
-                        <filter string="State of the Machine" name="state" domain="[]" context="{'group_by':'state_machine'}"/>
-                        <filter string="Technician" name="technicien" domain="[]" context="{'group_by':'technician_id'}"/>
-                        <filter string="Equipment" name="equip" domain="[]" context="{'group_by':'equipment_id'}"/>
-                        <filter string="Client" name="partner" domain="[]" context="{'group_by':'partner'}"/>
-                        <filter string="Responsible" name="responsible" domain="[]" context="{'group_by':'user_id'}"/>
-                        <filter string="Category" name="category" domain="[]" context="{'group_by':'category_id'}"/>
-                    </group>
+                  		<filter string="State of the Machine" name="state" domain="[]" context="{'group_by':'state_machine'}"/>
+                  		<filter string="Technician" name="technicien" domain="[]" context="{'group_by':'technician_id'}"/>
+                  		<filter string="Equipment" name="equip" domain="[]" context="{'group_by':'equipment_id'}"/>
+                  		<filter string="Client" name="partner" domain="[]" context="{'group_by':'partner'}"/>
+                  		<filter string="Responsible" name="responsible" domain="[]" context="{'group_by':'user_id'}"/>
+                  		<filter string="Category" name="category" domain="[]" context="{'group_by':'category_id'}"/>
+                  	</group>
                  </search>
             </field>
     </record>
@@ -68,37 +68,37 @@
         <field name="arch" type="xml">
             <form string="Intervention request">
                 <header>
-                    <button name="mail_notif" states="draft" string="Send by e-mail" type="object" class="oe_highlight" />
-                    <button name="action_gererate_order" states="process" type="object" string="Generate OT" class="oe_highlight"/>
-                    <button name="action_process" states="draft" string="In Progress" type="object" class="oe_highlight" />
-                    <button name="action_done" states="process" string="Validate" type="object" class="oe_highlight" />
-                    <button name="action_cancel" states="process,draft" string="Cancel" type="object"  class="oe_highlight"/>
+                	<button name="mail_notif" states="draft" string="Send by e-mail" type="object" class="oe_highlight" />
+                	<button name="action_gererate_order" states="process" type="object" string="Generate OT" class="oe_highlight"/>
+                	<button name="action_process" states="draft" string="In Progress" type="object" class="oe_highlight" />
+                	<button name="action_done" states="process" string="Validate" type="object" class="oe_highlight" />
+		            <button name="action_cancel" states="process,draft" string="Cancel" type="object"  class="oe_highlight"/>
                     <button name="action_draft" states="cancel" string="Re-Work" type="object" class="oe_highlight" />
-                        <field name="state" widget="statusbar" clickable="true"/>
-                    </header>
+                		<field name="state" widget="statusbar" clickable="true"/>
+                	</header>
                     <sheet>
                     <group>
-                        <group>
-                        <field name="name"/>
-                        <field name="partner" />
-                        <field name="equipment_id"/>
-                        <field name="category_id"/>
-                        <field name="zone_id"/> 
-                        <field name="state_machine" />
-                        <field name="warranty" />
-                        <field name="priority" widget="priority"/>
-                        </group>
-                        <group>
-                        <field name="user_id"/>
-                        <field name="type"/>
-                        <field name="failure_type"/>
-                        <field name="contact"/>
-                        <field name="date_inter"/>
-                        <field name="date_end" /> 
-                        <field name="technician_id"/>   
-                        <field name="bon_bool"/>       
-                        </group>
-                    </group>
+	                    <group>
+	                    <field name="name"/>
+	                    <field name="partner" />
+	                    <field name="equipment_id"/>
+	                    <field name="category_id"/>
+	                    <field name="zone_id"/> 
+	                    <field name="state_machine" />
+	                    <field name="warranty" />
+	                    <field name="priority" widget="priority"/>
+	                    </group>
+	                    <group>
+	                    <field name="user_id"/>
+	                    <field name="type"/>
+	                    <field name="failure_type"/>
+	                    <field name="contact"/>
+	                    <field name="date_inter"/>
+	                    <field name="date_end" /> 
+	                    <field name="technician_id"/>   
+	                    <field name="bon_bool"/>       
+	                    </group>
+					</group>
                     <newline/>
                     <notebook colspan="1">
                         <page string="Reason for intervention">
@@ -122,24 +122,24 @@
                         </page>
                          
                        <page string="Defective Piece">
-                       <field name="product_ids" >
-                                 <tree editable="bottom">
-                                    <field name="product_id"/>
-                                    <field name="ref_intern" />
-                                    <field name="qte" />
-                                    <field name="type_id" />
-                                </tree>
-                       </field>
-                  </page>
+		               <field name="product_ids" >
+                            	 <tree editable="bottom">
+                            		<field name="product_id"/>
+                            		<field name="ref_intern" />
+                            		<field name="qte" />
+                            		<field name="type_id" />
+                            	</tree>
+		               </field>
+	              </page>
                   <page string="Description ">
                             <field name="reclamation"/>
                    </page>
                     </notebook>
                     </sheet>
                      <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="message_ids" widget="mail_thread"/>
-                    </div>
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+                	</div>
                 </form>
             </field>
         </record>
@@ -198,72 +198,72 @@
     </record>
         
    <record id="maintenance_intervention_view_kanban" model="ir.ui.view">
-            <field name="name">maintenance.intervention.kanban</field>
-            <field name="model">maintenance.intervention</field>
-            <field name="arch" type="xml">
-                <kanban default_group_by="state">
-                    <field name="state"/>
-                    <field name="color"/>
-                    <field name="priority"/>
-                    <field name="equipment_id"/>
-                    <field name="technician_id"/>
-                    <field name="kanban_state"/>
-                    <field name="message_needaction_counter"/>
-                    <field name="activity_ids" />
-                    <field name="activity_state" />
-                    <templates>
-                        <t t-name="kanban-tooltip">
-                           <ul class="oe_kanban_tooltip">
-                              <li><b>Type:</b> <field name="type"/></li>
-                              <li><b>Request:</b> <field name="technician_id"/></li>
-                           </ul>
-                        </t>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
-                                <div class="o_dropdown_kanban dropdown">
-    
-                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
-                                        <span class="fa fa-ellipsis-v"/>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                        <t t-if="widget.editable"><li><a type="edit">Edit...</a></li></t>
-                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
-                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
-                                    </ul>
-                                </div>
-                                <div class="oe_kanban_content" tooltip="kanban-tooltip">
-                                    <div class="o_kanban_record_top">
-                                        <b class="o_kanban_record_title"><field name="name"/></b>
-                                    </div>
-                                    <div class="o_kanban_record_body">
-                                        <span name="user_id" t-if="record.user_id.raw_value">Ask by:<field name="user_id"/><br/></span>
-                                        <span name="technician_id" t-if="record.technician_id.raw_value">Responsible : <field name="technician_id"/><br/></span>
-                                        <span class="oe_grey" t-if="record.equipment_id.raw_value"><field name="equipment_id"/><br/></span>
-                                        <span t-if="record.type.raw_value"><field name="type"/></span>
-                                    </div>
-                                    <div class="o_kanban_record_bottom">
-                                        <div class="oe_kanban_bottom_left">
-                                            <field name="priority" widget="priority"/>
-                                            <t t-if="record.message_needaction_counter.raw_value">
-                                                <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
-                                            </t>
-                                            <div class="o_kanban_inline_block ml4 mr4">
-                                                <field name="activity_ids" widget="kanban_activity" />
-                                            </div>
-                                        </div>
-                                        <div class="oe_kanban_bottom_right">
-                                            <field name="kanban_state" widget="state_selection"/>
-                                            <img t-att-src="kanban_image('res.users', 'image_small', record.technician_id.raw_value)" t-att-title="record.technician_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="oe_clear"></div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
+	        <field name="name">maintenance.intervention.kanban</field>
+	        <field name="model">maintenance.intervention</field>
+	        <field name="arch" type="xml">
+	            <kanban default_group_by="state">
+	                <field name="state"/>
+	                <field name="color"/>
+	                <field name="priority"/>
+	                <field name="equipment_id"/>
+	                <field name="technician_id"/>
+	                <field name="kanban_state"/>
+	                <field name="message_needaction_counter"/>
+	                <field name="activity_ids" />
+	                <field name="activity_state" />
+	                <templates>
+	                    <t t-name="kanban-tooltip">
+	                       <ul class="oe_kanban_tooltip">
+	                          <li><b>Type:</b> <field name="type"/></li>
+	                          <li><b>Request:</b> <field name="technician_id"/></li>
+	                       </ul>
+	                    </t>
+	                    <t t-name="kanban-box">
+	                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
+	                            <div class="o_dropdown_kanban dropdown">
+	
+	                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+	                                    <span class="fa fa-ellipsis-v"/>
+	                                </a>
+	                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	                                    <t t-if="widget.editable"><li><a type="edit">Edit...</a></li></t>
+	                                    <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+	                                    <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+	                                </ul>
+	                            </div>
+	                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+	                                <div class="o_kanban_record_top">
+	                                    <b class="o_kanban_record_title"><field name="name"/></b>
+	                                </div>
+	                                <div class="o_kanban_record_body">
+	                                    <span name="user_id" t-if="record.user_id.raw_value">Ask by:<field name="user_id"/><br/></span>
+	                                    <span name="technician_id" t-if="record.technician_id.raw_value">Responsible : <field name="technician_id"/><br/></span>
+	                                    <span class="oe_grey" t-if="record.equipment_id.raw_value"><field name="equipment_id"/><br/></span>
+	                                    <span t-if="record.type.raw_value"><field name="type"/></span>
+	                                </div>
+	                                <div class="o_kanban_record_bottom">
+	                                    <div class="oe_kanban_bottom_left">
+	                                        <field name="priority" widget="priority"/>
+	                                        <t t-if="record.message_needaction_counter.raw_value">
+	                                            <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+	                                        </t>
+	                                        <div class="o_kanban_inline_block ml4 mr4">
+	                                            <field name="activity_ids" widget="kanban_activity" />
+	                                        </div>
+	                                    </div>
+	                                    <div class="oe_kanban_bottom_right">
+	                                        <field name="kanban_state" widget="state_selection"/>
+	                                        <img t-att-src="kanban_image('res.users', 'image_small', record.technician_id.raw_value)" t-att-title="record.technician_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="oe_clear"></div>
+	                        </div>
+	                    </t>
+	                </templates>
+	            </kanban>
+	        </field>
+	    </record>
     
         <record id="open_view_intervention_new" model="ir.actions.act_window">
             <field name="name">Request for Intervention</field>
@@ -274,7 +274,7 @@
         
 
 
-    <!-- bon de travail -->
+	<!-- bon de travail -->
     <!-- search -->
     <record model="ir.ui.view" id="ao_incident_search">
             <field name="name">maintenance.order.search</field>
@@ -282,24 +282,24 @@
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Searching for Service Order">
-                    <group string="filtres">
-                        <filter  name="draft" string="In Progress" domain="[('state','=','draft')]" help=""/>
-                        <filter  name="done" string="Completed" domain="[('state','=','done')]" help=""/>
-                        <filter  name="cancel" string="Canceled" domain="[('state','=','cancel')]" help=""/>
-                    </group>
-                    <newline/>
+                	<group string="filtres">
+	                	<filter  name="draft" string="In Progress" domain="[('state','=','draft')]" help=""/>
+	                	<filter  name="done" string="Completed" domain="[('state','=','done')]" help=""/>
+	                	<filter  name="cancel" string="Canceled" domain="[('state','=','cancel')]" help=""/>
+                	</group>
+                	<newline/>
                     <field name="name"/>
                     <field name="user_id"/>
                     <field name="equipment_id"/>
                     <newline/>
                     <group expand="0" string="Grouper par ...">
-                        <filter string="Machine" name="equip" domain="[]" context="{'group_by':'equipment_id'}"/>
-                        <filter string="Client" name="partner" domain="[]" context="{'group_by':'partner_id'}"/>
-                        <filter string="Responsible" name="responsible" domain="[]" context="{'group_by':'user_id'}"/>
-                        <filter string="Source" name="source" domain="[]" context="{'group_by':'interv_id'}"/>
-                        <filter string="Category" name="category" domain="[]" context="{'group_by':'category_id'}"/>
-                        <filter string="Technician" name="techn" domain="[]" context="{'group_by':'technician_id'}"/>
-                    </group>
+                  		<filter string="Machine" name="equip" domain="[]" context="{'group_by':'equipment_id'}"/>
+                  		<filter string="Client" name="partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                  		<filter string="Responsible" name="responsible" domain="[]" context="{'group_by':'user_id'}"/>
+                  		<filter string="Source" name="source" domain="[]" context="{'group_by':'interv_id'}"/>
+                  		<filter string="Category" name="category" domain="[]" context="{'group_by':'category_id'}"/>
+                  		<filter string="Technician" name="techn" domain="[]" context="{'group_by':'technician_id'}"/>
+                  	</group>
                  </search>
             </field>
     </record>
@@ -365,14 +365,14 @@
             <field name="arch" type="xml">
                 <form string="Incident">
                     <header>
-                        <button name="mail_notif"  type="object" string="Send by e-mail" class="oe_highlight"/>
-                        <button name="action_process" states="plan" string="In Progess" type="object" class="oe_highlight"/>
-                        <button name="action_done" states="invoice,draft" string="Validate" type="object" class="oe_highlight"/>
-                        <button name="action_cancel" states="draft,invoice" string="Cancel" type="object" class="oe_highlight"/>
-                        <button name="action_draft" states="cancel,draft,done,invoice" string="Plan" type="object" class="oe_highlight"/>
-                        <button name="action_devis" states="draft" string="Quote to Make" type="object" class="oe_highlight"/>
-                        <button name="action_gererate_invoice" states="invoice" string="Generate Quote" type="object" class="oe_highlight"/>
-                        <field name="state" widget="statusbar" />
+                		<button name="mail_notif"  type="object" string="Send by e-mail" class="oe_highlight"/>
+                		<button name="action_process" states="plan" string="In Progess" type="object" class="oe_highlight"/>
+                		<button name="action_done" states="invoice,draft" string="Validate" type="object" class="oe_highlight"/>
+		                <button name="action_cancel" states="draft,invoice" string="Cancel" type="object" class="oe_highlight"/>
+		                <button name="action_draft" states="cancel,draft,done,invoice" string="Plan" type="object" class="oe_highlight"/>
+                		<button name="action_devis" states="draft" string="Quote to Make" type="object" class="oe_highlight"/>
+                		<button name="action_gererate_invoice" states="invoice" string="Generate Quote" type="object" class="oe_highlight"/>
+                		<field name="state" widget="statusbar" />
                     </header>
                     <sheet>
                     <group>
@@ -423,95 +423,95 @@
                         </page>
 
                         <page string="Defective Piece">
-                       <field name="product_ids" >
-                                 <tree editable="bottom">
-                                    <field name="product_id"/>
-                                    <field name="ref_intern" />
-                                    <field name="qte" />
-                                    <field name="type_id" />
-                                
-                                </tree>
-                       </field>
+		               <field name="product_ids" >
+                            	 <tree editable="bottom">
+                            		<field name="product_id"/>
+                            		<field name="ref_intern" />
+                            		<field name="qte" />
+                            		<field name="type_id" />
+                            	
+                            	</tree>
+		               </field>
                         </page>
 
                     </notebook>
                     </sheet>
                     <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="message_ids" widget="mail_thread"/>
-                    </div>
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+                	</div>
                 </form>
             </field>
         </record>
         
    <record id="maintenance_work_order_view_kanban" model="ir.ui.view">
-            <field name="name">maintenance.order.kanban</field>
-            <field name="model">maintenance.order</field>
-            <field name="arch" type="xml">
-                <kanban default_group_by="state">
-                    <field name="state"/>
-                    <field name="color"/>
-                    <field name="priority"/>
-                    <field name="equipment_id"/>
-                    <field name="technician_id"/>
-                    <field name="kanban_state"/>
-                    <field name="message_needaction_counter"/>
-                    <field name="activity_ids" />
-                    <field name="activity_state" />
-                    <templates>
-                        <t t-name="kanban-tooltip">
-                           <ul class="oe_kanban_tooltip">
-                              <li><b>Category:</b> <field name="category_id"/></li>
-                              <li><b>Ask:</b> <field name="technician_id"/></li>
-                           </ul>
-                        </t>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
-                                <div class="o_dropdown_kanban dropdown">
-    
-                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
-                                        <span class="fa fa-ellipsis-v"/>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                        <t t-if="widget.editable"><li><a type="edit">Edit...</a></li></t>
-                                        <t t-if="widget.deletable"><li><a type="delete">Remove</a></li></t>
-                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
-                                    </ul>
-                                </div>
-                                <div class="oe_kanban_content" tooltip="kanban-tooltip">
-                                    <div class="o_kanban_record_top">
-                                        <b class="o_kanban_record_title"><field name="name"/></b>
-                                    </div>
-                                    <div class="o_kanban_record_body">
-                                        <span name="user_id" t-if="record.user_id.raw_value">Ask by:<field name="user_id"/><br/></span>
-                                        <span name="technician_id" t-if="record.technician_id.raw_value">Responsible : <field name="technician_id"/><br/></span>
-                                        <span class="oe_grey" t-if="record.equipment_id.raw_value"><field name="equipment_id"/><br/></span>
-                                        <span t-if="record.category_id.raw_value"><field name="category_id"/></span>
-                                    </div>
-                                    <div class="o_kanban_record_bottom">
-                                        <div class="oe_kanban_bottom_left">
-                                            <field name="priority" widget="priority"/>
-                                            <t t-if="record.message_needaction_counter.raw_value">
-                                                <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
-                                            </t>
-                                            <div class="o_kanban_inline_block ml4 mr4">
-                                                <field name="activity_ids" widget="kanban_activity" />
-                                            </div>
-                                        </div>
-                                        <div class="oe_kanban_bottom_right">
-                                            <field name="kanban_state" widget="state_selection"/>
-                                            <img t-att-src="kanban_image('res.users', 'image_small', record.technician_id.raw_value)" t-att-title="record.technician_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="oe_clear"></div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-        
+	        <field name="name">maintenance.order.kanban</field>
+	        <field name="model">maintenance.order</field>
+	        <field name="arch" type="xml">
+	            <kanban default_group_by="state">
+	                <field name="state"/>
+	                <field name="color"/>
+	                <field name="priority"/>
+	                <field name="equipment_id"/>
+	                <field name="technician_id"/>
+	                <field name="kanban_state"/>
+	                <field name="message_needaction_counter"/>
+	                <field name="activity_ids" />
+	                <field name="activity_state" />
+	                <templates>
+	                    <t t-name="kanban-tooltip">
+	                       <ul class="oe_kanban_tooltip">
+	                          <li><b>Category:</b> <field name="category_id"/></li>
+	                          <li><b>Ask:</b> <field name="technician_id"/></li>
+	                       </ul>
+	                    </t>
+	                    <t t-name="kanban-box">
+	                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
+	                            <div class="o_dropdown_kanban dropdown">
+	
+	                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+	                                    <span class="fa fa-ellipsis-v"/>
+	                                </a>
+	                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	                                    <t t-if="widget.editable"><li><a type="edit">Edit...</a></li></t>
+	                                    <t t-if="widget.deletable"><li><a type="delete">Remove</a></li></t>
+	                                    <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+	                                </ul>
+	                            </div>
+	                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+	                                <div class="o_kanban_record_top">
+	                                    <b class="o_kanban_record_title"><field name="name"/></b>
+	                                </div>
+	                                <div class="o_kanban_record_body">
+	                                    <span name="user_id" t-if="record.user_id.raw_value">Ask by:<field name="user_id"/><br/></span>
+	                                    <span name="technician_id" t-if="record.technician_id.raw_value">Responsible : <field name="technician_id"/><br/></span>
+	                                    <span class="oe_grey" t-if="record.equipment_id.raw_value"><field name="equipment_id"/><br/></span>
+	                                    <span t-if="record.category_id.raw_value"><field name="category_id"/></span>
+	                                </div>
+	                                <div class="o_kanban_record_bottom">
+	                                    <div class="oe_kanban_bottom_left">
+	                                        <field name="priority" widget="priority"/>
+	                                        <t t-if="record.message_needaction_counter.raw_value">
+	                                            <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+	                                        </t>
+	                                        <div class="o_kanban_inline_block ml4 mr4">
+	                                            <field name="activity_ids" widget="kanban_activity" />
+	                                        </div>
+	                                    </div>
+	                                    <div class="oe_kanban_bottom_right">
+	                                        <field name="kanban_state" widget="state_selection"/>
+	                                        <img t-att-src="kanban_image('res.users', 'image_small', record.technician_id.raw_value)" t-att-title="record.technician_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="oe_clear"></div>
+	                        </div>
+	                    </t>
+	                </templates>
+	            </kanban>
+	        </field>
+	    </record>
+	    
         <record id="open_view_incident_new" model="ir.actions.act_window">
             <field name="name">Work Order</field>
             <field name="res_model">maintenance.order</field>
@@ -520,7 +520,7 @@
         </record>       
         
         
-     <!-- equipments : views -->
+     <!-- equipment : views -->
     <record id="maintenance.hr_equipment_view_form" model="ir.ui.view">
         <field name="name">equipment.form.maint</field>
         <field name="model">maintenance.equipment</field>
@@ -528,6 +528,14 @@
             <form string="Equipments">
                 <sheet>
                     <div class="oe_button_box" name="button_box">
+		                  <button name="%(open_view_intervention_new)d"
+                                type="action"
+                                class="oe_inline oe_stat_button"
+                                icon="fa-book"
+                                context="{'search_default_equipment_id': active_id}"
+                                help="show the Intervention for this Equipement">
+                               <field name="intervention_count" widget="statinfo" string="Interventions"/>
+                            </button>
                             <button name="%(open_view_incident_new)d"
                                 type="action"
                                 class="oe_inline oe_stat_button"
@@ -555,28 +563,29 @@
                                <field name="cm_count" widget="statinfo" string="MC"/>
                             </button>
                     </div>
-                    <field name="image" widget="image" class="oe_avatar"/>
+					<field name="image" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" string="Name" placeholder="Equipment Name"/></h1>
                     </div>
                     <group>
                         <group>
-                            <field name="category_id" options="{&quot;no_open&quot;: True}"/>
-                            <field name="owner_user_id" string="Owner"/>
-                            
+                            <field name="client_id" string="Client"/>
+                            <field name="brand_id"/>
+                            <field name="model_id"/>
+                            <field name="serial_no"/>
                             <field name="startingdate"/>
                             <field name="deadlinegar"/>
                             <field name="warranty_func"/>
-                            <field name="technique_file"/>
-                            
                         </group>
                         <group>
-                            <field name="maintenance_team_id" attrs="{'required': [('period', '!=', 0)]}"/>
-                            <field name="technician_user_id"/>
+                            <field name="category_id" widget="many2one"/>
+                            <field name="team_id" widget="many2one"/>
+                            <field name="team_leader_id" widget="many2one"/>
                             <field name="assign_date" groups="base.group_no_one"/>
                             <field name="scrap_date" groups="base.group_no_one"/>
-                            <field name="location" string="Used in location"/>
+                            <field name="location" string="Location"/>
+                            <field name="zone_id" widget="many2one"/>
                         </group>
                     </group>
                     <notebook>
@@ -589,25 +598,14 @@
                                 <group>
                                     <field name="partner_id" context="{'default_supplier': True, 'default_customer': False}"/>
                                     <field name="partner_ref"/>
-                                    <field name="model"/>
-                                    <field name="serial_no"/>
-                                </group><group>
+                                </group>
+                                <group>
                                     <field name="cost" groups="maintenance.group_equipment_manager"/>
                                     <!--  <field name="warranty"/>-->
-                                    <field name="brand_id"/>
+                                    <field name="technique_file"/>
                                 </group>
                             </group>
                         </page>
-                       <page string="List of Parts">
-                       <field name="product_ids" >
-                                 <tree editable="bottom">
-                                    <field name="product_id" on_change="onchange_product(product_id)"/>
-                                    <field name="ref_intern" />
-                                    <field name="qte" />
-                                    <field name="type_id" />
-                                </tree>
-                       </field>
-                        </page> 
                         <page string="Maintenance">
                             <group>
                                 <group name="maintenance">
@@ -622,6 +620,58 @@
                                     </div>
                                 </group>
                             </group>
+                        </page>
+                       <page string="List of Parts">
+		               <field name="product_ids" >
+                            	 <tree editable="bottom">
+                            		<field name="product_id" on_change="onchange_product(product_id)"/>
+                            		<field name="ref_intern" />
+                            		<field name="qte" />
+                            		<field name="type_id" />
+                            	</tree>
+		               </field>
+                        </page>
+                        <page string="Softwares">
+                            <field name="software_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="software_id"/>
+                                </tree>
+                            </field>
+                        </page> 
+                        <page string="Network">
+                            <field name="network_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="subred"/>
+                                    <field name="gateway"/>
+                                    <field name="dns1"/>
+                                    <field name="dns2"/>
+                                    <field name="mac_address"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Dicom">
+                            <field name="dicom_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="ip"/>
+                                    <field name="port"/>
+                                    <field name="dicom_type_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Accesory">
+                            <field name="child_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="number_equipment" />
+                                    <field name="brand_id"/>
+                                    <field name="model_id"/>
+                                    <field name="serial_no"/>
+                                    <field name="category_id"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -638,7 +688,7 @@
 
            
 
-        <!-- list maintenenace -->  
+		<!-- list maintenenace -->	
          <record model="ir.ui.view" id="view_checklist_maintenance_tree">
             <field name="name">maintenance.checklist.history.tree</field>
             <field name="model">maintenance.checklist.history</field>
@@ -664,8 +714,8 @@
                    <header>
                         <button name="action_confirmed" states="draft" string="To Confirm" type="object"/>
                         <button name="action_done" states="draft" string="Valider" type="object" />
-                        <button name="action_draft" states="confirmed,done" string="Re-Work" type="object" />
-                        <field name="state" widget="statusbar" />
+		                <button name="action_draft" states="confirmed,done" string="Re-Work" type="object" />
+                		<field name="state" widget="statusbar" />
                    </header>
                     <sheet>
                     <newline/>
@@ -693,26 +743,26 @@
                             <field name="detail" select="1"/>
                         </tree>
                     </field>        
-                    <notebook>
-                        <page string="Work Order">
-                        <field name="ot_ids">
-                            <tree>
-                                    <field name="name"/>
-                                    <field name="priority"/>
-                                    <field name="partner_id"/>
-                                    <field name="zone_id"/>
-                                    <field name="user_id"/>
-                                    <field name="date"/>    
-                                    <field name="state"/>
-                            </tree>  
-                        </field>  
-                        </page>
+                	<notebook>
+	                    <page string="Work Order">
+	                    <field name="ot_ids">
+		                    <tree>
+						            <field name="name"/>
+				                    <field name="priority"/>
+				                    <field name="partner_id"/>
+				                    <field name="zone_id"/>
+				                    <field name="user_id"/>
+				                    <field name="date"/>    
+				                    <field name="state"/>
+		                    </tree>  
+		                </field>  
+	                    </page>
                     </notebook>
                     </sheet>
                      <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="message_ids" widget="mail_thread"/>
-                    </div>
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+                	</div>
                 </form>
             </field>
         </record>
@@ -729,7 +779,7 @@
         
         
 
-     <!-- maintenance checklist -->   
+	 <!-- maintenance checklist -->   
         <record id="view_chicklist_cm_form" model="ir.ui.view">
             <field name="name">maintenance.checklist.form</field>
             <field name="model">maintenance.checklist</field>
@@ -738,25 +788,25 @@
                 <form string="Zone">
                     <sheet>
                     <group>
-                        <group>
-                        <field name="name"/>
-                        <field name="active"/>
-                        </group>
-                        <group>
-                        <field name="equipment_type"/>
-                        <field name="planned_date" widget="float_time"/>
-                        </group> 
+	                    <group>
+	                    <field name="name"/>
+	                    <field name="active"/>
+	                    </group>
+	                    <group>
+	                    <field name="equipment_type"/>
+	                    <field name="planned_date" widget="float_time"/>
+	                    </group> 
                     </group>
                     <field name="description" placeholder="Description"/>
                     <notebook>
-                         <page string="Questions">
-                            <field name="questions_ids">
-                                <tree editable="bottom" >
-                                    <field name="sequence" widget="handle"/>
-                                    <field name="name"  />
-                                </tree>
-                             </field>
-                         </page>
+                    	 <page string="Questions">
+	                    	<field name="questions_ids">
+			                   	<tree editable="bottom" >
+			                   		<field name="sequence" widget="handle"/>
+		                            <field name="name"  />
+		                        </tree>
+		                     </field>
+	                     </page>
                     </notebook> 
                     </sheet>
                 </form>
@@ -793,14 +843,14 @@
                 <form string="Zone">
                     <sheet>
                     <group>
-                        <group>
-                        <field name="name"/>
-                        </group>
-                        <group>
-                        <field name="code"/>
-                        </group>
-                        </group>
-                    <field name="description"/>  
+	                    <group>
+	                    <field name="name"/>
+	                    </group>
+	                    <group>
+	                    <field name="code"/>
+	                    </group>
+	                    </group>
+	                <field name="description"/>  
                     </sheet>
                 </form>
             </field>
@@ -836,18 +886,18 @@
                 <form string="Zone">
                     <sheet>
                     <group>
-                        <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        </group>
-                        <group>
-                        <field name="manager_id"/>
-                        </group> 
+	                    <group>
+	                    <field name="name"/>
+	                    <field name="code"/>
+	                    </group>
+	                    <group>
+	                    <field name="manager_id"/>
+	                    </group> 
                     </group>
                     <notebook>
-                        <page string="Description">
-                            <field name="description"/>
-                        </page>
+	                    <page string="Description">
+	                    	<field name="description"/>
+	                    </page>
                     </notebook>
                     </sheet>
                 </form>
@@ -874,7 +924,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-         <!-- Brand-->
+        <!-- Brand-->
         <record id="maintenance_equipment_brand_view_form" model="ir.ui.view">
             <field name="name">maintenance.equipment.brand.form</field>
             <field name="model">maintenance.equipment.brand</field>
@@ -921,7 +971,55 @@
             <field name="view_mode">tree,form</field>
     </record>
 
-        <!--panne-->
+
+        <!-- Model Brand-->
+        <record id="maintenance_equipment_model_view_form" model="ir.ui.view">
+            <field name="name">maintenance.equipment.model.form</field>
+            <field name="model">maintenance.equipment.model</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Model">
+                    <sheet>
+                    <group>
+                        <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        </group>
+                        <group>
+                        <field name="brand_id"/>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="maintenance_equipment_model_view_tree" model="ir.ui.view">
+            <field name="name">maintenance.equipment.model.tree</field>
+            <field name="model">maintenance.equipment.model</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Model">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="brand_id" />
+                </tree>
+            </field>
+        </record>
+
+
+    <record id="maintenance_equipment_model_action_view" model="ir.actions.act_window">
+            <field name="name">Model</field>
+            <field name="res_model">maintenance.equipment.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+		<!--panne-->
         <record id="view_failure_form" model="ir.ui.view">
             <field name="name">maintenance.failure.form</field>
             <field name="model">maintenance.failure</field>
@@ -972,12 +1070,12 @@
                 <form string="Piece">
                     <sheet>
                     <group>
-                        <group>
-                        <field name="name"/>
-                        </group>
-                        <group>
-                        <field name="code"/>
-                        </group>
+	                    <group>
+	                    <field name="name"/>
+	                    </group>
+	                    <group>
+	                    <field name="code"/>
+	                    </group>
                     </group>
                     <field name="description"/>
                     </sheet>
@@ -1013,24 +1111,24 @@
                 <field name="name"/>
                 <field name="color"/>
                 <field name="technician_user_id"/>
-                <field name="owner_user_id"/>
+                <field name="client_id"/>
                 <field name="category_id"/>
                 <field name="serial_no"/>
-                <field name="model"/>
+                <field name="model_id"/>
                 <field name="maintenance_ids"/>
                 <field name="maintenance_open_count"/>
                 <field name="next_action_date"/>
                 <field name="activity_ids" />
                 <field name="activity_state" />
-                <field name="ot_count"/>
-                <field name="intervention_count"/>
-                <field name="cm_count"/>
-                <field name="pm_count"/>
+ 				<field name="ot_count"/>
+			    <field name="intervention_count"/>
+			    <field name="cm_count"/>
+			    <field name="pm_count"/>
                 <templates>
                     <t t-name="kanban-tooltip">
                         <ul class="oe_kanban_tooltip">
                             <li><b>Serial N°:</b> <field name="serial_no"/></li>
-                            <li><b>Model:</b> <field name="model"/></li>
+                            <li><b>Model:</b> <field name="model_id"/></li>
                         </ul>
                     </t>
                     <t t-name="kanban-box">
@@ -1059,18 +1157,18 @@
                                 </div>
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
-                                      <div class="label label-danger" t-if="record.intervention_count.raw_value" >
-                                          <t t-raw="record.intervention_count.raw_value"/> Intervention
-                                      </div>
-                                      <div class="label label-danger" t-if="record.ot_count.raw_value" >
-                                          <t t-raw="record.ot_count.raw_value"/> WO
-                                      </div>
-                                      <div class="label label-danger" t-if="record.cm_count.raw_value" >
-                                          <t t-raw="record.cm_count.raw_value"/> MC
-                                      </div>
-                                      <div class="label label-danger" t-if="record.pm_count.raw_value" >
-                                          <t t-raw="record.pm_count.raw_value"/> MP
-                                      </div>
+						        	  <div class="label label-danger" t-if="record.intervention_count.raw_value" >
+			                              <t t-raw="record.intervention_count.raw_value"/> Intervention
+			                          </div>
+			                          <div class="label label-danger" t-if="record.ot_count.raw_value" >
+			                              <t t-raw="record.ot_count.raw_value"/> WO
+			                          </div>
+			                          <div class="label label-danger" t-if="record.cm_count.raw_value" >
+			                              <t t-raw="record.cm_count.raw_value"/> MC
+			                          </div>
+			                          <div class="label label-danger" t-if="record.pm_count.raw_value" >
+			                              <t t-raw="record.pm_count.raw_value"/> MP
+			                          </div>
                                         <div class="label label-default" t-if="record.next_action_date.raw_value" >
                                             <t t-raw="moment(record.next_action_date.raw_value).format('MMMM Do')"/>
                                         </div>
@@ -1117,6 +1215,228 @@
             </tree>
 
         </field>
+    </record>
+
+    <!-- Team : views -->
+
+    <!-- Form : views -->
+    <record id="equipment_team_view_form_inherit" model="ir.ui.view">
+        <field name="name">equipment.team.form.inherit</field>
+        <field name="model">maintenance.team</field>
+        <field name="inherit_id" ref="maintenance.maintenance_team_view_form"/>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="team_leader_id" widget="many2one"/>
+                    </group>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+    <!-- Tree : views -->
+    <record id="equipment_team_view_tree_inherit" model="ir.ui.view">
+        <field name="name">equipment.team.tree.inherit</field>
+        <field name="model">maintenance.team</field>
+        <field name="inherit_id" ref="maintenance.maintenance_team_view_tree"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="team_leader_id" class="oe_inline"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- Software Type Views-->
+    <record id="maintenance_software_type_view_form" model="ir.ui.view">
+        <field name="name">maintenance.software.type.form</field>
+        <field name="model">maintenance.software.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Software Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="maintenance_software_type_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.software.type.tree</field>
+        <field name="model">maintenance.software.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Software Type">
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_software_type_action_view" model="ir.actions.act_window">
+            <field name="name">Software Type</field>
+            <field name="res_model">maintenance.software.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Software Views-->
+    <record id="maintenance_equipment_software_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.software.form</field>
+        <field name="model">maintenance.equipment.software</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Software">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="version"/>
+                        </group>
+                        <group>
+                            <field name="software_type_id"/>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="maintenance_equipment_software_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.software.tree</field>
+        <field name="model">maintenance.equipment.software</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Software">
+                <field name="name" />
+                <field name="version" />
+                <field name="software_type_id" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_software_action_view" model="ir.actions.act_window">
+            <field name="name">Software</field>
+            <field name="res_model">maintenance.equipment.software</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Dicom Type Views-->
+    <record id="maintenance_dicom_type_view_form" model="ir.ui.view">
+        <field name="name">maintenance.dicom.type.form</field>
+        <field name="model">maintenance.dicom.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Dicom Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="maintenance_dicom_type_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.dicom.type.tree</field>
+        <field name="model">maintenance.dicom.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Dicom Type">
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_dicom_type_action_view" model="ir.actions.act_window">
+            <field name="name">Dicom Type</field>
+            <field name="res_model">maintenance.dicom.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Dicom Views-->
+    <record id="maintenance_equipment_dicom_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.dicom.form</field>
+        <field name="model">maintenance.equipment.dicom</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Dicom">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="ip"/>
+                            <field name="port"/>
+                        </group>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="dicom_type_id"/>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="maintenance_equipment_dicom_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.dicom.tree</field>
+        <field name="model">maintenance.equipment.dicom</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Dicom">
+                <field name="name" />
+                <field name="ip" />
+                <field name="port" />
+                <field name="dicom_type_id" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_dicom_action_view" model="ir.actions.act_window">
+            <field name="name">Dicom</field>
+            <field name="res_model">maintenance.equipment.dicom</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
     </record>
                                   
 </odoo>

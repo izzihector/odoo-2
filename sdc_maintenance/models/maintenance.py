@@ -17,7 +17,6 @@ AVAILABLE_PRIORITIES = [
     ('2','Urgent')
 ]
 
-#Clase Zone
 class maintenanceZone(models.Model):
     _name = 'maintenance.zone'
     _description = 'maintenance zone'
@@ -29,7 +28,6 @@ class maintenanceZone(models.Model):
     
     description=fields.Text('Description')
 
-#Clase Brand
 class MaintenanceEquipmentBrand(models.Model):
     _name = 'maintenance.equipment.brand'
     _description = 'Brand'
@@ -39,6 +37,91 @@ class MaintenanceEquipmentBrand(models.Model):
     code=fields.Char('Reference Brand')
     manager_id=fields.Many2one('res.partner','Provider')
     
+    description=fields.Text('Description')
+
+class MaintenanceSoftwareType(models.Model):
+    _name = 'maintenance.software.type'
+    _description = 'Software Type'
+    _order = 'name asc'
+    
+    name=fields.Char('Software Type',required=True)
+    code=fields.Char('Reference Software Type')
+    
+    description=fields.Text('Description')
+
+class MaintenanceDicomType(models.Model):
+    _name = 'maintenance.dicom.type'
+    _description = 'Dicom Type'
+    _order = 'name asc'
+    
+    name=fields.Char('Dicom Type',required=True)
+    code=fields.Char('Reference Dicom Type')
+    
+    description=fields.Text('Description')
+
+class MaintenanceEquipmentModel(models.Model):
+    _name = 'maintenance.equipment.model'
+    _description = 'Model'
+    _order = 'name asc'
+    
+    name=fields.Char('Model',required=True)
+    code=fields.Char('Reference Model')
+    brand_id=fields.Many2one('maintenance.equipment.brand','Brand')
+    
+    description=fields.Text('Description')
+
+class MaintenanceEquipmentSoftwareList(models.Model):
+    _name = 'maintenance.equipment.software.list'
+    _description = 'Software List'
+    _order = 'name asc'
+    
+    name=fields.Char('License',required=True)
+
+    software_id=fields.Many2one('maintenance.equipment.software','Software')
+    equipment_id=fields.Many2one('maintenance.equipment','Equipment')
+    
+    description=fields.Text('Description')
+
+class MaintenanceEquipmentSoftware(models.Model):
+    _name = 'maintenance.equipment.software'
+    _description = 'Software'
+    _order = 'name asc'
+    
+    name=fields.Char('Software',required=True)
+    version=fields.Char('Version')
+
+    software_type_id=fields.Many2one('maintenance.software.type','Software Type')
+    
+    description=fields.Text('Description')
+
+class MaintenanceEquipmentNetwork(models.Model):
+    _name = 'maintenance.equipment.network'
+    _description = 'Network'
+    _order = 'name asc'
+    
+    name=fields.Char('IP',required=True)
+    subred=fields.Char('SubRed',required=True)
+    gateway=fields.Char('Gateway',required=True)
+    dns1=fields.Char('Dns1')
+    dns2=fields.Char('Dns2')
+    mac_address=fields.Char('Mac Address')
+
+    equipment_id=fields.Many2one('maintenance.equipment','Equipment')
+    
+    description=fields.Text('Description')
+
+class MaintenanceEquipmentDicom(models.Model):
+    _name = 'maintenance.equipment.dicom'
+    _description = 'Dicom'
+    _order = 'name asc'
+    
+    name=fields.Char('AeTitle',required=True)
+    ip=fields.Char('Ip',required=True)
+    port=fields.Char('Port',required=True)
+
+    equipment_id=fields.Many2one('maintenance.equipment','Equipment')
+    dicom_type_id=fields.Many2one('maintenance.dicom.type','Dicom Type')
+
     description=fields.Text('Description')
     
 class ProductPiece(models.Model):
@@ -59,8 +142,6 @@ class ProductPiece(models.Model):
         if self.product_id:
             product_obj = self.env['product.product'].browse(self.product_id.id)
             self.ref_intern = product_obj.default_code or False
-
-
 
 class maintenancePiece(models.Model):
     _name = "maintenance.piece"
@@ -83,7 +164,6 @@ class maintenanceCritical(models.Model):
 
 class MaintenanceEquipement(models.Model):
     _inherit = 'maintenance.equipment'
-
 
     @api.one
     @api.depends('intervention_ids')
@@ -120,24 +200,62 @@ class MaintenanceEquipement(models.Model):
                         record.warranty_func = True
             return True
 
+# Fields Many To Many
+    #Field Brand
     brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
-    trademark=fields.Char(u'Marque')
-    technique_file=fields.Binary(u'Technical Sheet')
+    #Field Team
+    team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Team', store=True, readonly=True)
+    #Field Leader Team
+    team_leader_id=fields.Many2one('res.users', related='category_id.team_id.team_leader_id', string='Leader Team', store=True, readonly=True)
+    #Field Leader Team
+    zone_id=fields.Many2one('maintenance.zone', u'Zone')
+    #Field Client
+    client_id=fields.Many2one('res.partner', u'Client')
+    #Field Model
+    model_id=fields.Many2one('maintenance.equipment.model', u'Model')
+    #Field Parent
+    parent_id=fields.Many2one('maintenance.equipment', u'Equipment Relation')
+
+# Fields One To Many
+    #Field Products
     product_ids=fields.One2many('product.piece','piece_id_equi',u'List of Parts')
+    #Field Intervention 
+    intervention_ids=fields.One2many('maintenance.intervention','equipment_id',u'Intervention')
+    #Field OT 
+    ot_ids=fields.One2many('maintenance.order','equipment_id',u'Work Order')    
+    #Field Software 
+    software_ids=fields.One2many('maintenance.equipment.software.list','equipment_id',u'Softwares')
+    #Field Network
+    network_ids=fields.One2many('maintenance.equipment.network','equipment_id',u'Networks')
+    #Field Dicom
+    dicom_ids=fields.One2many('maintenance.equipment.dicom','equipment_id',u'Dicom')
+    #Field Child
+    child_ids=fields.One2many('maintenance.equipment','parent_id',u'Accesories')
+
+# Fields Char
+    #Field
+    trademark=fields.Char(u'Marque')
+    number_equipment=fields.Char(u'N°')
+
+# Fields Binary
+    technique_file=fields.Binary(u'Technical Sheet')
+    image=fields.Binary(u'Image')
+
+# Fields Date
     startingdate=fields.Date(u"Date of commissioning")
     deadlinegar=fields.Date(u"End of warranty date")
+
+# Fields Boolean
     warranty_func=fields.Boolean(string='Under Warranty',compute='_days_waranty')
+  
+# Fields Text
     safety=fields.Text(u'Security Instruction')
-    image=fields.Binary(u'Image')
-        
-    intervention_ids=fields.One2many('maintenance.intervention','equipment_id',u'Intervention')
-    ot_ids=fields.One2many('maintenance.order','equipment_id',u'Work Order')
-        
-    intervention_count=fields.Integer(string='Intervention',compute='_intervention_count', store=True)
+
+# Fields Integer      
     ot_count=fields.Integer(compute='_ot_count',  string='OT')
     pm_count=fields.Integer(compute='_pm_maintenance_count', string='MP')
     cm_count=fields.Integer(compute='_pm_maintenance_count', string='MC')
-
+    intervention_count=fields.Integer(compute='_intervention_count', string='Intervention', store=True)
 
     @api.model
     def _read_group_brand_ids(self, brands, domain, order):
@@ -157,6 +275,11 @@ class MaintenanceEquipmentCategory(models.Model):
 
     team_id=fields.Many2one('maintenance.team', u'Team')
 
+
+class MaintenanceEquipmentTeam(models.Model):
+    _inherit='maintenance.team'
+
+    team_leader_id=fields.Many2one('res.users', u'Team Leader')
     
 class MaintenanceIntervention(models.Model):
     _name = "maintenance.intervention"
@@ -651,7 +774,6 @@ class maintenanceQuestion(models.Model):
 class MaintenanceRequest(models.Model):
     _inherit= 'maintenance.request'
 
-    
     @api.one
     def _days_next_due(self):
             for record in self:
@@ -691,21 +813,49 @@ class MaintenanceRequest(models.Model):
                     else:
                         record.state = u'OK'
             return True
-          
+
+# Fields Selection
+    #Field Meter 
     meter=fields.Selection([ ('days', 'Days')], u'Measure Unit', default='days')
+    state_machine=fields.Selection([('start','Working'),('stop','Stopped')],u'State on demand', default='start')
+
+# Fields Boolean
+    #Field Recurrent
     recurrent=fields.Boolean(u'Recurrent ?', help="Mark this option if PM is periodic")
+
+# Fields Integer
+    #Field Day Interval
     days_interval=fields.Integer(u'Interval (days)')  
-    days_last_done=fields.Date(u'Last maintenance')
-    days_next_due=fields.Date(compute='_days_next_due', string='Next Maintenance')
     days_warn_period=fields.Integer('Date of alert')
     days_left=fields.Integer(compute='_days_left', string='Remaining days')
+
+# Fields Date
+    #Field Day Last Done
+    days_last_done=fields.Date(u'Last maintenance')
+    days_next_due=fields.Date(compute='_days_next_due', string='Next Maintenance')
+
+# Fields Char
+    #Field State
     state=fields.Char(compute='_get_state', string='Status',track_visibility='always')
+
+# Fields Text
+    #Field motif
     motif=fields.Text('Reason')
+
+# Fields Many To One
+    #Field Technician
     technician_user_id = fields.Many2one('res.users', string='Technician', track_visibility='onchange')
-    state_machine=fields.Selection([('start','Working'),('stop','Stopped')],u'State on demand', default='start')
+    #Field Equipment
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
+    #Field Partner
     partner_id=fields.Many2one('res.partner', u'Client',domain=[('customer','=',True)])
-    
+    #Field Client
+    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
+    #Field Team
+    team_id = fields.Many2one('maintenance.team', related='equipment_id.category_id.team_id', string='Team', store=True, readonly=True)
+    #Field Team Leader
+    team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
+                
     
     def mail_notif(self):
             text_inter = u"""<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
