@@ -255,9 +255,7 @@ class MaintenanceEquipement(models.Model):
 
     @api.model
     def _read_group_brand_ids(self, brands, domain, order):
-        """ Read group customization in order to display all the brands in
-            the kanban view, even if they are empty.
-        """
+
         brand_ids = brands._search([], order=order, access_rights_uid=SUPERUSER_ID)
         return brands.browse(brand_ids)
 
@@ -810,46 +808,33 @@ class MaintenanceRequest(models.Model):
                         record.state = u'OK'
             return True
 
-# Fields Selection
-    #Field Meter 
+
     meter=fields.Selection([ ('days', 'Days')], u'Measure Unit', default='days')
     state_machine=fields.Selection([('start','Working'),('stop','Stopped')],u'State on demand', default='start')
 
-# Fields Boolean
-    #Field Recurrent
     recurrent=fields.Boolean(u'Recurrent ?', help="Mark this option if PM is periodic")
 
-# Fields Integer
-    #Field Day Interval
     days_interval=fields.Integer(u'Interval (days)')  
     days_warn_period=fields.Integer('Date of alert')
     days_left=fields.Integer(compute='_days_left', string='Remaining days')
 
-# Fields Date
-    #Field Day Last Done
     days_last_done=fields.Date(u'Last maintenance')
     days_next_due=fields.Date(compute='_days_next_due', string='Next Maintenance')
 
-# Fields Char
-    #Field State
     state=fields.Char(compute='_get_state', string='Status',track_visibility='always')
 
-# Fields Text
-    #Field motif
     motif=fields.Text('Reason')
 
-# Fields Many To One
-    #Field Technician
     technician_user_id = fields.Many2one('res.users', string='Technician', track_visibility='onchange')
-    #Field Equipment
+
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
-    #Field Partner
+
     partner_id=fields.Many2one('res.partner', u'Client',domain=[('customer','=',True)])
-    #Field Client
+
     client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
-    #Field Team
+
     team_id = fields.Many2one('maintenance.team', related='equipment_id.category_id.team_id', string='Team', store=True, readonly=True)
-    #Field Team Leader
+
     team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
                 
     
