@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="error_page" name="Error page">
+    <t name="Error page" t-name="error_page">
       <t t-call="website.layout">
+        <t t-set="title">Soporte Técnico - Error al Generar Solicitud</t>
+        <div id="wrap">
         <div class="oe_structure">
+        <section class="s_cover parallax bg-black-50 oe_img_bg oe_custom_bg s_parallax_is_fixed pb0 pt0" data-scroll-background-ratio="1" style="background-image: none;">
+                    <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url(&quot;/web/image/949/azurion.jpg&quot;); background-position: 50% 0px;"/>
+                    <div class="container">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-12 s_title pt32" data-name="Title">
+                                <h1 class="s_title_thin" style="font-size: 62px; text-align: center;">Portal del Cliente</h1>
+                                <h2 class="s_title_thin" style="font-size: 28px; text-align: center;">
+                                    <t>
+                                        <p>
+                                            <font class="bg-beta" style="color: rgb(255, 255, 255);"><t t-esc="parent_name"/></font>
+                                        </p>
+                                    </t>
+                                </h2>
+                            </div>
+                            <div class="col-lg-12 s_text pt16 pb16" data-name="Text">
+                                <p class="lead" style="text-align: center;">Gestione todas las solicitudes de Soporte Técnico
+                                    
+                                    <br/> y rastree el ciclo de vida de las solicitudes, desde la creación hasta la resolución..
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
           <div class="container">
                         <h1>¡Atención!</h1>
                         
@@ -17,8 +45,8 @@
                                     Si tiene una emergencia, no dude en contactarnos por teléfono:
                                 </p>
                                 <ul class="list-unstyled">
-                                    <li><i class="fa fa-phone"></i> : <span t-field="res_company.phone"/></li>
-                                    <li><i class="fa fa-envelope"></i> : <span t-field="res_company.email"/></li>
+                                    <li><i class="fa fa-phone"/> : <span t-field="res_company.phone"/></li>
+                                    <li><i class="fa fa-envelope"/> : <span t-field="res_company.email"/></li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
@@ -26,8 +54,13 @@
                             </div>
                         </div>
           </div>
+          </section>
+          <br/>
+          <br/>
+        </div>
         </div>
       </t>
+    </t>
     </template>
     
 </odoo>
