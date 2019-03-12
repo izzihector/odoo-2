@@ -57,7 +57,7 @@
                                     	</select>
                                 	</div>
                                 	<div class="col-md-12 form-group">
-                                    	<label for="motif">Detalle de la Solicitud:</label>
+                                    	<label for="motif">Detalle su Solicitud:</label>
                                     	<textarea class="form-control" name="motif">
                                         	<t t-att-value="motif"/>
                                     	</textarea>
