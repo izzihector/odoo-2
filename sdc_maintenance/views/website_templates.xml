@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
 	<template id="request">
-	<t t-name="request">
-    <t t-call="website.layout">
-        <t t-set="title">Nueva Solicitud de Soporte Técnico</t>
-        <div id="wrap">
-            <div class="oe_structure">
+		<t t-name="request">
+			<t t-call="website.layout">
+        	<t t-set="title">Nueva Solicitud de Soporte Técnico</t>
+        	<div id="wrap">
+            	<div class="oe_structure">
                 <section class="s_cover parallax bg-black-50 oe_img_bg oe_custom_bg s_parallax_is_fixed pb0 pt0" data-scroll-background-ratio="1" style="background-image: none;">
                     <span class="s_parallax_bg oe_img_bg oe_custom_bg" style="background-image: url(&quot;/web/image/949/azurion.jpg&quot;); background-position: 50% 0px;"/>
                     <div class="container">
@@ -92,5 +91,5 @@
         </div>
     </t>
 </t>
-	
+		</template>
 </odoo>
