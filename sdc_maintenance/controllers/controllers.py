@@ -57,7 +57,6 @@ class OpenMaintenance(http.Controller):
         wo_ids = http.request.env['maintenance.order'].sudo().search([('technician_id','=',user)])
         return http.request.render('sdc_maintenance.wo_page', {'wo_ids': wo_ids})
     
-    #data post
     MANDATORY_BILLING_FIELDS = ["motif","equipment_id"]
     @http.route('/intervention/request/success', type='http', auth='public', website=True)
     def navigate_to_success_page(self):
@@ -130,12 +129,12 @@ class OpenMaintenance(http.Controller):
         error = dict()
         error_message = []
 
-        # Validation
+
         for field_name in self.MANDATORY_BILLING_FIELDS:
             if not data.get(field_name):
                 error[field_name] = 'missing'
 
-        # error message for empty required fields
+
         if [err for err in error.values() if err == 'missing']:
             error_message.append(_('Some required fields are empty.'))
 

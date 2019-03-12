@@ -165,42 +165,6 @@ class maintenanceCritical(models.Model):
 class MaintenanceEquipement(models.Model):
     _inherit = 'maintenance.equipment'
 
-    @api.one
-    @api.depends('intervention_ids')
-    def _intervention_count(self):
-        self.intervention_count = len(self.intervention_ids)
-        #self.maintenance_open_count = len(self.maintenance_ids.filtered(lambda x: not x.stage_id.done))
-        
-                  
-    @api.one 
-    @api.depends('ot_ids')
-    def _ot_count(self):
-        self.ot_count = len(self.ot_ids)
-    
-    @api.one
-    @api.depends('maintenance_ids.maintenance_type')
-    def _pm_maintenance_count(self):
-        self.pm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='preventive'))
-        self.cm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='corrective'))
-
-            
-                        
-    @api.one
-    def _days_waranty(self):
-            for record in self:
-                if record.deadlinegar:
-                    fmt = '%Y-%m-%d'
-                    d1 = date.today().strftime('%Y-%m-%d')
-                    d2 = datetime.strptime(str(record.deadlinegar), fmt)
-                    if d1 > d2.isoformat(): 
-                        record.warranty_func = False
-                    else:
-                        record.warranty_func = True
-                else:
-                        record.warranty_func = True
-            return True
-
-
     brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
 
     team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Team', store=True, readonly=True)
@@ -252,6 +216,40 @@ class MaintenanceEquipement(models.Model):
     pm_count=fields.Integer(compute='_pm_maintenance_count', string='MP')
     cm_count=fields.Integer(compute='_pm_maintenance_count', string='MC')
     intervention_count=fields.Integer(compute='_intervention_count', string='Intervention', store=True)
+
+    @api.one
+    @api.depends('intervention_ids')
+    def _intervention_count(self):
+        self.intervention_count = len(self.intervention_ids)        
+                  
+    @api.one 
+    @api.depends('ot_ids')
+    def _ot_count(self):
+        self.ot_count = len(self.ot_ids)
+    
+    @api.one
+    @api.depends('maintenance_ids.maintenance_type')
+    def _pm_maintenance_count(self):
+        self.pm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='preventive'))
+        self.cm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='corrective'))
+
+            
+                        
+    @api.one
+    def _days_waranty(self):
+            for record in self:
+                if record.deadlinegar:
+                    fmt = '%Y-%m-%d'
+                    d1 = date.today().strftime('%Y-%m-%d')
+                    d2 = datetime.strptime(str(record.deadlinegar), fmt)
+                    if d1 > d2.isoformat(): 
+                        record.warranty_func = False
+                    else:
+                        record.warranty_func = True
+                else:
+                        record.warranty_func = True
+            return True
+ 
 
     @api.model
     def _read_group_brand_ids(self, brands, domain, order):
