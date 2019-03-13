@@ -173,7 +173,7 @@ class MaintenanceEquipement(models.Model):
 
     zone_id=fields.Many2one('maintenance.zone', u'Zone')
 
-    client_id=fields.Many2one('res.partner',related='equipment_id.client_id', string="Client", store=True, readonly=True)
+    client_id=fields.Many2one('res.partner', string='Clients')
 
     model_id=fields.Many2one('maintenance.equipment.model', u'Models')
 
