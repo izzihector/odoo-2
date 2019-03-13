@@ -167,7 +167,7 @@ class MaintenanceEquipement(models.Model):
 
     brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
 
-    team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Team', store=True, readonly=True)
+    team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Teams', store=True, readonly=True)
 
     team_leader_id=fields.Many2one('res.users', related='category_id.team_id.team_leader_id', string='Leader Team', store=True, readonly=True)
 
@@ -175,13 +175,13 @@ class MaintenanceEquipement(models.Model):
 
     client_id=fields.Many2one(oldname='x_studio_cliente',string="Client")
 
-    model_id=fields.Many2one('maintenance.equipment.model', u'Model')
+    model_id=fields.Many2one('maintenance.equipment.model', u'Models')
 
     parent_id=fields.Many2one('maintenance.equipment', u'Equipment Relation')
 
     product_ids=fields.One2many('product.piece','piece_id_equi',u'List of Parts')
  
-    intervention_ids=fields.One2many('maintenance.intervention','equipment_id',u'Intervention')
+    intervention_ids=fields.One2many('maintenance.intervention','equipment_id',u'Interventions')
 
     ot_ids=fields.One2many('maintenance.order','equipment_id',u'Work Order')    
  
@@ -265,7 +265,7 @@ class ProductTemplate(models.Model):
 class MaintenanceEquipementCategory(models.Model):
     _inherit='maintenance.equipment.category'
 
-    team_id=fields.Many2one('maintenance.team', u'Team')
+    team_id=fields.Many2one('maintenance.team', u'Teams')
 
 
 class MaintenanceEquipementTeam(models.Model):
@@ -340,8 +340,8 @@ class MaintenanceIntervention(models.Model):
     date_service=fields.Date(u'Date of commissioning')
     date_reception=fields.Date(u'Customer reception date')
         
-    amount=fields.Float(u'Rate'),
-    devis_ok=fields.Boolean(u'invoiced'),
+    amount=fields.Float(u'Rate')
+    devis_ok=fields.Boolean(u'invoiced')
     ot=fields.Char(u'N° OT',track_visibility='always')
     
 
