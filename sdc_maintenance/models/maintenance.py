@@ -173,7 +173,7 @@ class MaintenanceEquipement(models.Model):
 
     zone_id=fields.Many2one('maintenance.zone', u'Zone')
 
-    client_id=fields.Many2one('res.partner', string='Clients')
+    client_id=fields.Many2one('res.partner', string='Cliente')
 
     model_id=fields.Many2one('maintenance.equipment.model', u'Models')
 
@@ -763,7 +763,7 @@ class maintenanceQuestion(models.Model):
     
     
     
-class MaintenanceRequest(models.Model):
+class MaintenanceRequestt(models.Model):
     _inherit= 'maintenance.request'
 
     @api.one
