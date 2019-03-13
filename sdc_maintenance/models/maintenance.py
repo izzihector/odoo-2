@@ -173,7 +173,7 @@ class MaintenanceEquipement(models.Model):
 
     zone_id=fields.Many2one('maintenance.zone', u'Zone')
 
-    client_id=fields.Many2one(oldname='x_studio_cliente',string="Client")
+    client_id=fields.Many2one('res.users', oldname='x_studio_cliente',string="Client")
 
     model_id=fields.Many2one('maintenance.equipment.model', u'Models')
 
@@ -823,15 +823,15 @@ class MaintenanceRequest(models.Model):
 
     motif=fields.Text('Reason')
 
-    technician_user_id = fields.Many2one('res.users', string='Technician', track_visibility='onchange')
+    technician_user_id = fields.Many2one('res.users', string='Technicians', track_visibility='onchange')
 
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
 
-    partner_id=fields.Many2one('res.partner', u'Client',domain=[('customer','=',True)])
+    partner_id=fields.Many2one('res.partner', u'Cliente',domain=[('customer','=',True)])
 
-    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
+    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Clients', store=True, readonly=True)
 
-    team_id = fields.Many2one('maintenance.team', related='equipment_id.category_id.team_id', string='Team', store=True, readonly=True)
+    team_id = fields.Many2one('maintenance.team', related='equipment_id.category_id.team_id', string='Teams', store=True, readonly=True)
 
     team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
                 
