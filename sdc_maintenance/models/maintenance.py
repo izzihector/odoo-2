@@ -173,7 +173,7 @@ class MaintenanceEquipement(models.Model):
 
     zone_id=fields.Many2one('maintenance.zone', u'Zone')
 
-    client_id=fields.Many2one('res.users', oldname='x_studio_cliente',string="Client")
+    client_id=fields.Many2one('res.partner',related='equipment_id.client_id', string="Client", store=True, readonly=True)
 
     model_id=fields.Many2one('maintenance.equipment.model', u'Models')
 
@@ -823,7 +823,7 @@ class MaintenanceRequest(models.Model):
 
     motif=fields.Text('Reason')
 
-    technician_user_id = fields.Many2one('res.users', string='Technicians', track_visibility='onchange')
+    technician_user_id = fields.Many2one('res.users', string='Technicianss', track_visibility='onchange')
 
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
 
