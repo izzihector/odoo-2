@@ -12,3 +12,8 @@ class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
     request_ids=fields.One2many('maintenance.request','ticket_id',u'Request')
+
+    equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
+
+    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Clients', store=True, readonly=True)
+
