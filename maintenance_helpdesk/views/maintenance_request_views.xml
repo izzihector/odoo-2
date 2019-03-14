@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
     <odoo>
     	<record id="maintenance_action_request_new" model="ir.actions.act_window">
-        <field name="name">Quotation</field>
-        <field name="res_model">maintenance.request</field>
-        <field name="view_mode">form,tree,graph</field>
-
+        	<field name="name">Request</field>
+        	<field name="res_model">maintenance.request</field>
+        	<field name="view_mode">form,tree,graph</field>
     	</record>
 
-    
+    	<record id="ticket_action_maintenance" model="ir.actions.act_window">
+        	<field name="name">Request</field>
+        	<field name="res_model">maintenance.request</field>
+    	</record>
     </odoo>

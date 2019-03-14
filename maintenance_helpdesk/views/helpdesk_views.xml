@@ -22,7 +22,7 @@
                             context="{'default_partner_id': partner_id, 'search_default_draft': 1, 'search_default_sent': 1}">
                         <div class="o_stat_info">
                             <field name="sale_number" class="o_stat_value"/>
-                            <span class="o_stat_text"> Quotation(s) </span>
+                            <span class="o_stat_text"> Request </span>
                         </div>
                     </button>
                 </button>
