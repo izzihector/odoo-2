@@ -834,7 +834,9 @@ class MaintenanceRequestt(models.Model):
     team_id = fields.Many2one('maintenance.team', related='equipment_id.category_id.team_id', string='Teams', store=True, readonly=True)
 
     team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
-                
+     
+    ticket_id = fields.Many2one('helpdesk.ticket', 'Ticket')
+
     timesheet_ids=fields.One2many('account.analytic.line','request_id',u'Timesheet')
 
 
