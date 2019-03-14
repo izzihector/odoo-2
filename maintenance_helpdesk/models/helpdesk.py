@@ -2,6 +2,8 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
+from dateutil.relativedelta import *
+from dateutil import relativedelta
 
 from odoo import api, fields, models, SUPERUSER_ID, _, exceptions
 
@@ -12,7 +14,7 @@ class HelpdeskTicket(models.Model):
 
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
 
-    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
+    client_id=fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
 
     pm_count=fields.Integer(compute='_pm_maintenance_count', string='MP')
     cm_count=fields.Integer(compute='_pm_maintenance_count', string='MC')
