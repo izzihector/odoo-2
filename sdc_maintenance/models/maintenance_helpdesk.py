@@ -11,4 +11,4 @@ from odoo.exceptions import UserError
 class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
-    request_ids=fields.One2many('maintenance.request','ticket_id',u'Requests')
+    request_ids=fields.One2many('maintenance.request','ticket_id',u'Request')
