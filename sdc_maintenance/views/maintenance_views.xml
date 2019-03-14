@@ -539,7 +539,7 @@
                                 icon="fa-book"
                                 context="{'search_default_equipment_id': active_id}"
                                 help="show the Intervention for this Equipement">
-                               <field name="intervention_count" widget="statinfo" string="Interventions"/>
+                                Test
                             </button>
                             <button name="%(open_view_incident_new)d"
                                 type="action"
@@ -574,7 +574,7 @@
                         <h1><field name="name" string="Name" placeholder="Equipment Name"/></h1>
                     </div>
 
-                    <xpath expr="//field[@name='equipment_id']" position="after">
+                    <xpath expr="//field[@name='category_id']" position="after">
                         <field name="client_id"/>
                         <field name="brand_id"/>
                     </xpath>

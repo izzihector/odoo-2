@@ -162,7 +162,7 @@ class maintenanceCritical(models.Model):
     description=fields.Text('Description')
             
 
-class MaintenanceEquipement(models.Model):
+class MaintenanceEquipment(models.Model):
     _inherit = 'maintenance.equipment'
 
     brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
