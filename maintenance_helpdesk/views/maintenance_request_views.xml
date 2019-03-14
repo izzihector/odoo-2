@@ -10,4 +10,15 @@
         	<field name="name">Request</field>
         	<field name="res_model">maintenance.request</field>
     	</record>
+
+        <record id="maintenance_ticket_form_view_inherit" model="ir.ui.view">
+            <field name="name">Ticket</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+            <field name="arch" type="xml">
+                <field name="owner_user_id" position="after">
+                    <field name="ticket_id" widget="many2one"/>
+                </field>
+            </field>
+        </record>
     </odoo>
