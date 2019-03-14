@@ -19,8 +19,6 @@ class HelpdeskTicket(models.Model):
 
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
 
-    client_id=fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
-
     pm_count=fields.Integer(compute='_pm_maintenance_count', string='MP')
     cm_count=fields.Integer(compute='_pm_maintenance_count', string='MC')
 
