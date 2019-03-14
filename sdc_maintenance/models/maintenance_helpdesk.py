@@ -15,5 +15,5 @@ class HelpdeskTicket(models.Model):
 
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
 
-    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Clients', store=True, readonly=True)
+    client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
 
