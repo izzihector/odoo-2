@@ -4,6 +4,7 @@
 {
     'name': 'Helpdesk to Maintenance',
     'version': '1.0',
+    "author": "Rocendo Tejada - Electronica Médica",
     'category': 'Hidden',
     'description': """
 This module adds a shortcut the Maintenance in Helpdesk.
