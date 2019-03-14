@@ -1131,7 +1131,7 @@
                 <field name="activity_ids" />
                 <field name="activity_state" />
  				<field name="ot_count"/>
-			    <field name="intervention_count"/>
+
 			    <field name="cm_count"/>
 			    <field name="pm_count"/>
                 <templates>
@@ -1167,9 +1167,7 @@
                                 </div>
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
-						        	  <div class="label label-danger" t-if="record.intervention_count.raw_value" >
-			                              <t t-raw="record.intervention_count.raw_value"/> Intervention
-			                          </div>
+
 			                          <div class="label label-danger" t-if="record.ot_count.raw_value" >
 			                              <t t-raw="record.ot_count.raw_value"/> WO
 			                          </div>
