@@ -835,7 +835,9 @@ class MaintenanceRequestt(models.Model):
 
     team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
                 
-    
+    timesheet_ids=fields.One2many('account.analytic.line','request_id',u'Timesheet')
+
+
     def mail_notif(self):
             text_inter = u"""<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
                     <p>Bonjour %s </p>
