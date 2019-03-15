@@ -64,38 +64,6 @@
                             <field name="zone_id" widget="many2one"/>
                     </xpath>
                     <notebook>
-                        <page string="Description">
-                            <field name="note" placeholder="Description"/>
-                            <field name="safety" placeholder="Safety"/>
-                        </page>
-                        <page string="Product Information">
-                            <group>
-                                <group>
-                                    <field name="partner_id" context="{'default_supplier': True, 'default_customer': False}"/>
-                                    <field name="partner_ref"/>
-                                </group>
-                                <group>
-                                    <field name="cost" groups="maintenance.group_equipment_manager"/>
-                                    <!--  <field name="warranty"/>-->
-                                    <field name="technique_file"/>
-                                </group>
-                            </group>
-                        </page>
-                        <page string="Maintenance">
-                            <group>
-                                <group name="maintenance">
-                                    <field name="next_action_date" class="oe_read_only" string="Next Preventive Maintenance"/>
-                                    <label for="period" string="Preventive Maintenance Frequency"/>
-                                    <div class="o_row">
-                                        <field name="period"/> days
-                                    </div>
-                                    <label for="maintenance_duration" string="Maintenance Duration"/>
-                                    <div class="o_row">
-                                        <field name="maintenance_duration"/> hours
-                                    </div>
-                                </group>
-                            </group>
-                        </page>
                        <page string="List of Parts">
 		               <field name="product_ids" >
                             	 <tree editable="bottom">
