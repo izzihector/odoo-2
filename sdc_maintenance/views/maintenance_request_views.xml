@@ -56,7 +56,7 @@
                             <field name="motif" placeholder="Motif"/>
                         </page>
                         <page string="Timesheets" groups="hr_timesheet.group_hr_timesheet_user">
-                        <field name='timesheet_ids' attrs="{'readonly': [('task_id', '=', True), '|', ('is_closed', '=', True), ('is_task_active', '=', False)]}" context="{'default_project_id': project_id, 'default_task_id': task_id}" groups="hr_timesheet.group_hr_timesheet_user">
+                        <field name='timesheet_ids'>
                             <tree editable="bottom" string="Timesheet Activities" default_order="date">
                                 <field name="date"/>
                                 <field name="user_id" invisible="1"/>
