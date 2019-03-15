@@ -24,6 +24,7 @@
     'data': [
         'data/maintenance_sequence.xml',
         'views/maintenance_views.xml',
+        'views/maintenance_request_views.xml',
         'views/config_settings_views.xml',
         'views/error_template.xml',
         'views/succes_template.xml',

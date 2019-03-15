@@ -17,7 +17,7 @@
 		            
 	<!-- inherits maintenance request -->
     <record id="maintenance_request_view_form_inherit" model="ir.ui.view">
-        <field name="name">equipment.request.form.inherit</field>
+        <field name="name">maintenance.request.view.form.inherit</field>
         <field name="model">maintenance.request</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
         <field name="arch" type="xml">
