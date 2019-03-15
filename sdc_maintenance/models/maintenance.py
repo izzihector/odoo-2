@@ -737,6 +737,8 @@ class MaintenanceRequestt(models.Model):
     client_id = fields.Many2one('res.partner', related='equipment_id.client_id', string='Clients', store=True, readonly=True)
 
     team_id = fields.Many2one('maintenance.team', related='equipment_id.category_id.team_id', string='Teams', store=True, readonly=True)
+    helpdesk_team_id = fields.Many2one('helpdesk.team', related='equipment_id.category_id.helpdesk_team_id', string='Helpdesk Team', store=True, readonly=True)
+
 
     team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
      

@@ -31,6 +31,7 @@
 
             <xpath expr="//field[@name='schedule_date']" position="before">
                 <field name="team_id"/>
+                <field name="helpdesk_team_id"/>
                 <field name="team_leader_id"/>
             </xpath>
     
