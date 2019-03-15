@@ -58,7 +58,7 @@
                         <page string="Timesheets" groups="hr_timesheet.group_hr_timesheet_user">
                         <field name='timesheet_ids'>
                             <tree editable="bottom" string="Timesheet Activities" default_order="date">
-                                <field name="date"/>
+                                <field name="date" widget="datetime"/>
                                 <field name="user_id" invisible="1"/>
                                 <field name="employee_id" required="1"/>
                                 <field name="name"/>
