@@ -2,7 +2,7 @@
 # Author : Addi Ait-Mlouk
 {
     "name": "Soporte Técnico",
-    "version": "4.0",
+    "version": "5.0",
     "depends": ['maintenance', "mail","sale",'website'],
     "author": "Rocendo Tejada - Electronica Médica",
     'website': 'https://www.electronicamedica.com/',
@@ -25,6 +25,7 @@
         'data/maintenance_sequence.xml',
         'views/maintenance_views.xml',
         'views/maintenance_request_views.xml',
+        'views/maintenance_equipment_views.xml',
         'views/config_settings_views.xml',
         'views/error_template.xml',
         'views/succes_template.xml',
