@@ -22,7 +22,6 @@
 """,
 
     'data': [
-        'views/maintenance_request_views.xml',
         'data/maintenance_sequence.xml',
         'views/maintenance_views.xml',
         'views/config_settings_views.xml',
