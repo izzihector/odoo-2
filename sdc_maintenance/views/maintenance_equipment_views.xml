@@ -44,8 +44,10 @@
                     </div>
 
                     <xpath expr="//field[@name='name']" position="before">
-                        <field name="client_id"/>
-                        <field name="brand_id"/>
+                        <div class="o_row">
+                            <field name="client_id" widget="res_partner_many2one" placeholder="Company" domain="[('is_company', '=', True)]"/>
+                            <field name="brand_id"/>
+                        </div>
                     </xpath>
                     <xpath expr="//field[@name='category_id']" position="after">
                             <field name="model_id"/>
