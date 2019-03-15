@@ -2,7 +2,7 @@
 # Author : Addi Ait-Mlouk
 {
     "name": "Soporte Técnico",
-    "version": "3.1",
+    "version": "4.0",
     "depends": ['maintenance', "mail","sale",'website'],
     "author": "Rocendo Tejada - Electronica Médica",
     'website': 'https://www.electronicamedica.com/',
