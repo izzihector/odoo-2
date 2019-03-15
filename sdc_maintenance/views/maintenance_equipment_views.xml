@@ -57,6 +57,7 @@
                     <xpath expr="//field[@name='maintenance_team_id']" position="after">
                             <field name="team_id" widget="many2one"/>
                             <field name="team_leader_id" widget="many2one"/>
+                            <field name="helpdesk_team_id" widget="many2one"/>
                             <field name="assign_date" groups="base.group_no_one"/>
                             <field name="scrap_date" groups="base.group_no_one"/>
                             <field name="location" string="Location"/>
