@@ -19,7 +19,6 @@
          - Check up List.
          -
 
-
 """,
 
     'data': [

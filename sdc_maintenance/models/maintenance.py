@@ -233,7 +233,6 @@ class MaintenanceEquipment(models.Model):
         self.pm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='preventive'))
         self.cm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='corrective'))
 
-            
                         
     @api.one
     def _days_waranty(self):
