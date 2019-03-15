@@ -6,7 +6,6 @@
             <field name="model">maintenance.equipment</field>
             <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
             <field name="arch" type="xml">
-                <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="%(open_view_intervention_new)d"
                                 type="action"
@@ -152,7 +151,7 @@
                             </field>
                         </page>
                     </notebook>
-                </sheet>
+    
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
