@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
     <odoo>
 
+    <record id="maintenance_equipment_view_form_inherit_hr" model="ir.ui.view">
+        <field name="name">maintenance.equipment.view.form.inherit.hr</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='owner_user_id']" position="replace">
+                <field name="equipment_assign_to" widget="radio"/>
+                <field name="employee_id" string="Employee" attrs="{'invisible': ['|', ('equipment_assign_to', '=', 'department'), ('equipment_assign_to', '=', False)]}"/>
+                <field name="department_id" string="Department" attrs="{'invisible': ['|', ('equipment_assign_to', '=', 'employee'), ('equipment_assign_to', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
         <!-- equipment : views -->
         <record id="maintenance_equipment_view_form_inherit" model="ir.ui.view">
-        <field name="name">maintenance.equipment.view.form.inherit</field>
+            <field name="name">maintenance.equipment.view.form.inherit</field>
             <field name="model">maintenance.equipment</field>
             <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
             <field name="arch" type="xml">
@@ -44,27 +56,21 @@
                                <field name="cm_count" widget="statinfo" string="MC"/>
                         </button>
                     </div>
-					<field name="image" widget="image" class="oe_avatar"/>
-                    <div class="oe_title">
-                        <label for="name" class="oe_edit_only"/>
-                        <h1><field name="name" string="Name" placeholder="Equipment Name"/></h1>
-                    </div>
 
-                    <xpath expr="//field[@name='category_id']" position="after">
+					<field name="image" widget="image" class="oe_avatar"/>
+
+                    <xpath expr="//field[@name='name']" position="after">
                         <field name="client_id"/>
                         <field name="brand_id"/>
                     </xpath>
-
-
-                    <group>
-                        <group>
+                    <xpath expr="//field[@name='category_id']" position="after">
                             <field name="model_id"/>
                             <field name="serial_no"/>
                             <field name="startingdate"/>
                             <field name="deadlinegar"/>
                             <field name="warranty_func"/>
-                        </group>
-                        <group>
+                    </xpath>
+                    <xpath expr="//field[@name='maintenance_team_id']" position="after">
                             <field name="category_id" widget="many2one"/>
                             <field name="team_id" widget="many2one"/>
                             <field name="team_leader_id" widget="many2one"/>
@@ -72,8 +78,7 @@
                             <field name="scrap_date" groups="base.group_no_one"/>
                             <field name="location" string="Location"/>
                             <field name="zone_id" widget="many2one"/>
-                        </group>
-                    </group>
+                    </xpath>
                     <notebook>
                         <page string="Description">
                             <field name="note" placeholder="Description"/>
