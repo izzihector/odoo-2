@@ -43,7 +43,7 @@
                         </button>
                     </div>
 
-                    <xpath expr="//field[@name='name']" position="after">
+                    <xpath expr="//field[@name='name']" position="before">
                         <field name="client_id"/>
                         <field name="brand_id"/>
                     </xpath>
@@ -55,7 +55,6 @@
                             <field name="warranty_func"/>
                     </xpath>
                     <xpath expr="//field[@name='maintenance_team_id']" position="after">
-                            <field name="category_id" widget="many2one"/>
                             <field name="team_id" widget="many2one"/>
                             <field name="team_leader_id" widget="many2one"/>
                             <field name="assign_date" groups="base.group_no_one"/>
