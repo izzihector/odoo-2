@@ -162,7 +162,7 @@ class maintenanceCritical(models.Model):
     description=fields.Text('Description')
             
 
-class MaintenanceEquipment(models.Model):
+class MaintenanceEquipement(models.Model):
     _inherit = 'maintenance.equipment'
 
     brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
@@ -191,20 +191,16 @@ class MaintenanceEquipment(models.Model):
 
     dicom_ids=fields.One2many('maintenance.equipment.dicom','equipment_id',u'Dicom')
 
-    child_ids=fields.One2many('maintenance.equipment','parent_id',u'Accesories')
-
+    child_ids=fields.One2many('maintenance.equipment','parent_id',u'Accesory')
 
     trademark=fields.Char(u'Marque')
     number_equipment=fields.Char(u'N°')
 
-
     technique_file=fields.Binary(u'Technical Sheet')
     image=fields.Binary(u'Image')
 
-
     startingdate=fields.Date(u"Date of commissioning")
     deadlinegar=fields.Date(u"End of warranty date")
-
 
     warranty_func=fields.Boolean(string='Under Warranty',compute='_days_waranty')
   
@@ -233,7 +229,6 @@ class MaintenanceEquipment(models.Model):
         self.pm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='preventive'))
         self.cm_count = len(self.maintenance_ids.filtered(lambda x: x.maintenance_type=='corrective'))
 
-                        
     @api.one
     def _days_waranty(self):
             for record in self:
