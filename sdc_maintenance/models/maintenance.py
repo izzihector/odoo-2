@@ -200,6 +200,8 @@ class MaintenanceEquipement(models.Model):
 
     team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Teams', store=True, readonly=True)
 
+    helpdesk_team_id=fields.Many2one('helpdesk.team', related='category_id.helpdesk_team_id', string='Helpdesk Team', store=True, readonly=True)
+
     team_leader_id=fields.Many2one('res.users', related='category_id.team_id.team_leader_id', string='Leader Team', store=True, readonly=True)
 
     zone_id=fields.Many2one('maintenance.zone', u'Zone')
