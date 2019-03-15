@@ -259,6 +259,7 @@ class MaintenanceEquipementCategory(models.Model):
     _inherit='maintenance.equipment.category'
 
     team_id=fields.Many2one('maintenance.team', u'Teams')
+    helpdesk_team_id=fields.Many2one('helpdesk.team', u'Helpdesk Team')
 
 
 class MaintenanceEquipementTeam(models.Model):
