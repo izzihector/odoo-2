@@ -55,6 +55,29 @@
                         <page string="Motif">
                             <field name="motif" placeholder="Motif"/>
                         </page>
+                        <page string="Timesheet">
+                            <field name="timesheet_ids" >
+                                 <tree editable="bottom">
+                                    <field name="product_id" on_change="onchange_product(product_id)"/>
+                                    <field name="ref_intern" />
+                                    <field name="qte" />
+                                    <field name="type_id" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Timesheets" groups="hr_timesheet.group_hr_timesheet_user">
+                        <field name='timesheet_ids' attrs="{'readonly': [('task_id', '=', True), '|', ('is_closed', '=', True), ('is_task_active', '=', False)]}" context="{'default_project_id': project_id, 'default_task_id': task_id}" groups="hr_timesheet.group_hr_timesheet_user">
+                            <tree editable="bottom" string="Timesheet Activities" default_order="date">
+                                <field name="date"/>
+                                <field name="user_id" invisible="1"/>
+                                <field name="employee_id" required="1"/>
+                                <field name="name"/>
+                                <field name="unit_amount" sum="Total hours" widget="timesheet_uom"/>
+                                <field name="project_id" invisible="1"/>
+                                <field name="task_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
                     </notebook> 
 
             </xpath>
