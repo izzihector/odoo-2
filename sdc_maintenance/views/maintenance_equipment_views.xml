@@ -43,8 +43,6 @@
                         </button>
                     </div>
 
-					<field name="image" widget="image" class="oe_avatar"/>
-
                     <xpath expr="//field[@name='name']" position="after">
                         <field name="client_id"/>
                         <field name="brand_id"/>
