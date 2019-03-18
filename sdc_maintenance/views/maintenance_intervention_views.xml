@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+ 	<!-- intervention -->
+    <record model="ir.ui.view" id="maintenance_interv_search">
+            <field name="name">maintenance.intervention.form</field>
+            <field name="model">maintenance.intervention</field>
+            <field name="arch" type="xml">
+                <search string="Intervention research">
+                	<group>
+	                	<filter  name ="encours" string="In Progress" domain="[('state','=','draft')]" help=""/>
+	                	<filter  name ="done" string="Completed" domain="[('state','=','done')]" help=""/>
+	                	<filter  name="cancel" string="Canceled" domain="[('state','=','cancel')]" help=""/>
+                	</group>
+                	<newline/>
+                    <field name="name" />
+                    <field name="equipment_id" />
+                    <newline/>
+                  <group expand="0" string="Group by ...">
+                  		<filter string="State of the Machine" name="state" domain="[]" context="{'group_by':'state_machine'}"/>
+                  		<filter string="Technician" name="technicien" domain="[]" context="{'group_by':'technician_id'}"/>
+                  		<filter string="Equipment" name="equip" domain="[]" context="{'group_by':'equipment_id'}"/>
+                  		<filter string="Client" name="partner" domain="[]" context="{'group_by':'partner'}"/>
+                  		<filter string="Responsible" name="responsible" domain="[]" context="{'group_by':'user_id'}"/>
+                  		<filter string="Category" name="category" domain="[]" context="{'group_by':'category_id'}"/>
+                  	</group>
+                 </search>
+            </field>
+    </record>
+    
+    <!-- form -->
+    <record id="view_intervention_form" model="ir.ui.view">
+        <field name="name">maintenance.intervention.form</field>
+        <field name="model">maintenance.intervention</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Intervention request">
+                <header>
+                	<button name="mail_notif" states="draft" string="Send by e-mail" type="object" class="oe_highlight" />
+                	<button name="action_gererate_order" states="process" type="object" string="Generate OT" class="oe_highlight"/>
+                	<button name="action_process" states="draft" string="In Progress" type="object" class="oe_highlight" />
+                	<button name="action_done" states="process" string="Validate" type="object" class="oe_highlight" />
+		            <button name="action_cancel" states="process,draft" string="Cancel" type="object"  class="oe_highlight"/>
+                    <button name="action_draft" states="cancel" string="Re-Work" type="object" class="oe_highlight" />
+                		<field name="state" widget="statusbar" clickable="true"/>
+                	</header>
+                    <sheet>
+                    <group>
+	                    <group>
+	                    <field name="name"/>
+	                    <field name="partner" />
+	                    <field name="equipment_id"/>
+	                    <field name="category_id"/>
+	                    <field name="zone_id"/> 
+	                    <field name="state_machine" />
+	                    <field name="warranty" />
+	                    <field name="priority" widget="priority"/>
+	                    </group>
+	                    <group>
+	                    <field name="user_id"/>
+	                    <field name="type"/>
+	                    <field name="failure_type"/>
+	                    <field name="contact"/>
+	                    <field name="date_inter"/>
+	                    <field name="date_end" /> 
+	                    <field name="technician_id"/>   
+	                    <field name="bon_bool"/>       
+	                    </group>
+					</group>
+                    <newline/>
+                    <notebook colspan="1">
+                        <page string="Reason for intervention">
+                            <field name="motif" />
+                        </page>
+
+                        <page string="Observation" >
+                            <field name="observation" />
+                        </page>
+                       
+                        <page string="Resources Allocated">
+                            <field colspan="4" mode="tree" name="history_ids">
+                                <tree editable="bottom">
+                                    <field name="name"  />
+                                    <field name="user_id"  />
+                                    <field name="hours" widget="float_time" sum="Durée"/>
+                                    <field name="date"  />
+                                    <field name="description"  />
+                                </tree>
+                            </field>
+                        </page>
+                         
+                       <page string="Defective Piece">
+		               <field name="product_ids" >
+                            	 <tree editable="bottom">
+                            		<field name="product_id"/>
+                            		<field name="ref_intern" />
+                            		<field name="qte" />
+                            		<field name="type_id" />
+                            	</tree>
+		               </field>
+	              </page>
+                  <page string="Description ">
+                            <field name="reclamation"/>
+                   </page>
+                    </notebook>
+                    </sheet>
+                     <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+                	</div>
+                </form>
+            </field>
+        </record>
+
+        <record id="maintenance_intervention_tree_view" model="ir.ui.view">
+            <field name="name">maintenance.intervention.tree</field>
+            <field name="model">maintenance.intervention</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Intervention Request">
+                    <field name="name" />
+                    <field name="priority"/>
+                    <field name="partner"/>
+                    <field name="equipment_id"/>
+                    <field name="failure_type"/>
+                    <field name="user_id"/>
+                    <field name="technician_id"/>
+                    <field name="date_end"/>
+                   <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="intervention_request_view_graph" model="ir.ui.view">
+        <field name="name">maintenance.intervention.graph</field>
+        <field name="model">maintenance.intervention</field>
+        <field name="arch" type="xml">
+            <graph string="Interventions">
+                <field name="user_id"/>
+                <field name="state"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="intervention_request_view_pivot" model="ir.ui.view">
+        <field name="name">maintenance.intervention.pivot</field>
+        <field name="model">maintenance.intervention</field>
+        <field name="arch" type="xml">
+            <pivot string="intervention">
+                <field name="user_id"/>
+                <field name="state"/>
+            </pivot>
+        </field>
+    </record>
+
+
+    <record id="intervention_view_calendar" model="ir.ui.view">
+        <field name="name">maintenance.intervention.calendar</field>
+        <field name="model">maintenance.intervention</field>
+        <field name="arch" type="xml">
+            <calendar date_start="date_inter" color="user_id">
+                <field name="name"/>
+                <field name="user_id"/>
+            </calendar>
+        </field>
+    </record>
+        
+    <record id="maintenance_intervention_view_kanban" model="ir.ui.view">
+	   <field name="name">maintenance.intervention.kanban</field>
+	   <field name="model">maintenance.intervention</field>
+	   <field name="arch" type="xml">
+	       <kanban default_group_by="state">
+	           <field name="state"/>
+	           <field name="color"/>
+	           <field name="priority"/>
+	           <field name="equipment_id"/>
+	           <field name="technician_id"/>
+	           <field name="kanban_state"/>
+	           <field name="message_needaction_counter"/>
+	           <field name="activity_ids" />
+	           <field name="activity_state" />
+	           <templates>
+	               <t t-name="kanban-tooltip">
+	                   <ul class="oe_kanban_tooltip">
+	                       <li><b>Type:</b> <field name="type"/></li>
+	                       <li><b>Request:</b> <field name="technician_id"/></li>
+	                   </ul>
+	               </t>
+	               <t t-name="kanban-box">
+	                   <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click oe_semantic_html_override">
+	                   <div class="o_dropdown_kanban dropdown">
+	                       <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+	                           <span class="fa fa-ellipsis-v"/>
+	                       </a>
+	                   <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	                       <t t-if="widget.editable">
+                            <li>
+                                <a type="edit">Edit...</a>
+                            </li>
+                        </t>
+	                       <t t-if="widget.deletable">
+                            <li><a type="delete">Delete</a></li>
+                        </t>
+                            <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+	                   </ul>
+	                   </div>
+	                   <div class="oe_kanban_content" tooltip="kanban-tooltip">
+	                                <div class="o_kanban_record_top">
+	                                    <b class="o_kanban_record_title"><field name="name"/></b>
+	                                </div>
+	                                <div class="o_kanban_record_body">
+	                                    <span name="user_id" t-if="record.user_id.raw_value">Ask by:<field name="user_id"/><br/></span>
+	                                    <span name="technician_id" t-if="record.technician_id.raw_value">Responsible : <field name="technician_id"/><br/></span>
+	                                    <span class="oe_grey" t-if="record.equipment_id.raw_value"><field name="equipment_id"/><br/></span>
+	                                    <span t-if="record.type.raw_value"><field name="type"/></span>
+	                                </div>
+	                                <div class="o_kanban_record_bottom">
+	                                    <div class="oe_kanban_bottom_left">
+	                                        <field name="priority" widget="priority"/>
+	                                        <t t-if="record.message_needaction_counter.raw_value">
+	                                            <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+	                                        </t>
+	                                        <div class="o_kanban_inline_block ml4 mr4">
+	                                            <field name="activity_ids" widget="kanban_activity" />
+	                                        </div>
+	                                    </div>
+	                                    <div class="oe_kanban_bottom_right">
+	                                        <field name="kanban_state" widget="state_selection"/>
+	                                        <img t-att-src="kanban_image('res.users', 'image_small', record.technician_id.raw_value)" t-att-title="record.technician_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="oe_clear"></div>
+	                        </div>
+	                    </t>
+	                </templates>
+	            </kanban>
+	        </field>
+	    </record>
+    
+        <record id="open_view_intervention_new" model="ir.actions.act_window">
+            <field name="name">Request for Intervention</field>
+            <field name="res_model">maintenance.intervention</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form,calendar,graph,pivot</field>
+        </record>
+                                  
+</odoo>
