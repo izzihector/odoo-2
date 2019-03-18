@@ -1,0 +1,6 @@
+id;name;model_id:id;group_id:id;perm_read;perm_write;perm_create;perm_unlink
+view.regulatory.license;view.regulatory.license;model_regulatory_license;regulatory_management.group_regulatory_user;1;1;0;0
+;;;;;;;
+view_regulatory_license2;view.regulatory.license2;model_regulatory_license;regulatory_management.group_regulatory_manager;1;1;1;1
+;;;;;;;
+view_regulatory_license3;view.regulatory.license3;model_regulatory_license;base.group_public;1;0;0;0
