@@ -27,17 +27,7 @@ class maintenanceZone(models.Model):
     manager_id=fields.Many2one('res.users','Responsible')
     
     description=fields.Text('Description')
-
-class MaintenanceEquipmentBrand(models.Model):
-    _name = 'maintenance.equipment.brand'
-    _description = 'Brand'
-    _order = 'name asc'
     
-    name=fields.Char('Brand',required=True)
-    code=fields.Char('Reference Brand')
-    manager_id=fields.Many2one('res.partner','Provider')
-    
-    description=fields.Text('Description')
 
 class MaintenanceSoftwareType(models.Model):
     _name = 'maintenance.software.type'

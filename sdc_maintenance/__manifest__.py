@@ -27,6 +27,7 @@
         'views/maintenance_request_views.xml',
         'views/maintenance_equipment_views.xml',
         'views/maintenance_equipment_category_views.xml',
+        'views/maintenance_equipment_brand_views.xml',
         'views/config_settings_views.xml',
         'views/error_template.xml',
         'views/succes_template.xml',
