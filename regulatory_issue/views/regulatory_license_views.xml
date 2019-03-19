@@ -32,7 +32,8 @@
 
         <menuitem 
             id="regulatory_management_menu" 
-            name="Regulatory"/>
+            name="Regulatory"
+            web_icon="regulatory_issue,static/description/icon.png"/>
         <menuitem 
             id="regulatory_management_license" 
             parent="regulatory_management_menu" 
