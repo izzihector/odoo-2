@@ -115,7 +115,7 @@
             <field name="arch" type="xml">
                 <form string="Continuous Improvement">
                     <header>
-                        <field name="stage_id" widget="statusbar" options="{'clickable': '1'}" attrs="{'invisible': [('archive', '=', True)]}"/>
+                        <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
