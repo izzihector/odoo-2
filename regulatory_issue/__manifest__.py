@@ -28,6 +28,7 @@
     'website': "http://www.electronicamedica.com",
     'company': 'Electrónica Médica',
     "category": "Productivity",
+    'icon': '/regulatory_issue/static/src/img/icon.png',
     'depends': ['base', 'calendar', 'mail'],
     'data': ['views/regulatory_license_views.xml'],
     'demo': [],
