@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <template id="website_helpdesk_maintenance_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit">
         <xpath expr="//div[@class='form-group row form-field o_website_form_required']" position="before">
             <div class="form-group row form-field o_website_form_required">
@@ -13,5 +12,4 @@
             </div>
         </xpath>
     </template>
-
 </odoo>
