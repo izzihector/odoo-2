@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="website_helpdesk_maintenance_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit">
-        <xpath expr="//field[@name='team_id']" position="after">
+        <xpath expr="//span[@id='o_website_form_result']" position="after">
             <label class="col-form-label" >Equipment</label>
         </xpath>
     </template>
