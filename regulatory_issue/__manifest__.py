@@ -30,7 +30,6 @@
     "category": "Productivity",
     'depends': ['base', 'calendar', 'mail'],
     'data': ['views/regulatory_license_views.xml',
-             'security/regulatory_security.xml',
              'security/ir.model.access.csv',
              ],
     'demo': [],
