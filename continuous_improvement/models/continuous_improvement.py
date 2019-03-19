@@ -57,17 +57,8 @@ class ContinuousImprovement(models.Model):
     name = fields.Char(string="Asunto", required=True, translate=True)
     assigned_id = fields.Many2one('res.users', u'Assigned')
     type_id = fields.Many2one('continuous.improvement.type', u'Type')
-    stage_id = fields.Many2one('continuous.improvement.stage', string='Stage', ondelete='restrict', track_visibility='onchange',
-                               group_expand='_read_group_stage_ids', default=_default_stage)
+    stage_id = fields.Many2one('continuous.improvement.stage', string='Stage', ondelete='restrict', track_visibility='onchange', default=_default_stage)
     description=fields.Text('Description')
     observation=fields.Text('Observation')
-
-    @api.model
-    def _read_group_stage_ids(self, stages, domain, order):
-        """ Read group customization in order to display all the stages in the
-            kanban view, even if they are empty
-        """
-        stage_ids = stages._search([], order=order, access_rights_uid=SUPERUSER_ID)
-        return stages.browse(stage_ids)
 
 
