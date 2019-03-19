@@ -141,7 +141,7 @@
             <field name="name">continuous.improvement.view.tree</field>
             <field name="model">continuous.improvement</field>
             <field name="arch" type="xml">
-                <tree editable="bottom">
+                <tree>
                     <field name="name"/>
                     <field name="stage_id"/>
                     <field name="assigned_id"/>
