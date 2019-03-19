@@ -3,7 +3,14 @@
 
     <template id="website_helpdesk_maintenance_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit">
         <xpath expr="//span[@id='o_website_form_result']" position="after">
-            <label class="col-form-label" >Equipment</label>
+            <div class="form-group row form-field o_website_form_required">
+                <div class="col-lg-3 col-md-4 text-right">
+                    <label class="col-form-label" for="name">Equipment</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    <input type="text" class="form-control o_website_form_input" name="name" required="1"/>
+                </div>
+            </div>
         </xpath>
     </template>
 
