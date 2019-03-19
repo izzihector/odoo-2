@@ -134,7 +134,7 @@
         </record>
 
         <record id="continuous_improvement_action" model="ir.actions.act_window">
-            <field name="name">ContinuousImprovement</field>
+            <field name="name">Continuous Improvement</field>
             <field name="res_model">continuous.improvement</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
