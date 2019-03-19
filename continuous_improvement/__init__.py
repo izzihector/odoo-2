@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
 #
-#    Electrónica Médica.
-#    Copyright (C) 2019-TODAY Electrónica Médica (<https://www.electronicamedica.com>).
+#    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2019-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #
-#    Author: Rocendo Tejada (<https://www.electronicamedica.com>)
+#    Author: AVINASH NK(<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -21,17 +21,4 @@
 #
 ###################################################################################
 
-from datetime import date, datetime, timedelta
-from odoo import models, fields, api
-from odoo.tools.translate import _
-from odoo.exceptions import UserError, ValidationError
-
-
-class RegulatoryLicense(models.Model):
-    _name = 'regulatory.license'
-
-    name = fields.Char(string="License", required=True, translate=True)
-    expiration_date = fields.Date(u'Expiration Date')
-    description=fields.Text('Description')
-
-
+from . import models

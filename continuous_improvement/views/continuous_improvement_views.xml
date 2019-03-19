@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+            <!-- Stage : Views -->
+    <record id="continuous_improvement_stage_view_search" model="ir.ui.view">
+        <field name="name">continuous.improvement.stage.view.search</field>
+        <field name="model">continuous.improvement.stage</field>
+        <field name="arch" type="xml">
+            <search string="Continuous Improvement Stage">
+               <field name="name" string="Continuous Improvement Stage"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="continuous_improvement_stage_view_tree" model="ir.ui.view">
+        <field name="name">continuous.improvement.stage.view.tree</field>
+        <field name="model">continuous.improvement.stage</field>
+        <field name="arch" type="xml">
+            <tree string="Continuous Improvement Stage" editable="top">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="fold"/>
+                <field name="done"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="continuous_improvement_stage_view_kanban" model="ir.ui.view">
+        <field name="name">continuous.improvement.stage.view.kanban</field>
+        <field name="model">continuous.improvement.stage</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- stages : actions -->
+    <record id="continuous_improvement_stage_action" model="ir.actions.act_window">
+        <field name="name">Stages</field>
+        <field name="res_model">continuous.improvement.stage</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new stage in the Continuous Improvement
+          </p>
+        </field>
+    </record>
+
+
+    <record id="continuous_improvement_type_view_search" model="ir.ui.view">
+        <field name="name">continuous.improvement.type.view.search</field>
+        <field name="model">continuous.improvement.type</field>
+        <field name="arch" type="xml">
+            <search string="Continuous Improvement Type">
+               <field name="name" string="Continuous Improvement Type"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="continuous_improvement_type_view_tree" model="ir.ui.view">
+        <field name="name">continuous.improvement.type.view.tree</field>
+        <field name="model">continuous.improvement.type</field>
+        <field name="arch" type="xml">
+            <tree string="Continuous Improvement type" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="continuous_improvement_type_view_kanban" model="ir.ui.view">
+        <field name="name">continuous.improvement.type.view.kanban</field>
+        <field name="model">continuous.improvement.type</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- type : actions -->
+    <record id="continuous_improvement_type_action" model="ir.actions.act_window">
+        <field name="name">Type</field>
+        <field name="res_model">continuous.improvement.type</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new type in the Continuous Improvement
+          </p>
+        </field>
+    </record>
+
+
+        <record id="continuous_improvement_view_form" model="ir.ui.view">
+            <field name="name">continuous.improvement.view.form</field>
+            <field name="model">continuous.improvement</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="continuous_improvement_view_tree" model="ir.ui.view">
+            <field name="name">continuous.improvement.view.tree</field>
+            <field name="model">continuous.improvement</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="continuous_improvement_action" model="ir.actions.act_window">
+            <field name="name">ContinuousImprovement</field>
+            <field name="res_model">continuous.improvement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="continuous_improvement_menu" 
+            name="Regulatory"
+            web_icon="continuous_improvement,static/description/icon.png"/>
+        <menuitem 
+            id="continuous_improvement" 
+            parent="continuous_improvement_menu" 
+            action="continuous_improvement_action"/>
+        <menuitem 
+            id="continuous_improvement_stage" 
+            parent="continuous_improvement_menu" 
+            action="continuous_improvement_stage_action"/>
+        <menuitem 
+            id="continuous_improvement_type" 
+            parent="continuous_improvement_menu" 
+            action="continuous_improvement_type_action"/>
+
+    </data>
+</odoo>

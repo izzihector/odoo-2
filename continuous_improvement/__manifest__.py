@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
 #
-#    Electrónica Médica.
+#    Electrónica Médica by Rocendo Tejada
 #    Copyright (C) 2019-TODAY Electrónica Médica (<https://www.electronicamedica.com>).
 #
-#    Author: Rocendo Tejada (<https://www.electronicamedica.com>)
+#    Author: Rocendo Tejada
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,18 +20,20 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
-
-from datetime import date, datetime, timedelta
-from odoo import models, fields, api
-from odoo.tools.translate import _
-from odoo.exceptions import UserError, ValidationError
-
-
-class RegulatoryLicense(models.Model):
-    _name = 'regulatory.license'
-
-    name = fields.Char(string="License", required=True, translate=True)
-    expiration_date = fields.Date(u'Expiration Date')
-    description=fields.Text('Description')
-
-
+{
+    'name': 'Continuous Improvement Management',
+    'summary': """Continuous Improvement Management""",
+    'version': '12.0.1.0.0',
+    'author': 'Rocendo Tejada',
+    'website': "http://www.electronicamedica.com",
+    'company': 'Electrónica Médica',
+    "category": "Productivity",
+    'icon': '/continuous_improvement/static/src/img/icon.png',
+    'depends': ['base', 'calendar', 'mail'],
+    'data': ['views/continuous_improvement_views.xml'],
+    'demo': [],
+    'images': ['static/description/banner.jpg'],
+    'license': 'AGPL-3',
+    'installable': True,
+    'application': True,
+}
