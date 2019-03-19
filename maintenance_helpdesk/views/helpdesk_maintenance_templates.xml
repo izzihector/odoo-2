@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_helpdesk_maintenance_form.ticket_submit" inherit_id="website_helpdesk_form.ticket_submit">
+        <xpath expr="//div[@class='container']" position="after">
+            <div class="form-group row form-field o_website_form_required">
+                <div class="col-lg-3 col-md-4 text-right">
+                    <label class="col-form-label">Equipo</label>
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    <input type="text" class="form-control o_website_form_input"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

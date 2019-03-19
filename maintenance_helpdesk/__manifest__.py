@@ -17,6 +17,7 @@ This shortcut allows you to generate a Maintenance Request.
     'data': [
         'security/ir.model.access.csv',
         'views/maintenance_request_views.xml',
+        'views/helpdesk_maintenance_templates.xml',
         'views/helpdesk_views.xml',
     ],
     'auto_install': True,
