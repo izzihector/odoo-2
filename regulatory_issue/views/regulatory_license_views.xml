@@ -31,7 +31,11 @@
         </record>
 
         <menuitem 
+            id="regulatory_management_menu" 
+            name="Regulatory"/>
+        <menuitem 
             id="regulatory_management_license" 
+            parent="regulatory_management_menu" 
             action="regulatory_license_action"/>
 
     </data>
