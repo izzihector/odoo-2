@@ -142,7 +142,7 @@
 
         <menuitem 
             id="continuous_improvement_menu" 
-            name="Regulatory"
+            name="Continuous Improvement"
             web_icon="continuous_improvement,static/description/icon.png"/>
         <menuitem 
             id="continuous_improvement" 
