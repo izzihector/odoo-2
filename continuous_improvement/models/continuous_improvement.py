@@ -50,11 +50,11 @@ class ContinuousImprovement(models.Model):
     _description = 'Continuous Improvement'
     _order = 'id'
 
+
     name = fields.Char(string="Asunto", required=True, translate=True)
     assigned_id = fields.Many2one('res.users', u'Assigned')
     type_id = fields.Many2one('continuous.improvement.type', u'Type')
-    stage_id = fields.Many2one('continuous.improvement.stage', string='Stage', default=_default_stage)
+    stage_id = fields.Many2one('continuous.improvement.stage', string='Stage')
     description=fields.Text('Description')
     observation=fields.Text('Observation')
-
-
+    
