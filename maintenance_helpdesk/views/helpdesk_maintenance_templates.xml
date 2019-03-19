@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="website_helpdesk_maintenance_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit" groups="base.group_portal">
+    <template id="website_helpdesk_maintenance_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit" groups="form-group">
         <xpath expr="//field[@name='name']" position="before">
             <label class="col-form-label" >Equipment</label>
         </xpath>
