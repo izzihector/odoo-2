@@ -26,7 +26,7 @@
                                         <a class="btn btn-secondary btn-block o_download_btn" title="Download"><i class="fa fa-download"/> Download</a>
                                     </div>
                                     <div class="btn-group flex-grow-1 mb-1">
-                                        <a class="btn btn-secondary btn-block"  title="Print" target="_blank"><i class="fa fa-print"/> Print</a>
+                                        <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"  title="Print" target="_blank"><i class="fa fa-print"/> Print</a>
                                     </div>
             </div>
           </t>
