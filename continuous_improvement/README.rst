@@ -1,20 +1,13 @@
-Beauty Spa Management v12
+Continuous Improvement Management v1
 =========================
-This Spa management system developed by Cybrosys Techno Solutions helps
-your customers to do the online booking for using the service. This module
-integrates with other Odoo modules like accounting and website.
+This continuous improvement management developed by Electronica Médica
+helps users to generate requests for improvements within the company's processes.
 
 Features
 ========
-* Online Booking Facility.
-* Accounting Facility.
-* Customer Notification Through Mail.
-* User Interactive Dashboard
-* Customer Can view the Available chairs and order details
-* Different access levels for Users and Administrator
-* Track the chair user by date.
+* Online Requests Facility.
 
 
 Credits
 =======
-Developer (v9-v12): AVINASH N K
+Developer (v1): Rocendo Tejada
