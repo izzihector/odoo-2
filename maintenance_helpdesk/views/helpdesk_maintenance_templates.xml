@@ -18,7 +18,7 @@
       <xpath expr="//div[@class='o_portal_messages_container mt32']" position="before">
         <t t-call="portal.portal_record_layout">
           <t t-set="card_header">
-            <a t-if="sale_order.has_to_be_signed(True)" role="button" class="btn btn-primary btn-block mb8" data-toggle="modal" data-target="#modalaccept" href="#">
+            <a role="button" class="btn btn-primary btn-block mb8" data-toggle="modal" data-target="#modalaccept" href="#">
                 <i class="fa fa-check"/> Accept &amp; Sign
             </a>
           </t>
