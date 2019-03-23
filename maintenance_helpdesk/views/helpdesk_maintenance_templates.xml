@@ -25,12 +25,12 @@
               <a role="button" class="btn btn-secondary" href="#discussion"><i class="fa fa-comment"/> Feedback</a>
             </div>
             <div class="col-sm-auto mt8">
-              <a role="button" class="btn btn-secondary" ><i class="fa fa-download"/> Download</a>
+              <a role="button" class="btn btn-secondary" href="#"><i class="fa fa-download"/> Download</a>
+            </div>
+            <div class="col-sm-auto mt8">
+              <a role="button" class="btn btn-secondary" href="#" target="_blank"><i class="fa fa-print"/> Print</a>
             </div>
           </t>
-          <div class="col-sm-auto mt8">
-            <a role="button" class="btn btn-secondary" target="_blank"><i class="fa fa-psrint"/> Print</a>
-          </div>
         </div>
       </xpath>
     </template>
