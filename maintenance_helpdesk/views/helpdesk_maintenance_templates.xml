@@ -15,38 +15,10 @@
     </template>
 
     <template id="website_helpdesk_maintenance_tickets_followup_template" name="Helpdesk Maintenance Report" inherit_id="helpdesk.tickets_followup">
-        <xpath expr="//t[@t-set='card_header']" position="before">
-          <div class="row mt16 o_portal_sale_sidebar">
-  <!-- Sidebar -->
-  <t t-call="portal.portal_record_sidebar">
-      <t t-set="classes" t-value="'col-12 col-lg flex-lg-grow-0 d-print-none'"/>
-
-      <t t-set="title">
-          <h2 class="mb-0"><b t-field=""/> </h2>
-      </t>
-      <t t-set="entries">
-          <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">
-              <li class="list-group-item flex-grow-1">
-                  <a t-if="" role="button" class="btn btn-primary btn-block mb8" data-toggle="modal" data-target="#modalaccept" href="#">
-                      <i class="fa fa-check"/> Accept &amp; Sign
-                  </a>
-                  <a t-elif="" role="button" class="btn btn-primary btn-block mb8" data-toggle="modal" data-target="#modalaccept" href="#">
-                      <i class="fa fa-check"/> <t t-if="not sale_order.signature">Accept &amp; Pay</t><t t-else="">Pay now</t>
-                  </a>
-                  <div class="o_download_pdf btn-toolbar flex-sm-nowrap">
-                      <div class="btn-group flex-grow-1 mr-1 mb-1">
-                          <a class="btn btn-secondary btn-block o_download_btn" t-att-href="sale_order.get_portal_url(report_type='pdf', download=True)" title="Download"><i class="fa fa-download"/> Download</a>
-                      </div>
-                      <div class="btn-group flex-grow-1 mb-1">
-                          <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print" t-att-href="sale_order.get_portal_url(report_type='pdf')" id="print_invoice_report" title="Print" target="_blank"><i class="fa fa-print"/> Print</a>
-                      </div>
-                  </div>
-              </li>
-          </ul>
-      </t>
-  </t>
-</div>
-        </xpath>
+      <xpath expr="//t[@t-set='card_header']" position="before">
+        <div class="row mt16">
+        </div>
+      </xpath>
     </template>
 
 </odoo>
