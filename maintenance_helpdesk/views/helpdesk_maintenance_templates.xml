@@ -16,23 +16,22 @@
 
     <template id="website_helpdesk_maintenance_tickets_followup_template" name="Helpdesk Maintenance Report" inherit_id="helpdesk.tickets_followup">
       <xpath expr="//div[@class='o_portal_messages_container mt32']" position="before">
-        <t t-call="portal.portal_record_layout">
-          <t t-set="card_header">
-            <li class="list-group-item flex-grow-1">
-            <a role="button" class="btn btn-primary btn-block mb8" data-toggle="modal" data-target="#modalaccept" href="#">
-                <i class="fa fa-check"/> Accept &amp; Sign
-            </a>
-            <div class="o_download_pdf btn-toolbar flex-sm-nowrap">
-                                    <div class="btn-group flex-grow-1 mr-1 mb-1">
-                                        <a class="btn btn-secondary btn-block o_download_btn" title="Download"><i class="fa fa-download"/> Download</a>
-                                    </div>
-                                    <div class="btn-group flex-grow-1 mb-1">
-                                        <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"  title="Print" target="_blank"><i class="fa fa-print"/> Print</a>
-                                    </div>
+        <div class="row justify-content-center text-center d-print-none pt-1 pb-4">
+          <t>
+            <div class="col-sm-auto mt8">
+              <a role="button" class="btn btn-primary" data-toggle="modal" data-target="#modalaccept" href="#"><i class="fa fa-check"/> Accept &amp; Sign</a>
             </div>
-          </li>
+            <div class="col-sm-auto mt8">
+              <a role="button" class="btn btn-secondary" href="#discussion"><i class="fa fa-comment"/> Feedback</a>
+            </div>
+            <div class="col-sm-auto mt8">
+              <a class="btn btn-secondary btn-block o_download_btn" title="Download"><i class="fa fa-download"/> Download</a>
+            </div>
           </t>
-        </t>
+          <div class="col-sm-auto mt8">
+            <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"  title="Print" target="_blank"><i class="fa fa-print"/> Print</a>
+          </div>
+        </div>
       </xpath>
     </template>
 
