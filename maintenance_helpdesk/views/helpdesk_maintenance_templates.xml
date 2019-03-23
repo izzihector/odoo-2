@@ -18,6 +18,7 @@
       <xpath expr="//div[@class='o_portal_messages_container mt32']" position="before">
         <t t-call="portal.portal_record_layout">
           <t t-set="card_header">
+            <li class="list-group-item flex-grow-1">
             <a role="button" class="btn btn-primary btn-block mb8" data-toggle="modal" data-target="#modalaccept" href="#">
                 <i class="fa fa-check"/> Accept &amp; Sign
             </a>
@@ -29,6 +30,7 @@
                                         <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"  title="Print" target="_blank"><i class="fa fa-print"/> Print</a>
                                     </div>
             </div>
+          </li>
           </t>
         </t>
       </xpath>
