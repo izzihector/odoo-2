@@ -17,6 +17,7 @@
     <template id="website_helpdesk_maintenance_tickets_followup_template" name="Helpdesk Maintenance Report" inherit_id="helpdesk.tickets_followup">
       <xpath expr="//t[@t-set='card_header']" position="before">
         <div class="row mt16">
+          Test
         </div>
       </xpath>
     </template>
