@@ -35,6 +35,8 @@
         'views/regulatory_legal_documentation_views.xml',
         'views/regulatory_technical_criteria_views.xml',
         'views/regulatory_technical_file_views.xml',
+        'security/regulatory_issue.xml',
+        'security/ir.model.access.csv'
     ],
     'demo': [],
     'images': ['static/description/banner.jpg'],
