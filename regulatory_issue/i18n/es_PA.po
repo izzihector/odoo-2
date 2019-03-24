@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* regulatory_issue
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-24 19:52+0000\n"
+"PO-Revision-Date: 2019-03-24 14:57-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__code
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__code
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__code
+msgid "Code"
+msgstr "Código"
+
+#. module: regulatory_issue
+#: model:ir.model,name:regulatory_issue.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__create_uid
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__create_uid
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__create_uid
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__create_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__create_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__create_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__description
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__description
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__description
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__display_name
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__display_name
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__display_name
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__expiration_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__expiration_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__expiration_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__expiration_date
+msgid "Expiration Date"
+msgstr "Fecha de caducidad"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__file
+msgid "File"
+msgstr "Archivo"
+
+#. module: regulatory_issue
+#: model:ir.module.category,description:regulatory_issue.module_category_regulatory_issue
+msgid "Helps you handle your Regulatory Issue needs"
+msgstr "Le ayuda a manejar sus necesidades de asuntos regulatorios"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__id
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__id
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__id
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__id
+msgid "ID"
+msgstr "ID"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation____last_update
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license____last_update
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria____last_update
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__write_uid
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__write_uid
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__write_uid
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__write_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__write_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__write_date
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: regulatory_issue
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_legal_documentation__name
+msgid "Legal Document"
+msgstr "Documento Legal"
+
+#. module: regulatory_issue
+#: model:ir.actions.act_window,name:regulatory_issue.regulatory_legal_documentation_action
+#: model:ir.ui.menu,name:regulatory_issue.regulatory_legal_documentation
+msgid "Legal Documentation"
+msgstr "Documentación Legal"
+
+#. module: regulatory_issue
+#: model:ir.actions.act_window,name:regulatory_issue.regulatory_license_action
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_license__name
+#: model:ir.ui.menu,name:regulatory_issue.regulatory_management_license
+msgid "License"
+msgstr "Licencia"
+
+#. module: regulatory_issue
+#: model:res.groups,name:regulatory_issue.group_regulatory_issue_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: regulatory_issue
+#: model:ir.ui.menu,name:regulatory_issue.regulatory_management_menu
+msgid "Regulatory"
+msgstr "Regulatorio"
+
+#. module: regulatory_issue
+#: model:ir.module.category,name:regulatory_issue.module_category_regulatory_issue
+msgid "Regulatory Issue"
+msgstr "Asunto Regulatorio"
+
+#. module: regulatory_issue
+#: model:ir.actions.act_window,name:regulatory_issue.regulatory_technical_criteria_action
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_criteria__name
+#: model:ir.ui.menu,name:regulatory_issue.regulatory_technical_criteria
+msgid "Technical Criteria"
+msgstr "Criterio Técnico"
+
+#. module: regulatory_issue
+#: model:ir.actions.act_window,name:regulatory_issue.regulatory_technical_file_action
+#: model:ir.model.fields,field_description:regulatory_issue.field_regulatory_technical_file__name
+#: model:ir.ui.menu,name:regulatory_issue.regulatory_technical_file
+msgid "Technical File"
+msgstr "Ficha Técnica"
+
+#. module: regulatory_issue
+#: model:res.groups,name:regulatory_issue.group_regulatory_issue_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: regulatory_issue
+#: model:ir.model,name:regulatory_issue.model_regulatory_legal_documentation
+msgid "regulatory.legal.documentation"
+msgstr "Regulatorio Documentación Legal"
+
+#. module: regulatory_issue
+#: model:ir.model,name:regulatory_issue.model_regulatory_license
+msgid "regulatory.license"
+msgstr "Regulatorio Licencia"
+
+#. module: regulatory_issue
+#: model:ir.model,name:regulatory_issue.model_regulatory_technical_criteria
+msgid "regulatory.technical.criteria"
+msgstr "Regulatorio Criterio Técnico"
+
+#. module: regulatory_issue
+#: model:ir.model,name:regulatory_issue.model_regulatory_technical_file
+msgid "regulatory.technical.file"
+msgstr "Regulatorio Ficha Técnica"
