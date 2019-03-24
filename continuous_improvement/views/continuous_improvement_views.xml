@@ -56,7 +56,7 @@
         </field>
     </record>
 
-
+<!-- type : views -->
     <record id="continuous_improvement_type_view_search" model="ir.ui.view">
         <field name="name">continuous.improvement.type.view.search</field>
         <field name="model">continuous.improvement.type</field>
@@ -154,7 +154,8 @@
         <field name="name">continuous.improvement.view.kanban</field>
         <field name="model">continuous.improvement</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_mobile" default_group_by="stage_id">
+            <kanban class="o_kanban_small_column" default_group_by="stage_id">
+                <field name="stage_id"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
@@ -179,21 +180,21 @@
             <field name="view_mode">tree,form,kanban</field>
         </record>
 
-        <menuitem 
-            id="continuous_improvement_menu" 
+        <menuitem
+            id="continuous_improvement_menu"
             name="Continuous Improvement"
             web_icon="continuous_improvement,static/description/icon.png"/>
-        <menuitem 
-            id="continuous_improvement" 
-            parent="continuous_improvement_menu" 
+        <menuitem
+            id="continuous_improvement"
+            parent="continuous_improvement_menu"
             action="continuous_improvement_action"/>
-        <menuitem 
-            id="continuous_improvement_stage" 
-            parent="continuous_improvement_menu" 
+        <menuitem
+            id="continuous_improvement_stage"
+            parent="continuous_improvement_menu"
             action="continuous_improvement_stage_action"/>
-        <menuitem 
-            id="continuous_improvement_type" 
-            parent="continuous_improvement_menu" 
+        <menuitem
+            id="continuous_improvement_type"
+            parent="continuous_improvement_menu"
             action="continuous_improvement_type_action"/>
 
     </data>
