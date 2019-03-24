@@ -203,7 +203,7 @@
             <field name="name">Continuous Improvement</field>
             <field name="res_model">continuous.improvement</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_mode">tree,form,kanban,pivot,graph</field>
         </record>
 
         <menuitem
