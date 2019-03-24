@@ -175,6 +175,29 @@
         </field>
         </record>
 
+        <record id="continuous_improvement_view_graph" model="ir.ui.view">
+            <field name="name">continuous.improvement.view.graph</field>
+            <field name="model">continuous.improvement</field>
+            <field name="arch" type="xml">
+                <graph string="Continuous Improvement">
+                    <field name="stage_id" type="col"/>
+                    <field name="type_id" type="col"/>
+                    <field name="user_id" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="continuous_improvement_view_pivot" model="ir.ui.view">
+            <field name="name">continuous.improvement.view.pivot</field>
+            <field name="model">continuous.improvement</field>
+            <field name="arch" type="xml">
+                <pivot string="Continuous Improvement" disable_linking="True">
+                    <field name="create_date" interval="month" type="row"/>
+                    <field name="stage_id" type="col"/>
+                    <field name="type_id" type="col"/>
+                </pivot>
+            </field>
+        </record>
 
         <record id="continuous_improvement_action" model="ir.actions.act_window">
             <field name="name">Continuous Improvement</field>
