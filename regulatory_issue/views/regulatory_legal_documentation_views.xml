@@ -168,13 +168,14 @@
         <menuitem
             id="regulatory_legal_documentation"
             parent="regulatory_management_menu"
-            action="regulatory_legal_documentation_action"/>
+            action="regulatory_legal_documentation_action"
+            sequence="3"/>
 
             <menuitem
                 id="regulatory_management_configuration"
                 parent="regulatory_management_menu"
                 name="Configuration"
-                sequence="8" />
+                sequence="5" />
             <menuitem
                 id="regulatory_legal_documentation_stage"
                 parent="regulatory_management_configuration"

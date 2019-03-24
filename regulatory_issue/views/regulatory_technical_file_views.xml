@@ -35,7 +35,8 @@
         <menuitem
             id="regulatory_technical_file"
             parent="regulatory_management_menu"
-            action="regulatory_technical_file_action"/>
+            action="regulatory_technical_file_action"
+            sequence="1"/>
 
     </data>
 </odoo>

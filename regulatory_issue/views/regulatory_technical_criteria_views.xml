@@ -35,7 +35,8 @@
         <menuitem
             id="regulatory_technical_criteria"
             parent="regulatory_management_menu"
-            action="regulatory_technical_criteria_action"/>
+            action="regulatory_technical_criteria_action"
+            sequence="2"/>
 
     </data>
 </odoo>
