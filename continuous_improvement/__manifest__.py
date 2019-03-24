@@ -30,9 +30,15 @@
     "category": "Productivity",
     'icon': '/continuous_improvement/static/src/img/icon.png',
     'depends': ['base', 'calendar', 'mail'],
-    'data': ['views/continuous_improvement_views.xml'],
+    'data': [
+        'views/continuous_improvement_views.xml',
+        'security/continuous_improvement.xml',
+        'security/ir.model.access.csv',
+    ],
     'demo': [],
-    'images': ['static/description/banner.jpg'],
+    'images': [
+        'static/description/banner.jpg'
+    ],
     'license': 'AGPL-3',
     'installable': True,
     'application': True,
