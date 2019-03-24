@@ -1,0 +1,201 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* continuous_improvement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-24 01:27+0000\n"
+"PO-Revision-Date: 2019-03-23 20:37-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_PA\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: continuous_improvement
+#: model:ir.model,name:continuous_improvement.model_continuous_improvement_type
+msgid " Continuous Improvement Type"
+msgstr "Tipo de Mejora Continua"
+
+#. module: continuous_improvement
+#: model_terms:ir.actions.act_window,help:continuous_improvement.continuous_improvement_stage_action
+msgid "Add a new stage in the Continuous Improvement"
+msgstr "Añada una nueva etapa en la Mejora Continua"
+
+#. module: continuous_improvement
+#: model_terms:ir.actions.act_window,help:continuous_improvement.continuous_improvement_type_action
+msgid "Add a new type in the Continuous Improvement"
+msgstr "Agregue un nuevo tipo en la Mejora Continua"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__assigned_id
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_view_form
+msgid "Assigned"
+msgstr "Asignado"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__name
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_view_form
+msgid "Asunto"
+msgstr "Asunto"
+
+#. module: continuous_improvement
+#: model:ir.model,name:continuous_improvement.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: continuous_improvement
+#: model:ir.actions.act_window,name:continuous_improvement.continuous_improvement_action
+#: model:ir.model,name:continuous_improvement.model_continuous_improvement
+#: model:ir.module.category,name:continuous_improvement.module_category_continuous_improvement
+#: model:ir.ui.menu,name:continuous_improvement.continuous_improvement
+#: model:ir.ui.menu,name:continuous_improvement.continuous_improvement_menu
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_view_form
+msgid "Continuous Improvement"
+msgstr "Mejora Continua"
+
+#. module: continuous_improvement
+#: model:res.groups,name:continuous_improvement.group_continuous_improvement_manager
+msgid "Continuous Improvement Manager"
+msgstr "Administrador de Mejora Continua"
+
+#. module: continuous_improvement
+#: model:ir.model,name:continuous_improvement.model_continuous_improvement_stage
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_stage_view_search
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_stage_view_tree
+msgid "Continuous Improvement Stage"
+msgstr "Etapa de Mejora Continua"
+
+#. module: continuous_improvement
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_type_view_search
+msgid "Continuous Improvement Type"
+msgstr "Tipo de Mejora Continua"
+
+#. module: continuous_improvement
+#: model:res.groups,name:continuous_improvement.group_continuous_improvement_user
+msgid "Continuous Improvement User"
+msgstr "Usuario de Mejora Continua"
+
+#. module: continuous_improvement
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_type_view_tree
+msgid "Continuous Improvement type"
+msgstr "Tipo de Mejora Continua"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__create_uid
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__create_uid
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__create_date
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__create_date
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: continuous_improvement
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_view_form
+msgid "Description ......."
+msgstr "Descripción ……."
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__display_name
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__display_name
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__fold
+msgid "Folded in Maintenance Pipe"
+msgstr "Doblado en tubo de mejora continua"
+
+#. module: continuous_improvement
+#: model:ir.module.category,description:continuous_improvement.module_category_continuous_improvement
+msgid "Helps you handle your Continuous Improvement needs"
+msgstr "Le ayuda a manejar sus necesidades de Mejora Continua"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__id
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__id
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement____last_update
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage____last_update
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__write_uid
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__write_uid
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__write_date
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__write_date
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__name
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_view_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__observation
+msgid "Observation"
+msgstr "Observación"
+
+#. module: continuous_improvement
+#: model_terms:ir.ui.view,arch_db:continuous_improvement.continuous_improvement_view_form
+msgid "Observation ......."
+msgstr "Observación ……."
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__done
+msgid "Request Done"
+msgstr "Solicitud hecha"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_stage__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: continuous_improvement
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__stage_id
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: continuous_improvement
+#: model:ir.actions.act_window,name:continuous_improvement.continuous_improvement_stage_action
+#: model:ir.ui.menu,name:continuous_improvement.continuous_improvement_stage
+msgid "Stages"
+msgstr "Etapas"
+
+#. module: continuous_improvement
+#: model:ir.actions.act_window,name:continuous_improvement.continuous_improvement_type_action
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement__type_id
+#: model:ir.model.fields,field_description:continuous_improvement.field_continuous_improvement_type__name
+#: model:ir.ui.menu,name:continuous_improvement.continuous_improvement_type
+msgid "Type"
+msgstr "Tipo"

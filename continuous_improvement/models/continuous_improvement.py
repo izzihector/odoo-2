@@ -34,7 +34,7 @@ class ContinuousImprovementStage(models.Model):
 
     name = fields.Char('Name', required=True, translate=True)
     sequence = fields.Integer('Sequence', default=20)
-    fold = fields.Boolean('Folded in Maintenance Pipe')
+    fold = fields.Boolean('Folded in Continuous Improvement Pipe')
     done = fields.Boolean('Request Done')
 
 class ContinuousImprovementType(models.Model):
@@ -57,4 +57,3 @@ class ContinuousImprovement(models.Model):
     stage_id = fields.Many2one('continuous.improvement.stage', string='Stage')
     description=fields.Text('Description')
     observation=fields.Text('Observation')
-    
