@@ -51,10 +51,14 @@ class ContinuousImprovement(models.Model):
     _order = 'id'
 
 
+    @api.returns('self')
+    def _default_stage(self):
+        return self.env['continuous.improvement.stage'].search([], limit=1)
+
     name = fields.Char(string="Asunto", required=True, translate=True)
     assigned_id = fields.Many2one('res.users', u'Assigned')
     user_id = fields.Many2one('res.users', string='Solicitado Por', index=True, track_visibility='onchange', default=lambda self: self.env.user)
     type_id = fields.Many2one('continuous.improvement.type', u'Type')
-    stage_id = fields.Many2one('continuous.improvement.stage', string='Stage')
+    stage_id = fields.Many2one('continuous.improvement.stage', string='Stage', default=_default_stage)
     description=fields.Text('Description')
     observation=fields.Text('Observation')
