@@ -7,13 +7,13 @@
   </record>
 
   <record id="group_continuous_improvement_user" model="res.groups">
-      <field name="name">Continuous Improvement User</field>
+      <field name="name">User</field>
       <field name="category_id" ref="continuous_improvement.module_category_continuous_improvement"/>
       <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
   </record>
 
   <record id="group_continuous_improvement_manager" model="res.groups">
-      <field name="name">Continuous Improvement Manager</field>
+      <field name="name">Manager</field>
       <field name="category_id" ref="continuous_improvement.module_category_continuous_improvement"/>
       <field name="implied_ids" eval="[(4, ref('group_continuous_improvement_user'))]"/>
   </record>
