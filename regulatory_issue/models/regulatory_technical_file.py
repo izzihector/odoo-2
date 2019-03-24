@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
 #
-#    Electrónica Médica by Rocendo Tejada
+#    Electrónica Médica.
 #    Copyright (C) 2019-TODAY Electrónica Médica (<https://www.electronicamedica.com>).
 #
-#    Author: Rocendo Tejada
+#    Author: Rocendo Tejada (<https://www.electronicamedica.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,25 +20,17 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
-{
-    'name': 'Regulatory Issue Management',
-    'summary': """Regulatory Issue Management""",
-    'version': '12.0.1.0.0',
-    'author': 'Rocendo Tejada',
-    'website': "http://www.electronicamedica.com",
-    'company': 'Electrónica Médica',
-    "category": "Productivity",
-    'icon': '/regulatory_issue/static/src/img/icon.png',
-    'depends': ['base', 'calendar', 'mail'],
-    'data': [
-        'views/regulatory_license_views.xml',
-        'views/regulatory_legal_documentation_views.xml',
-        'views/regulatory_technical_criteria_views.xml',
-        'views/regulatory_technical_file_views.xml',
-    ],
-    'demo': [],
-    'images': ['static/description/banner.jpg'],
-    'license': 'AGPL-3',
-    'installable': True,
-    'application': True,
-}
+
+from datetime import date, datetime, timedelta
+from odoo import models, fields, api
+from odoo.tools.translate import _
+from odoo.exceptions import UserError, ValidationError
+
+
+class RegulatoryTechnicalFile(models.Model):
+    _name = 'regulatory.technical.file'
+
+    name = fields.Char(string="Technical File", required=True, translate=True)
+    code=fields.Char('Code')
+    expiration_date = fields.Date(u'Expiration Date')
+    description=fields.Text('Description')

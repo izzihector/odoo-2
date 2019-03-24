@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="regulatory_technical_file_view_form" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.view.form</field>
+            <field name="model">regulatory.technical.file</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_view_tree" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.view.tree</field>
+            <field name="model">regulatory.technical.file</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_action" model="ir.actions.act_window">
+            <field name="name">legal Documentation</field>
+            <field name="res_model">regulatory.technical.file</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="regulatory_technical_file"
+            parent="regulatory_management_menu"
+            action="regulatory_technical_file_action"/>
+
+    </data>
+</odoo>

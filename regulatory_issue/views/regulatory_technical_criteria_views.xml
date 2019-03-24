@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="regulatory_technical_criteria_view_form" model="ir.ui.view">
+            <field name="name">regulatory.technical.criteria.view.form</field>
+            <field name="model">regulatory.technical.criteria</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_criteria_view_tree" model="ir.ui.view">
+            <field name="name">regulatory.technical.criteria.view.tree</field>
+            <field name="model">regulatory.technical.criteria</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_criteria_action" model="ir.actions.act_window">
+            <field name="name">legal Documentation</field>
+            <field name="res_model">regulatory.technical.criteria</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="regulatory_technical_criteria"
+            parent="regulatory_management_menu"
+            action="regulatory_technical_criteria_action"/>
+
+    </data>
+</odoo>

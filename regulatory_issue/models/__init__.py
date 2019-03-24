@@ -21,5 +21,8 @@
 #
 ###################################################################################
 
-from . import regulatory_license
 from . import regulatory_config
+from . import regulatory_license
+from . import regulatory_technical_file
+from . import regulatory_technical_criteria
+from . import regulatory_legal_documentation
