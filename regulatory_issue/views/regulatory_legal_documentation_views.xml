@@ -1,17 +1,144 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <record id="regulatory_legal_documentation_view_form" model="ir.ui.view">
+  <data>
+
+    <record id="regulatory_legal_documentation_stage_view_search" model="ir.ui.view">
+        <field name="name">regulatory.legal.documentation.stage.view.search</field>
+        <field name="model">regulatory.legal.documentation.stage</field>
+        <field name="arch" type="xml">
+            <search string="Continuous Improvement Stage">
+               <field name="name" string="Continuous Improvement Stage"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="regulatory_legal_documentation_stage_view_tree" model="ir.ui.view">
+        <field name="name">regulatory.legal.documentation.stage.view.tree</field>
+        <field name="model">regulatory.legal.documentation.stage</field>
+        <field name="arch" type="xml">
+            <tree string="Continuous Improvement Stage" editable="top">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="fold"/>
+                <field name="done"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="regulatory_legal_documentation_stage_view_kanban" model="ir.ui.view">
+        <field name="name">regulatory.legal.documentation.stage.view.kanban</field>
+        <field name="model">regulatory.legal.documentation.stage</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- stages : actions -->
+    <record id="regulatory_legal_documentation_stage_action" model="ir.actions.act_window">
+        <field name="name">Legal Documentation Stages</field>
+        <field name="res_model">regulatory.legal.documentation.stage</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new stage in the Continuous Improvement
+          </p>
+        </field>
+    </record>
+
+<!-- type : views -->
+    <record id="regulatory_legal_documentation_type_view_search" model="ir.ui.view">
+        <field name="name">regulatory.legal.documentation.type.view.search</field>
+        <field name="model">regulatory.legal.documentation.type</field>
+        <field name="arch" type="xml">
+            <search string="Continuous Improvement Type">
+               <field name="name" string="Continuous Improvement Type"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="regulatory_legal_documentation_type_view_tree" model="ir.ui.view">
+        <field name="name">regulatory.legal.documentation.type.view.tree</field>
+        <field name="model">regulatory.legal.documentation.type</field>
+        <field name="arch" type="xml">
+            <tree string="Continuous Improvement type" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="regulatory_legal_documentation_type_view_kanban" model="ir.ui.view">
+        <field name="name">regulatory.legal.documentation.type.view.kanban</field>
+        <field name="model">regulatory.legal.documentation.type</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- type : actions -->
+    <record id="regulatory_legal_documentation_type_action" model="ir.actions.act_window">
+        <field name="name">Legal Documentation Type</field>
+        <field name="res_model">regulatory.legal.documentation.type</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Add a new type in the Continuous Improvement
+          </p>
+        </field>
+    </record>
+
+
+    <record id="regulatory_legal_documentation_view_form" model="ir.ui.view">
             <field name="name">regulatory.legal.documentation.view.form</field>
             <field name="model">regulatory.legal.documentation</field>
             <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>
-                            <field name="name"/>
-                        </group>
-                    </sheet>
-                </form>
+              <form string="Regulatory Legal Documentation">
+                  <header>
+                      <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                  </header>
+                  <sheet>
+                      <div class="oe_title">
+                          <label for="name" class="oe_edit_only" string="Name"/>
+                          <h1>
+                              <field name="name" placeholder="Name"/>
+                          </h1>
+                  </div>
+                  <group>
+                      <group>
+                          <field name="apostille_number"/>
+                          <field name="certificate_number"/>
+                          <field name="type_id" widget="many2one"/>
+                      </group>
+                      <group>
+                        <field name="expedition_date" widget="date"/>
+                        <field name="expiration_date" widget="date"/>
+                      </group>
+                  </group>
+                  <field name='description' placeholder="Description ......."/>
+                  <field name='observation' placeholder="Observation ......."/>
+              </sheet>
+              </form>
             </field>
         </record>
 
@@ -21,6 +148,12 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="apostille_number"/>
+                    <field name="certificate_number"/>
+                    <field name="expedition_date" widget="date"/>
+                    <field name="expiration_date" widget="date"/>
+                    <field name="type_id" widget="many2one"/>
+                    <field name="stage_id" widget="many2one"/>
                 </tree>
             </field>
         </record>
@@ -36,6 +169,21 @@
             id="regulatory_legal_documentation"
             parent="regulatory_management_menu"
             action="regulatory_legal_documentation_action"/>
+
+            <menuitem
+                id="regulatory_management_configuration"
+                parent="regulatory_management_menu"
+                name="Configuration"
+                sequence="8" />
+            <menuitem
+                id="regulatory_legal_documentation_stage"
+                parent="regulatory_management_configuration"
+                action="regulatory_legal_documentation_stage_action"/>
+            <menuitem
+                id="regulatory_legal_documentation_type"
+                parent="regulatory_management_configuration"
+                action="regulatory_legal_documentation_type_action"/>
+
 
     </data>
 </odoo>
