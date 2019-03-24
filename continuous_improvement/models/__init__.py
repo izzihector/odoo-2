@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 ###################################################################################
 #
-#    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2019-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Electronica Medica Pvt. Ltd.
+#    Copyright (C) 2019-TODAY Electronica Medica (<https://www.electronicamedica.com>).
 #
-#    Author: AVINASH NK(<https://www.cybrosys.com>)
+#    Author: Rocendo Tejada(<https://www.electronicamedica.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -23,4 +23,3 @@
 
 from . import continuous_improvement
 from . import continuous_improvement_config
-
