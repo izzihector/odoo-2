@@ -9,6 +9,7 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="file"/>
                         </group>
                     </sheet>
                 </form>
@@ -18,7 +19,7 @@
             <field name="name">regulatory_license_tree.tree</field>
             <field name="model">regulatory.license</field>
             <field name="arch" type="xml">
-                <tree editable="bottom">
+                <tree>
                     <field name="name"/>
                 </tree>
             </field>
@@ -30,13 +31,13 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem 
-            id="regulatory_management_menu" 
+        <menuitem
+            id="regulatory_management_menu"
             name="Regulatory"
             web_icon="regulatory_issue,static/description/icon.png"/>
-        <menuitem 
-            id="regulatory_management_license" 
-            parent="regulatory_management_menu" 
+        <menuitem
+            id="regulatory_management_license"
+            parent="regulatory_management_menu"
             action="regulatory_license_action"/>
 
     </data>

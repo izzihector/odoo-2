@@ -33,5 +33,4 @@ class RegulatoryLicense(models.Model):
     name = fields.Char(string="License", required=True, translate=True)
     expiration_date = fields.Date(u'Expiration Date')
     description=fields.Text('Description')
-
-
+    file=fields.Binary(u'File')
