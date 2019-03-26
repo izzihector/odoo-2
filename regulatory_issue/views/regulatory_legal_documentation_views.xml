@@ -2,16 +2,6 @@
 <odoo>
   <data>
 
-    <record id="regulatory_legal_documentation_stage_view_search" model="ir.ui.view">
-        <field name="name">regulatory.legal.documentation.stage.view.search</field>
-        <field name="model">regulatory.legal.documentation.stage</field>
-        <field name="arch" type="xml">
-            <search string="Continuous Improvement Stage">
-               <field name="name" string="Continuous Improvement Stage"/>
-            </search>
-        </field>
-    </record>
-
     <record id="regulatory_legal_documentation_stage_view_tree" model="ir.ui.view">
         <field name="name">regulatory.legal.documentation.stage.view.tree</field>
         <field name="model">regulatory.legal.documentation.stage</field>
