@@ -44,7 +44,7 @@
                     <field name="certificate_name"/>
                     <field name="criteria_expiration_date"/>
                     <field name="expiration_date_authenticated_seal"/>
-                    <field name="stage"/>
+                    <field name="stage_id"/>
                 </tree>
             </field>
         </record>
