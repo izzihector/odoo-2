@@ -31,10 +31,6 @@ class RegulatoryTechnicalCriteria(models.Model):
     _name = 'regulatory.technical.criteria'
 
     name = fields.Char(string="Technical Criteria", required=True, translate=True)
-    ctni=fields.Char('CTNI')
-    certificate_name=fields.Char('Certificate Name')
-    criteria_expiration_date=fields.Date(u'Criterion expiration date')
-    expiration_date_authenticated_seal=fields.Date(u'Date Expiration of the Authenticated Seal')
+    code=fields.Char('Code')
+    expiration_date = fields.Date(u'Expiration Date')
     description=fields.Text('Description')
-    technical_file_id=fields.Many2one('regulatory.technical.file', u'Technical File')
-    stage_id=fields.Many2one('regulatory.legal.documentation.stage', string='Stage', default=_default_stage)

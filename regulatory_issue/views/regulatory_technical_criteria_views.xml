@@ -5,31 +5,13 @@
             <field name="name">regulatory.technical.criteria.view.form</field>
             <field name="model">regulatory.technical.criteria</field>
             <field name="arch" type="xml">
-              <form string="Regulatory Technical Criteria">
-                  <header>
-                      <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
-                  </header>
-                  <sheet>
-                      <div class="oe_title">
-                          <label for="name" class="oe_edit_only" string="Name"/>
-                          <h1>
-                              <field name="name" placeholder="Name"/>
-                          </h1>
-                  </div>
-                  <group>
-                      <group>
-                          <field name="ctni"/>
-                          <field name="certificate_name"/>
-                          <field name="technical_file_id" widget="many2one"/>
-                      </group>
-                      <group>
-                        <field name="criteria_expiration_date" widget="date"/>
-                        <field name="expiration_date_authenticated_seal" widget="date"/>
-                      </group>
-                  </group>
-                  <field name='description' placeholder="Description ......."/>
-              </sheet>
-              </form>
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
             </field>
         </record>
 
@@ -39,12 +21,6 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="ctni"/>
-                    <field name="technical_file_id"/>
-                    <field name="certificate_name"/>
-                    <field name="criteria_expiration_date"/>
-                    <field name="expiration_date_authenticated_seal"/>
-                    <field name="stage_id"/>
                 </tree>
             </field>
         </record>
