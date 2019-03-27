@@ -274,7 +274,122 @@
             <field name="res_model">maintenance.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form,calendar,pivot,graph</field>
-        </record>          
+        </record>       
+        
+        
+     <!-- equiment : views -->
+    <record id="maintenance.hr_equipment_view_form" model="ir.ui.view">
+        <field name="name">equipment.form.maint</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="arch" type="xml">
+            <form string="Equipments">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                            <button name="%(open_view_incident_new)d"
+                                type="action"
+                                class="oe_inline oe_stat_button"
+                                icon="fa-gear"
+                                context="{'search_default_equipment_id': active_id}"
+                                help="show the Preventive maintenance for this Equipement">
+                               <field name="ot_count" widget="statinfo" string="Ordre de travail"/>
+                            </button>
+                            
+                           <button name="%(hr_equipment_request_action_pm)d"
+                                type="action"
+                                class="oe_inline oe_stat_button"
+                                icon="fa-bell" 
+                                context="{'search_default_equipment_id': active_id}"
+                                help="show the Preventive maintenance for this Equipement">
+                               <field name="pm_count" widget="statinfo" string="MP"/>
+                            </button>
+                            
+                            <button name="%(hr_equipment_request_action_cm)d"
+                                type="action"
+                                class="oe_inline oe_stat_button"
+                                icon="fa-wrench"
+                                context="{'search_default_equipment_id': active_id}"
+                                help="show the Preventive maintenance for this Equipement">
+                               <field name="cm_count" widget="statinfo" string="MC"/>
+                            </button>
+                    </div>
+					<field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" string="Name" placeholder="Equipment Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category_id" options="{&quot;no_open&quot;: True}"/>
+                            <field name="owner_user_id" string="Owner"/>
+                            
+                            <field name="startingdate"/>
+                            <field name="deadlinegar"/>
+                            <field name="warranty_func"/>
+                            <field name="technique_file"/>
+                            
+                        </group>
+                        <group>
+                            <field name="maintenance_team_id" attrs="{'required': [('period', '!=', 0)]}"/>
+                            <field name="technician_user_id"/>
+                            <field name="assign_date" groups="base.group_no_one"/>
+                            <field name="scrap_date" groups="base.group_no_one"/>
+                            <field name="location" string="Used in location"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="note" placeholder="Description"/>
+                            <field name="safety" placeholder="Safety"/>
+                        </page>
+                        <page string="Product Information">
+                            <group>
+                                <group>
+                                    <field name="partner_id" context="{'default_supplier': True, 'default_customer': False}"/>
+                                    <field name="partner_ref"/>
+                                    <field name="model"/>
+                                    <field name="serial_no"/>
+                                </group><group>
+                                    <field name="cost" groups="maintenance.group_equipment_manager"/>
+                                    <!--  <field name="warranty"/>-->
+                                    <field name="trademark"/>
+                                </group>
+                            </group>
+                        </page>
+                       <page string="Liste de pièces">
+		               <field name="product_ids" >
+                            	 <tree editable="bottom">
+                            		<field name="product_id" on_change="onchange_product(product_id)"/>
+                            		<field name="ref_intern" />
+                            		<field name="qte" />
+                            		<field name="type_id" />
+                            	</tree>
+		               </field>
+                        </page> 
+                        <page string="Maintenance">
+                            <group>
+                                <group name="maintenance">
+                                    <field name="next_action_date" class="oe_read_only" string="Next Preventive Maintenance"/>
+                                    <label for="period" string="Preventive Maintenance Frequency"/>
+                                    <div class="o_row">
+                                        <field name="period"/> days
+                                    </div>
+                                    <label for="maintenance_duration" string="Maintenance Duration"/>
+                                    <div class="o_row">
+                                        <field name="maintenance_duration"/> hours
+                                    </div>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
 
 		<!-- list maintenenace -->	
          <record model="ir.ui.view" id="view_checklist_maintenance_tree">

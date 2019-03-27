@@ -6,7 +6,7 @@
 			<field name="inherit_id" ref="account.invoice_form"/>
 			<field name="arch" type="xml">
 				<xpath expr="//header/button[@name='action_invoice_draft']" position="after">
-					<button name="download_fiscal_file" type="object" string="Imprimir Factura Fiscal" class="oe_highlight" attrs="{'invisible': [('state', 'not in', ('open','paid'))]}"/>
+					<button name="download_fiscal_file" type="object" string="Imprimir Factura Fiscal" class="oe_highlight" attrs="{'invisible': ['|', ('state', 'not in', ('open','paid')), ('fiscal_reference', '!=', False)]}"/>
 				</xpath>
 				<xpath expr="//field[@name='date_invoice']" position="after">
 					<field name="fiscal_id" />
