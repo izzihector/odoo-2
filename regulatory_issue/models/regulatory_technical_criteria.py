@@ -29,6 +29,7 @@ from odoo.exceptions import UserError, ValidationError
 
 class RegulatoryTechnicalCriteria(models.Model):
     _name = 'regulatory.technical.criteria'
+    _description = 'Regulatory Technical Criteria'
 
     name = fields.Char(string="Technical Criteria", required=True, translate=True)
     code=fields.Char('Code')
