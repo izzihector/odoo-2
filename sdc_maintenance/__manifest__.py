@@ -11,9 +11,9 @@
     'icon': '/sdc_maintenance/static/src/img/icon.png',
     'summary' : 'cmms, maintenance, Equipment, Repair, Machine, Corrective maintenance, Preventive maintenance, Intervention, Checklist, Work order, website',
     "description": """
-        Open maintenance management system module allow you to manage 
+        Open maintenance management system module allow you to manage
         preventives and corrective maintenance without limit.
-        All informations is linked to the equipment tree and let you follow 
+        All informations is linked to the equipment tree and let you follow
         maintenance operation :
          - Repair.
          - Check up List.
@@ -41,9 +41,7 @@
         'report/intervention_template.xml',
         'report/equipment_template.xml',
         'report/report_menu.xml',
-        'maintenance_menu.xml',
-        'security/cmms_security.xml',
-        'security/ir.model.access.csv'
+        'maintenance_menu.xml'
     ],
     'images': ['static/description/thumb.jpg'],
     'demo_xml': [],
