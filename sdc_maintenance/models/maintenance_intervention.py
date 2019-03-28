@@ -49,7 +49,7 @@ class MaintenanceIntervention(models.Model):
         return True
 
     name=fields.Char('No. of intervention',readonly=True, default=lambda x: x.env['ir.sequence'].get('maintenance.intervention'))
-    zone_id=fields.Many2one('maintenance.equipment.zone', u'Zone')
+    zone_id=fields.Many2one('maintenance.zone', u'Zone')
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
     category_id = fields.Many2one('maintenance.equipment.category', related='equipment_id.category_id', string='Category', store=True, readonly=True)
     partner=fields.Many2one('res.partner', u'Client',domain=[('customer','=',True)])

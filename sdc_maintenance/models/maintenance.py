@@ -135,7 +135,7 @@ class maintenanceOrder(models.Model):
 
     name=fields.Char(u'N° Work Order',readonly=True, default=lambda x: x.env['ir.sequence'].get('maintenance.order'))
     state=fields.Selection([('plan',u'Planned'),('draft',u'In Progress'),('invoice',u'Quote to Make'),('done',u'Done'),('cancel',u'Canceled')],u'Statut',track_visibility='always', default='plan')
-    zone_id=fields.Many2one('maintenance.equipment.zone', u'Zone')
+    zone_id=fields.Many2one('maintenance.zone', u'Zone')
     partner_id=fields.Many2one('res.partner', u'Client',domain=[('customer','=',True)])
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
     category_id = fields.Many2one('maintenance.equipment.category', related='equipment_id.category_id', string='Catégorie', store=True, readonly=True)
@@ -293,7 +293,7 @@ class maintenanceChecklistHistory(models.Model):
 
 
     name=fields.Char("Nom", default=lambda x: x.env['ir.sequence'].get('maintenance.checklist.history'))
-    zone_id=fields.Many2one('maintenance.equipment.zone',u'Zone')
+    zone_id=fields.Many2one('maintenance.zone',u'Zone')
     checklist_id=fields.Many2one('maintenance.checklist', 'Control List')
     answers_ids=fields.One2many("maintenance.answer.history","checklist_history_id","Answers")
     ot_ids=fields.One2many('maintenance.order','maintenance_id',"Work Order")

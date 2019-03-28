@@ -53,7 +53,7 @@ class MaintenanceEquipement(models.Model):
 
     team_leader_id=fields.Many2one('res.users', related='category_id.team_id.team_leader_id', string='Leader Team', store=True, readonly=True)
 
-    zone_id=fields.Many2one('maintenance.equipment.zone', u'Zone')
+    zone_id=fields.Many2one('maintenance.zone', u'Zone')
 
     client_id=fields.Many2one('res.partner', string='Cliente', oldname="x_studio_cliente")
 
@@ -124,7 +124,7 @@ class MaintenanceSoftwareType(models.Model):
 
 
 class maintenanceZone(models.Model):
-    _name = 'maintenance.equipment.zone'
+    _name = 'maintenance.zone'
     _description = 'Zone'
     _order = 'name asc'
 
