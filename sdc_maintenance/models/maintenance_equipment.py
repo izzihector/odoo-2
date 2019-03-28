@@ -115,7 +115,7 @@ class MaintenanceEquipmentBrand(models.Model):
 
 
 class MaintenanceSoftwareType(models.Model):
-    _name = 'maintenance.software.type'
+    _name = 'maintenance.equipment.software.type'
     _description = 'Software Type'
     _order = 'name asc'
     
@@ -177,7 +177,7 @@ class MaintenanceEquipmentSoftware(models.Model):
     name=fields.Char('Software',required=True)
     version=fields.Char('Version')
 
-    software_type_id=fields.Many2one('maintenance.software.type','Software Type')
+    software_type_id=fields.Many2one('maintenance.equipment.software.type','Software Type')
     
     description=fields.Text('Description')
 

@@ -42,7 +42,8 @@
         'report/equipment_template.xml',
         'report/report_menu.xml',
         'maintenance_menu.xml',
-
+        'security/cmms_security.xml',
+        'security/ir.model.access.csv'
     ],
     'images': ['static/description/thumb.jpg'],
     'demo_xml': [],
