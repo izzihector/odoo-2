@@ -45,8 +45,6 @@
 
     ],
     'images': ['static/description/thumb.jpg'],
-    'price': 400.00,
-    'currency': 'USD',
     'demo_xml': [],
     'installable': True,
     'Aplication': True,
