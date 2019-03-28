@@ -2,7 +2,7 @@
 # Author : Rocendo Tejada
 from odoo import api, fields, models, SUPERUSER_ID, _, exceptions
 import time
-import datetime as dt 
+import datetime as dt
 import time, datetime
 from datetime import date
 from datetime import datetime
@@ -60,7 +60,7 @@ class ProductTemplate(models.Model):
 
     is_piece=fields.Boolean(u'Is Parts')
 
-    
+
 class maintenanceFailure(models.Model):
     _name = "maintenance.failure"
     _description = "failure cause"
@@ -69,7 +69,7 @@ class maintenanceFailure(models.Model):
     name=fields.Char('Failure type', required=True)
     code=fields.Char('Code')
     description=fields.Text('failure description')
-    
+
 
 class maintenanceHistory(models.Model):
     _name = "maintenance.history"
@@ -82,21 +82,21 @@ class maintenanceHistory(models.Model):
     incident_id=fields.Many2one('maintenance.order', u'Work Order')
     intervention_id=fields.Many2one('maintenance.intervention', u'Intervention')
     user_id=fields.Many2one('res.users', u'Member', default=lambda self:self._uid)
-    
+
 
 
 class maintenanceOrder(models.Model):
     _name = "maintenance.order"
-    _description = "Order" 
+    _description = "Order"
     _order = "name desc"
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-      
+
     @api.multi
     def action_print(self):
         return self.env.ref('sdc_maintenance.report_maintenance_incident').report_action(self)
 
-    
+
     @api.one
     @api.depends('interv_id')
     def action_done(self):
@@ -120,7 +120,7 @@ class maintenanceOrder(models.Model):
     @api.one
     def action_cancel(self):
         self.state = 'cancel'
-        return True       
+        return True
 
     @api.one
     @api.depends('interv_id')
@@ -132,17 +132,17 @@ class maintenanceOrder(models.Model):
             return self.write({'state' : 'invoice'})
         else:
             return self.write({'state' : 'invoice'})
-    
+
     name=fields.Char(u'N° Work Order',readonly=True, default=lambda x: x.env['ir.sequence'].get('maintenance.order'))
     state=fields.Selection([('plan',u'Planned'),('draft',u'In Progress'),('invoice',u'Quote to Make'),('done',u'Done'),('cancel',u'Canceled')],u'Statut',track_visibility='always', default='plan')
-    zone_id=fields.Many2one('maintenance.zone', u'Zone')
+    zone_id=fields.Many2one('maintenance.equipment.zone', u'Zone')
     partner_id=fields.Many2one('res.partner', u'Client',domain=[('customer','=',True)])
     equipment_id=fields.Many2one('maintenance.equipment', u'Equipment')
-    category_id = fields.Many2one('maintenance.equipment.category', related='equipment_id.category_id', string='Catégorie', store=True, readonly=True) 
+    category_id = fields.Many2one('maintenance.equipment.category', related='equipment_id.category_id', string='Catégorie', store=True, readonly=True)
     warranty=fields.Boolean(u'Under warranty')
     type_id=fields.Many2one('intervention.type',u'Type of intervention')
     date=fields.Datetime(u'OT date', default=datetime.today())
-    user_id=fields.Many2one('res.users', u'Responsible',default=lambda self: self._uid)   
+    user_id=fields.Many2one('res.users', u'Responsible',default=lambda self: self._uid)
     product_ids=fields.One2many('product.piece','piece_id_incid',u'List of Parts')
     history_ids=fields.One2many('maintenance.history', 'incident_id', u'Resources allocated',ondelete='set null')
     description=fields.Text(u'Report')
@@ -153,17 +153,17 @@ class maintenanceOrder(models.Model):
     pm_ok=fields.Boolean(u'pm ok')
     interv_ok=fields.Boolean(u'interv ok')
     failure_type=fields.Many2one('maintenance.failure', u'Failure type')
-    devis_track=fields.Char(u'N° de devis',track_visibility='always')      
+    devis_track=fields.Char(u'N° de devis',track_visibility='always')
     maintenance_id = fields.Many2one('maintenance.checklist.history', 'Control List')
     state_machine=fields.Selection([('start','Working'),('stop','Stopped')],u'State on Demand')
-    
+
     technician_id=fields.Many2one('res.users', u'Technicien')
     priority = fields.Selection([('0', 'Very Low'), ('1', 'Low'), ('2', 'Normal'), ('3', 'High')], string='Priority')
     color = fields.Integer('Color Index')
     kanban_state = fields.Selection([('normal', 'In Progress'), ('blocked', 'Blocked'), ('done', 'Ready for next stage')],
                                     string='Kanban State', required=True, default='normal', track_visibility='onchange')
-    
-    
+
+
     _sql_constraints = [
         ('maintenance_order_model_uniq', 'unique (name)', u'la Référence de l\'ordere de mission doit être unique'),
     ]
@@ -189,17 +189,17 @@ class maintenanceOrder(models.Model):
                     """
             mail_content = text_inter %(
                                         self.technician_id.name or False,
-                                        self.name or False,   
-                                        self.partner_id.name or False, 
-                                        self.equipment_id.name or False,  
-                                        self.category_id.name or False,  
-                                        self.state_machine or False,  
-                                        self.priority or False,  
+                                        self.name or False,
+                                        self.partner_id.name or False,
+                                        self.equipment_id.name or False,
+                                        self.category_id.name or False,
+                                        self.state_machine or False,
+                                        self.priority or False,
                                         self.date or False,
                                         self.user_id.name or False,
                                         self.reclamation or False,
                                         )
-            
+
             main_content = {
                             'subject': _('Service de maintenance - Ordre de travail N° : %s') % (self.name),
                             'author_id': self.env.user.user_id.id,
@@ -207,16 +207,16 @@ class maintenanceOrder(models.Model):
                             'email_to': self.technician_id.login,
                         }
             self.env['mail.mail'].create(main_content).send()
-            
+
     @api.onchange('equipment_id')
     def onchange_equipement(self):
         if self.equipment_id:
-            object_patrimoin=self.env['maintenance.equipment'].browse(self.equipment_id.id) 
+            object_patrimoin=self.env['maintenance.equipment'].browse(self.equipment_id.id)
             if object_patrimoin.warranty_func == True:
-                self.warranty = True 
+                self.warranty = True
             else : self.warranty = False
-    
- 
+
+
     @api.multi
     def copy(self, default=None):
         default = dict(default or {})
@@ -226,8 +226,8 @@ class maintenanceOrder(models.Model):
 
     @api.multi
     def action_gererate_invoice(self):
-        for object_inter in self:  
-                if object_inter.partner_id:    
+        for object_inter in self:
+                if object_inter.partner_id:
                     sale_order_id = self.env['sale.order'].create({ 'origin':object_inter.name or False,
                                                                     'note': 'OT-' + object_inter.description or False,
                                                                     'partner_id' : object_inter.partner_id and object_inter.partner_id.id or False,
@@ -244,7 +244,7 @@ class maintenanceOrder(models.Model):
                                                       'order_id' : sale_order_id.id,
                                                       }
                                 print (sale_order_line)
-                                self.env['sale.order.line'].create(sale_order_line)      
+                                self.env['sale.order.line'].create(sale_order_line)
                     if sale_order_id:
                         product_id = self.env['product.product'].search([('product_tmpl_id', '=', object_inter.equipment_id.id)])
                         data ={
@@ -252,18 +252,18 @@ class maintenanceOrder(models.Model):
                                 'order_id' : sale_order_id.id,
                                }
                         self.env['sale.order.line'].create(data)
-                        
+
                     object_inter.state = 'done'
                 else : raise exceptions.except_orm(u'Attention !!', u'Veuillez choisir un client !')
         return True
 
-        
+
 class maintenanceChecklistHistory(models.Model):
     _name="maintenance.checklist.history"
     _description= "Checklist History"
     _inherit = ['mail.thread']
     _order = 'name desc'
-    
+
     @api.onchange('checklist_id')
     def onchange_checklist_id(self):
         if self.checklist_id:
@@ -275,25 +275,25 @@ class maintenanceChecklistHistory(models.Model):
                 res.append(obj)
             return {'value':{'answers_ids': res}}
 
-    
+
     @api.one
     def action_done(self):
         self.state='done'
         return True
-    
+
     @api.one
     def action_confirmed(self):
         self.state='confirmed'
         return True
-    
+
     @api.one
     def action_draft(self):
         self.state='draft'
         return True
-    
-      
+
+
     name=fields.Char("Nom", default=lambda x: x.env['ir.sequence'].get('maintenance.checklist.history'))
-    zone_id=fields.Many2one('maintenance.zone',u'Zone')
+    zone_id=fields.Many2one('maintenance.equipment.zone',u'Zone')
     checklist_id=fields.Many2one('maintenance.checklist', 'Control List')
     answers_ids=fields.One2many("maintenance.answer.history","checklist_history_id","Answers")
     ot_ids=fields.One2many('maintenance.order','maintenance_id',"Work Order")
@@ -303,12 +303,12 @@ class maintenanceChecklistHistory(models.Model):
     user_id=fields.Many2one('res.users', 'Responsible')
     state=fields.Selection([('draft', 'Rough draft'), ('confirmed', 'confirmado'),('done', 'Done')], "Status",track_visibility='always', default='draft')
 
-    
+
 class maintenanceChecklist(models.Model):
     _name="maintenance.checklist"
     _description= "checklist"
     _order = 'sequence, id'
-    
+
     name=fields.Char("Title", required=True)
     active=fields.Boolean("Active", default=1)
     planned_date=fields.Float("Expected Duration")
@@ -316,8 +316,8 @@ class maintenanceChecklist(models.Model):
     description=fields.Text('Description')
     questions_ids=fields.One2many("maintenance.question","checklist_id","Questions")
     equipment_type=fields.Many2one('maintenance.equipment.category', u'Category')
-   
-    
+
+
     @api.multi
     def copy(self, default=None):
         if default is None:
@@ -333,12 +333,12 @@ CHOICE_MAINT = [
     ('bon','Good'),
     ('mauvais','Bad'),
     ('inapplicable','Inapplicable')]
-   
+
 class maintenanceQuestionHistory(models.Model):
     _name="maintenance.answer.history"
     _description= "Answers"
     _order = 'sequence, id'
-       
+
     name=fields.Char(u"Action à réaliser",required=True)
     sequence=fields.Integer('Sequence')
     checklist_history_id=fields.Many2one('maintenance.checklist.history', u'Control List')
@@ -349,13 +349,13 @@ class maintenanceQuestion(models.Model):
     _name = "maintenance.question"
     _description = "Question"
     _order = 'sequence'
-    
+
     name=fields.Char("Question", required=True)
     sequence=fields.Integer('Sequence')
     checklist_id=fields.Many2one('maintenance.checklist', 'Control List', required=True)
-    
-    
-    
+
+
+
 class MaintenanceRequestt(models.Model):
     _inherit= 'maintenance.request'
 
@@ -371,7 +371,7 @@ class MaintenanceRequestt(models.Model):
                 else:
                     record.days_next_due = False
             return True
-    
+
     @api.one
     def _days_left(self):
             for record in self:
@@ -386,10 +386,10 @@ class MaintenanceRequestt(models.Model):
                 else:
                     record.days_left = False
             return True
-    
+
     @api.one
     def _get_state(self):
-            for record in self:    
+            for record in self:
                 if record.meter == u'days':
                     if record.days_left <= 0:
                         record.state = u'Outdated'
@@ -405,7 +405,7 @@ class MaintenanceRequestt(models.Model):
 
     recurrent=fields.Boolean(u'Recurrent ?', help="Mark this option if PM is periodic")
 
-    days_interval=fields.Integer(u'Interval (days)')  
+    days_interval=fields.Integer(u'Interval (days)')
     days_warn_period=fields.Integer('Date of alert')
     days_left=fields.Integer(compute='_days_left', string='Remaining days')
 
@@ -429,7 +429,7 @@ class MaintenanceRequestt(models.Model):
 
 
     team_leader_id = fields.Many2one('res.users', related='equipment_id.category_id.team_id.team_leader_id', string='Team Leader', store=True, readonly=True)
-     
+
     timesheet_ids=fields.One2many('account.analytic.line','request_id',u'Timesheet')
 
 
@@ -453,17 +453,17 @@ class MaintenanceRequestt(models.Model):
                     """
             mail_content = text_inter %(
                                         self.technician_user_id.name or False,
-                                        self.name or False,   
-                                        self.partner_id.name or False, 
-                                        self.equipment_id.name or False,  
-                                        self.category_id.name or False,  
-                                        self.state_machine or False,  
-                                        self.priority or False,  
+                                        self.name or False,
+                                        self.partner_id.name or False,
+                                        self.equipment_id.name or False,
+                                        self.category_id.name or False,
+                                        self.state_machine or False,
+                                        self.priority or False,
                                         self.schedule_date or False,
                                         self.owner_user_id.name or False,
                                         self.motif or False,
                                         )
-            
+
             main_content = {
                             'subject': _('Service de maintenance - maintenance N° : %s') % (self.name),
                             'author_id': self.env.user.user_id.id,
@@ -471,8 +471,3 @@ class MaintenanceRequestt(models.Model):
                             'email_to': self.technician_user_id.login,
                         }
             self.env['mail.mail'].create(main_content).send()
-
-
-            
-            
-    
