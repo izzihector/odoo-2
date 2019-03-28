@@ -24,16 +24,16 @@
                                 help="show the Preventive maintenance for this Equipement">
                                <field name="ot_count" widget="statinfo" string="Ordre de travail"/>
                         </button>
-    
+
                         <button name="%(hr_equipment_request_action_pm)d"
                                 type="action"
                                 class="oe_inline oe_stat_button"
-                                icon="fa-bell" 
+                                icon="fa-bell"
                                 context="{'search_default_equipment_id': active_id}"
                                 help="show the Preventive maintenance for this Equipement">
                                <field name="pm_count" widget="statinfo" string="MP"/>
                         </button>
-                            
+
                         <button name="%(hr_equipment_request_action_cm)d"
                                 type="action"
                                 class="oe_inline oe_stat_button"
@@ -44,12 +44,8 @@
                         </button>
                     </div>
 
-                    <xpath expr="//field[@name='name']" position="after">
-                        <div class="o_row">
-                            <field name="client_id" widget="res_partner_many2one" placeholder="Company" domain="[('is_company', '=', True)]"/>
-                        </div>
-                    </xpath>
                     <xpath expr="//field[@name='category_id']" position="after">
+                            <field name="client_id" widget="res_partner_many2one" placeholder="Company" domain="[('is_company', '=', True)]"/>
                             <field name="brand_id" widget="many2one"/>
                             <field name="model_id" widget="many2one"/>
                             <field name="serial_no"/>
@@ -58,12 +54,8 @@
                             <field name="warranty_func"/>
                     </xpath>
                     <xpath expr="//field[@name='maintenance_team_id']" position="after">
-                            <field name="team_id" widget="many2one"/>
                             <field name="team_leader_id" widget="many2one"/>
                             <field name="helpdesk_team_id" widget="many2one"/>
-                            <field name="assign_date" groups="base.group_no_one"/>
-                            <field name="scrap_date" groups="base.group_no_one"/>
-                            <field name="location" string="Location"/>
                             <field name="zone_id" widget="many2one"/>
                     </xpath>
                     <notebook>
@@ -84,7 +76,7 @@
                                     <field name="software_id"/>
                                 </tree>
                             </field>
-                        </page> 
+                        </page>
                         <page string="Network">
                             <field name="network_ids" >
                                  <tree editable="bottom">
@@ -120,13 +112,13 @@
                             </field>
                         </page>
                     </notebook>
-    
+
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
-         
+
             </field>
         </record>
 
@@ -238,7 +230,7 @@
             </field>
         </record>
 
-    <!-- Brand - Form - View -->   
+    <!-- Brand - Form - View -->
     <record id="maintenance_equipment_brand_view_form" model="ir.ui.view">
         <field name="name">maintenance.equipment.brand.form</field>
         <field name="model">maintenance.equipment.brand</field>
@@ -253,7 +245,7 @@
                         </group>
                         <group>
                         <field name="manager_id"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -265,7 +257,7 @@
         </field>
     </record>
 
-    <!-- Brand - Tree - View -->  
+    <!-- Brand - Tree - View -->
     <record id="maintenance_equipment_brand_view_tree" model="ir.ui.view">
         <field name="name">maintenance.equipment.brand.tree</field>
         <field name="model">maintenance.equipment.brand</field>
@@ -279,7 +271,7 @@
         </field>
     </record>
 
-    <!-- Brand - Action - View --> 
+    <!-- Brand - Action - View -->
     <record id="maintenance_equipment_brand_action_view" model="ir.actions.act_window">
         <field name="name">Brand</field>
         <field name="res_model">maintenance.equipment.brand</field>
@@ -302,7 +294,7 @@
                         </group>
                         <group>
                         <field name="manager_id"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -333,7 +325,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        
+
         <!-- Model Brand-->
         <record id="maintenance_equipment_model_view_form" model="ir.ui.view">
             <field name="name">maintenance.equipment.model.form</field>
@@ -349,7 +341,7 @@
                         </group>
                         <group>
                         <field name="brand_id"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -424,7 +416,7 @@
                         </group>
                         <group>
                             <field name="code"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -435,7 +427,7 @@
             </form>
         </field>
     </record>
-    
+
     <record id="maintenance_software_type_view_tree" model="ir.ui.view">
         <field name="name">maintenance.equipment.software.type.tree</field>
         <field name="model">maintenance.equipment.software.type</field>
@@ -471,7 +463,7 @@
                         </group>
                         <group>
                             <field name="software_type_id"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -482,7 +474,7 @@
             </form>
         </field>
     </record>
-    
+
     <record id="maintenance_equipment_software_view_tree" model="ir.ui.view">
         <field name="name">maintenance.equipment.software.tree</field>
         <field name="model">maintenance.equipment.software</field>
@@ -518,7 +510,7 @@
                         </group>
                         <group>
                             <field name="code"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -529,7 +521,7 @@
             </form>
         </field>
     </record>
-    
+
     <record id="maintenance_dicom_type_view_tree" model="ir.ui.view">
         <field name="name">maintenance.dicom.type.tree</field>
         <field name="model">maintenance.dicom.type</field>
@@ -567,7 +559,7 @@
                         <group>
                             <field name="equipment_id"/>
                             <field name="dicom_type_id"/>
-                        </group> 
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -578,7 +570,7 @@
             </form>
         </field>
     </record>
-    
+
     <record id="maintenance_equipment_dicom_view_tree" model="ir.ui.view">
         <field name="name">maintenance.equipment.dicom.tree</field>
         <field name="model">maintenance.equipment.dicom</field>
@@ -601,5 +593,5 @@
             <field name="view_mode">tree,form</field>
     </record>
 
-                       
+
 </odoo>
