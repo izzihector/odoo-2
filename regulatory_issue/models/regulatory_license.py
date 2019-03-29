@@ -35,3 +35,4 @@ class RegulatoryLicense(models.Model):
     expiration_date = fields.Date(u'Expiration Date')
     description=fields.Text('Description')
     file=fields.Binary(u'File')
+    email=fields.Char('Email', help="Email address of the Team")

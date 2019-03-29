@@ -12,17 +12,17 @@
                           <h1>
                               <field name="name" placeholder="Certificate Name"/>
                           </h1>
-                  </div>
-                  <group>
+                      </div>
                       <group>
+                        <group>
                           <field name="ctni"/>
                           <field name="technical_file"/>
                           <field name="criterion_expiration_date" widget="date"/>
                           <field name="date_expiration_authenticated_seal" widget="date"/>
+                        </group>
                       </group>
-                  </group>
-                  <field name='description' placeholder="Description ......."/>
-              </sheet>
+                      <field name='description' placeholder="Description ......."/>
+                    </sheet>
               </form>
             </field>
         </record>
