@@ -2,6 +2,168 @@
 <odoo>
     <data>
 
+      <record id="regulatory_technical_file_registry_stage_view_search" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.registry.stage.view.search</field>
+          <field name="model">regulatory.technical.file.registry.stage</field>
+          <field name="arch" type="xml">
+              <search string="Technical File Registry Stage">
+                 <field name="name" string="Technical File Registry Stage"/>
+              </search>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_registry_stage_view_tree" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.registry.stage.view.tree</field>
+          <field name="model">regulatory.technical.file.registry.stage</field>
+          <field name="arch" type="xml">
+              <tree string="Technical File Registry Stage" editable="top">
+                  <field name="sequence" widget="handle"/>
+                  <field name="name"/>
+                  <field name="fold"/>
+                  <field name="done"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_registry_stage_view_kanban" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.registry.stage.view.kanban</field>
+          <field name="model">regulatory.technical.file.registry.stage</field>
+          <field name="arch" type="xml">
+              <kanban class="o_kanban_mobile">
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div t-attf-class="oe_kanban_global_click">
+                              <div>
+                                  <strong><field name="name"/></strong>
+                              </div>
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+      <!-- stages : actions -->
+      <record id="regulatory_technical_file_registry_stage_action" model="ir.actions.act_window">
+          <field name="name">Technical File Registry Stages</field>
+          <field name="res_model">regulatory.technical.file.registry.stage</field>
+          <field name="view_mode">tree,kanban,form</field>
+          <field name="view_type">form</field>
+          <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+              Add a new stage in the Technical File Registry
+            </p>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_creation_stage_view_search" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.creation.stage.view.search</field>
+          <field name="model">regulatory.technical.file.creation.stage</field>
+          <field name="arch" type="xml">
+              <search string="Technical File Creation Stage">
+                 <field name="name" string="Technical File Creation Stage"/>
+              </search>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_creation_stage_view_tree" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.creation.stage.view.tree</field>
+          <field name="model">regulatory.technical.file.creation.stage</field>
+          <field name="arch" type="xml">
+              <tree string="Technical File Creation Stage" editable="top">
+                  <field name="sequence" widget="handle"/>
+                  <field name="name"/>
+                  <field name="fold"/>
+                  <field name="done"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_creation_stage_view_kanban" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.creation.stage.view.kanban</field>
+          <field name="model">regulatory.technical.file.creation.stage</field>
+          <field name="arch" type="xml">
+              <kanban class="o_kanban_mobile">
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div t-attf-class="oe_kanban_global_click">
+                              <div>
+                                  <strong><field name="name"/></strong>
+                              </div>
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+      <!-- stages : actions -->
+      <record id="regulatory_technical_file_creation_stage_action" model="ir.actions.act_window">
+          <field name="name">Technical File Creation Stages</field>
+          <field name="res_model">regulatory.technical.file.creation.stage</field>
+          <field name="view_mode">tree,kanban,form</field>
+          <field name="view_type">form</field>
+          <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+              Add a new stage in the Technical File Creation
+            </p>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_modification_stage_view_search" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.modification.stage.view.search</field>
+          <field name="model">regulatory.technical.file.modification.stage</field>
+          <field name="arch" type="xml">
+              <search string="Technical File Modification Stage">
+                 <field name="name" string="Technical File Modification Stage"/>
+              </search>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_modification_stage_view_tree" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.modification.stage.view.tree</field>
+          <field name="model">regulatory.technical.file.modification.stage</field>
+          <field name="arch" type="xml">
+              <tree string="Technical File Modification Stage" editable="top">
+                  <field name="sequence" widget="handle"/>
+                  <field name="name"/>
+                  <field name="fold"/>
+                  <field name="done"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_modification_stage_view_kanban" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.modification.stage.view.kanban</field>
+          <field name="model">regulatory.technical.file.modification.stage</field>
+          <field name="arch" type="xml">
+              <kanban class="o_kanban_mobile">
+                  <templates>
+                      <t t-name="kanban-box">
+                          <div t-attf-class="oe_kanban_global_click">
+                              <div>
+                                  <strong><field name="name"/></strong>
+                              </div>
+                          </div>
+                      </t>
+                  </templates>
+              </kanban>
+          </field>
+      </record>
+
+      <!-- stages : actions -->
+      <record id="regulatory_technical_file_modification_stage_action" model="ir.actions.act_window">
+          <field name="name">Technical File Modification Stages</field>
+          <field name="res_model">regulatory.technical.file.modification.stage</field>
+          <field name="view_mode">tree,kanban,form</field>
+          <field name="view_type">form</field>
+          <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+              Add a new stage in the Technical File Modification
+            </p>
+          </field>
+      </record>
+
       <record id="regulatory_technical_file_type_area_view_form" model="ir.ui.view">
           <field name="name">regulatory.technical.file.type.area.view.form</field>
           <field name="model">regulatory.technical.file.type.area</field>
@@ -297,6 +459,18 @@
           id="regulatory_technical_file_group"
           parent="regulatory_management_configuration"
           action="regulatory_technical_file_group_action"/>
+        <menuitem
+          id="regulatory_technical_file_modification_stage"
+          parent="regulatory_management_configuration"
+          action="regulatory_technical_file_modification_stage_action"/>
+        <menuitem
+          id="regulatory_technical_file_creation_stage"
+          parent="regulatory_management_configuration"
+          action="regulatory_technical_file_creation_stage_action"/>
+        <menuitem
+          id="regulatory_technical_file_registry_stage"
+          parent="regulatory_management_configuration"
+          action="regulatory_technical_file_registry_stage_action"/>
 
     </data>
 </odoo>

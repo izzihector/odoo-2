@@ -43,6 +43,39 @@ class RegulatoryTechnicalFileGroup(models.Model):
     description=fields.Text('Description')
 
 
+class RegulatoryTechnicalFileRegistryStage(models.Model):
+    _name = 'regulatory.technical.file.registry.stage'
+    _description = 'Regulatory Technical File Registry Stage'
+    _order = 'sequence, id'
+
+    name = fields.Char('Name', required=True, translate=True)
+    sequence = fields.Integer('Sequence', default=20)
+    fold = fields.Boolean('Folded in Regulatory Technical File Registry Pipe')
+    done = fields.Boolean('Request Done')
+
+
+class RegulatoryTechnicalFileCreationStage(models.Model):
+    _name = 'regulatory.technical.file.creation.stage'
+    _description = 'Regulatory Technical File Creation Stage'
+    _order = 'sequence, id'
+
+    name = fields.Char('Name', required=True, translate=True)
+    sequence = fields.Integer('Sequence', default=20)
+    fold = fields.Boolean('Folded in Regulatory Technical File Creation Pipe')
+    done = fields.Boolean('Request Done')
+
+
+class RegulatoryTechnicalFileModificationStage(models.Model):
+    _name = 'regulatory.technical.file.modification.stage'
+    _description = 'Regulatory Technical File Modification Stage'
+    _order = 'sequence, id'
+
+    name = fields.Char('Name', required=True, translate=True)
+    sequence = fields.Integer('Sequence', default=20)
+    fold = fields.Boolean('Folded in Regulatory Technical File Modification Pipe')
+    done = fields.Boolean('Request Done')
+
+
 class RegulatoryTechnicalFile(models.Model):
     _name = 'regulatory.technical.file'
     _description = 'Regulatory Technical File'
