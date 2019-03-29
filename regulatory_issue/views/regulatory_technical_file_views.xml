@@ -72,13 +72,26 @@
             <field name="name">regulatory.technical.file.view.form</field>
             <field name="model">regulatory.technical.file</field>
             <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>
-                            <field name="name"/>
-                        </group>
-                    </sheet>
-                </form>
+              <form string="Regulatory Technical File">
+                  <sheet>
+                      <div class="oe_title">
+                          <label for="name" class="oe_edit_only" string="Name"/>
+                          <h1>
+                              <field name="name" placeholder="Name"/>
+                          </h1>
+                  </div>
+                  <group>
+                      <group>
+                          <field name="technical_file_number"/>
+                          <field name="type_area_id" widget="many2one"/>
+                      </group>
+                      <group>
+                        <field name="group_id" widget="many2one"/>
+                      </group>
+                  </group>
+                  <field name='description' placeholder="Description ......."/>
+              </sheet>
+              </form>
             </field>
         </record>
 
@@ -88,6 +101,9 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="technical_file_number"/>
+                    <field name="type_area_id" widget="many2one"/>
+                    <field name="group_id" widget="many2one"/>
                 </tree>
             </field>
         </record>
@@ -98,6 +114,149 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <record id="regulatory_technical_file_registry_view_form" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.registry.view.form</field>
+            <field name="model">regulatory.technical.file.registry</field>
+            <field name="arch" type="xml">
+              <form string="Technical File Registry">
+                  <sheet>
+                      <div class="oe_title">
+                          <label for="name" class="oe_edit_only" string="Name"/>
+                          <h1>
+                              <field name="name" placeholder="Name"/>
+                          </h1>
+                  </div>
+                  <group>
+                      <group>
+                          <field name="technical_file_number"/>
+                          <field name="type_area_id" widget="many2one"/>
+                      </group>
+                      <group>
+                        <field name="group_id" widget="many2one"/>
+                      </group>
+                  </group>
+                  <field name='description' placeholder="Description ......."/>
+              </sheet>
+              </form>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_registry_view_tree" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.registry.view.tree</field>
+            <field name="model">regulatory.technical.file.registry</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="technical_file_id" widget="many2one"/>
+                    <field name="sales_team_id" widget="many2one"/>
+                    <field name="responsible_id" widget="many2one"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_registry_action" model="ir.actions.act_window">
+            <field name="name">Technical File Registry</field>
+            <field name="res_model">regulatory.technical.file.registry</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="regulatory_technical_file_creation_view_form" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.creation.view.form</field>
+            <field name="model">regulatory.technical.file.creation</field>
+            <field name="arch" type="xml">
+              <form string="Technical File Creation">
+                  <sheet>
+                      <div class="oe_title">
+                          <label for="name" class="oe_edit_only" string="Name"/>
+                          <h1>
+                              <field name="name" placeholder="Name"/>
+                          </h1>
+                  </div>
+                  <group>
+                      <group>
+                          <field name="sales_team_id" widget="many2one"/>
+                      </group>
+                      <group>
+                        <field name="responsible_id" widget="many2one"/>
+                      </group>
+                  </group>
+                  <field name='observation' placeholder="Observation ......."/>
+              </sheet>
+              </form>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_creation_view_tree" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.creation.view.tree</field>
+            <field name="model">regulatory.technical.file.creation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="sales_team_id" widget="many2one"/>
+                    <field name="responsible_id" widget="many2one"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_creation_action" model="ir.actions.act_window">
+            <field name="name">Technical File Creation</field>
+            <field name="res_model">regulatory.technical.file.creation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="regulatory_technical_file_modification_view_form" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.modification.view.form</field>
+            <field name="model">regulatory.technical.file.modification</field>
+            <field name="arch" type="xml">
+              <form string="Technical File Modification">
+                  <sheet>
+                      <div class="oe_title">
+                          <label for="name" class="oe_edit_only" string="Name"/>
+                          <h1>
+                              <field name="name" placeholder="Name"/>
+                          </h1>
+                  </div>
+                  <group>
+                      <group>
+                          <field name="technical_file_id" widget="many2one"/>
+                          <field name="sales_team_id" widget="many2one"/>
+                      </group>
+                      <group>
+                        <field name="responsible_id" widget="many2one"/>
+                        <field name="responsible_sales_id" widget="many2one"/>
+                      </group>
+                  </group>
+                  <field name='observation' placeholder="Observation ......."/>
+              </sheet>
+              </form>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_modification_view_tree" model="ir.ui.view">
+            <field name="name">regulatory.technical.file.modification.view.tree</field>
+            <field name="model">regulatory.technical.file.modification</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="technical_file_id" widget="many2one"/>
+                    <field name="sales_team_id" widget="many2one"/>
+                    <field name="responsible_id" widget="many2one"/>
+                    <field name="responsible_sales_id" widget="many2one"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="regulatory_technical_file_modification_action" model="ir.actions.act_window">
+            <field name="name">Technical File Modification</field>
+            <field name="res_model">regulatory.technical.file.modification</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
 
         <menuitem
             id="regulatory_management_registry"
@@ -111,15 +270,33 @@
             action="regulatory_technical_file_action"
             name="Technical File"
             sequence="1"/>
+        <menuitem
+          id="regulatory_technical_file_creation"
+          parent="regulatory_management_registry"
+          action="regulatory_technical_file_creation_action"
+          name="Creation"
+          sequence="2"/>
+        <menuitem
+          id="regulatory_technical_file_registry"
+          parent="regulatory_management_registry"
+          action="regulatory_technical_file_registry_action"
+          name="Registry"
+          sequence="3"/>
+        <menuitem
+          id="regulatory_technical_file_modification"
+          parent="regulatory_management_registry"
+          action="regulatory_technical_file_modification_action"
+          name="Modification"
+          sequence="4"/> 
 
         <menuitem
-                id="regulatory_technical_file_type_area"
-                parent="regulatory_management_configuration"
-                action="regulatory_technical_file_type_area_action"/>
-            <menuitem
-                id="regulatory_technical_file_group"
-                parent="regulatory_management_configuration"
-                action="regulatory_technical_file_group_action"/>
+          id="regulatory_technical_file_type_area"
+          parent="regulatory_management_configuration"
+          action="regulatory_technical_file_type_area_action"/>
+        <menuitem
+          id="regulatory_technical_file_group"
+          parent="regulatory_management_configuration"
+          action="regulatory_technical_file_group_action"/>
 
     </data>
 </odoo>
