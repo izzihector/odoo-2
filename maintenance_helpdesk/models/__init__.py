@@ -3,3 +3,4 @@
 
 from . import helpdesk
 from . import maintenance
+from . import maintenance_equipment
