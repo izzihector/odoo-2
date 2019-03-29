@@ -459,26 +459,6 @@
             <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem
-        id="menu_maintenance_cat"
-        name="Equipment Categories"
-        parent="menu_maintenance_configuration"
-        action="hr_equipment_category_action"
-        sequence="2"/>
-
-    <menuitem
-      id="menu_maintenance_equipment_brand"
-      name="Brand"
-      parent="maintenance.menu_maintenance_configuration"
-      action="maintenance_equipment_brand_action_view"
-      sequence="4"/>
-
-    <!-- Zone -->
-     <menuitem
-      id="menu_maintenance_equipment_zone"
-      name="Zone"
-      parent="maintenance.menu_maintenance_configuration"
-      action="maintenance_equipment_zone_action_view" />
 
 
 </odoo>
