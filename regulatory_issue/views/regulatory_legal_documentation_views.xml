@@ -169,7 +169,7 @@
             id="regulatory_management_legal_documentation"
             parent="regulatory_management_menu"
             name="Legal Documents"
-            sequence="4" />
+            sequence="2" />
 
         <menuitem
             id="regulatory_legal_documentation"

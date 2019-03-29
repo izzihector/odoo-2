@@ -39,7 +39,7 @@
             id="regulatory_management_license"
             parent="regulatory_management_menu"
             action="regulatory_license_action"
-            sequence="4"/>
+            sequence="3"/>
 
     </data>
 </odoo>
