@@ -166,10 +166,16 @@
         </record>
 
         <menuitem
-            id="regulatory_legal_documentation"
+            id="regulatory_management_legal_documentation"
             parent="regulatory_management_menu"
+            name="Legal Documentation"
+            sequence="4" />
+
+        <menuitem
+            id="regulatory_legal_documentation"
+            parent="regulatory_management_legal_documentation"
             action="regulatory_legal_documentation_action"
-            sequence="3"/>
+            sequence="1"/>
 
             <menuitem
                 id="regulatory_management_configuration"

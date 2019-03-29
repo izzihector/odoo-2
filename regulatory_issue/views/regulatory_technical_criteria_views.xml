@@ -50,7 +50,7 @@
 
         <menuitem
             id="regulatory_technical_criteria"
-            parent="regulatory_management_menu"
+            parent="regulatory_management_legal_documentation"
             action="regulatory_technical_criteria_action"
             sequence="2"/>
 
