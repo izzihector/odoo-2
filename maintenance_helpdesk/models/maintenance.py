@@ -5,6 +5,6 @@ from odoo import fields, models
 
 
 class MaintenanceRequest(models.Model):
-    _inherit = 'maintenance.equipment'
+    _inherit = 'maintenance.request'
 
     ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket')

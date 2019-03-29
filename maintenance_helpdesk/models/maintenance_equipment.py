@@ -77,9 +77,7 @@ class MaintenanceEquipmentSoftware(models.Model):
 
     name=fields.Char('Software',required=True)
     version=fields.Char('Version')
-
     software_type_id=fields.Many2one('maintenance.equipment.software.type','Software Type')
-
     description=fields.Text('Description')
 
 
