@@ -168,7 +168,7 @@
         <menuitem
             id="regulatory_management_legal_documentation"
             parent="regulatory_management_menu"
-            name="Legal Documentation"
+            name="Factory Legal Documents"
             sequence="4" />
 
         <menuitem

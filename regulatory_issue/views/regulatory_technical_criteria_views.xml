@@ -52,6 +52,7 @@
             id="regulatory_technical_criteria"
             parent="regulatory_management_legal_documentation"
             action="regulatory_technical_criteria_action"
+            name="Technical Criteria"
             sequence="2"/>
 
     </data>
