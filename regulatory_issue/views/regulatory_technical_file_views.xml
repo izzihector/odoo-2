@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
+
+      <record id="regulatory_technical_file_type_area_view_form" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.type.area.view.form</field>
+          <field name="model">regulatory.technical.file.type.area</field>
+          <field name="arch" type="xml">
+              <form string="Type Area">
+                  <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="description"/>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_view_tree" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.view.tree</field>
+          <field name="model">regulatory.technical.file.type.area</field>
+          <field name="arch" type="xml">
+              <tree>
+                <field name="name"/>
+                <field name="description"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_type_area_action" model="ir.actions.act_window">
+          <field name="name">Technical File Type Area</field>
+          <field name="res_model">regulatory.technical.file.type.area</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
+      <record id="regulatory_technical_file_group_view_form" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.group.view.form</field>
+          <field name="model">regulatory.technical.file.group</field>
+          <field name="arch" type="xml">
+              <form string="Type Area">
+                  <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="description"/>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_group_view_tree" model="ir.ui.view">
+          <field name="name">regulatory.technical.file.group.view.tree</field>
+          <field name="model">regulatory.technical.file.group</field>
+          <field name="arch" type="xml">
+              <tree>
+                <field name="name"/>
+                <field name="description"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="regulatory_technical_file_group_action" model="ir.actions.act_window">
+          <field name="name">Technical File Group</field>
+          <field name="res_model">regulatory.technical.file.group</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
+
         <record id="regulatory_technical_file_view_form" model="ir.ui.view">
             <field name="name">regulatory.technical.file.view.form</field>
             <field name="model">regulatory.technical.file</field>
@@ -44,6 +111,15 @@
             action="regulatory_technical_file_action"
             name="Technical File"
             sequence="1"/>
+
+        <menuitem
+                id="regulatory_technical_file_type_area"
+                parent="regulatory_management_configuration"
+                action="regulatory_technical_file_type_area_action"/>
+            <menuitem
+                id="regulatory_technical_file_group"
+                parent="regulatory_management_configuration"
+                action="regulatory_technical_file_group_action"/>
 
     </data>
 </odoo>
