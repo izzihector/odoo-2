@@ -33,9 +33,16 @@
         </record>
 
         <menuitem
-            id="regulatory_technical_file"
+            id="regulatory_management_registry"
             parent="regulatory_management_menu"
+            name="Registry"
+            sequence="1"/>
+
+        <menuitem
+            id="regulatory_technical_file"
+            parent="regulatory_management_registry"
             action="regulatory_technical_file_action"
+            name="Technical File"
             sequence="1"/>
 
     </data>
