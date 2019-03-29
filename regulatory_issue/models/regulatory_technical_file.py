@@ -49,7 +49,7 @@ class RegulatoryTechnicalFile(models.Model):
 
     name = fields.Char(string="Generic Name", required=True, translate=True)
     technical_file_number=fields.Char('Technical File Number')
-    Description=fields.Text('Description')
+    description=fields.Text('Description')
     group_id = fields.Many2one('regulatory.technical.file.group', string='Group')
     type_area_id = fields.Many2one('regulatory.technical.file.type.area', string='Type Area')
 
@@ -59,6 +59,7 @@ class RegulatoryTechnicalFileRegistry(models.Model):
     _description = 'Regulatory Technical File Registry'
 
     name = fields.Char(string="Proposed Name for the File", required=True, translate=True)
+    technical_file_id = fields.Many2one('regulatory.technical.file', string='Technical File Number')
     observation=fields.Text('Observation')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')
@@ -83,3 +84,4 @@ class RegulatoryTechnicalFileModification(models.Model):
     observation=fields.Text('Description')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')
+    responsible_sales_id = fields.Many2one('res.users', string='Responsible Sale')
