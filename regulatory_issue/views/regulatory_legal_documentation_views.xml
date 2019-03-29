@@ -168,13 +168,14 @@
         <menuitem
             id="regulatory_management_legal_documentation"
             parent="regulatory_management_menu"
-            name="Factory Legal Documents"
+            name="Legal Documents"
             sequence="4" />
 
         <menuitem
             id="regulatory_legal_documentation"
             parent="regulatory_management_legal_documentation"
             action="regulatory_legal_documentation_action"
+            name="Factory Legal Documents"
             sequence="1"/>
 
             <menuitem
