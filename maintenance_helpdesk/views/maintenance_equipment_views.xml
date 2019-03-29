@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <!-- equipment : views -->
+        <record id="maintenance_equipment_view_form_inherit" model="ir.ui.view">
+            <field name="name">maintenance.equipment.view.form.inherit</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//field[@name='category_id']" position="after">
+                            <field name="client_id" widget="res_partner_many2one" placeholder="Company" domain="[('is_company', '=', True)]"/>
+                            <field name="brand_id" widget="many2one"/>
+                            <field name="model_id" widget="many2one"/>
+                    </xpath>
+                    <xpath expr="//field[@name='maintenance_team_id']" position="after">
+                            <field name="team_leader_id" widget="many2one"/>
+                            <field name="helpdesk_team_id" widget="many2one"/>
+                            <field name="zone_id" widget="many2one"/>
+                    </xpath>
+                    <notebook>
+                        <page string="Softwares">
+                            <field name="software_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="software_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Network">
+                            <field name="network_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="subred"/>
+                                    <field name="gateway"/>
+                                    <field name="dns1"/>
+                                    <field name="dns2"/>
+                                    <field name="mac_address"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Dicom">
+                            <field name="dicom_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="ip"/>
+                                    <field name="port"/>
+                                    <field name="dicom_type_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Accesory">
+                            <field name="child_ids" >
+                                 <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="number_equipment" />
+                                    <field name="brand_id"/>
+                                    <field name="model_id"/>
+                                    <field name="serial_no"/>
+                                    <field name="category_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+
+            </field>
+        </record>
+
+
+        <record id="maintenance_equipment_category_view_form_inherit" model="ir.ui.view">
+          <field name="name">maintenance.equipment.category.view.form.inherit</field>
+          <field name="model">maintenance.equipment.category</field>
+          <field name="inherit_id" ref="maintenance.hr_equipment_category_view_form"/>
+          <field name="arch" type="xml">
+              <group>
+                  <field name="team_id" class="oe_inline"/>
+                  <field name="helpdesk_team_id" class="oe_inline"/>
+              </group>
+          </field>
+        </record>
+
+        <record id="maintenance_equipment_category_view_tree_inherit" model="ir.ui.view">
+            <field name="name">maintenance.equipment.category.view.tree.inherit</field>
+            <field name="model">maintenance.equipment.category</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_category_view_tree"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="team_id" class="oe_inline"/>
+                    <field name="helpdesk_team_id" class="oe_inline"/>
+                </tree>
+            </field>
+        </record>
+
+    <!-- Brand - Form - View -->
+    <record id="maintenance_equipment_brand_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.brand.view.form</field>
+        <field name="model">maintenance.equipment.brand</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Brand">
+                <sheet>
+                    <group>
+                        <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        </group>
+                        <group>
+                        <field name="manager_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Brand - Tree - View -->
+    <record id="maintenance_equipment_brand_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.brand.view.tree</field>
+        <field name="model">maintenance.equipment.brand</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Brand">
+                <field name="name" />
+                <field name="code" />
+                <field name="manager_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Brand - Action - View -->
+    <record id="maintenance_equipment_brand_action_view" model="ir.actions.act_window">
+        <field name="name">Brand</field>
+        <field name="res_model">maintenance.equipment.brand</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+             <!-- zone-->
+        <record id="maintenance_equipment_zone_view_form" model="ir.ui.view">
+            <field name="name">maintenance.equipment.zone.view.form</field>
+            <field name="model">maintenance.equipment.zone</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Zone">
+                    <sheet>
+                    <group>
+                        <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        </group>
+                        <group>
+                        <field name="manager_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="maintenance_equipment_zone_view_tree" model="ir.ui.view">
+            <field name="name">maintenance.equipment.zone.view.tree</field>
+            <field name="model">maintenance.equipment.zone</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Zone line">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="manager_id" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="maintenance_equipment_zone_action_view" model="ir.actions.act_window">
+            <field name="name">Zone</field>
+            <field name="res_model">maintenance.equipment.zone</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Model Brand-->
+        <record id="maintenance_equipment_model_view_form" model="ir.ui.view">
+            <field name="name">maintenance.equipment.model.view.form</field>
+            <field name="model">maintenance.equipment.model</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Model">
+                    <sheet>
+                    <group>
+                        <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        </group>
+                        <group>
+                        <field name="brand_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="maintenance_equipment_model_view_tree" model="ir.ui.view">
+            <field name="name">maintenance.equipment.model.view.tree</field>
+            <field name="model">maintenance.equipment.model</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Model">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="brand_id" />
+                </tree>
+            </field>
+        </record>
+
+
+    <record id="maintenance_equipment_model_action_view" model="ir.actions.act_window">
+            <field name="name">Model</field>
+            <field name="res_model">maintenance.equipment.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+     <!-- Team : views -->
+    <record id="maintenance_equipment_team_view_form_inherit" model="ir.ui.view">
+        <field name="name">maintenance.equipment.team.view.form.inherit</field>
+        <field name="model">maintenance.team</field>
+        <field name="inherit_id" ref="maintenance.maintenance_team_view_form"/>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="team_leader_id" widget="many2one"/>
+                    </group>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+    <!-- Tree : views -->
+    <record id="maintenance_equipment_team_view_tree_inherit" model="ir.ui.view">
+        <field name="name">maintenance.equipment.team.view.tree.inherit</field>
+        <field name="model">maintenance.team</field>
+        <field name="inherit_id" ref="maintenance.maintenance_team_view_tree"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="team_leader_id" class="oe_inline"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- Software Type Views-->
+    <record id="maintenance_equipment_software_type_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.software.type.view.form</field>
+        <field name="model">maintenance.equipment.software.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Software Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="maintenance_equipment_software_type_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.software.type.view.tree</field>
+        <field name="model">maintenance.equipment.software.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Software Type">
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_software_type_action_view" model="ir.actions.act_window">
+            <field name="name">Software Type</field>
+            <field name="res_model">maintenance.equipment.software.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Software Views-->
+    <record id="maintenance_equipment_software_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.software.view.form</field>
+        <field name="model">maintenance.equipment.software</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Software">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="version"/>
+                        </group>
+                        <group>
+                            <field name="software_type_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="maintenance_equipment_software_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.software.view.tree</field>
+        <field name="model">maintenance.equipment.software</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Software">
+                <field name="name" />
+                <field name="version" />
+                <field name="software_type_id" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_software_action_view" model="ir.actions.act_window">
+            <field name="name">Software</field>
+            <field name="res_model">maintenance.equipment.software</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Dicom Type Views-->
+    <record id="maintenance_equipment_dicom_type_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.dicom.type.view.form</field>
+        <field name="model">maintenance.equipment.dicom.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Dicom Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="maintenance_equipment_dicom_type_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.dicom.type.view.tree</field>
+        <field name="model">maintenance.equipment.dicom.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Dicom Type">
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_dicom_type_action_view" model="ir.actions.act_window">
+            <field name="name">Dicom Type</field>
+            <field name="res_model">maintenance.equipment.dicom.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Dicom Views-->
+    <record id="maintenance_equipment_dicom_view_form" model="ir.ui.view">
+        <field name="name">maintenance.equipment.dicom.view.form</field>
+        <field name="model">maintenance.equipment.dicom</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Dicom">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="ip"/>
+                            <field name="port"/>
+                        </group>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="dicom_type_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="maintenance_equipment_dicom_view_tree" model="ir.ui.view">
+        <field name="name">maintenance.equipment.dicom.view.tree</field>
+        <field name="model">maintenance.equipment.dicom</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Dicom">
+                <field name="name" />
+                <field name="ip" />
+                <field name="port" />
+                <field name="dicom_type_id" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_dicom_action_view" model="ir.actions.act_window">
+            <field name="name">Dicom</field>
+            <field name="res_model">maintenance.equipment.dicom</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_maintenance_cat"
+        name="Equipment Categories"
+        parent="menu_maintenance_configuration"
+        action="hr_equipment_category_action"
+        sequence="2"/>
+
+    <menuitem
+      id="menu_maintenance_equipment_brand"
+      name="Brand"
+      parent="maintenance.menu_maintenance_configuration"
+      action="maintenance_equipment_brand_action_view"
+      sequence="4"/>
+
+    <!-- Zone -->
+     <menuitem
+      id="menu_maintenance_equipment_zone"
+      name="Zone"
+      parent="maintenance.menu_maintenance_configuration"
+      action="maintenance_equipment_zone_action_view" />
+
+
+</odoo>

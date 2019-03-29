@@ -16,7 +16,34 @@ from dateutil.relativedelta import *
 class MaintenanceEquipment(models.Model):
     _inherit = 'maintenance.equipment'
 
+
+    brand_id=fields.Many2one('maintenance.equipment.brand', u'Brand')
+
+    team_id=fields.Many2one('maintenance.team', related='category_id.team_id', string='Teams', store=True, readonly=True)
+
+    helpdesk_team_id=fields.Many2one('helpdesk.team', related='category_id.helpdesk_team_id', string='Helpdesk Team', store=True, readonly=True)
+
+    team_leader_id=fields.Many2one('res.users', related='category_id.team_id.team_leader_id', string='Leader Team', store=True, readonly=True)
+
+    zone_id=fields.Many2one('maintenance.equipment.zone', u'Zone')
+
+    client_id=fields.Many2one('res.partner', string='Client')
+
+    model_id=fields.Many2one('maintenance.equipment.model', u'Models')
+
+    parent_id=fields.Many2one('maintenance.equipment', u'Equipment Relation')
+
+    software_ids=fields.One2many('maintenance.equipment.software.list','equipment_id',u'Softwares')
+
+    network_ids=fields.One2many('maintenance.equipment.network','equipment_id',u'Networks')
+
+    dicom_ids=fields.One2many('maintenance.equipment.dicom','equipment_id',u'Dicom')
+
+    child_ids=fields.One2many('maintenance.equipment','parent_id',u'Accesory')
+
     number_equipment=fields.Char(u'N°')
+
+    image=fields.Binary(u'Image')
 
 
 class MaintenanceEquipmentBrand(models.Model):
