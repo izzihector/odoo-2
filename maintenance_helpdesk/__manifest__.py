@@ -19,6 +19,7 @@ This shortcut allows you to generate a Maintenance Request.
         'views/maintenance_request_views.xml',
         'views/helpdesk_maintenance_templates.xml',
         'views/helpdesk_views.xml',
+        'views/maintenance_equipment_views.xml'
     ],
     'auto_install': True,
 }
