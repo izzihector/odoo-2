@@ -129,7 +129,7 @@
                   </div>
                   <group>
                       <group>
-                          <field name="technical_file_number"/>
+                          <field name="technical_file_id" widget="many2one"/>
                           <field name="type_area_id" widget="many2one"/>
                       </group>
                       <group>
@@ -287,7 +287,7 @@
           parent="regulatory_management_registry"
           action="regulatory_technical_file_modification_action"
           name="Modification"
-          sequence="4"/> 
+          sequence="4"/>
 
         <menuitem
           id="regulatory_technical_file_type_area"
