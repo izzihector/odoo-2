@@ -143,6 +143,17 @@ class equipment_equipment(models.Model):
     image_medium = fields.Binary("Medium-sized image")
     category_ids = fields.Many2many('equipment.category', id1='equipment_id', id2='category_id', string='Tags')
 
+    brand_id=fields.Many2one('equipment.brand', u'Brand')
+    zone_id=fields.Many2one('equipment.zone', u'Zone')
+    client_id=fields.Many2one('res.partner', string='Client')
+    model_id=fields.Many2one('equipment.model', u'Models')
+    parent_id=fields.Many2one('equipment.equipment', u'Equipment Relation')
+
+    software_ids=fields.One2many('equipment.software.list','equipment_id',u'Softwares')
+    network_ids=fields.One2many('equipment.network','equipment_id',u'Networks')
+    dicom_ids=fields.One2many('equipment.dicom','equipment_id',u'Dicom')
+    child_ids=fields.One2many('equipment.equipment','parent_id',u'Accesory')
+
     _group_by_full = {
         'finance_state_id': _read_group_finance_state_ids,
         'warehouse_state_id': _read_group_warehouse_state_ids,
