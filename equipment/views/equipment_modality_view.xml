@@ -107,6 +107,6 @@
 			parent="menu_equipment_config"
 			action="equipment_modality_action_view"
 			groups="equipment.group_technical_support_manager"
-			sequence="11"/>
+			sequence="12"/>
 
 	</odoo>
