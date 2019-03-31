@@ -34,14 +34,16 @@
                             <h1>
                                 <field name="name"/>
                             </h1>
+														<h3>
+																<field name=s"equipment_number"/>
+														</h3>
                             <field name="category_ids" widget="many2many_tags" placeholder="Tags..."/>
                         </div>
                         <group>
-                            <field name="property_stock_equipment" domain="[('usage','=','equipment')]"/>
+													<field name="client_id" widget="many2one"/>
                         </group>
                         <group>
                             <group>
-                                <field name="criticality"/>
                                 <field name="user_id"/>
                             </group>
                             <group>
@@ -52,26 +54,28 @@
                             <page name="info" string="Info">
                                 <group>
                                     <group>
-                                        <field name="equipment_number"/>
-                                        <field name="model"/>
-                                        <field name="serial"/>
+																			<field name="brand_id" widget="many2one"/>
+                                      <field name="model_id"/>
+                                      <field name="serial"/>
                                     </group>
                                     <group>
-                                    </group>
-                                </group>
-                                <group string="Warranty">
-                                    <group>
-                                    <field name="manufacturer_id"/>
-                                    <field name="start_date"/>
-                                    <field name="warranty_start_date"/>
-                                    </group>
-                                    <group>
-                                    <field name="vendor_id"/>
-                                    <field name="purchase_date"/>
-                                    <field name="warranty_end_date"/>
+																			<field name="property_stock_equipment" domain="[('usage','=','equipment')]"/>
+																			<field name="criticality"/>
                                     </group>
                                 </group>
                             </page>
+														<page string="Warranty">
+															<group>
+																<field name="manufacturer_id"/>
+																<field name="start_date"/>
+																<field name="warranty_start_date"/>
+															</group>
+															<group>
+																<field name="vendor_id"/>
+																<field name="purchase_date"/>
+																<field name="warranty_end_date"/>
+															</group>
+														</page>
 														<page string="Softwares">
 		                            <field name="software_ids" >
 		                                 <tree editable="bottom">
