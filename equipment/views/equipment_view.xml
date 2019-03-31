@@ -35,7 +35,7 @@
                                 <field name="name"/>
                             </h1>
 														<h3>
-																<field name=s"equipment_number"/>
+																<field name="equipment_number"/>
 														</h3>
                             <field name="category_ids" widget="many2many_tags" placeholder="Tags..."/>
                         </div>
