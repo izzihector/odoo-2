@@ -113,7 +113,7 @@
 			parent="menu_equipment_config"
 			action="equipment_dicom_action_view"
 			groups="equipment.group_technical_support_manager"
-			sequence="7"/>
+			sequence="5"/>
 
 
 	</odoo>

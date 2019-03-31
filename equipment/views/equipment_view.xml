@@ -365,7 +365,7 @@
 		        id="menu_equipment_category"
 		        parent="menu_equipment_config"
 		        groups="equipment.group_technical_support_manager"
-		        sequence="100"/>
+		        sequence="1"/>
 
 			  <!-- Equipment state item -->
 				<menuitem
@@ -374,7 +374,7 @@
 				    id="menu_equipment_state"
 				    parent="menu_equipment_config"
 				    groups="equipment.group_technical_support_manager"
-				    sequence="100"/>
+				    sequence="2"/>
 
  	</data>
 </openerp>

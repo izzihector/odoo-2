@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<odoo>
+    <!-- network Views-->
+    <record id="equipment_network_view_form" model="ir.ui.view">
+        <field name="name">equipment.network.view.form</field>
+        <field name="model">equipment.network</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Network">
+                <sheet>
+									<div class="oe_title">
+											<label for="name" class="oe_edit_only"/>
+											<h1>
+													<field name="name"/>
+											</h1>
+											<field name="subred" placeholder="Subred..."/>
+									</div>
+                    <group>
+                        <group>
+                            <field name="gateway"/>
+                            <field name="dns1"/>
+                            <field name="dns2"/>
+                        </group>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="mac_address"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="equipment_network_view_tree" model="ir.ui.view">
+        <field name="name">equipment.network.view.tree</field>
+        <field name="model">equipment.network</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Network">
+                <field name="name" />
+                <field name="subred"/>
+                <field name="gateway"/>
+                <field name="mac_address"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="equipment_network_action_view" model="ir.actions.act_window">
+            <field name="name">Network</field>
+            <field name="res_model">equipment.network</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+		<!-- Equipment network item -->
+		<menuitem
+			name="Network"
+			id="menu_equipment_network"
+			parent="menu_equipment_config"
+			action="equipment_network_action_view"
+			groups="equipment.group_technical_support_manager"
+			sequence="4"/>
+
+
+	</odoo>

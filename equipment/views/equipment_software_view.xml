@@ -101,7 +101,7 @@
 			parent="menu_equipment_config"
 			action="equipment_software_type_action_view"
 			groups="equipment.group_technical_support_manager"
-			sequence="6"/>
+			sequence="8"/>
 
 		<!-- Equipment Software item -->
 		<menuitem
@@ -110,7 +110,7 @@
 			parent="menu_equipment_config"
 			action="equipment_software_action_view"
 			groups="equipment.group_technical_support_manager"
-			sequence="7"/>
+			sequence="9"/>
 
 
 	</odoo>

@@ -55,6 +55,6 @@
 			parent="menu_equipment_config"
 			action="equipment_zone_action_view"
 			groups="equipment.group_technical_support_manager"
-			sequence="4"/>
+			sequence="10"/>
 
 	</odoo>
