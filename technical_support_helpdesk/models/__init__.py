@@ -2,5 +2,4 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from . import helpdesk
-from . import maintenance
-from . import maintenance_equipment
+from . import technical_support

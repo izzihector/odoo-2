@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="website_helpdesk_maintenance_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit">
+    <template id="website_helpdesk_technical_support_template" name="Equipment" inherit_id="website_helpdesk_form.ticket_submit">
         <xpath expr="//div[@class='form-group row form-field o_website_form_required']" position="before">
             <div class="form-group row form-field o_website_form_required">
                 <div class="col-lg-3 col-md-4 text-right">
@@ -14,7 +14,7 @@
         </xpath>
     </template>
 
-    <template id="website_helpdesk_maintenance_tickets_followup_template" name="Helpdesk Maintenance Report" inherit_id="helpdesk.tickets_followup">
+    <template id="website_helpdesk_technical_support_tickets_followup_template" name="Helpdesk Technical Support Report" inherit_id="helpdesk.tickets_followup">
       <xpath expr="//div[@class='o_portal_messages_container mt32']" position="before">
         <div class="row justify-content-center text-center d-print-none pt-1 pb-4">
           <t>

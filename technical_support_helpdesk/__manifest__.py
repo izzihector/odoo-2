@@ -13,13 +13,11 @@ This module adds a shortcut the Maintenance in Helpdesk.
 This shortcut allows you to generate a Maintenance Request.
 
     """,
-    'depends': ['helpdesk', 'maintenance'],
+    'depends': ['helpdesk', 'technical_support'],
     'data': [
-        'security/ir.model.access.csv',
-        'views/maintenance_request_views.xml',
-        'views/helpdesk_maintenance_templates.xml',
+        'views/technical_support_request_views.xml',
+        'views/helpdesk_technical_support_templates.xml',
         'views/helpdesk_views.xml',
-        'views/maintenance_equipment_views.xml'
     ],
     'auto_install': True,
 }

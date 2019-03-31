@@ -3,8 +3,7 @@
 
 from odoo import fields, models
 
-
-class MaintenanceRequest(models.Model):
-    _inherit = 'maintenance.request'
+class TechnicalSupportRequest(models.Model):
+    _inherit = 'technical_support.request'
 
     ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket')
