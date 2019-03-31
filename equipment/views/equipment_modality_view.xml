@@ -16,6 +16,11 @@
 		                        <field name="name"/>
 		                    </h1>
 											</div>
+							<group>
+								<group>
+									<field name="manager_id" widget="many2one"/>
+								</group>
+							</group>
 		                <field name="note" nolabel="1"/>
 		                </sheet>
 		            </form>
