@@ -1,0 +1,529 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* equipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130204-000102\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-29 04:56+0000\n"
+"PO-Revision-Date: 2013-03-29 04:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_equipment
+msgid "equipments"
+msgstr "Активы"
+
+#. module: base
+#: model:ir.module.module,summary:base.module_equipment
+msgid "equipment Management"
+msgstr "Управление Активами"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Info"
+msgstr "Информация"
+
+#. module: equipment
+#: field:equipment.equipment,manufacturer_id:0
+msgid "Manufacturer"
+msgstr "Производитель"
+
+#. module: equipment
+#: field:equipment.equipment,property_stock_equipment:0
+msgid "equipment Location"
+msgstr "Расположение актива"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Serial No:"
+msgstr "Серийный №:"
+
+#. module: equipment
+#: view:equipment.equipment:0
+#: model:ir.actions.act_window,name:equipment.action_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments_equipments
+#: model:stock.location,name:equipment.stock_location_equipments
+msgid "equipments"
+msgstr "Активы"
+
+#. module: equipment
+#: model:ir.ui.menu,name:base.menu_technical_support_root
+msgid "Maintenance"
+msgstr "Обслуживание"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Model:"
+msgstr "Модель:"
+
+#. module: equipment
+#: help:equipment.equipment,image_small:0
+msgid "Small-sized image of the equipment. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Маленькое изображение актива. Автоматически приводится к размеру 64х64 пиксела, с сохранением пропорции."
+
+#. module: equipment
+#: field:equipment.equipment,image:0
+msgid "Image"
+msgstr "Изображение"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Manufacturer:"
+msgstr "Производитель:"
+
+#. module: equipment
+#: model:stock.location,name:equipment.stock_location_locations_equipment
+msgid "equipment Locations"
+msgstr "Расположения активов"
+
+#. module: equipment
+#: field:equipment.equipment,serial:0
+msgid "Serial no."
+msgstr "Серийный №"
+
+#. module: equipment
+#: field:equipment.equipment,image_medium:0
+msgid "Medium-sized image"
+msgstr "Среднее изображение"
+
+#. module: equipment
+#: help:equipment.equipment,image_medium:0
+msgid "Medium-sized image of the equipment. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr "Среднее изображение актива. Автоматически приводится к размеру 128х128 пикселов, с сохранением пропорции."
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_equipment_equipment
+msgid "equipment"
+msgstr "Актив"
+
+#. module: equipment
+#: field:equipment.equipment,active:0
+msgid "Active"
+msgstr "Активно"
+
+#. module: equipment
+#: field:equipment.equipment,image_small:0
+msgid "Small-sized image"
+msgstr "Маленькое изображение актива"
+
+#. module: equipment
+#: field:equipment.equipment,model:0
+msgid "Model"
+msgstr "Модель"
+
+#. module: equipment
+#: view:equipment.equipment:0
+#: field:equipment.equipment,name:0
+msgid "equipment Name"
+msgstr "Наименование актива"
+
+#. module: equipment
+#: help:equipment.equipment,property_stock_equipment:0
+msgid "This location will be used as the destination location for installed parts during equipment life."
+msgstr "Это расположение будет использоваться как конечное для установленных запчастей в течении жизни актива."
+
+#. module: equipment
+#: help:equipment.equipment,image:0
+msgid "This field holds the image used as image for the equipment, limited to 1024x1024px."
+msgstr "Это поле содержит изображение актива, ограниченное 1024х1024 пикселами."
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_stock_location
+msgid "Location"
+msgstr "Расположение"
+
+#. module: equipment
+#: field:equipment.equipment,user_id:0
+msgid "Assigned to"
+msgstr "Ответственный"
+
+#. module: equipment
+#: model:equipment.equipment,name:equipment.equipment_equipment_1
+msgid "Moulding machine 25"
+msgstr "ТПА 25"
+
+#. module: equipment
+#: model:equipment.equipment,name:equipment.equipment_equipment_2
+msgid "Truck"
+msgstr "Грузовик"
+
+#. module: equipment
+#: model:equipment.equipment,name:equipment.equipment_equipment_3
+msgid "Building"
+msgstr "Строение"
+
+#. module: equipment
+#: field:equipment.equipment,equipment_number:0
+msgid "equipment Number"
+msgstr "Инвентарный номер"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Warranty"
+msgstr "Гарантия"
+
+#. module: equipment
+#: field:equipment.equipment,warranty_start_date:0
+msgid "Warranty Start"
+msgstr "Начало гарантии"
+
+#. module: equipment
+#: field:equipment.equipment,warranty_end_date:0
+msgid "Warranty End"
+msgstr "Конец гарантии"
+
+#. module: equipment
+#: field:equipment.equipment,vendor_id:0
+msgid "Vendor"
+msgstr "Продавец"
+
+#. module: equipment
+#: field:equipment.equipment,start_date:0
+msgid "Start Date"
+msgstr "Дата запуска"
+
+#. module: equipment
+#: field:equipment.equipment,purchase_date:0
+msgid "Purchase Date"
+msgstr "Дата покупки"
+
+#. module: equipment
+#: field:equipment.equipment,criticality:0
+msgid "Criticality"
+msgstr "Критичность"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "General"
+msgstr "Обычный"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Important"
+msgstr "Важный"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Very important"
+msgstr "Очень важный"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Critical"
+msgstr "Критичный"
+
+#. module: equipment
+#: field:equipment.equipment,maintenance_state_id:0
+#: view:equipment.state:0
+#: field:equipment.state,name:0
+msgid "State"
+msgstr "Состояние"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_planned
+msgid "Planned"
+msgstr "Планируется"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_rented
+msgid "Rented"
+msgstr "Взят в аренду"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_purchased
+msgid "Purchased"
+msgstr "Куплен"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_leased
+msgid "Leased"
+msgstr "Сдан в аренду"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_sold
+msgid "Sold"
+msgstr "Продан"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_shipped
+msgid "Shipped"
+msgstr "Доставляется"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_moves
+msgid "Moves"
+msgstr "Перемещается"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_stored
+msgid "Stored"
+msgstr "Хранится"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_installed
+msgid "Installed"
+msgstr "Устанавливается"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_use
+msgid "Use"
+msgstr "Используется"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_stolen
+msgid "Stolen"
+msgstr "Украден"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_retired
+msgid "Retired"
+msgstr "Устарел"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_shutdown
+msgid "Shutdown"
+msgstr "Отключен"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_run
+msgid "Run"
+msgstr "Работает"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_setup
+msgid "Setup"
+msgstr "Настраивается"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_standby
+msgid "Standby"
+msgstr "Ожидает"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_down
+msgid "Down"
+msgstr "Не работает"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_breakdown
+msgid "Breakdown"
+msgstr "Авария"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_repair
+msgid "Repair"
+msgstr "Ремонт"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_maintenance
+msgid "Maintenance"
+msgstr "Обслуживание"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_operable
+msgid "Operable"
+msgstr "Рабочий"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_draft
+msgid "Draft"
+msgstr "Планируется"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_depreciation
+msgid "Depreciation"
+msgstr "Амортизируется"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_close
+msgid "Close"
+msgstr "Закрыт"
+
+#. module: equipment
+#: field:equipment.state,sequence:0
+msgid "Sequence"
+msgstr "Последовательность"
+
+#. module: equipment
+#: field:equipment.state,team:0
+msgid "Scope Team"
+msgstr "Подразделение"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Finance"
+msgstr "Финансы"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Warehouse"
+msgstr "Склад"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Manufacture"
+msgstr "Производство"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+#: model:ir.module.category,name:equipment.module_category_maintenance
+msgid "Maintenance"
+msgstr "Обслуживание"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Accounting"
+msgstr "Бухгалтерия"
+
+#. module: equipment
+#: field:equipment.equipment,maintenance_state_color:0
+msgid "Color"
+msgstr "Цвет"
+
+#. module: equipment
+#: field:equipment.state,state_color:0
+msgid "State Color"
+msgstr "Цвет индикатора"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Red"
+msgstr "Красный"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Green"
+msgstr "Зеленый"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Blue"
+msgstr "Синий"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Yellow"
+msgstr "Желтый"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Magenta"
+msgstr "Малиновый"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Cyan"
+msgstr "Бирюзовый"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Black"
+msgstr "Черный"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "White"
+msgstr "Белый"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Orange"
+msgstr "Оранжевый"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "SkyBlue"
+msgstr "Голубой"
+
+#. module: equipment
+#: view:equipment.state:0
+msgid "Change color"
+msgstr "Поменять цвет"
+
+#. module: equipment
+#: model:ir.ui.menu,name:equipment.menu_maintenance_config
+msgid "Configuration"
+msgstr "Настройки"
+
+#. module: equipment
+#: model:ir.actions.act_window,name:equipment.action_equipment_state
+#: model:ir.ui.menu,name:equipment.menu_equipment_state
+msgid "equipment States"
+msgstr "Состояния активов"
+
+#. module: equipment
+#: model:ir.actions.act_window,name:equipment.action_management_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments_management
+msgid "Manage states"
+msgstr "Управление состояниями"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_customer
+msgid "Customer"
+msgstr "Заказчик"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_user
+msgid "User"
+msgstr "Пользователь"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#. module: equipment
+#: field:equipment.category,name:0
+msgid "Tag"
+msgstr "Тэг"
+
+#. module: equipment
+#: field:equipment.equipment,category_ids:0
+msgid "Tags"
+msgstr "Тэги"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_form_view
+msgid "Tags..."
+msgstr "Тэги..."
+
+#. module: equipment
+#: view:equipment.category:equipment.equipment_category_tree_view
+#: model:ir.actions.act_window,name:equipment.action_equipment_category
+#: model:ir.model,name:equipment.model_equipment_category
+#: model:ir.ui.menu,name:equipment.menu_equipment_category
+msgid "equipment Tags"
+msgstr "Тэги активов"
+
+#. module: equipment
+#: model:equipment.category,name:equipment.equipment_category_1
+msgid "Equipment"
+msgstr "Оборудование"
+
+#. module: equipment
+#: model:equipment.category,name:equipment.equipment_category_2
+msgid "Vehicle"
+msgstr "Авто"
+
+#. module: equipment
+#: model:equipment.category,name:equipment.equipment_category_3
+msgid "Building"
+msgstr "Строение"

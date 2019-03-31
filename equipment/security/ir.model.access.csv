@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_equipment_equipment_manager,equipment.equipment manager,model_equipment_equipment,equipment.group_technical_support_manager,1,1,1,1
+access_equipment_state_manager,equipment.state manager,model_equipment_state,equipment.group_technical_support_manager,1,1,1,1
+access_equipment_category_manager,equipment.category manager,model_equipment_category,equipment.group_technical_support_manager,1,1,1,1
+
+access_equipment_equipment_user,equipment.equipment user,model_equipment_equipment,equipment.group_technical_support_user,1,1,0,0
+access_equipment_state_user,equipment.state user,model_equipment_state,equipment.group_technical_support_user,1,0,0,0
+access_equipment_category_user,equipment.category user,model_equipment_category,equipment.group_technical_support_user,1,1,1,1
+
+access_equipment_equipment_customer,equipment.equipment customer,model_equipment_equipment,equipment.group_technical_support_customer,1,0,0,0
+access_equipment_state_customer,equipment.state customer,model_equipment_state,equipment.group_technical_support_customer,1,0,0,0
+access_equipment_category_customer,equipment.category customer,model_equipment_category,equipment.group_technical_support_customer,1,0,0,0

@@ -1,0 +1,599 @@
+equipment# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* equipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-06 15:03+0000\n"
+"PO-Revision-Date: 2015-09-06 15:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#. module: equipment
+#: field:equipment.equipment,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_equipment_equipment
+msgid "equipment"
+msgstr "Équipement"
+
+#. module: equipment
+#: field:equipment.equipment,property_stock_equipment:0
+msgid "equipment Location"
+msgstr "Emplacement d'équipement"
+
+#. module: equipment
+#: model:stock.location,name:equipment.stock_location_locations_equipment
+msgid "equipment Locations"
+msgstr "Emplacements d'équipements"
+
+#. module: equipment
+#: field:equipment.equipment,name:0
+msgid "equipment Name"
+msgstr "Nom"
+
+#. module: equipment
+#: field:equipment.equipment,equipment_number:0
+msgid "equipment Number"
+msgstr "Numéro"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_search
+msgid "equipment Search"
+msgstr "Recherche d'équipement"
+
+#. module: equipment
+#: model:ir.actions.act_window,name:equipment.action_equipment_state
+#: model:ir.ui.menu,name:equipment.menu_equipment_state
+msgid "equipment States"
+msgstr "États des équipements"
+
+#. module: equipment
+#: view:equipment.category:equipment.equipment_category_tree_view
+#: model:ir.actions.act_window,name:equipment.action_equipment_category
+#: model:ir.model,name:equipment.model_equipment_category
+#: model:ir.ui.menu,name:equipment.menu_equipment_category
+msgid "equipment Tags"
+msgstr "Étiquettes"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_form_view
+#: view:equipment.equipment:equipment.equipments_tree_view
+#: field:equipment.category,equipment_ids:0
+#: model:ir.actions.act_window,name:equipment.action_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments_equipments
+#: model:stock.location,name:equipment.stock_location_equipments
+msgid "equipments"
+msgstr "Équipements"
+
+#. module: equipment
+#: field:equipment.equipment,user_id:0
+msgid "Assigned to"
+msgstr "Affecté à"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Black"
+msgstr "Black"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Blue"
+msgstr "Blue"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_breakdown
+msgid "Breakdown"
+msgstr "Cassé"
+
+#. module: equipment
+#: view:equipment.state:equipment.equipment_state_kanban_view
+msgid "Change color"
+msgstr "Changer la couleur"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_close
+msgid "Close"
+msgstr "Fermer"
+
+#. module: equipment
+#: field:equipment.equipment,maintenance_state_color:0
+msgid "Color"
+msgstr "Couleur"
+
+#. module: equipment
+#: model:ir.ui.menu,name:equipment.menu_maintenance_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: equipment
+#: field:equipment.equipment,create_uid:0
+#: field:equipment.category,create_uid:0
+#: field:equipment.state,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: equipment
+#: field:equipment.equipment,create_date:0
+#: field:equipment.category,create_date:0
+#: field:equipment.state,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Critical"
+msgstr "Critique"
+
+#. module: equipment
+#: field:equipment.equipment,criticality:0
+msgid "Criticality"
+msgstr "Criticité"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_customer
+msgid "Customer"
+msgstr "Client"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Cyan"
+msgstr "Cyan"
+
+#. module: equipment
+#: help:equipment.equipment,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_depreciation
+msgid "Depreciation"
+msgstr "Dépréciation"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_down
+msgid "Down"
+msgstr "En panne"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: equipment
+#: model:ir.module.category,name:equipment.module_category_eam
+msgid "Enterprise equipment Management"
+msgstr "Gestion des immobilisations"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Finance"
+msgstr "Finance"
+
+#. module: equipment
+#: field:equipment.equipment,message_follower_ids:0
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "General"
+msgstr "Général"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Green"
+msgstr "Green"
+
+#. module: equipment
+#: model:ir.module.category,description:equipment.module_category_eam
+msgid "Helps you manage your equipments."
+msgstr "Gestion de vos immobilisations."
+
+#. module: equipment
+#: model:ir.module.category,description:equipment.module_category_maintenance
+msgid "Helps you manage your maintenance processes."
+msgstr "Aide à la gestion des processus de maintenance."
+
+#. module: equipment
+#: help:equipment.equipment,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: equipment
+#: field:equipment.equipment,id:0
+#: field:equipment.category,id:0
+#: field:equipment.state,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: equipment
+#: help:equipment.equipment,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: equipment
+#: field:equipment.equipment,image:0
+msgid "Image"
+msgstr "Image"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Important"
+msgstr "Important"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_form_view
+msgid "Info"
+msgstr "Info"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_installed
+msgid "Installed"
+msgstr "Installé"
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_stock_location
+msgid "Inventory Locations"
+msgstr "Emplacements de stock"
+
+#. module: equipment
+#: field:equipment.equipment,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Est abonné"
+
+#. module: equipment
+#: field:equipment.equipment,message_last_post:0
+msgid "Last Message Date"
+msgstr "Date du dernier message"
+
+#. module: equipment
+#: field:equipment.equipment,write_uid:0
+#: field:equipment.category,write_uid:0
+#: field:equipment.state,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: equipment
+#: field:equipment.equipment,write_date:0
+#: field:equipment.category,write_date:0
+#: field:equipment.state,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_leased
+msgid "Leased"
+msgstr "Leasing"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Magenta"
+msgstr "Magenta"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_maintenance
+#: selection:equipment.state,team:0
+#: model:ir.module.category,name:equipment.module_category_maintenance
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#. module: equipment
+#: model:ir.actions.act_window,name:equipment.action_management_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments_management
+msgid "Manage states"
+msgstr "Gérer les états"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Manufacture"
+msgstr "En production"
+
+#. module: equipment
+#: field:equipment.equipment,manufacturer_id:0
+msgid "Manufacturer"
+msgstr "Fabricant"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_kanban_view
+msgid "Manufacturer:"
+msgstr "Fabricant:"
+
+#. module: equipment
+#: field:equipment.equipment,image_medium:0
+msgid "Medium-sized image"
+msgstr "Medium-sized image"
+
+#. module: equipment
+#: help:equipment.equipment,image_medium:0
+msgid "Medium-sized image of the equipment. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+msgstr "Medium-sized image of the equipment. It is automatically resized as a 128x128px image, with aspect ratio preserved, only when the image exceeds one of those sizes. Use this field in form views or some kanban views."
+
+#. module: equipment
+#: field:equipment.equipment,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: equipment
+#: help:equipment.equipment,message_ids:0
+msgid "Messages and communication history"
+msgstr "Historique des messages et communications"
+
+#. module: equipment
+#: field:equipment.equipment,model:0
+msgid "Model"
+msgstr "Modèle"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_kanban_view
+msgid "Model:"
+msgstr "Modèle:"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_moves
+msgid "Moves"
+msgstr "Mouvements"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_operable
+msgid "Operable"
+msgstr "Fonctionnel"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Orange"
+msgstr "Orange"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_planned
+msgid "Planned"
+msgstr "Plannifié"
+
+#. module: equipment
+#: field:equipment.equipment,purchase_date:0
+msgid "Purchase Date"
+msgstr "Date d'achat"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_purchased
+msgid "Purchased"
+msgstr "Acheté"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Red"
+msgstr "Red"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_rented
+msgid "Rented"
+msgstr "Loué"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_repair
+msgid "Repair"
+msgstr "Réparation"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_retired
+msgid "Retired"
+msgstr "Retiré"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_run
+msgid "Run"
+msgstr "En fonction"
+
+#. module: equipment
+#: field:equipment.state,team:0
+msgid "Scope Team"
+msgstr "Scope Team"
+
+#. module: equipment
+#: field:equipment.state,sequence:0
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_kanban_view
+msgid "Serial No:"
+msgstr "Numéro de série:"
+
+#. module: equipment
+#: field:equipment.equipment,serial:0
+msgid "Serial no."
+msgstr "Numéro de série"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_setup
+msgid "Setup"
+msgstr "Configuration"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_shipped
+msgid "Shipped"
+msgstr "Expédié"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_shutdown
+msgid "Shutdown"
+msgstr "Arrêt"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "SkyBlue"
+msgstr "SkyBlue"
+
+#. module: equipment
+#: field:equipment.equipment,image_small:0
+msgid "Small-sized image"
+msgstr "Small-sized image"
+
+#. module: equipment
+#: help:equipment.equipment,image_small:0
+msgid "Small-sized image of the equipment. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Small-sized image of the equipment. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_sold
+msgid "Sold"
+msgstr "Vendu"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_standby
+msgid "Standby"
+msgstr "Pause"
+
+#. module: equipment
+#: field:equipment.equipment,start_date:0
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: equipment
+#: field:equipment.equipment,finance_state_id:0
+#: field:equipment.equipment,maintenance_state_id:0
+#: field:equipment.equipment,manufacture_state_id:0
+#: field:equipment.equipment,warehouse_state_id:0
+#: view:equipment.state:equipment.equipment_state_form_view
+#: field:equipment.state,name:0
+msgid "State"
+msgstr "État"
+
+#. module: equipment
+#: field:equipment.state,state_color:0
+msgid "State Color"
+msgstr "State Color"
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_equipment_state
+msgid "State of equipment"
+msgstr "État de l'équipement"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_stolen
+msgid "Stolen"
+msgstr "Volé"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_stored
+msgid "Stored"
+msgstr "En stock"
+
+#. module: equipment
+#: field:equipment.equipment,message_summary:0
+msgid "Summary"
+msgstr "Résumé"
+
+#. module: equipment
+#: field:equipment.category,name:0
+msgid "Tag"
+msgstr "Étiquette"
+
+#. module: equipment
+#: field:equipment.equipment,category_ids:0
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_form_view
+msgid "Tags..."
+msgstr "Étiquettes..."
+
+#. module: equipment
+#: help:equipment.equipment,image:0
+msgid "This field holds the image used as image for the equipment, limited to 1024x1024px."
+msgstr "This field holds the image used as image for the equipment, limited to 1024x1024px."
+
+#. module: equipment
+#: help:equipment.equipment,property_stock_equipment:0
+msgid "This location will be used as the destination location for installed parts during equipment life."
+msgstr "Cet emplacement sera utilisé comme destination pour les pièces installées au cours de la vie d'une immobilisation."
+
+#. module: equipment
+#: field:equipment.equipment,message_unread:0
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_use
+msgid "Use"
+msgstr "Usagé"
+
+#. module: equipment
+#: help:equipment.state,sequence:0
+msgid "Used to order states."
+msgstr "Used to order states."
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: equipment
+#: field:equipment.equipment,vendor_id:0
+msgid "Vendor"
+msgstr "Vendeur"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Very important"
+msgstr "Très important"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: equipment
+#: view:equipment.equipment:equipment.equipments_form_view
+msgid "Warranty"
+msgstr "Garantie"
+
+#. module: equipment
+#: field:equipment.equipment,warranty_end_date:0
+msgid "Warranty End"
+msgstr "Fin de garantie"
+
+#. module: equipment
+#: field:equipment.equipment,warranty_start_date:0
+msgid "Warranty Start"
+msgstr "Début de garantie"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "White"
+msgstr "White"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Yellow"
+msgstr "Yellow"

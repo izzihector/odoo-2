@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="equipments_backend" name="equipment equipments" inherit_id="web.equipments_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/equipment/static/src/css/equipment.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

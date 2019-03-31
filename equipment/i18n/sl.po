@@ -1,0 +1,513 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* equipment
+#
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130204-000102\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-29 04:56+0000\n"
+"PO-Revision-Date: 2015-02-22 08:14+0100\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian <translate@matmoz.si>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+"Language: sl\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_equipment
+msgid "equipments"
+msgstr "Sredstva"
+
+#. module: base
+#: model:ir.module.module,summary:base.module_equipment
+msgid "equipment Management"
+msgstr "Upravljanje sredstev"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Info"
+msgstr "Informacije"
+
+#. module: equipment
+#: field:equipment.equipment,manufacturer_id:0
+msgid "Manufacturer"
+msgstr "Proizvajalec"
+
+#. module: equipment
+#: field:equipment.equipment,property_stock_equipment:0
+msgid "equipment Location"
+msgstr "Lokacija sredstva"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Serial No:"
+msgstr "Serijska številka"
+
+#. module: equipment
+#: view:equipment.equipment:0
+#: model:ir.actions.act_window,name:equipment.action_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments_equipments
+#: model:stock.location,name:equipment.stock_location_equipments
+msgid "equipments"
+msgstr "Sredstva"
+
+#. module: equipment
+#: model:ir.ui.menu,name:base.menu_technical_support_root
+msgid "Maintenance"
+msgstr "Vzdrževanje"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Model:"
+msgstr "Model:"
+
+#. module: equipment
+#: help:equipment.equipment,image_small:0
+msgid ""
+"Small-sized image of the equipment. It is automatically resized as a 64x64px "
+"image, with aspect ratio preserved. Use this field anywhere a small image is "
+"required."
+msgstr ""
+"Manjša slika sredstva. Samodejno prilagodi velikost na 64x64 px in ohrani "
+"razmerja. To polje uporabite kjerkoli je potrebna majhna slika."
+
+#. module: equipment
+#: field:equipment.equipment,image:0
+msgid "Image"
+msgstr "Slika"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Manufacturer:"
+msgstr "Proizvajalec:"
+
+#. module: equipment
+#: model:stock.location,name:equipment.stock_location_locations_equipment
+msgid "equipment Locations"
+msgstr "Lokacije sredstev"
+
+#. module: equipment
+#: field:equipment.equipment,serial:0
+msgid "Serial no."
+msgstr "Serijska številka"
+
+#. module: equipment
+#: field:equipment.equipment,image_medium:0
+msgid "Medium-sized image"
+msgstr "Srednje velika slika"
+
+#. module: equipment
+#: help:equipment.equipment,image_medium:0
+msgid ""
+"Medium-sized image of the equipment. It is automatically resized as a 128x128px "
+"image, with aspect ratio preserved, only when the image exceeds one of those "
+"sizes. Use this field in form views or some kanban views."
+msgstr ""
+"Srednje velika slika sredstva.  Samodejno prilagodi velikost na 128x128 px in "
+"ohrani razmerja, če presega to velikost. To polje uporabite v obrazcih in "
+"pogledih tipa kanban."
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_equipment_equipment
+msgid "equipment"
+msgstr "Sredstvo"
+
+#. module: equipment
+#: field:equipment.equipment,active:0
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: equipment
+#: field:equipment.equipment,image_small:0
+msgid "Small-sized image"
+msgstr "Manjša slika"
+
+#. module: equipment
+#: field:equipment.equipment,model:0
+msgid "Model"
+msgstr "Model"
+
+#. module: equipment
+#: view:equipment.equipment:0
+#: field:equipment.equipment,name:0
+msgid "equipment Name"
+msgstr "Naziv sredstva"
+
+#. module: equipment
+#: help:equipment.equipment,property_stock_equipment:0
+msgid ""
+"This location will be used as the destination location for installed parts "
+"during equipment life."
+msgstr ""
+"Ta lokacija bo uporabljena kot ciljna lokacija za nameščene dele med "
+"življenjskim ciklom sredstva."
+
+#. module: equipment
+#: help:equipment.equipment,image:0
+msgid ""
+"This field holds the image used as image for the equipment, limited to "
+"1024x1024px."
+msgstr ""
+"To polje vsebuje sliko, ki se uporabi kot slika sredstva, omejena je na "
+"1024x1024 px."
+
+#. module: equipment
+#: model:ir.model,name:equipment.model_stock_location
+msgid "Location"
+msgstr "Lokacija"
+
+#. module: equipment
+#: field:equipment.equipment,user_id:0
+msgid "Assigned to"
+msgstr "Dodeljeno k"
+
+#. module: equipment
+#: model:equipment.equipment,name:equipment.equipment_equipment_1
+msgid "Moulding machine 25"
+msgstr "Preoblikovalni stroj 25"
+
+#. module: equipment
+#: model:equipment.equipment,name:equipment.equipment_equipment_2
+msgid "Truck"
+msgstr "Tovornjak"
+
+#. module: equipment
+#: model:equipment.equipment,name:equipment.equipment_equipment_3
+msgid "Building"
+msgstr "Zgradba"
+
+#. module: equipment
+#: field:equipment.equipment,equipment_number:0
+msgid "equipment Number"
+msgstr "Številka sredstva"
+
+#. module: equipment
+#: view:equipment.equipment:0
+msgid "Warranty"
+msgstr "Garancija"
+
+#. module: equipment
+#: field:equipment.equipment,warranty_start_date:0
+msgid "Warranty Start"
+msgstr "Začetek garancijske dobe"
+
+#. module: equipment
+#: field:equipment.equipment,warranty_end_date:0
+msgid "Warranty End"
+msgstr "Konec garancijske dobe"
+
+#. module: equipment
+#: field:equipment.equipment,vendor_id:0
+msgid "Vendor"
+msgstr "Prodajalec"
+
+#. module: equipment
+#: field:equipment.equipment,start_date:0
+msgid "Start Date"
+msgstr "Začetni datum"
+
+#. module: equipment
+#: field:equipment.equipment,purchase_date:0
+msgid "Purchase Date"
+msgstr "Datum nabave"
+
+#. module: equipment
+#: field:equipment.equipment,criticality:0
+msgid "Criticality"
+msgstr "Kritičnost"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "General"
+msgstr "Splošno"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Important"
+msgstr "Pomembno"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Very important"
+msgstr "Zelo pomembno"
+
+#. module: equipment
+#: selection:equipment.equipment,criticality:0
+msgid "Critical"
+msgstr "Kritično"
+
+#. module: equipment
+#: field:equipment.equipment,maintenance_state_id:0
+#: view:equipment.state:0
+#: field:equipment.state,name:0
+msgid "State"
+msgstr "Stanje"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_planned
+msgid "Planned"
+msgstr "Načrtovano"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_rented
+msgid "Rented"
+msgstr "Posojeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_purchased
+msgid "Purchased"
+msgstr "Kupljeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_leased
+msgid "Leased"
+msgstr "Dano v najem"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_sold
+msgid "Sold"
+msgstr "Prodano"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_shipped
+msgid "Shipped"
+msgstr "Odpremljeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_moves
+msgid "Moves"
+msgstr "Premiki"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_stored
+msgid "Stored"
+msgstr "Skladiščeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_installed
+msgid "Installed"
+msgstr "Nameščeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_use
+msgid "Use"
+msgstr "Uporaba"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_stolen
+msgid "Stolen"
+msgstr "Ukradeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_retired
+msgid "Retired"
+msgstr "Umaknjeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_shutdown
+msgid "Shutdown"
+msgstr "Izključitev"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_run
+msgid "Run"
+msgstr "Zagon"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_setup
+msgid "Setup"
+msgstr "Nastavitev"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_standby
+msgid "Standby"
+msgstr "V pripravljenosti"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_down
+msgid "Down"
+msgstr "Odklopljeno"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_breakdown
+msgid "Breakdown"
+msgstr "Okvara"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_repair
+msgid "Repair"
+msgstr "Popravilo"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_maintenance
+msgid "Maintenance"
+msgstr "Vzdrževanje"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_operable
+msgid "Operable"
+msgstr "Delujoče"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_draft
+msgid "Draft"
+msgstr "Osnutek"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_depreciation
+msgid "Depreciation"
+msgstr "Amortizacija"
+
+#. module: equipment
+#: model:equipment.state,name:equipment.equipment_state_close
+msgid "Close"
+msgstr "Zaključi"
+
+#. module: equipment
+#: field:equipment.state,sequence:0
+msgid "Sequence"
+msgstr "Zaporedje"
+
+#. module: equipment
+#: field:equipment.state,team:0
+msgid "Scope Team"
+msgstr "Razporejena ekipa"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Finance"
+msgstr "Finance"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Warehouse"
+msgstr "Skladišče"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Manufacture"
+msgstr "Proizvodnja"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+#: model:ir.module.category,name:equipment.module_category_maintenance
+msgid "Maintenance"
+msgstr "Vzdrževanje"
+
+#. module: equipment
+#: selection:equipment.state,team:0
+msgid "Accounting"
+msgstr "Računovodstvo"
+
+#. module: equipment
+#: field:equipment.equipment,maintenance_state_color:0
+msgid "Color"
+msgstr "Barva"
+
+#. module: equipment
+#: field:equipment.state,state_color:0
+msgid "State Color"
+msgstr "Barva indikatorja"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Red"
+msgstr "Rdeča"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Green"
+msgstr "Zelena"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Blue"
+msgstr "Modra"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Yellow"
+msgstr "Rumena"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Magenta"
+msgstr "Škrlatna"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Cyan"
+msgstr "Sinja"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Black"
+msgstr "Črna"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "White"
+msgstr "Bela"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "Orange"
+msgstr "Oranžna"
+
+#. module: equipment
+#: selection:equipment.equipment,maintenance_state_color:0
+#: selection:equipment.state,state_color:0
+msgid "SkyBlue"
+msgstr "Nebesno modra"
+
+#. module: equipment
+#: view:equipment.state:0
+msgid "Change color"
+msgstr "Sprememba barve"
+
+#. module: equipment
+#: model:ir.ui.menu,name:equipment.menu_maintenance_config
+msgid "Configuration"
+msgstr "Nastavitve"
+
+#. module: equipment
+#: model:ir.actions.act_window,name:equipment.action_equipment_state
+#: model:ir.ui.menu,name:equipment.menu_equipment_state
+msgid "equipment States"
+msgstr "Stanja sredstva"
+
+#. module: equipment
+#: model:ir.actions.act_window,name:equipment.action_management_equipments
+#: model:ir.ui.menu,name:equipment.menu_maintenance_equipments_management
+msgid "Manage states"
+msgstr "Upravljanje stanj"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_customer
+msgid "Customer"
+msgstr "Kupec"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_user
+msgid "User"
+msgstr "Uporabnik"
+
+#. module: equipment
+#: model:res.groups,name:equipment.group_technical_support_manager
+msgid "Manager"
+msgstr "Upravitelj"
