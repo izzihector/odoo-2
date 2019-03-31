@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<odoo>
+		<!-- Software Type Views-->
+    <record id="equipment_software_type_view_form" model="ir.ui.view">
+        <field name="name">equipment.software.type.view.form</field>
+        <field name="model">equipment.software.type</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Software Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="equipment_software_type_view_tree" model="ir.ui.view">
+        <field name="name">equipment.software.type.view.tree</field>
+        <field name="model">equipment.software.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Software Type">
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="equipment_software_type_action_view" model="ir.actions.act_window">
+            <field name="name">Software Type</field>
+            <field name="res_model">equipment.software.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Software Views-->
+    <record id="equipment_software_view_form" model="ir.ui.view">
+        <field name="name">equipment.software.view.form</field>
+        <field name="model">equipment.software</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Software">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="version"/>
+                        </group>
+                        <group>
+                            <field name="software_type_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="equipment_software_view_tree" model="ir.ui.view">
+        <field name="name">equipment.software.view.tree</field>
+        <field name="model">equipment.software</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Software">
+                <field name="name" />
+                <field name="version" />
+                <field name="software_type_id" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="equipment_software_action_view" model="ir.actions.act_window">
+            <field name="name">Software</field>
+            <field name="res_model">equipment.software</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+		<!-- Equipment Software Type item -->
+		<menuitem
+			name="Software Type"
+			id="menu_equipment_software_type"
+			parent="menu_equipment_config"
+			action="equipment_software_type_action_view"
+			groups="equipment.group_technical_support_manager"
+			sequence="6"/>
+
+		<!-- Equipment Software item -->
+		<menuitem
+			name="Software"
+			id="menu_equipment_software"
+			parent="menu_equipment_config"
+			action="equipment_software_action_view"
+			groups="equipment.group_technical_support_manager"
+			sequence="7"/>
+
+
+	</odoo>
