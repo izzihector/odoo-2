@@ -148,7 +148,7 @@ class equipment_equipment(models.Model):
     client_id=fields.Many2one('res.partner', string='Client')
     model_id=fields.Many2one('equipment.model', u'Models')
     parent_id=fields.Many2one('equipment.equipment', u'Equipment Relation')
-    category_id=fields.Many2one('equipment.modality', string='Modality', group_expand='_read_group_modality_ids')
+    modality_id=fields.Many2one('equipment.modality', string='Modality')
 
     software_ids=fields.One2many('equipment.software.list','equipment_id',u'Softwares')
     network_ids=fields.One2many('equipment.network','equipment_id',u'Networks')
