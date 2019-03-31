@@ -8,16 +8,6 @@
                 <xpath expr="//button[@name='assign_ticket_to_self']" position="before">
                     <button string="New Request" name="%(technical_support_action_request_new)d" type="action" class="oe_highlight"/>
                 </xpath>
-                <button name="open_customer_tickets" position="after">
-                    <button class="oe_stat_button" type="action"
-                            name="%(ticket_action_technical_support)d" icon="fa-pencil-square-o"
-                            >
-                        <div class="o_stat_info">
-                            <field class="o_stat_value"/>
-                            <span class="o_stat_text">Request</span>
-                        </div>
-                    </button>
-                </button>
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="equipment_id"/>
                 </xpath>
