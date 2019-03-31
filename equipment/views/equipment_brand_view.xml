@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<odoo>
+		<!-- Brand - Form - View -->
+		<record id="equipment_brand_view_form" model="ir.ui.view">
+				<field name="name">equipment.brand.view.form</field>
+				<field name="model">equipment.brand</field>
+				<field name="type">form</field>
+				<field name="arch" type="xml">
+						<form string="Brand">
+								<sheet>
+										<group>
+												<group>
+												<field name="name"/>
+												<field name="code"/>
+												</group>
+												<group>
+												<field name="manager_id"/>
+												</group>
+										</group>
+										<notebook>
+												<page string="Description">
+														<field name="description"/>
+												</page>
+										</notebook>
+								</sheet>
+						</form>
+				</field>
+		</record>
+
+		<!-- Brand - Tree - View -->
+		<record id="equipment_brand_view_tree" model="ir.ui.view">
+				<field name="name">equipment.brand.view.tree</field>
+				<field name="model">equipment.brand</field>
+				<field name="type">tree</field>
+				<field name="arch" type="xml">
+						<tree string="Brand">
+								<field name="name" />
+								<field name="code" />
+								<field name="manager_id" />
+						</tree>
+				</field>
+		</record>
+
+		<!-- Brand - Action - View -->
+		<record id="equipment_brand_action_view" model="ir.actions.act_window">
+				<field name="name">Brand</field>
+				<field name="res_model">equipment.brand</field>
+				<field name="view_type">form</field>
+				<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- Equipment Brand item -->
+		<menuitem
+			name="Brand"
+			id="menu_equipment_brand"
+			parent="menu_equipment_config"
+			action="equipment_brand_action_view"
+			groups="equipment.group_technical_support_manager"
+			sequence="3"/>
+
+	</odoo>

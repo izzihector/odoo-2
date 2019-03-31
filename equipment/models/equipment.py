@@ -6,8 +6,17 @@
 #
 ##############################################################################
 
-from odoo import api, fields, models
 from odoo import tools
+from odoo import api, fields, models, SUPERUSER_ID, _, exceptions
+import time
+import datetime as dt
+import time, datetime
+from datetime import date
+from datetime import datetime
+from dateutil import relativedelta
+from datetime import datetime, timedelta
+from odoo.exceptions import UserError
+from dateutil.relativedelta import *
 
 STATE_COLOR_SELECTION = [
     ('0', 'Red'),
@@ -107,11 +116,11 @@ class equipment_equipment(models.Model):
     ]
 
     name = fields.Char('Equipment Name', size=64, required=True, translate=True)
-    finance_state_id = fields.Many2one('equipment.state', 'State', domain=[('team','=','0')])
-    warehouse_state_id = fields.Many2one('equipment.state', 'State', domain=[('team','=','1')])
-    manufacture_state_id = fields.Many2one('equipment.state', 'State', domain=[('team','=','2')])
-    maintenance_state_id = fields.Many2one('equipment.state', 'State', domain=[('team','=','3')])
-    accounting_state_id = fields.Many2one('equipment.state', 'State', domain=[('team','=','4')])
+    finance_state_id = fields.Many2one('equipment.state', 'State Finance', domain=[('team','=','0')])
+    warehouse_state_id = fields.Many2one('equipment.state', 'State Warehouse', domain=[('team','=','1')])
+    manufacture_state_id = fields.Many2one('equipment.state', 'State Manufacture', domain=[('team','=','2')])
+    maintenance_state_id = fields.Many2one('equipment.state', 'State Maintenance', domain=[('team','=','3')])
+    accounting_state_id = fields.Many2one('equipment.state', 'State Accounting', domain=[('team','=','4')])
     maintenance_state_color = fields.Selection(related='maintenance_state_id.state_color', selection=STATE_COLOR_SELECTION, string="Color", readonly=True)
     criticality = fields.Selection(CRITICALITY_SELECTION, 'Criticality')
     property_stock_equipment = fields.Many2one(
@@ -151,3 +160,104 @@ class equipment_equipment(models.Model):
     def write(self, vals):
         tools.image_resize_images(vals)
         return super(equipment_equipment, self).write(vals)
+
+
+class EquipmentBrand(models.Model):
+    _name = 'equipment.brand'
+    _description = 'Brand'
+    _order = 'name asc'
+
+    name=fields.Char('Brand',required=True)
+    code=fields.Char('Reference Brand')
+    manager_id=fields.Many2one('res.partner','Provider')
+    description=fields.Text('Description')
+
+
+class EquipmentSoftwareType(models.Model):
+    _name = 'equipment.software.type'
+    _description = 'Software Type'
+    _order = 'name asc'
+
+    name=fields.Char('Software Type',required=True)
+    code=fields.Char('Reference Software Type')
+    description=fields.Text('Description')
+
+
+class EquipmentZone(models.Model):
+    _name = 'equipment.zone'
+    _description = 'Zone'
+    _order = 'name asc'
+
+    name=fields.Char('Zone',required=True)
+    code=fields.Char('Reference de zone')
+    manager_id=fields.Many2one('res.users','Responsible')
+    description=fields.Text('Description')
+
+class EquipmentDicomType(models.Model):
+    _name = 'equipment.dicom.type'
+    _description = 'Dicom Type'
+    _order = 'name asc'
+
+    name=fields.Char('Dicom Type',required=True)
+    code=fields.Char('Reference Dicom Type')
+    description=fields.Text('Description')
+
+class EquipmentModel(models.Model):
+    _name = 'equipment.model'
+    _description = 'Model'
+    _order = 'name asc'
+
+    name=fields.Char('Model',required=True)
+    code=fields.Char('Reference Model')
+    brand_id=fields.Many2one('equipment.brand','Brand')
+    description=fields.Text('Description')
+
+
+class EquipmentSoftware(models.Model):
+    _name = 'equipment.software'
+    _description = 'Software'
+    _order = 'name asc'
+
+    name=fields.Char('Software',required=True)
+    version=fields.Char('Version')
+    software_type_id=fields.Many2one('equipment.software.type','Software Type')
+    description=fields.Text('Description')
+
+
+class EquipmentSoftwareList(models.Model):
+    _name = 'equipment.software.list'
+    _description = 'Software List'
+    _order = 'name asc'
+
+    name=fields.Char('License',required=True)
+    software_id=fields.Many2one('equipment.software','Software')
+    equipment_id=fields.Many2one('equipment.equipment','Equipment')
+    description=fields.Text('Description')
+
+
+class EquipmentNetwork(models.Model):
+    _name = 'equipment.network'
+    _description = 'Network'
+    _order = 'name asc'
+
+    name=fields.Char('IP',required=True)
+    subred=fields.Char('SubRed',required=True)
+    gateway=fields.Char('Gateway',required=True)
+    dns1=fields.Char('Dns1')
+    dns2=fields.Char('Dns2')
+    mac_address=fields.Char('Mac Address')
+    equipment_id=fields.Many2one('equipment.equipment','Equipment')
+    description=fields.Text('Description')
+
+
+class EquipmentDicom(models.Model):
+    _name = 'equipment.dicom'
+    _description = 'Dicom'
+    _order = 'name asc'
+
+    name=fields.Char('AeTitle',required=True)
+    ip=fields.Char('Ip',required=True)
+    port=fields.Char('Port',required=True)
+    equipment_id=fields.Many2one('equipment.equipment','Equipment')
+    dicom_type_id=fields.Many2one('equipment.dicom.type','Dicom Type')
+    description=fields.Text('Description')
