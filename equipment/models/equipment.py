@@ -148,11 +148,13 @@ class equipment_equipment(models.Model):
     client_id=fields.Many2one('res.partner', string='Client')
     model_id=fields.Many2one('equipment.model', u'Models')
     parent_id=fields.Many2one('equipment.equipment', u'Equipment Relation')
+    category_id=fields.Many2one('equipment.modality', string='Modality', group_expand='_read_group_modality_ids')
 
     software_ids=fields.One2many('equipment.software.list','equipment_id',u'Softwares')
     network_ids=fields.One2many('equipment.network','equipment_id',u'Networks')
     dicom_ids=fields.One2many('equipment.dicom','equipment_id',u'Dicom')
     child_ids=fields.One2many('equipment.equipment','parent_id',u'Accesory')
+
 
     _group_by_full = {
         'finance_state_id': _read_group_finance_state_ids,
@@ -171,6 +173,14 @@ class equipment_equipment(models.Model):
     def write(self, vals):
         tools.image_resize_images(vals)
         return super(equipment_equipment, self).write(vals)
+
+    @api.model
+    def _read_group_modality_ids(self, modalities, domain, order):
+        """ Read group customization in order to display all the categories in
+            the kanban view, even if they are empty.
+        """
+        modality_ids = modalities._search([], order=order, access_rights_uid=SUPERUSER_ID)
+        return modalities.browse(modality_ids)
 
 
 class EquipmentBrand(models.Model):
