@@ -32,22 +32,25 @@
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
                             <h1>
-                                <field name="name"/>
-                            </h1>
-														<h3>
-																<field name="equipment_number"/>
-														</h3>
+															<field name="equipment_number"/>
+														</h1>
+														<h2>
+																<field name="name"/>
+														</h2>
                             <field name="category_ids" widget="many2many_tags" placeholder="Tags..."/>
                         </div>
                         <group>
-													<field name="client_id" widget="many2one"/>
+													<group>
+															<field name="client_id" widget="many2one"/>
+													</group>
+													<group>
+															<field name="active"/>
+													</group>
                         </group>
                         <group>
                             <group>
-                                <field name="user_id"/>
                             </group>
                             <group>
-                                <field name="active"/>
                             </group>
                         </group>
                         <notebook>
