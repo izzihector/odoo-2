@@ -288,9 +288,8 @@ class EquipmentModality(models.Model):
     _name = 'equipment.modality'
     _description = 'Equipment Modality'
 
-
     name = fields.Char('Modality Name', required=True, translate=True)
     color = fields.Integer('Color Index')
     note = fields.Text('Comments', translate=True)
     equipment_ids = fields.One2many('equipment.equipment', 'modality_id', string='Equipments', copy=False)
-    helpdesk_team_id = fields.Many2one('helpdesk.team', u'Helpdesk Team')
+    helpdesk_team_id = fields.Many2one('helpdesk.team', 'Helpdesk Team')

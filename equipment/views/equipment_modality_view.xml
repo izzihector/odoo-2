@@ -18,7 +18,6 @@
 											</div>
 							<group>
 								<group>
-									<field name="helpdesk_team_id" widget="many2one"/>
 								</group>
 							</group>
 		                <field name="note" nolabel="1"/>
