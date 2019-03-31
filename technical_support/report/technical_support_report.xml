@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            string="Maintenance Order"
+            id="action_report_maintenance_order"
+            model="technical_support.order"
+            name="technical_support.report_technical_support_order"
+            file="technical_support.report_technical_support_order"
+            report_type="qweb-pdf"
+        />
+
+        <report
+            string="Maintenance Request"
+            id="action_report_maintenance_request"
+            model="technical_support.request"
+            name="technical_support.report_technical_support_request"
+            file="technical_support.report_technical_support_request"
+            report_type="qweb-pdf"
+        />
+
+    </data>
+</odoo>

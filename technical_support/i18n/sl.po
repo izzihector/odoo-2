@@ -1,0 +1,658 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* technical_support
+#
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130204-000102\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-29 05:41+0000\n"
+"PO-Revision-Date: 2015-02-22 08:38+0100\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian <translate@matmoz.si>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+"Language: sl\n"
+"X-Generator: Lokalize 1.5\n"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_technical_support
+msgid "technical_support"
+msgstr "Vzdrževanje, popravila in operacije"
+
+#. module: base
+#: model:ir.module.module,summary:base.module_technical_support
+msgid "equipment Maintenance, Repair and Operation"
+msgstr "Vzdrževanje, popravila in operacije sredstev"
+
+#. module: base
+#: model:ir.module.category,name:base.module_category_maintenance
+msgid "Maintenance"
+msgstr "Vzdrževanje"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Description for Operations"
+msgstr "Opis za operacije"
+
+#. module: technical_support
+#: view:technical_support.order:0
+msgid "Force Reservation"
+msgstr "Vsili rezervacijo"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Labor"
+msgstr "Delo"
+
+#. module: technical_support
+#: view:technical_support.request:0
+msgid "Send Request"
+msgstr "Pošlji zahtevek"
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_equipment_request_sent
+#: model:mail.message.subtype,name:technical_support.mt_request_sent
+msgid "Send Request"
+msgstr "Pošlji zahtevek"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order,message_unread:0
+#: view:technical_support.request:0
+#: field:technical_support.request,message_unread:0
+msgid "Unread Messages"
+msgstr "Neprebrana sporočila"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Description for Labor"
+msgstr "Opis za delo"
+
+#. module: technical_support
+#: field:technical_support.order,equipment_id:0
+#: field:technical_support.request,equipment_id:0
+#: field:technical_support.task,equipment_id:0
+msgid "equipment"
+msgstr "Sredstvo"
+
+#. module: technical_support
+#: view:technical_support.request:0
+msgid "Search Maintenance Request"
+msgstr "Iskalnik vzdrževalnih zahtevkov"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order.parts.line,parts_uom:0
+#: field:technical_support.task.parts.line,parts_uom:0
+msgid "Unit of Measure"
+msgstr "Enota mere"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order,problem_description:0
+msgid "Problem Description"
+msgstr "Opis težave"
+
+#. module: technical_support
+#: field:technical_support.order,company_id:0
+msgid "Company"
+msgstr "Družba"
+
+#. module: technical_support
+#: view:technical_support.task:0
+msgid "Task Name"
+msgstr "Naziv opravila"
+
+#. module: technical_support
+#: model:res.groups,name:technical_support.group_create_maintenance_request
+msgid "Create Maintenance Request"
+msgstr "Ustvari vzdrževalni zahtevek"
+
+#. module: technical_support
+#: field:technical_support.order,task_id:0
+msgid "Task"
+msgstr "Opravilo"
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_request
+#: view:technical_support.request:0
+msgid "Maintenance Request"
+msgstr "Vzdrževalni zahtevek"
+
+#. module: technical_support
+#: field:technical_support.order,maintenance_type:0
+#: field:technical_support.task,maintenance_type:0
+msgid "Maintenance Type"
+msgstr "Tip vzdrževanja"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Operations"
+msgstr "Uporaba"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order,parts_ready_lines:0
+msgid "Available Parts"
+msgstr "Razpoložljivi deli"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Specify the tools and mechanisms needed for execute this order..."
+msgstr "Specifikacija orodja in mehanizmov potrebnih za izvedbo tega naloga..."
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Specify the specialists needed for execute this order..."
+msgstr "Specifikacija potrebnih strokovnjakov za izvedbo tega naloga..."
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Specify the jobs that need execute..."
+msgstr "Specifikacija del potrebnih za izvedbo..."
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Specify the documentation useful when execute this order..."
+msgstr "Specifikacija dokumentacije, ki bi koristila pri izvedbi naloga..."
+
+#. module: technical_support
+#: field:technical_support.order,labor_description:0
+#: field:technical_support.task,labor_description:0
+msgid "Labor Description"
+msgstr "Opis dela"
+
+#. module: technical_support
+#: field:technical_support.order,name:0
+#: field:technical_support.request,name:0
+msgid "Reference"
+msgstr "Sklic"
+
+#. module: technical_support
+#: field:technical_support.order,parts_lines:0
+msgid "Planned parts"
+msgstr "Načrtovani deli"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order,parts_move_lines:0
+msgid "Parts to Consume"
+msgstr "Deli, ki se porabijo"
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_task
+#: field:technical_support.task.parts.line,task_id:0
+msgid "Maintenance Task"
+msgstr "Vzdrževalno opravilo"
+
+#. module: technical_support
+#: field:technical_support.order,operations_description:0
+#: field:technical_support.task,operations_description:0
+msgid "Operations Description"
+msgstr "Opis operacij"
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "DONE"
+msgstr "Opravljeno"
+
+#. module: technical_support
+#: view:technical_support.request:0
+#: field:technical_support.request,reject_reason:0
+#: field:technical_support.request.reject,reject_reason:0
+msgid "Reject Reason"
+msgstr "Razlog zavrnitve"
+
+#. module: technical_support
+#: field:technical_support.order,parts_picking_id:0
+msgid "Parts Picking List"
+msgstr "Prevzemnica delov"
+
+#. module: technical_support
+#: selection:technical_support.order,maintenance_type:0
+#: field:technical_support.request,breakdown:0
+msgid "Breakdown"
+msgstr "Okvara"
+
+#. module: technical_support
+#: view:technical_support.order:0
+msgid "Recreate Picking"
+msgstr "Poustvari prevzemnico"
+
+#. module: technical_support
+#: field:technical_support.order,date_planned:0
+msgid "Planned Date"
+msgstr "Načrtovani datum"
+
+#. module: technical_support
+#: model:ir.module.category,description:technical_support.module_category_maintenance
+msgid "Helps you manage your maintenance processes."
+msgstr "Pomaga pri upravljanju vzdrževalnih procesov."
+
+#. module: technical_support
+#: view:technical_support.request:0
+msgid "Undecided maintenance request"
+msgstr "Neobdelani vzdrževalni zahtevki"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Documentation"
+msgstr "Dokumentacija"
+
+#. module: technical_support
+#: view:technical_support.order:0
+msgid "Order Date"
+msgstr "Datum naloga"
+
+#. module: technical_support
+#: field:technical_support.order,tools_description:0
+#: field:technical_support.task,tools_description:0
+msgid "Tools Description"
+msgstr "Opis orodja"
+
+#. module: technical_support
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_tasks
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_tasks_tasks
+#: view:technical_support.task:0
+msgid "Tasks"
+msgstr "Opravila"
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_requests
+#: model:ir.ui.menu,name:technical_support.menu_technical_support_request
+#: view:technical_support.request:0
+msgid "Maintenance Requests"
+msgstr "Vzdrževalni zahtevki"
+
+#. module: technical_support
+#: selection:technical_support.order,maintenance_type:0
+#: selection:technical_support.task,maintenance_type:0
+msgid "Corrective"
+msgstr "Korektivni ukrepi"
+
+#. module: technical_support
+#: view:technical_support.order:0
+msgid "Confirm Maintenance"
+msgstr "Potrditev vzdrževanja"
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Canceled"
+msgstr "Preklicano"
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_order_parts_line
+#: model:ir.model,name:technical_support.model_technical_support_task_parts_line
+msgid "Maintenance Planned Parts"
+msgstr "Načrtovani deli za vzdrževanje"
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "PARTS EXCEPTION"
+msgstr "IZJEMA PRI DELIH"
+
+#. module: technical_support
+#: view:technical_support.request.reject:0
+msgid "or"
+msgstr "ali"
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Draft"
+msgstr "Osnutek"
+
+#. module: technical_support
+#: model:ir.module.category,name:technical_support.module_category_maintenance
+#: model:ir.ui.menu,name:technical_support.menu_technical_support_maintenance
+#: model:ir.ui.menu,name:base.menu_technical_support_root
+msgid "Maintenance"
+msgstr "Vzdrževanje"
+
+#. module: technical_support
+#: field:technical_support.request,requested_date:0
+msgid "Requested Date"
+msgstr "Zahtevani datum"
+
+#. module: technical_support
+#: field:technical_support.order,state:0
+#: field:technical_support.request,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: technical_support
+#: help:technical_support.request,state:0
+msgid ""
+"When the maintenance request is created the status is set to 'Draft'.\n"
+"            If the request is sent the status is set to 'Claim'.\n"
+"            If the request is confirmed the status is set to 'Execution'.\n"
+"            If the request is rejected the status is set to 'Rejected'.\n"
+"            When the maintenance is over, the status is set to 'Done'."
+msgstr ""
+"Ob nastanku vzdrževalnega zahtevka je status nastavljen na 'Osnutek'.\n"
+"            Ko je zahtevek poslan je status 'Zahtevek'.\n"
+"            Ko je zahtevek potrjen je status 'Izvedba'.\n"
+"            Će ke zahtevek zavrnjen je status 'Zavrnjeno'.\n"
+"            Ko se vzdrževanje konča je status 'Opravljeno'."
+
+#. module: technical_support
+#: view:technical_support.request:0
+msgid "Confirm Request"
+msgstr "Potrditev zahtevka"
+
+#. module: technical_support
+#: field:technical_support.order,parts_location_id:0
+msgid "Parts Location"
+msgstr "Lokacija delov"
+
+#. module: technical_support
+#: model:res.groups,name:technical_support.group_technical_support_user
+msgid "User"
+msgstr "Uporabnik"
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_orders
+#: model:ir.ui.menu,name:technical_support.menu_technical_support_order
+#: view:technical_support.order:0
+msgid "Maintenance Orders"
+msgstr "Vzdrževalni zahtevki"
+
+#. module: technical_support
+#: view:technical_support.request:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Execution"
+msgstr "Izvedba"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order,parts_moved_lines:0
+msgid "Consumed Parts"
+msgstr "Porabljeni deli"
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_order
+#: view:technical_support.order:0
+#: field:technical_support.order.parts.line,maintenance_id:0
+msgid "Maintenance Order"
+msgstr "Vzdrževalni nalog"
+
+#. module: technical_support
+#: view:technical_support.order:0
+msgid "Planned Parts"
+msgstr "Načrtovani deli"
+
+#. module: technical_support
+#: help:technical_support.request,requested_date:0
+msgid "Date requested by the customer for maintenance."
+msgstr "Kupčev zahtevani datum vzdrževanja."
+
+#. module: technical_support
+#: field:technical_support.task,active:0
+msgid "Active"
+msgstr "Aktivno"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: field:technical_support.order.parts.line,parts_qty:0
+#: field:technical_support.task.parts.line,parts_qty:0
+msgid "Quantity"
+msgstr "Količina"
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Claim"
+msgstr "Zahtevek"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Description for Documentation"
+msgstr "Opis za dokumentacijo"
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_tasks
+#: view:technical_support.task:0
+msgid "Maintenance Tasks"
+msgstr "Vzdrževalna opravila"
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Done"
+msgstr "Opravljeno"
+
+#. module: technical_support
+#: view:technical_support.order:0
+msgid "Done"
+msgstr "Opravljeno"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.request:0
+#: view:technical_support.request.reject:0
+msgid "Cancel"
+msgstr "Preklic"
+
+#. module: technical_support
+#: view:technical_support.request:0
+msgid "Open"
+msgstr "Odprto"
+
+#. module: technical_support
+#: field:technical_support.order,origin:0
+msgid "Source Document"
+msgstr "Izvorni dokument"
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "WAITING PARTS"
+msgstr "ČAKANJE DELOV"
+
+#. module: technical_support
+#: help:technical_support.order,parts_picking_id:0
+msgid "This is the Internal Picking List that brings parts to the equipment"
+msgstr "To je interna prevzemnica, ki prenese dele do sredstva"
+
+#. module: technical_support
+#: field:technical_support.request,create_uid:0
+msgid "Responsible"
+msgstr "Odgovorni"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Description for Tools"
+msgstr "Opis za orodje"
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "CANCELED"
+msgstr "Preklicano"
+
+#. module: technical_support
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_parts
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_parts_parts
+#: view:technical_support.order:0
+#: field:technical_support.order.parts.line,parts_id:0
+#: view:technical_support.task:0
+#: field:technical_support.task,parts_lines:0
+#: field:technical_support.task.parts.line,parts_id:0
+msgid "Parts"
+msgstr "Deli"
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "DRAFT"
+msgstr "Osnutek"
+
+#. module: technical_support
+#: help:technical_support.order,origin:0
+msgid "Reference of the document that generated this maintenance order."
+msgstr "Sklic dokumenta, ki je osnova za ta vzdrževalni nalog."
+
+#. module: technical_support
+#: field:technical_support.request,cause:0
+msgid "Cause"
+msgstr "Vzrok"
+
+#. module: technical_support
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_equipments
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_equipments_equipments
+msgid "equipments"
+msgstr "Sredstva"
+
+#. module: technical_support
+#: field:technical_support.order,date_scheduled:0
+msgid "Scheduled Date"
+msgstr "Načrtovani datum"
+
+#. module: technical_support
+#: field:technical_support.order,description:0
+#: field:technical_support.order.parts.line,name:0
+#: view:technical_support.request:0
+#: field:technical_support.request,description:0
+#: field:technical_support.task,name:0
+#: field:technical_support.task.parts.line,name:0
+msgid "Description"
+msgstr "Opis"
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Rejected"
+msgstr "Zavrnjeno"
+
+#. module: technical_support
+#: model:res.groups,name:technical_support.group_technical_support_customer
+msgid "Customer"
+msgstr "Kupec"
+
+#. module: technical_support
+#: field:technical_support.order,documentation_description:0
+#: field:technical_support.task,documentation_description:0
+msgid "Documentation Description"
+msgstr "Opis dokumentacije"
+
+#. module: technical_support
+#: help:technical_support.order,parts_location_id:0
+msgid "Location where the system will look for parts."
+msgstr "Lokacija, kjer bo sistem iskal dele."
+
+#. module: technical_support
+#: field:technical_support.order,date_execution:0
+#: field:technical_support.request,execution_date:0
+msgid "Execution Date"
+msgstr "Datum izvedbe"
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_request_reject
+#: model:ir.model,name:technical_support.model_technical_support_request_reject
+#: view:technical_support.request:0
+#: view:technical_support.request.reject:0
+msgid "Reject Request"
+msgstr "Zavrnitev zahtevka"
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "READY TO MAINTENANCE"
+msgstr "Pripravljeno na vzdrževanje"
+
+#. module: technical_support
+#: help:technical_support.order,state:0
+msgid ""
+"When the maintenance order is created the status is set to 'Draft'.\n"
+"            If the order is confirmed the status is set to 'Waiting Parts'.\n"
+"            If any exceptions are there, the status is set to 'Picking "
+"Exception'.\n"
+"            If the stock is available then the status is set to 'Ready to "
+"Maintenance'.\n"
+"            When the maintenance order gets started then the status is set to "
+"'In Progress'.\n"
+"            When the maintenance is over, the status is set to 'Done'."
+msgstr ""
+"Ko se vzdrževalni nalog ustvari je status nastavljen na 'Osnutek'.\n"
+"            Ob potrditvi status preide na 'Čakanje delov'.\n"
+"            V primeru izjem je status 'Prevzemna izjema'.\n"
+"            Če je zaloga na voljo je status 'Pripravljeno na vzdrževanje'.\n"
+"            Ob začetku vzdrževalnega naloga je status 'V teku'.\n"
+"            Ob dokončanju vzdrževanja je status 'Opravljeno'."
+
+#. module: technical_support
+#: model:res.groups,name:technical_support.group_technical_support_manager
+msgid "Manager"
+msgstr "Upravitelj"
+
+#. module: technical_support
+#: view:technical_support.order:0
+#: view:technical_support.task:0
+msgid "Tools"
+msgstr "Orodja"
+
+#. module: technical_support
+#: model:technical_support.order,description:technical_support.technical_support_order_2
+#: model:technical_support.task,name:technical_support.technical_support_task_1
+msgid "Wash the truck"
+msgstr "Pranje tovornjaka"
+
+#. module: technical_support
+#: model:technical_support.request,cause:technical_support.technical_support_request_1
+msgid "Don't work Pump"
+msgstr "Črpalka ne deluje"
+
+#. module: technical_support
+#: model:technical_support.order,description:1
+#: model:technical_support.request,cause:technical_support.technical_support_request_2
+msgid "There is no light"
+msgstr "Ne sveti"
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_request_confirmed
+msgid "Maintenance Request confirmed"
+msgstr "Vzdrževalni zahtevek potrjen"
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_request_sent
+msgid "Maintenance Request sent"
+msgstr "Vzdrževalni zahtevek poslan"
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_order_confirmed
+msgid "Confirm Maintenance"
+msgstr "Potrditev vzdrževanja"
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_equipment_request_confirmed
+#: model:mail.message.subtype,name:technical_support.mt_request_confirmed
+msgid "Confirm Request"
+msgstr "Potrditev zahtevka"
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_order_confirmed
+msgid "Maintenance Order confirmed"
+msgstr "Vzdrževalni nalog potrjen"
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_request_rejected
+msgid "Maintenance Request rejected"
+msgstr "Vzdrževalni zahtevek zavrnjen"
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_equipment_request_rejected
+#: model:mail.message.subtype,name:technical_support.mt_request_rejected
+msgid "Reject Request"
+msgstr "Zavrnitev zahtevka"
+

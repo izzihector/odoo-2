@@ -1,0 +1,839 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* technical_support
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-29 23:06+0000\n"
+"PO-Revision-Date: 2015-10-29 23:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: technical_support
+#: field:equipment.equipment,technical_support_count:0
+msgid "# Maintenance"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_request
+msgid "(Breakdown)"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.task,active:0
+msgid "Active"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_equipment_equipment
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: field:technical_support.order,equipment_id:0
+#: field:technical_support.request,equipment_id:0
+msgid "equipment"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,category_ids:0
+#: field:technical_support.task,category_id:0
+msgid "equipment Category"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+#: view:website:technical_support.report_technical_support_request
+msgid "equipment:"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+msgid "Available Parts"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Bill Of Material"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,maintenance_type:0
+#: field:technical_support.request,breakdown:0
+msgid "Breakdown"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "CANCELED"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.convert.order:technical_support.view_convert_order
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+#: view:technical_support.request.reject:technical_support.view_request_reject_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Canceled"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.request,cause:0
+msgid "Cause"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_request
+msgid "Cause:"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Claim"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_order_confirmed
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+msgid "Confirm Maintenance"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_equipment_request_confirmed
+#: model:mail.message.subtype,name:technical_support.mt_request_confirmed
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+msgid "Confirm Request"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+msgid "Consumed Parts"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_convert_order
+msgid "Convert Order to Task"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_view_convert_order
+#: view:technical_support.convert.order:technical_support.view_convert_order
+msgid "Convert to Task"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,maintenance_type:0
+#: selection:technical_support.task,maintenance_type:0
+msgid "Corrective"
+msgstr ""
+
+#. module: technical_support
+#: model:res.groups,name:technical_support.group_create_maintenance_request
+msgid "Create Maintenance Request"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.convert.order,create_uid:0
+#: field:technical_support.order,create_uid:0
+#: field:technical_support.order.parts.line,create_uid:0
+#: field:technical_support.request.reject,create_uid:0
+#: field:technical_support.task,create_uid:0
+#: field:technical_support.task.parts.line,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.convert.order,create_date:0
+#: field:technical_support.order,create_date:0
+#: field:technical_support.order.parts.line,create_date:0
+#: field:technical_support.request,create_date:0
+#: field:technical_support.request.reject,create_date:0
+#: field:technical_support.task,create_date:0
+#: field:technical_support.task.parts.line,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "DONE"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "DRAFT"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.request:technical_support.technical_support_request_tree_view
+msgid "Date"
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.order,message_last_post:0
+#: help:technical_support.request,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.request,requested_date:0
+msgid "Date requested by the customer for maintenance."
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,description:0
+#: field:technical_support.order.parts.line,name:0
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+#: field:technical_support.request,description:0
+#: field:technical_support.task,name:0
+#: field:technical_support.task.parts.line,name:0
+#: view:website:technical_support.report_technical_support_order
+msgid "Description"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Description for Documentation"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Description for Labor"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Description for Operations"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Description for Tools"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Description:"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.convert.order:technical_support.view_convert_order
+msgid "Do you really want convert Maintenance Order to Task?"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+#: view:website:technical_support.report_technical_support_order
+msgid "Documentation"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,documentation_description:0
+#: field:technical_support.task,documentation_description:0
+msgid "Documentation Description"
+msgstr ""
+
+#. module: technical_support
+#: model:technical_support.request,cause:technical_support.technical_support_request_1
+msgid "Don't work Pump"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: selection:technical_support.request,state:0
+msgid "Done"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Execution"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: field:technical_support.order,date_execution:0
+#: field:technical_support.request,execution_date:0
+msgid "Execution Date"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_request
+msgid "Execution Date:"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,message_follower_ids:0
+#: field:technical_support.request,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+msgid "Force Reservation"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: view:technical_support.request:technical_support.technical_support_request_search
+msgid "Group By"
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.order,message_summary:0
+#: help:technical_support.request,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.convert.order,id:0
+#: field:technical_support.order,id:0
+#: field:technical_support.order.parts.line,id:0
+#: field:technical_support.request,id:0
+#: field:technical_support.request.reject,id:0
+#: field:technical_support.task,id:0
+#: field:technical_support.task.parts.line,id:0
+msgid "ID"
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.order,message_unread:0
+#: help:technical_support.request,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,message_is_follower:0
+#: field:technical_support.request,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+#: view:website:technical_support.report_technical_support_order
+msgid "Labor"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,labor_description:0
+#: field:technical_support.task,labor_description:0
+msgid "Labor Description"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,message_last_post:0
+#: field:technical_support.request,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.convert.order,write_uid:0
+#: field:technical_support.order,write_uid:0
+#: field:technical_support.order.parts.line,write_uid:0
+#: field:technical_support.request,write_uid:0
+#: field:technical_support.request.reject,write_uid:0
+#: field:technical_support.task,write_uid:0
+#: field:technical_support.task.parts.line,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.convert.order,write_date:0
+#: field:technical_support.order,write_date:0
+#: field:technical_support.order.parts.line,write_date:0
+#: field:technical_support.request,write_date:0
+#: field:technical_support.request.reject,write_date:0
+#: field:technical_support.task,write_date:0
+#: field:technical_support.task.parts.line,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: technical_support
+#: view:equipment.equipment:technical_support.view_equipment_equipment_technical_support_buttons_from
+#: model:ir.ui.menu,name:technical_support.menu_technical_support_maintenance
+msgid "Maintenance"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.actions.report.xml,name:technical_support.action_report_maintenance_order
+#: model:ir.model,name:technical_support.model_technical_support_order
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: field:technical_support.order.parts.line,maintenance_id:0
+msgid "Maintenance Order"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_order_confirmed
+msgid "Maintenance Order confirmed"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Maintenance Order № :"
+msgstr ""
+
+#. module: technical_support
+#: code:addons/technical_support/equipment.py:44
+#: model:ir.actions.act_window,name:technical_support.action_orders
+#: model:ir.ui.menu,name:technical_support.menu_technical_support_order
+#: view:technical_support.order:technical_support.technical_support_order_calendar_view
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.order:technical_support.technical_support_order_tree_view
+#, python-format
+msgid "Maintenance Orders"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_order_parts_line
+#: model:ir.model,name:technical_support.model_technical_support_task_parts_line
+msgid "Maintenance Planned Parts"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.actions.report.xml,name:technical_support.action_report_maintenance_request
+#: model:ir.model,name:technical_support.model_technical_support_request
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+msgid "Maintenance Request"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_request_confirmed
+msgid "Maintenance Request confirmed"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_request_rejected
+msgid "Maintenance Request rejected"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,description:technical_support.mt_request_sent
+msgid "Maintenance Request sent"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_request
+msgid "Maintenance Request № :"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_requests
+#: model:ir.ui.menu,name:technical_support.menu_technical_support_request
+#: view:technical_support.request:technical_support.technical_support_request_tree_view
+msgid "Maintenance Requests"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_technical_support_task
+#: field:technical_support.task.parts.line,task_id:0
+msgid "Maintenance Task"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_tasks
+#: view:technical_support.task:technical_support.technical_support_task_tree_view
+msgid "Maintenance Tasks"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: field:technical_support.order,maintenance_type:0
+#: field:technical_support.task,maintenance_type:0
+msgid "Maintenance Type"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Maintenance Type:"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,message_ids:0
+#: field:technical_support.request,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.order,message_ids:0
+#: help:technical_support.request,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: technical_support
+#: model:product.template,name:technical_support.product_product_technical_support_oil_product_template
+msgid "Oil"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.request:technical_support.technical_support_request_search
+msgid "Open"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+#: view:website:technical_support.report_technical_support_order
+msgid "Operations"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,operations_description:0
+#: field:technical_support.task,operations_description:0
+msgid "Operations Description"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_tree_view
+msgid "Order Date"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_parts
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_parts_parts
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: field:technical_support.order.parts.line,parts_id:0
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+#: field:technical_support.task,parts_lines:0
+#: field:technical_support.task.parts.line,parts_id:0
+#: model:product.category,name:technical_support.product_category_technical_support
+msgid "Parts"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+msgid "Parts to Consume"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,date_planned:0
+msgid "Planned Date"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Planned Date:"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:website:technical_support.report_technical_support_order
+msgid "Planned Parts"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,parts_lines:0
+msgid "Planned parts"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,maintenance_type:0
+#: selection:technical_support.task,maintenance_type:0
+msgid "Predictive"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,maintenance_type:0
+#: selection:technical_support.task,maintenance_type:0
+msgid "Preventive"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+#: view:website:technical_support.report_technical_support_request
+msgid "Printing date:"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: field:technical_support.order,problem_description:0
+#: view:website:technical_support.report_technical_support_order
+#: view:website:technical_support.report_technical_support_request
+msgid "Problem Description"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,procurement_group_id:0
+msgid "Procurement group"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Product"
+msgstr ""
+
+#. module: technical_support
+#: model:product.template,name:technical_support.product_product_technical_support_pump_product_template
+msgid "Pump"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: field:technical_support.order.parts.line,parts_qty:0
+#: field:technical_support.task.parts.line,parts_qty:0
+#: view:website:technical_support.report_technical_support_order
+msgid "Quantity"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "READY TO MAINTENANCE"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+msgid "Recreate Picking"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,name:0
+#: field:technical_support.request,name:0
+msgid "Reference"
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.order,origin:0
+msgid "Reference of the document that generated this maintenance order."
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+#: field:technical_support.request,reject_reason:0
+#: field:technical_support.request.reject,reject_reason:0
+msgid "Reject Reason"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.actions.act_window,name:technical_support.action_request_reject
+#: model:ir.model,name:technical_support.model_technical_support_request_reject
+#: model:mail.message.subtype,name:technical_support.mt_equipment_request_rejected
+#: model:mail.message.subtype,name:technical_support.mt_request_rejected
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+#: view:technical_support.request.reject:technical_support.view_request_reject_wizard
+msgid "Reject Request"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.request,state:0
+msgid "Rejected"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.request,requested_date:0
+msgid "Requested Date"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_request
+msgid "Requested Date:"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.request,create_uid:0
+msgid "Responsible"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: field:technical_support.order,date_scheduled:0
+msgid "Scheduled Date"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Scheduled Date:"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+msgid "Search Maintenance Order"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.request:technical_support.technical_support_request_search
+msgid "Search Maintenance Request"
+msgstr ""
+
+#. module: technical_support
+#: model:mail.message.subtype,name:technical_support.mt_equipment_request_sent
+#: model:mail.message.subtype,name:technical_support.mt_request_sent
+#: view:technical_support.request:technical_support.technical_support_request_form_view
+msgid "Send Request"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,origin:0
+msgid "Source Document"
+msgstr ""
+
+#. module: technical_support
+#: view:website:technical_support.report_technical_support_order
+msgid "Source Document:"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Specify the documentation useful when execute this order..."
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Specify the jobs that need execute..."
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Specify the specialists needed for execute this order..."
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Specify the tools and mechanisms needed for execute this order..."
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: view:technical_support.request:technical_support.technical_support_request_search
+msgid "State"
+msgstr ""
+
+#. module: technical_support
+#: view:equipment.equipment:technical_support.view_equipment_search_technical_support
+#: field:technical_support.order,state:0
+#: field:technical_support.request,state:0
+msgid "Status"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.model,name:technical_support.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,message_summary:0
+#: field:technical_support.request,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: technical_support
+#: code:addons/technical_support/wizard/convert_order.py:52
+#: field:technical_support.order,task_id:0
+#, python-format
+msgid "Task"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Task Name"
+msgstr ""
+
+#. module: technical_support
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_tasks
+#: model:ir.ui.menu,name:technical_support.menu_maintenance_tasks_tasks
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+msgid "Tasks"
+msgstr ""
+
+#. module: technical_support
+#: model:technical_support.request,cause:technical_support.technical_support_request_2
+msgid "There is no light"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: view:technical_support.task:technical_support.technical_support_task_form_view
+#: view:website:technical_support.report_technical_support_order
+msgid "Tools"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,tools_description:0
+#: field:technical_support.task,tools_description:0
+msgid "Tools Description"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.request:technical_support.technical_support_request_search
+msgid "Undecided maintenance request"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_form_view
+#: field:technical_support.order.parts.line,parts_uom:0
+#: field:technical_support.task.parts.line,parts_uom:0
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.order:technical_support.technical_support_order_search
+#: field:technical_support.order,message_unread:0
+#: view:technical_support.request:technical_support.technical_support_request_search
+#: field:technical_support.request,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: technical_support
+#: selection:technical_support.order,state:0
+msgid "WAITING PARTS"
+msgstr ""
+
+#. module: technical_support
+#: model:technical_support.order,description:technical_support.technical_support_order_2
+#: model:technical_support.task,name:technical_support.technical_support_task_1
+msgid "Wash the truck"
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.order,state:0
+msgid "When the maintenance order is created the status is set to 'Draft'.\n"
+"            If the order is confirmed the status is set to 'Waiting Parts'.\n"
+"            If the stock is available then the status is set to 'Ready to Maintenance'.\n"
+"            When the maintenance is over, the status is set to 'Done'."
+msgstr ""
+
+#. module: technical_support
+#: help:technical_support.request,state:0
+msgid "When the maintenance request is created the status is set to 'Draft'.\n"
+"            If the request is sent the status is set to 'Claim'.\n"
+"            If the request is confirmed the status is set to 'Execution'.\n"
+"            If the request is rejected the status is set to 'Rejected'.\n"
+"            When the maintenance is over, the status is set to 'Done'."
+msgstr ""
+
+#. module: technical_support
+#: view:technical_support.convert.order:technical_support.view_convert_order
+#: view:technical_support.request.reject:technical_support.view_request_reject_wizard
+msgid "or"
+msgstr ""
+
+#. module: technical_support
+#: field:technical_support.order,parts_move_lines:0
+#: field:technical_support.order,parts_moved_lines:0
+#: field:technical_support.order,parts_ready_lines:0
+msgid "unknown"
+msgstr ""
+
