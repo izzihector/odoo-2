@@ -9,22 +9,12 @@
 		            <form string="Equipment Modalities">
 		                <sheet>
 		                <div class="oe_button_box" name="button_box">
-		                    <button
-		                        class="oe_stat_button"
-		                        icon="fa-laptop"
-		                        type="action">
-		                        <field string="Equipments" name="equipment_count" widget="statinfo"/>
-		                    </button>
 		                </div>
 		                <div class="oe_title">
 		                    <label for="name" class="oe_edit_only" string="Modality Name"/>
 		                    <h1>
 		                        <field name="name"/>
 		                    </h1>
-		                </div>
-		                <group>
-		                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}" class="oe_inline"/>
-		                </group>
 		                <field name="note" nolabel="1"/>
 		                </sheet>
 		                <div class="oe_chatter">
