@@ -272,3 +272,30 @@ class EquipmentDicom(models.Model):
     equipment_id=fields.Many2one('equipment.equipment','Equipment')
     dicom_type_id=fields.Many2one('equipment.dicom.type','Dicom Type')
     description=fields.Text('Description')
+
+
+class EquipmentModality(models.Model):
+    _name = 'equipment.modality'
+    _inherit = ['mail.alias.mixin', 'mail.thread']
+    _description = 'Equipment Modality'
+
+    @api.one
+    @api.depends('equipment_ids')
+    def _compute_fold(self):
+        self.fold = False if self.equipment_count else True
+
+    name = fields.Char('Modality Name', required=True, translate=True)
+    company_id = fields.Many2one('res.company', string='Company',
+        default=lambda self: self.env.user.company_id)
+    color = fields.Integer('Color Index')
+    note = fields.Text('Comments', translate=True)
+    equipment_ids = fields.One2many('equipment.equipment', 'modality_id', string='Equipments', copy=False)
+    equipment_count = fields.Integer(string="Equipment", compute='_compute_equipment_count')
+    fold = fields.Boolean(string='Folded in Modality Pipe', compute='_compute_fold', store=True)
+
+    @api.multi
+    def _compute_equipment_count(self):
+        equipment_data = self.env['equipment.equipment'].read_group([('modality_id', 'in', self.ids)], ['modality_id'], ['modality_id'])
+        mapped_data = dict([(m['modality_id'][0], m['modality_id_count']) for m in equipment_data])
+        for modality in self:
+            modality.equipment_count = mapped_data.get(modality.id, 0)
