@@ -286,7 +286,6 @@ class EquipmentDicom(models.Model):
 
 class EquipmentModality(models.Model):
     _name = 'equipment.modality'
-    _inherit = ['mail.alias.mixin', 'mail.thread']
     _description = 'Equipment Modality'
 
 
