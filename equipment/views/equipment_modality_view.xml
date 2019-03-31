@@ -88,7 +88,7 @@
 		    </record>
 
 		    <!-- equipment.modality : actions -->
-		    <record id="equipment_modality_action" model="ir.actions.act_window">
+		    <record id="equipment_modality_action_view" model="ir.actions.act_window">
 		        <field name="name">Equipment Modalities</field>
 		        <field name="res_model">equipment.modality</field>
 		        <field name="view_mode">tree,kanban,form</field>
