@@ -39,6 +39,7 @@ Support following feature:
         'views/equipment_software_view.xml',
         'views/equipment_dicom_view.xml',
         'views/equipment_network_view.xml',
+        'views/equipment_modality_view.xml',
         'views/equipment.xml',
         'data/equipment_data.xml',
         'data/stock_data.xml',
