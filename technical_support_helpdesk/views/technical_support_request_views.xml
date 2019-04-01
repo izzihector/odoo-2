@@ -16,7 +16,7 @@
             <field name="model">technical_support.request</field>
             <field name="inherit_id" ref="technical_support.technical_support_request_form_view"/>
             <field name="arch" type="xml">
-                <field name="equipment_id" position="after">
+                <field name="requested_date" position="after">
                     <field name="ticket_id" widget="many2one"/>
                 </field>
             </field>
