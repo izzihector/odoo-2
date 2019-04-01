@@ -89,7 +89,6 @@
 														<page string="Subscription">
 															<group>
 																<group>
-																	<field name="instalation_date" widget="datetime"/>
 																</group>
 																<group>
 																</group>
