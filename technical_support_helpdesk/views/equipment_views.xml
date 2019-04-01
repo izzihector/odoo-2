@@ -22,4 +22,16 @@
                 </field>
             </field>
         </record>
+
+        <record id="equipment_equipment_form_view_inherit" model="ir.ui.view">
+            <field name="name">Equipment</field>
+            <field name="model">equipment.equipment</field>
+            <field name="inherit_id" ref="equipment.equipments_form_view"/>
+            <field name="arch" type="xml">
+                <field name="modality_id" position="before">
+                    <field name="team_id" widget="many2one"/>
+                </field>
+            </field>
+        </record>
+
     </odoo>
