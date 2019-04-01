@@ -145,6 +145,7 @@
                     <field name="modality_id"/>
                     <field name="id" />
 										<field name="user_id"/>
+										<field name="criticality"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_vignette">
