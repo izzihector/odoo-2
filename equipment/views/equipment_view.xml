@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="oe_kanban_details">
                                     <h4>
-                                        <a type="open"><field name="equipment_number" />s-<field name="name"/>-<field name="serial"></a>
+                                        <a type="open"><field name="equipment_number" />-<field name="name"/>-<field name="serial"></a>
                                     </h4>
                                     <ul>
                                         <li>Model: <field name="model_id"></field></li>
