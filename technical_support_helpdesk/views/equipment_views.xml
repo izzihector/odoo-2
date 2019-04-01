@@ -18,6 +18,7 @@
             <field name="arch" type="xml">
                 <field name="note" position="before">
                     <field name="team_id" widget="many2one"/>
+                    <field name="team_leader_id" widget="many2one"/>
                 </field>
             </field>
         </record>
