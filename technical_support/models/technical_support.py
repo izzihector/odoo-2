@@ -321,6 +321,11 @@ class technical_support_request(models.Model):
     create_uid = fields.Many2one('res.users', 'Responsible')
 
     client_id=fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
+    brand_id=fields.Many2one('equipment.brand', related='equipment_id.brand_id', string='Brand', readonly=True)
+    zone_id=fields.Many2one('equipment.zone', related='equipment_id.zone_id', string='Zone', readonly=True)
+    model_id=fields.Many2one('equipment.model', related='equipment_id.model_id', string='Model', readonly=True)
+    parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
+    modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
 
     @api.onchange('requested_date')
     def onchange_requested_date(self):
