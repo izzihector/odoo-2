@@ -22,7 +22,7 @@
             <field name="name">technical_support.request.tree</field>
             <field name="model">technical_support.request</field>
             <field name="arch" type="xml">
-                <tree fonts="bold:message_unread==True" string="Maintenance Requests">
+                <tree fonts="bold:message_unread==True" string="Technical Support Requests">
                     <field name="message_unread" invisible="1"/>
                     <field name="name"/>
                     <field name="execution_date" string="Date"/>
@@ -37,7 +37,7 @@
             <field name="name">technical_support.request.form</field>
             <field name="model">technical_support.request</field>
             <field name="arch" type="xml">
-                <form string="Maintenance Request" version="7.0">
+                <form string="Technical Support Request" version="1.0">
                     <header>
                         <button name="action_send" states="draft" string="Send Request" type="object" class="oe_highlight"/>
                         <button name="action_confirm" states="claim" string="Confirm Request" type="object" class="oe_highlight" groups="technical_support.group_technical_support_user"/>
@@ -47,7 +47,7 @@
                     </header>
                     <sheet>
                         <div class="oe_title">
-                            <h1>Maintenance Request <field name="name" class="oe_inline" readonly="1"/></h1>
+                            <h1>TSR# <field name="name" class="oe_inline" readonly="1"/></h1>
                         </div>
                         <group>
                             <group>
@@ -79,7 +79,7 @@
             <field name="name">technical_support.request.search</field>
             <field name="model">technical_support.request</field>
             <field name="arch" type="xml">
-                <search string="Search Maintenance Request">
+                <search string="Search Technical Support Request">
                     <field name="state"/>
                     <field name="name"/>
                     <field name="equipment_id"/>
@@ -97,7 +97,7 @@
         </record>
 
         <record id="action_requests" model="ir.actions.act_window">
-            <field name="name">Maintenance Requests</field>
+            <field name="name">Technical Support Requests</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">technical_support.request</field>
             <field name="view_type">form</field>
@@ -105,7 +105,7 @@
             <field name="context">{'search_default_open': 1}</field>
         </record>
 
-        <menuitem name="Maintenance Requests"
+        <menuitem name="Technical Support Requests"
             action="action_requests"
             id="menu_technical_support_request"
             parent="menu_technical_support_maintenance"
@@ -116,7 +116,7 @@
             <field name="name">technical_support.order.tree</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
-                <tree fonts="bold:message_unread==True" string="Maintenance Orders">
+                <tree fonts="bold:message_unread==True" string="Technical Support Orders">
                     <field name="message_unread" invisible="1"/>
                     <field name="name"/>
                     <field name="date_execution" string="Order Date" widget="date"/>
@@ -133,7 +133,7 @@
             <field name="name">technical_support.order.calendar</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
-                <calendar color="equipment_id" date_start="date_execution" string="Maintenance Orders">
+                <calendar color="equipment_id" date_start="date_execution" string="Technical Support Orders">
                     <field name="name"/>
                     <field name="description"/>
                 </calendar>
@@ -144,7 +144,7 @@
             <field name="name">technical_support.order.form</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
-                <form string="Maintenance Orders" version="7.0">
+                <form string="Technical Support Orders" version="7.0">
                     <header>
                         <button name="action_confirm" states="draft" string="Confirm Maintenance" type="object" class="oe_highlight"/>
                         <button name="action_done" states="ready" string="Done" type="object" class="oe_highlight"/>
@@ -157,7 +157,7 @@
                     </header>
                     <sheet>
                         <div class="oe_title">
-                            <h1>Maintenance Order <field name="name" class="oe_inline" readonly="1"/></h1>
+                            <h1>#TSO <field name="name" class="oe_inline" readonly="1"/></h1>
                         </div>
                         <group>
                             <group>
@@ -259,7 +259,7 @@
             <field name="name">technical_support.order.search</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
-                <search string="Search Maintenance Order">
+                <search string="Search Technical Support Order">
                     <field name="name"/>
                     <field name="maintenance_type"/>
                     <field name="equipment_id"/>
@@ -293,7 +293,7 @@
         </record>
 
         <record id="action_orders" model="ir.actions.act_window">
-            <field name="name">Maintenance Orders</field>
+            <field name="name">Technical Support Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">technical_support.order</field>
             <field name="view_type">form</field>
@@ -301,14 +301,16 @@
             <field name="context" eval="{'default_categ_id': ref('technical_support.product_category_technical_support')}"/>
         </record>
 
-        <menuitem name="Maintenance Orders"
+        <menuitem
+						name="Technical Support Orders"
             action="action_orders"
             id="menu_technical_support_order"
             parent="menu_technical_support_maintenance"
             sequence="10"/>
 
         <!-- Parts menu -->
-        <menuitem name="Parts"
+        <menuitem
+						name="Parts"
             id="menu_maintenance_parts"
             parent="base.menu_technical_support_root"
             groups="technical_support.group_technical_support_user"

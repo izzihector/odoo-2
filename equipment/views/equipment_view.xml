@@ -384,6 +384,13 @@
 						groups="equipment.group_technical_support_customer"
 						sequence="100"/>
 
+				<menuitem name="Equipments"
+						action="action_equipments"
+						id="menu_technical_support_equipments_equipments"
+						parent="base.menu_technical_support_root"
+						groups="equipment.group_technical_support_customer"
+						sequence="2"/>
+
 				<!-- Management equipment item -->
 				<menuitem name="Manage states"
 						action="action_management_equipments"
