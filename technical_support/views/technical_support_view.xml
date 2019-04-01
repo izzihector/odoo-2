@@ -80,7 +80,6 @@
 																<group>
 																	<field name="brand_id" widget="manyone"/>
 	                                <field name="model_id" widget="manyone"/>
-																	<field name="category_ids" widget="many2many" />
 																</group>
 															</group>
 														</page>
