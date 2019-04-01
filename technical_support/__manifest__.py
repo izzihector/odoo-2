@@ -8,7 +8,7 @@
 
 {
     'name': 'Technical Support',
-    'version': '1.0',
+    'version': '1.1',
     'summary': 'Equipment Maintenance, Diagnostic, Preventive, Corrective, Repair and Operation',
     'description': """
 Manage Maintenance process in Odoo
