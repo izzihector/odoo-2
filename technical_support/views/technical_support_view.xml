@@ -87,7 +87,13 @@
 																<separator string="Client Information"/>
 														</page>
 														<page string="Subscription">
-																<separator string="Subscription Information"/>
+															<group>
+																<group>
+																	<field name="instalation_date" widget="datetime"/>
+																</group>
+																<group>
+																</group>
+															</group>
 														</page>
 														<page string="Contact">
 																<separator string="Contact Information"/>
