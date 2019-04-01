@@ -144,6 +144,7 @@
                     <field name="client_id"/>
                     <field name="modality_id"/>
                     <field name="id" />
+										<field name="equipment_number" />
 										<field name="user_id"/>
 										<field name="criticality"/>
                     <templates>
@@ -155,12 +156,11 @@
                                 </div>
                                 <div class="oe_kanban_details">
                                     <h4>
-                                        <a type="open"><field name="id"/>-<field name="name"/></a>
+                                        <a type="open"><field name="equipment_number" />s-<field name="name"/>-<field name="serial"></a>
                                     </h4>
                                     <ul>
                                         <li>Model: <field name="model_id"></field></li>
                                         <li>Brand: <field name="brand_id"></field></li>
-                                        <li>Serial No: <field name="serial"></field></li>
 																				<li>Client: <field name="client_id"></field></li>
                                         <li class="emsa_kanban_info">
                                         <a t-if="record.criticality.raw_value == 0" t-attf-title="#{record.criticality.value}" class="emsa_attention_off"><span class="fa fa-exclamation-triangle"/></a>
