@@ -144,6 +144,7 @@
                     <field name="client_id"/>
                     <field name="modality_id"/>
                     <field name="id" />
+										<field name="user_id"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_vignette">
@@ -166,7 +167,7 @@
                                         <a t-if="record.criticality.raw_value gt 1" t-attf-title="#{record.criticality.value}" class="emsa_attention_on"><span class="fa fa-exclamation-triangle"/></a>
                                         <a t-if="record.criticality.raw_value lte 2" t-attf-title="#{record.criticality.value}" class="emsa_attention_off"><span class="fa fa-exclamation-triangle"/></a>
                                         <a t-if="record.criticality.raw_value gt 2" t-attf-title="#{record.criticality.value}" class="emsa_attention_on"><span class="fa fa-exclamation-triangle"/></a>
-                                        <img t-att-alt="Equipment" t-att-src="kanban_image('res.partner', 'image_small', record.client_id.raw_value)" t-att-title="record.client_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                        <img t-att-alt="Equipment" t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
                                         </li>
                                     </ul>
                                 </div>
