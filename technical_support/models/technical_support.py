@@ -327,8 +327,6 @@ class technical_support_request(models.Model):
     parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
     modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
 
-    instalation_date = fields.Date(string='Instalation Date', related='equipment_id.instalation_date' readonly=True)
-
     @api.onchange('requested_date')
     def onchange_requested_date(self):
         self.execution_date = self.requested_date
