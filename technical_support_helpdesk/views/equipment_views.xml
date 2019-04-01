@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+    	<record id="equipment_modaliy_action_team_new" model="ir.actions.act_window">
+        	<field name="name">Modality Team</field>
+        	<field name="res_model">equipment.modality</field>
+        	<field name="view_mode">form,tree,graph</field>
+    	</record>
+
+    	<record id="team_action_equipment_modality" model="ir.actions.act_window">
+        	<field name="name">Modality Team</field>
+        	<field name="res_model">equipment.modality</field>
+    	</record>
+
+        <record id="equipment_modality_team_form_view_inherit" model="ir.ui.view">
+            <field name="name">Modality Team</field>
+            <field name="model">equipment.modality</field>
+            <field name="inherit_id" ref="equipment.equipment_modality_view_form"/>
+            <field name="arch" type="xml">
+                <field name="note" position="before">
+                    <field name="team_id" widget="many2one"/>
+                </field>
+            </field>
+        </record>
+    </odoo>
