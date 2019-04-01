@@ -64,9 +64,25 @@
                         <group string="Reject Reason" states="reject">
                             <field name="reject_reason" colspan="4" nolabel="1"/>
                         </group>
-                        <group string="Description">
-                            <field name="description" colspan="4" nolabel="1"/>
-                        </group>
+												<notebook>
+														<page string="Description">
+															<group>
+																	<field name="description" colspan="4" nolabel="1"/>
+															</group>
+														</page>
+														<page string="Equipment">
+															<separator string="Equipment Information"/>
+														</page>
+														<page string="Client">
+																<separator string="Client Information"/>
+														</page>
+														<page string="Subscription">
+																<separator string="Subscription Information"/>
+														</page>
+														<page string="Contact">
+																<separator string="Contact Information"/>
+														</page>
+												</notebook>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
