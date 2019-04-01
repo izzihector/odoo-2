@@ -86,6 +86,7 @@ class technical_support_order(models.Model):
     wo_id = fields.Many2one('technical_support.workorder', 'Work Order', ondelete='cascade')
     request_id = fields.Many2one('technical_support.request', 'Request')
 
+
     _order = 'date_execution'
 
     @api.onchange('equipment_id','maintenance_type')
@@ -327,7 +328,7 @@ class technical_support_request(models.Model):
     parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
     modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
 
-    
+
 
     @api.onchange('requested_date')
     def onchange_requested_date(self):

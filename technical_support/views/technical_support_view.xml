@@ -208,6 +208,7 @@
                                 <field name="date_execution"/>
                                 <field name="user_id"/>
                                 <field name="origin"/>
+																<field name="request_id"/>
                             </group>
                             <group groups="stock.group_locations">
                             </group>
