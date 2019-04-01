@@ -9,9 +9,11 @@
                 <tree string="equipments">
                     <field name="equipment_number"/>
                     <field name="name"/>
-                    <field name="property_stock_equipment"/>
-                    <field name="criticality"/>
-                    <field name="user_id"/>
+                    <field name="brand_id"/>
+                    <field name="model_id"/>
+										<field name="serial"/>
+                    <field name="client_id"/>
+										<field name="modality_id"/>
                 </tree>
             </field>
         </record>
@@ -139,8 +141,8 @@
                 <kanban>
                     <field name="maintenance_state_id"/>
                     <field name="maintenance_state_color"/>
-                    <field name="user_id"/>
-                    <field name="criticality"/>
+                    <field name="client_id"/>
+                    <field name="modality_id"/>
                     <field name="id" />
                     <templates>
                         <t t-name="kanban-box">
@@ -154,8 +156,8 @@
                                         <a type="open"><field name="name"/></a>
                                     </h4>
                                     <ul>
-                                        <li>Model: <field name="model"></field></li>
-                                        <li>Manufacturer: <field name="manufacturer_id"></field></li>
+                                        <li>Model: <field name="model_id"></field></li>
+                                        <li>Brand: <field name="brand_id"></field></li>
                                         <li>Serial No: <field name="serial"></field></li>
                                         <li class="emsa_kanban_info">
                                         <a t-if="record.criticality.raw_value == 0" t-attf-title="#{record.criticality.value}" class="emsa_attention_off"><span class="fa fa-exclamation-triangle"/></a>
@@ -164,7 +166,7 @@
                                         <a t-if="record.criticality.raw_value gt 1" t-attf-title="#{record.criticality.value}" class="emsa_attention_on"><span class="fa fa-exclamation-triangle"/></a>
                                         <a t-if="record.criticality.raw_value lte 2" t-attf-title="#{record.criticality.value}" class="emsa_attention_off"><span class="fa fa-exclamation-triangle"/></a>
                                         <a t-if="record.criticality.raw_value gt 2" t-attf-title="#{record.criticality.value}" class="emsa_attention_on"><span class="fa fa-exclamation-triangle"/></a>
-                                        <img t-att-alt="Equipment" t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                        <img t-att-alt="Equipment" t-att-src="kanban_image('res.partner', 'image_small', record.client_id.raw_value)" t-att-title="record.client_id.value" width="24" height="24" class="oe_kanban_avatar"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -183,10 +185,11 @@
                 <search string="Equipment Search">
                     <field name="equipment_number"/>
                     <field name="name"/>
-                    <field name="property_stock_equipment"/>
-                    <field name="criticality"/>
-                    <field name="user_id"/>
+                    <field name="brand_id"/>
+                    <field name="model_id"/>
+                    <field name="client_id"/>
                     <field name="category_ids"/>
+										<field name="modality_id"/>
                     <separator />
                     <group expand="0" string="Group By">
                       <filter name="group_name"
@@ -194,8 +197,8 @@
                               context="{'group_by': 'name'}"
                               />
                       <filter name="group_user"
-                              string="User"
-                              context="{'group_by': 'user_id'}"
+                              string="Client"
+                              context="{'group_by': 'client_id'}"
                               />
                     </group>
                 </search>
