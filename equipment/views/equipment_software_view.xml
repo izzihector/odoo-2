@@ -100,7 +100,7 @@
 			id="menu_equipment_software_type"
 			parent="menu_equipment_config"
 			action="equipment_software_type_action_view"
-			groups="equipment.group_technical_support_manager"
+			groups="equipment.group_equipment_manager"
 			sequence="8"/>
 
 		<!-- Equipment Software item -->
@@ -109,7 +109,7 @@
 			id="menu_equipment_software"
 			parent="menu_equipment_config"
 			action="equipment_software_action_view"
-			groups="equipment.group_technical_support_manager"
+			groups="equipment.group_equipment_manager"
 			sequence="9"/>
 
 

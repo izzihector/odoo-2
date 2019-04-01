@@ -54,7 +54,7 @@
 			id="menu_equipment_zone"
 			parent="menu_equipment_config"
 			action="equipment_zone_action_view"
-			groups="equipment.group_technical_support_manager"
+			groups="equipment.group_equipment_manager"
 			sequence="10"/>
 
 	</odoo>
