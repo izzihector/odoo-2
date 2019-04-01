@@ -195,6 +195,7 @@
                         <group>
                             <group>
                                 <field name="equipment_id"/>
+																<field name="client_id"/>
                                 <field name="category_ids" invisible="1"/>
                                 <field name="maintenance_type"/>
                                 <label for="task_id" attrs="{'invisible':[('maintenance_type','=','bm')]}"/>
