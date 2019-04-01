@@ -374,7 +374,7 @@
             id="menu_equipment"
             groups="equipment.group_technical_support_user"
 						web_icon="equipment,static/description/icon.png"
-            sequence="90"/>
+            sequence="92"/>
 
 				<!-- Equipment item -->
 				<menuitem
