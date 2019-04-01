@@ -8,3 +8,8 @@ class EquipmentModality(models.Model):
 
     team_id=fields.Many2one('helpdesk.team', string='Team')
     team_leader_id=fields.Many2one('res.users', related='team_id.leader_id', string='Team Leader', store=True, readonly=True)
+
+class EquipmentEquipment(models.Model):
+    _inherit = 'equipment.equipment'
+
+    team_id=fields.Many2one('helpdesk.team', related='modality_id.team_id', string='Team', store=True, readonly=True)
