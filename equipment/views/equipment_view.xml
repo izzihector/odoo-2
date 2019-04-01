@@ -372,17 +372,18 @@
         <menuitem
 						name="Equipments"
             id="menu_equipment"
-            groups="equipment.group_technical_support_customer"
+            groups="equipment.group_technical_support_user"
 						web_icon="equipment,static/description/icon.png"
             sequence="90"/>
 
 				<!-- Equipment item -->
-				<menuitem name="Equipments"
+				<menuitem
+						name="Equipments"
 						action="action_equipments"
 						id="menu_maintenance_equipments_equipments"
 						parent="menu_equipment"
-						groups="equipment.group_technical_support_customer"
-						sequence="100"/>
+						groups="equipment.group_technical_support_user"
+						sequence="1"/>
 
 				<!-- Management equipment item -->
 				<menuitem name="Manage states"
