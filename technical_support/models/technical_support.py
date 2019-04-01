@@ -65,7 +65,7 @@ class technical_support_order(models.Model):
     maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='bm')
     task_id = fields.Many2one('technical_support.task', 'Task', readonly=True, states={'draft': [('readonly', False)]})
     description = fields.Char('Description', size=64, translate=True, required=True, readonly=True, states={'draft': [('readonly', False)]})
-    equipment_id = fields.Many2one('equipment.equipment', 'equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
+    equipment_id = fields.Many2one('equipment.equipment', 'Equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
     date_planned = fields.Datetime('Planned Date', required=True, readonly=True, states={'draft':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
     date_scheduled = fields.Datetime('Scheduled Date', required=True, readonly=True, states={'draft':[('readonly',False)],'released':[('readonly',False)],'ready':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
     date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
@@ -137,7 +137,7 @@ class technical_support_order(models.Model):
                 if any(states) or len(states) == 0: res = False
         return res
 
-    def action_confirm(self):        
+    def action_confirm(self):
         for order in self:
             order.write({'state':'released'})
         return 0
