@@ -13,3 +13,4 @@ class EquipmentEquipment(models.Model):
     _inherit = 'equipment.equipment'
 
     team_id=fields.Many2one('helpdesk.team', related='modality_id.team_id', string='Team', store=True, readonly=True)
+    team_leader_id=fields.Many2one('res.users', related='modality_id.team_id.leader_id', string='Team Leader', store=True, readonly=True)

@@ -28,8 +28,9 @@
             <field name="model">equipment.equipment</field>
             <field name="inherit_id" ref="equipment.equipments_form_view"/>
             <field name="arch" type="xml">
-                <field name="modality_id" position="before">
+                <field name="modality_id" position="after">
                     <field name="team_id" widget="many2one"/>
+                    <field name="team_leader_id" widget="many2one"/>
                 </field>
             </field>
         </record>
