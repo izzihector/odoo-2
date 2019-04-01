@@ -59,6 +59,7 @@
                             <group>
                                 <field name="requested_date" attrs="{'invisible':[('breakdown','=',True),('state','=','draft')],'readonly':[('state','!=','draft')]}"/>
                                 <field name="execution_date"/>
+																<field name="maintenance_type"/>
                             </group>
                         </group>
                         <group string="Reject Reason" states="reject">
@@ -207,7 +208,6 @@
                                 <field name="date_scheduled"/>
                                 <field name="date_execution"/>
                                 <field name="user_id"/>
-                                <field name="origin"/>
 																<field name="request_id"/>
                             </group>
                             <group groups="stock.group_locations">
@@ -217,6 +217,19 @@
                             </group>
                         </group>
                         <notebook>
+														<page string="Information">
+															<group>
+																<group>
+																	<field name="modality_id" widget="manyone"/>
+																	<field name="parent_id" widget="manyone"/>
+																	<field name="zone_id" widget="manyone"/>
+																</group>
+																<group>
+																	<field name="brand_id" widget="manyone"/>
+	                                <field name="model_id" widget="manyone"/>
+																</group>
+															</group>
+														</page>
                             <page string="Parts">
                                     <group string="Planned Parts" states="draft,released,done,parts_except,cancel">
                                         <field name="parts_lines" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">

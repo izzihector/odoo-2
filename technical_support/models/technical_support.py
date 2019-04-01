@@ -30,6 +30,7 @@ class technical_support_order(models.Model):
 
     MAINTENANCE_TYPE_SELECTION = [
         ('bm', 'Breakdown'),
+        ('pm', 'Preventive'),
         ('cm', 'Corrective')
     ]
 
@@ -85,6 +86,13 @@ class technical_support_order(models.Model):
     category_ids = fields.Many2many(related='equipment_id.category_ids', string='equipment Category', readonly=True)
     wo_id = fields.Many2one('technical_support.workorder', 'Work Order', ondelete='cascade')
     request_id = fields.Many2one('technical_support.request', 'Request')
+
+    client_id=fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
+    brand_id=fields.Many2one('equipment.brand', related='equipment_id.brand_id', string='Brand', readonly=True)
+    zone_id=fields.Many2one('equipment.zone', related='equipment_id.zone_id', string='Zone', readonly=True)
+    model_id=fields.Many2one('equipment.model', related='equipment_id.model_id', string='Model', readonly=True)
+    parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
+    modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
 
 
     _order = 'date_execution'
@@ -294,6 +302,12 @@ class technical_support_request(models.Model):
         ('cancel', 'Canceled')
     ]
 
+    MAINTENANCE_TYPE_SELECTION = [
+        ('bm', 'Breakdown'),
+        ('pm', 'Preventive'),
+        ('cm', 'Corrective')
+    ]
+
     @api.multi
     def _track_subtype(self, init_values):
         self.ensure_one()
@@ -327,7 +341,7 @@ class technical_support_request(models.Model):
     model_id=fields.Many2one('equipment.model', related='equipment_id.model_id', string='Model', readonly=True)
     parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
     modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
-
+    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='bm')
 
 
     @api.onchange('requested_date')
