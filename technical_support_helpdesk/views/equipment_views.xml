@@ -16,7 +16,7 @@
             <field name="model">equipment.modality</field>
             <field name="inherit_id" ref="equipment.equipment_modality_view_form"/>
             <field name="arch" type="xml">
-                <field name="note" position="before">
+                <field name="name" position="after">
                     <field name="team_id" widget="many2one"/>
                     <field name="team_leader_id" widget="many2one"/>
                 </field>
