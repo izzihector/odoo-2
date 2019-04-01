@@ -17,3 +17,9 @@ class HelpdeskTicket(models.Model):
 
     request_ids=fields.One2many('technical_support.request','ticket_id', string='Request')
     equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
+    equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
+
+class HelpdeskTeam(models.Model):
+    _inherit = 'helpdesk.team'
+
+    leader_id=fields.Many2one('res.users', u'Leader')

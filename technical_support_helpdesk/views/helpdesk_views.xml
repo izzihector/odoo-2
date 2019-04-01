@@ -15,6 +15,24 @@
             </field>
         </record>
 
-
-
+        <record id="helpdesk_team_form_view_inherited" model="ir.ui.view">
+              <field name="name">helpdesk.team.form.view.inherited</field>
+              <field name="model">helpdesk.team</field>
+              <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form"/>
+              <field name="arch" type="xml">
+                  <xpath expr="//div[@class='col-lg-6 o_setting_box']" position="after">
+                    <div class="col-lg-6 o_setting_box" title="Team Leader">
+                      <div class="o_setting_right_pane">
+                        <label for="leader_id"/>
+                          <div class="text-muted">
+                            Team Responsible
+                          </div>
+                          <div>
+                            <field name="leader_id" class="mt16"/>
+                          </div>
+                      </div>
+                    </div>
+                  </xpath>
+              </field>
+          </record>
     </odoo>
