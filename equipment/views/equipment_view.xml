@@ -30,7 +30,7 @@
                     <sheet>
                         <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
                         </div>
-                        <field name="image_small" widget="image" class="oe_avatar oe_left"/>
+                        <field name="image_medium" widget="image" class="oe_avatar oe_left"/>
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only"/>
                             <h1>
@@ -161,7 +161,7 @@
                                     <ul>
                                         <li>Model: <field name="model_id"></field></li>
                                         <li>Brand: <field name="brand_id"></field></li>
-																				<li>Client: <field name="client_id"></field></li>
+																				<li>Client: <field name="modality_id"></field></li>
                                         <li class="emsa_kanban_info">
                                         <a t-if="record.criticality.raw_value == 0" t-attf-title="#{record.criticality.value}" class="emsa_attention_off"><span class="fa fa-exclamation-triangle"/></a>
                                         <a t-if="record.criticality.raw_value gt 0" t-attf-title="#{record.criticality.value}" class="emsa_attention_on"><span class="fa fa-exclamation-triangle"/></a>
