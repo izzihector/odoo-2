@@ -311,14 +311,16 @@ class technical_support_request(models.Model):
         If the request is confirmed the status is set to 'Execution'.\n\
         If the request is rejected the status is set to 'Rejected'.\n\
         When the maintenance is over, the status is set to 'Done'.", track_visibility='onchange', default='draft')
-    equipment_id = fields.Many2one('equipment.equipment', 'equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
-    cause = fields.Char('Cause', size=64, translate=True, required=True, readonly=True, states={'draft': [('readonly', False)]})
+    equipment_id = fields.Many2one('equipment.equipment', 'Equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
+    cause = fields.Char('Subject', size=64, translate=True, required=True, readonly=True, states={'draft': [('readonly', False)]})
     description = fields.Text('Description', readonly=True, states={'draft': [('readonly', False)]})
     reject_reason = fields.Text('Reject Reason', readonly=True)
     requested_date = fields.Datetime('Requested Date', required=True, readonly=True, states={'draft': [('readonly', False)]}, help="Date requested by the customer for maintenance.", default=time.strftime('%Y-%m-%d %H:%M:%S'))
     execution_date = fields.Datetime('Execution Date', required=True, readonly=True, states={'draft':[('readonly',False)],'claim':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
     breakdown = fields.Boolean('Breakdown', readonly=True, states={'draft': [('readonly', False)]}, default=False)
     create_uid = fields.Many2one('res.users', 'Responsible')
+
+    client_id=fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
 
     @api.onchange('requested_date')
     def onchange_requested_date(self):
