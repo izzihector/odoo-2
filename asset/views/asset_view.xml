@@ -367,7 +367,7 @@
         <!-- Asset Tags item -->
         <menuitem name="Asset Tags"
             action="action_asset_category"
-            id="menu_asset_category"s
+            id="menu_asset_category"
             parent="menu_asset_config"
             groups="asset.group_asset_manager"
             sequence="2"/>
