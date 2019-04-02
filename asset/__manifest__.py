@@ -32,9 +32,9 @@ Support following feature:
     'data': [
         'security/asset_security.xml',
         'security/ir.model.access.csv',
-        'asset_view.xml',
-        'asset_data.xml',
-        'stock_data.xml',
+        'views/asset_view.xml',
+        'data/asset_data.xml',
+        'data/stock_data.xml',
         'views/asset.xml',
     ],
     'installable': True,

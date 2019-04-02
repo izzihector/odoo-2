@@ -2,18 +2,6 @@
 <openerp>
 	<data>
 
-        <!-- Top menu item -->
-        <menuitem name="Maintenance"
-            id="base.menu_mro_root"
-            sequence="80"/>
-
-        <!-- Asset menu -->
-        <menuitem name="Assets"
-            id="menu_maintenance_assets"
-            parent="base.menu_mro_root"
-            groups="asset.group_mro_customer"
-            sequence="9"/>
-
         <!-- Asset Tree View  -->
         <record id="assets_tree_view" model="ir.ui.view">
             <field name="name">asset.asset.tree</field>
@@ -138,7 +126,7 @@
                 </kanban>
             </field>
         </record>
-        
+
         <!-- Asset Search  -->
         <record model="ir.ui.view" id="assets_search">
             <field name="name">Asset Search</field>
@@ -195,14 +183,6 @@
             <field name="view_id" ref="assets_form_view"/>
             <field name="act_window_id" ref="action_assets"/>
         </record>
-
-        <!-- Asset item -->
-        <menuitem name="Assets"
-            action="action_assets"
-            id="menu_maintenance_assets_assets"
-            parent="menu_maintenance_assets"
-            groups="asset.group_mro_customer"
-            sequence="100"/>
 
         <!-- Management Asset Kanban View  -->
         <record model="ir.ui.view" id="management_assets_kanban_view">
@@ -263,29 +243,7 @@
             <field name="act_window_id" ref="action_management_assets"/>
         </record>
 
-        <!-- Management Asset item -->
-        <menuitem name="Manage states"
-            action="action_management_assets"
-            id="menu_maintenance_assets_management"
-            parent="menu_maintenance_assets"
-            groups="asset.group_mro_user"
-            sequence="100"/>
-
-        <!-- Report menu -->
-        <menuitem name="Reports"
-            id="menu_maintenance_report"
-            parent="base.menu_mro_root"
-            groups="asset.group_mro_customer"
-            sequence="30"/>
-
-        <!-- Configuration menu -->
-        <menuitem name="Configuration"
-            id="menu_maintenance_config"
-            parent="base.menu_mro_root"
-            groups="asset.group_mro_manager"
-            sequence="200"/>
-            
-        <!-- Asset State Form View  -->        
+        <!-- Asset State Form View  -->
         <record id="asset_state_form_view" model="ir.ui.view">
             <field name="name">asset.state.form</field>
             <field name="model">asset.state</field>
@@ -308,7 +266,7 @@
                 </form>
             </field>
         </record>
-        
+
         <!-- Asset State Kanban View  -->
         <record model="ir.ui.view" id="asset_state_kanban_view">
             <field name="name">Asset State Kanban</field>
@@ -341,14 +299,6 @@
             <field name="view_mode">kanban,form</field>
         </record>
 
-        <!-- Asset state item -->
-        <menuitem name="Asset States"
-            action="action_asset_state"
-            id="menu_asset_state"
-            parent="menu_maintenance_config"
-            groups="asset.group_mro_manager"
-            sequence="100"/>
-
         <!-- Asset Tags Tree View -->
         <record id="asset_category_tree_view" model="ir.ui.view">
             <field name="name">asset.category.tree</field>
@@ -368,13 +318,59 @@
             <field name="view_mode">tree</field>
         </record>
 
+				<!-- Top menu item -->
+				<menuitem name="Asset"
+						id="menu_asset"
+						groups="asset.group_asset_user"
+						web_icon="asset,static/description/icon.png"
+						sequence="93"/>
+
+				<!-- Asset menu -->
+				<!-- Asset item -->
+				<menuitem name="Assets"
+						action="action_assets"
+						id="menu_asset_assets"
+						parent="menu_asset"
+						groups="asset.group_asset_customer"
+						sequence="2"/>
+
+				<!-- Management Asset item -->
+				<menuitem name="Manage states"
+						action="action_management_assets"
+						id="menu_assets_management"
+						parent="menu_asset"
+						groups="asset.group_asset_user"
+						sequence="3"/>
+
+				<!-- Report menu -->
+				<menuitem name="Reports"
+						id="menu_asset_report"
+						parent="menu_asset"
+						groups="asset.group_asset_customer"
+						sequence="4"/>
+
+				<!-- Configuration menu -->
+				<menuitem name="Configuration"
+						id="menu_asset_config"
+						parent="menu_asset"
+						groups="asset.group_asset_manager"
+						sequence="5"/>
+
+				<!-- Asset state item -->
+				<menuitem name="Asset States"
+						action="action_asset_state"
+						id="menu_asset_state"
+						parent="menu_asset_config"
+						groups="asset.group_asset_manager"
+						sequence="1"/>
+
         <!-- Asset Tags item -->
         <menuitem name="Asset Tags"
             action="action_asset_category"
-            id="menu_asset_category"
-            parent="menu_maintenance_config"
-            groups="asset.group_mro_manager"
-            sequence="100"/>
+            id="menu_asset_category"s
+            parent="menu_asset_config"
+            groups="asset.group_asset_manager"
+            sequence="2"/>
 
  	</data>
 </openerp>
