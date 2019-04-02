@@ -108,6 +108,11 @@ class RegulatoryTechnicalFileCreation(models.Model):
     _name = 'regulatory.technical.file.creation'
     _description = 'Regulatory Technical File Creation'
 
+
+    @api.returns('self')
+    def _default_stage(self):
+        return self.env['regulatory.technical.file.creation.stage'].search([], limit=1)
+
     name = fields.Char(string="Proposed Name for the File", required=True, translate=True)
     observation=fields.Text('Observation')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
