@@ -345,10 +345,11 @@
                   </div>
                   <group>
                       <group>
+                          <field name="responsible_id" widget="many2one"/>
                           <field name="sales_team_id" widget="many2one"/>
                       </group>
                       <group>
-                        <field name="responsible_id" widget="many2one"/>
+                        <field name="model_id" widget="many2one"/>
                       </group>
                   </group>
                   <field name='observation' placeholder="Observation ......."/>
