@@ -282,8 +282,11 @@
             <field name="model">regulatory.technical.file.registry</field>
             <field name="arch" type="xml">
               <form string="Technical File Registry">
-                  <sheet>
-                      <div class="oe_title">
+                <header>
+                      <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                  <div class="oe_title">
                           <label for="name" class="oe_edit_only" string="Name"/>
                           <h1>
                               <field name="name" placeholder="Name"/>
@@ -299,7 +302,7 @@
                       </group>
                   </group>
                   <field name='observation' placeholder="Observation ......."/>
-              </sheet>
+                </sheet>
               </form>
             </field>
         </record>

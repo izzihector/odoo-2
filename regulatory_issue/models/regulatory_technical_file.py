@@ -91,11 +91,17 @@ class RegulatoryTechnicalFileRegistry(models.Model):
     _name = 'regulatory.technical.file.registry'
     _description = 'Regulatory Technical File Registry'
 
+
+    @api.returns('self')
+    def _default_stage(self):
+        return self.env['regulatory.technical.file.registry.stage'].search([], limit=1)
+
     name = fields.Char(string="Proposed Name for the File", required=True, translate=True)
     technical_file_id = fields.Many2one('regulatory.technical.file', string='Technical File Number')
     observation=fields.Text('Observation')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')
+    stage_id = fields.Many2one('regulatory.technical.file.registry.stage', string='Stage', default=_default_stage)
 
 
 class RegulatoryTechnicalFileCreation(models.Model):
