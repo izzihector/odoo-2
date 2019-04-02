@@ -112,7 +112,8 @@ class RegulatoryTechnicalFileCreation(models.Model):
     observation=fields.Text('Observation')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')
-
+    model_id = fields.Many2one('equipment.model', string='Model Equipment')
+    stage_id = fields.Many2one('regulatory.technical.file.creation.stage', string='Stage', default=_default_stage)
 
 class RegulatoryTechnicalFileModification(models.Model):
     _name = 'regulatory.technical.file.modification'
