@@ -3,7 +3,7 @@
 
 {
     'name': 'Helpdesk to Technical Support',
-    'version': '1.2',
+    'version': '1.3',
     "author": "Rocendo Tejada - Electronica Médica",
     'category': 'Hidden',
     'description': """
