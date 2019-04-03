@@ -81,8 +81,8 @@ class RegulatoryTechnicalFile(models.Model):
     _description = 'Regulatory Technical File'
     _inherit = ['mail.thread']
 
-    name = fields.Char(string="Generic Name", required=True)
-    technical_file_number=fields.Char('Technical File Number')
+    name = fields.Char(string="Technical File Number", required=True)
+    technical_file_name=fields.Char('Technical File Name', required=True)
     description=fields.Text('Description')
     group_id = fields.Many2one('regulatory.technical.file.group', string='Group')
     type_area_id = fields.Many2one('regulatory.technical.file.type.area', string='Type Area')
