@@ -8,7 +8,7 @@
 
 {
     'name': 'Assets',
-    'version': '1.12',
+    'version': '1.13',
     'summary': 'Asset Management',
     'description': """
 Managing Assets in Odoo.
