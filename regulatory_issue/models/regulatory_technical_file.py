@@ -91,7 +91,7 @@ class RegulatoryTechnicalFile(models.Model):
 class RegulatoryTechnicalFileRegistry(models.Model):
     _name = 'regulatory.technical.file.registry'
     _description = 'Regulatory Technical File Registry'
-
+    _inherit = ['mail.thread']
 
     @api.returns('self')
     def _default_stage(self):
@@ -108,30 +108,33 @@ class RegulatoryTechnicalFileRegistry(models.Model):
 class RegulatoryTechnicalFileCreation(models.Model):
     _name = 'regulatory.technical.file.creation'
     _description = 'Regulatory Technical File Creation'
-
+    _inherit = ['mail.thread']
 
     @api.returns('self')
     def _default_stage(self):
         return self.env['regulatory.technical.file.creation.stage'].search([], limit=1)
 
-    name = fields.Char(string="Proposed Name for the File", required=True, translate=True)
+    name = fields.Char(string="Proposed Name for the File", required=True)
     observation=fields.Text('Observation')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')
     model_id = fields.Many2one('equipment.model', string='Model Equipment')
     stage_id = fields.Many2one('regulatory.technical.file.creation.stage', string='Stage', default=_default_stage)
 
+
 class RegulatoryTechnicalFileModification(models.Model):
     _name = 'regulatory.technical.file.modification'
     _description = 'Regulatory Technical File Modification'
+    _inherit = ['mail.thread']
+
 
     @api.returns('self')
     def _default_stage(self):
         return self.env['regulatory.technical.file.modification.stage'].search([], limit=1)
 
-    name = fields.Char(string="Name of the Technical File", required=True, translate=True)
+    name = fields.Char(string="Name of the Technical File", required=True)
     technical_file_id = fields.Many2one('regulatory.technical.file', string='Technical File Number')
-    technical_file_name = fields.Char(related='technical_file_id.name', string='Technical File Number')
+    technical_file_name = fields.Char(related='technical_file_id.name', string='Technical File Name')
     observation=fields.Text('Description')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')

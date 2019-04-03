@@ -311,6 +311,10 @@
                   </group>
                   <field name='observation' placeholder="Observation ......."/>
                 </sheet>
+                <div class="oe_chatter">
+                  <field name="message_follower_ids" widget="mail_followers"/>
+                  <field name="message_ids" widget="mail_thread"/>
+                </div>
               </form>
             </field>
         </record>
@@ -335,7 +339,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-
+<!-- Technical File Creation -->
         <record id="regulatory_technical_file_creation_view_form" model="ir.ui.view">
             <field name="name">regulatory.technical.file.creation.view.form</field>
             <field name="model">regulatory.technical.file.creation</field>
@@ -348,7 +352,7 @@
                       <div class="oe_title">
                           <label for="name" class="oe_edit_only" string="Proposed Name for the File"/>
                           <h1>
-                              <field name="name" placeholder="Name"/>
+                              <field name="name" placeholder="Proposed Name for the File"/>
                           </h1>
                   </div>
                   <group>
@@ -362,6 +366,10 @@
                   </group>
                   <field name='observation' placeholder="Observation ......."/>
               </sheet>
+              <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+              </div>
               </form>
             </field>
         </record>
@@ -415,6 +423,10 @@
                   </group>
                   <field name='observation' placeholder="Observation ......."/>
               </sheet>
+              <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+              </div>
               </form>
             </field>
         </record>
