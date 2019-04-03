@@ -448,7 +448,7 @@
                     <group string="Modification Line">
                         <field name="modification_lines" nolabel="1">
                             <tree string="Modification Line" editable="bottom">
-                                <field name="Name"/>
+                                <field name="name"/>
                                 <field name="value"/>
                             </tree>
                         </field>
