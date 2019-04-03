@@ -79,8 +79,9 @@ class RegulatoryTechnicalFileModificationStage(models.Model):
 class RegulatoryTechnicalFile(models.Model):
     _name = 'regulatory.technical.file'
     _description = 'Regulatory Technical File'
+    _inherit = ['mail.thread']
 
-    name = fields.Char(string="Generic Name", required=True, translate=True)
+    name = fields.Char(string="Generic Name", required=True)
     technical_file_number=fields.Char('Technical File Number')
     description=fields.Text('Description')
     group_id = fields.Many2one('regulatory.technical.file.group', string='Group')
