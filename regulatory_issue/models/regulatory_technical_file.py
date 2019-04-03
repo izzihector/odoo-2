@@ -134,7 +134,7 @@ class RegulatoryTechnicalFileModification(models.Model):
 
     name = fields.Char(string="Name of the Technical File", required=True)
     technical_file_id = fields.Many2one('regulatory.technical.file', string='Technical File Number')
-    technical_file_name = fields.Char(related='technical_file_id.name', string='Technical File Name')
+    technical_file_name = fields.Char(related='technical_file_id.technical_file_name', string='Technical File Name')
     observation=fields.Text('Description')
     sales_team_id = fields.Many2one('crm.team', string='Sales Team')
     responsible_id = fields.Many2one('res.users', string='Responsible')
