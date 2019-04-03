@@ -432,6 +432,7 @@
                       <group>
                           <field name="technical_file_id" widget="many2one"/>
                           <field name="technical_file_name" />
+                          <field name="model_id" widget="many2one"/>
                       </group>
                       <group>
                         <field name="responsible_id" widget="many2one"/>
@@ -439,11 +440,19 @@
                         <field name="sales_team_id" widget="many2one"/>
                       </group>
                   </group>
+                  <group>
+                    <field name='observation' placeholder="Observation ......."/>
+                  </group>
               <notebook>
-                  <page name="info" string="Info">
-                      <group>
-                        <field name='observation' placeholder="Observation ......."/>
-                      </group>
+                  <page name="Line" string="Modification Line">
+                    <group string="Modification Line">
+                        <field name="modification_lines" nolabel="1">
+                            <tree string="Modification Line" editable="bottom">
+                                <field name="Name"/>
+                                <field name="value"/>
+                            </tree>
+                        </field>
+                    </group>
                   </page>
               </notebook>
             </sheet>
