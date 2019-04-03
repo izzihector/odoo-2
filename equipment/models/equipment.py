@@ -72,7 +72,7 @@ class equipment_equipment(models.Model):
     """
     _name = 'equipment.equipment'
     _description = 'Equipment'
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     def _read_group_state_ids(self, domain, read_group_order=None, access_rights_uid=None, team='3'):
         access_rights_uid = access_rights_uid or self.uid
