@@ -8,7 +8,14 @@
                     <label class="col-form-label" for="equipment_id">Equipment</label>
                 </div>
                 <div class="col-lg-7 col-md-8">
-                  <field name="equipment_id"  widget="many2one" required="1"/>
+                  <select name="equipment_id" class="form-control select2">
+                      <option value=""> -- Seleccione el Equipo -- </option>
+                      <t t-foreach="equipment_id" t-as="equipment_id">
+                          <option t-att-value="equipment_id.id">
+                              <t t-esc="equipment_id.name"/>
+                          </option>
+                      </t>
+                  </select>
                 </div>
             </div>
         </xpath>
