@@ -9,7 +9,7 @@
                     <button string="New Request" name="%(technical_support_action_request_new)d" type="action" class="oe_highlight"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
-                    <field name="equipment_id"/>
+                    <field name="equipment_id" domain="[('client_id','=',partner_id)]"/>
                 </xpath>
 
             </field>
