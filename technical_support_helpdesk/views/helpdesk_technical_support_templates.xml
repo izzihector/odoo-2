@@ -5,10 +5,10 @@
         <xpath expr="//div[@class='form-group row form-field o_website_form_required']" position="before">
             <div class="form-group row form-field o_website_form_required">
                 <div class="col-lg-3 col-md-4 text-right">
-                    <label class="col-form-label" for="name">Equipment</label>
+                    <label class="col-form-label" for="equipment_id">Equipment</label>
                 </div>
                 <div class="col-lg-7 col-md-8">
-                    <input type="text" class="form-control o_website_form_input" name="name" required="1"/>
+                    <input name="equipment_id" required="1"/>
                 </div>
             </div>
         </xpath>
