@@ -8,7 +8,7 @@
                     <label class="col-form-label" for="equipment_id">Equipment</label>
                 </div>
                 <div class="col-lg-7 col-md-8">
-                  <field name="equipment_id" domain="[('client_id','=',partner_id)]" required="1"/>
+                  <field name="equipment_id" domain="[('client_id','=',parent_id)]" required="1"/>
                 </div>
             </div>
         </xpath>
