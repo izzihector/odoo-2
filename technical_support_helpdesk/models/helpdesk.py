@@ -27,7 +27,6 @@ class HelpdeskTicket(models.Model):
                 'date_planned':request.assign_date,
                 'date_scheduled':request.assign_date,
                 'date_execution':request.assign_date,
-                'origin': request.id,
                 'state': 'draft',
                 'maintenance_type': 'bm',
                 'equipment_id': request.equipment_id.id,
