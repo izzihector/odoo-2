@@ -31,7 +31,8 @@ class HelpdeskTicket(models.Model):
                 'maintenance_type': 'bm',
                 'equipment_id': request.equipment_id.id,
                 'description': request.name,
-                'problem_description': request.description
+                'problem_description': request.description,
+                'ticket_id': request.id,
             })
         self.write({'stage_id': '2'})
         return order_id.id

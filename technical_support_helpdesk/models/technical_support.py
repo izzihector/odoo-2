@@ -7,3 +7,9 @@ class TechnicalSupportRequest(models.Model):
     _inherit = 'technical_support.request'
 
     ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket')
+
+
+class TechnicalSupportOrder(models.Model):
+    _inherit = 'technical_support.order'
+
+    ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket')
