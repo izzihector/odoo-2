@@ -18,6 +18,23 @@ class HelpdeskTicket(models.Model):
     request_ids=fields.One2many('technical_support.request','ticket_id', string='Request')
     equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
 
+    def action_confirm(self):
+        order = self.env['technical_support.order']
+        order_id = False
+        for request in self:
+            order_id = order.create({
+                'date_planned':request.assign_date,
+                'date_scheduled':request.assign_date,
+                'date_execution':request.assign_date,
+                'origin': request.id,
+                'state': 'draft',
+                'maintenance_type': 'bm',
+                'equipment_id': request.equipment_id.id,
+                'ticket_id': request.id,
+            })
+        self.write({'stage_id': '2'})
+        return order_id.id
+
 class HelpdeskTeam(models.Model):
     _inherit = 'helpdesk.team'
 
