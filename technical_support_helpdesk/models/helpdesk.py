@@ -16,6 +16,7 @@ class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
     request_ids=fields.One2many('technical_support.request','ticket_id', string='Request')
+    order_ids=fields.One2many('technical_support.order','ticket_id', string='Request')
     equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
 
     def action_confirm(self):
