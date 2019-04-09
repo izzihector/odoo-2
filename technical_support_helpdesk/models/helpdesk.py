@@ -15,9 +15,15 @@ from dateutil.relativedelta import *
 class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
+    def _technical_support_count(self):
+        maintenance = self.env['technical_support.order']
+        for ticket in self:
+            self.technical_support_count = ticket.search_count([('ticket_id', '=', ticket.id)])
+
     request_ids=fields.One2many('technical_support.request','ticket_id', string='Requests')
     order_ids=fields.One2many('technical_support.order','ticket_id', string='Orders')
     equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
+    technical_support_count = fields.Integer(compute='_technical_support_count', string='# Reports')
 
     def action_confirm_main(self):
         order = self.env['technical_support.order']
