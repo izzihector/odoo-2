@@ -18,7 +18,7 @@ class HelpdeskTicket(models.Model):
     def _technical_support_count(self):
         maintenance = self.env['technical_support.order']
         for ticket in self:
-            self.technical_support_count = ticket.search_count([('ticket_id', '=', ticket.id)])
+            self.technical_support_count = maintenance.search_count([('ticket_id', '=', ticket.id)])
 
     request_ids=fields.One2many('technical_support.request','ticket_id', string='Requests')
     order_ids=fields.One2many('technical_support.order','ticket_id', string='Orders')
