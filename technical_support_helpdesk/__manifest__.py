@@ -16,6 +16,7 @@ This shortcut allows you to generate a Technical Support Request.
     'depends': ['helpdesk', 'technical_support', 'equipment'],
     'data': [
         'views/technical_support_request_views.xml',
+        'views/technical_support_order_views.xml',
         'views/helpdesk_technical_support_templates.xml',
         'views/helpdesk_views.xml',
         'views/equipment_views.xml',

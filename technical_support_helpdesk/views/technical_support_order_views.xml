@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+    	<record id="technical_support_action_order_new" model="ir.actions.act_window">
+        	<field name="name">Order</field>
+        	<field name="res_model">technical_support.order</field>
+        	<field name="view_mode">form,tree,graph</field>
+    	</record>
+
+    	<record id="ticket_action_technical_support" model="ir.actions.act_window">
+        	<field name="name">Order</field>
+        	<field name="res_model">technical_support.order</field>
+    	</record>
+
+        <record id="technical_support_ticket_form_view_inherit" model="ir.ui.view">
+            <field name="name">Ticket</field>
+            <field name="model">technical_support.order</field>
+            <field name="inherit_id" ref="technical_support.technical_support_order_form_view"/>
+            <field name="arch" type="xml">
+                <field name="date_execution" position="after">
+                    <field name="ticket_id" widget="many2one"/>
+                </field>
+            </field>
+        </record>
+    </odoo>
