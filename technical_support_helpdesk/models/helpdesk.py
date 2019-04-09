@@ -44,6 +44,17 @@ class HelpdeskTicket(models.Model):
         self.write({'stage_id': 2})
         return order_id.id
 
+    def action_view_report(self):
+        return {
+            'domain': "[('ticket_id','in',[" + ','.join(map(str, self.ids)) + "])]",
+            'name': _('Maintenance Orders'),
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'res_model': 'technical_support.order',
+            'type': 'ir.actions.act_window',
+            'target': 'current',
+        }
+
 class HelpdeskTeam(models.Model):
     _inherit = 'helpdesk.team'
 
