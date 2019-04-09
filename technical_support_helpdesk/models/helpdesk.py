@@ -15,11 +15,11 @@ from dateutil.relativedelta import *
 class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
-    request_ids=fields.One2many('technical_support.request','ticket_id', string='Request')
-    order_ids=fields.One2many('technical_support.order','ticket_id', string='Request')
+    request_ids=fields.One2many('technical_support.request','ticket_id', string='Requests')
+    order_ids=fields.One2many('technical_support.order','ticket_id', string='Orders')
     equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
 
-    def action_confirm(self):
+    def action_confirm_main(self):
         order = self.env['technical_support.order']
         order_id = False
         for request in self:
@@ -27,12 +27,12 @@ class HelpdeskTicket(models.Model):
                 'date_planned':request.assign_date,
                 'date_scheduled':request.assign_date,
                 'date_execution':request.assign_date,
+                'origin': request.id,
                 'state': 'draft',
                 'maintenance_type': 'bm',
                 'equipment_id': request.equipment_id.id,
                 'description': request.name,
                 'problem_description': request.description,
-                'ticket_id': request.id,
             })
         self.write({'stage_id': '2'})
         return order_id.id
