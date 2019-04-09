@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='assign_ticket_to_self']" position="before">
-                  <button name="action_confirm" string="Confirm Maintenance" type="object" class="oe_highlight" groups="technical_support.group_technical_support_user"/>
+                  <button name="action_confirm_main" string="Confirm Maintenance" type="object" class="oe_highlight" groups="technical_support.group_technical_support_user"/>
                   <button string="New Request" name="%(technical_support_action_request_new)d" type="action" class="oe_highlight"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
