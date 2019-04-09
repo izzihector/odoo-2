@@ -34,7 +34,7 @@ class HelpdeskTicket(models.Model):
                 'description': request.name,
                 'problem_description': request.description,
             })
-        self.write({'stage_id': '2'})
+        self.write({'stage_id': 2})
         return order_id.id
 
 class HelpdeskTeam(models.Model):
