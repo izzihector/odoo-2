@@ -12,12 +12,6 @@
                 <xpath expr="//field[@name='partner_id']" position="after">
                     <field name="equipment_id" domain="[('client_id','=',partner_id)]"/>
                 </xpath>
-                <xpath expr="//button[@name='open_customer_tickets']" position="before">
-                   <button class="oe_stat_button" type="object"
-                       icon="fa-cogs">
-                       <field string="Reports" widget="statinfo"/>
-                   </button>
-                </xpath>
 
             </field>
         </record>
