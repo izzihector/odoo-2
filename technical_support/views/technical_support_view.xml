@@ -164,6 +164,13 @@
             </field>
         </record>
 
+				<record id="mt_state_change" model="mail.message.subtype">
+					<field name="name">Ticket Cerrado</field>
+					<field name="res_model">technical_support.order</field>
+					<field name="default" eval="True"/>
+					<field name="description">Orden Cerrado!</field>
+				</record>
+
         <record id="technical_support_order_calendar_view" model="ir.ui.view">
             <field name="name">technical_support.order.calendar</field>
             <field name="model">technical_support.order</field>

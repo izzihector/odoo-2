@@ -18,7 +18,7 @@ class technical_support_order(models.Model):
     """
     _name = 'technical_support.order'
     _description = 'Maintenance Order'
-    _inherit = ['mail.thread']
+    _inherit =  ['mail.thread', 'mail.activity.mixin']
 
     STATE_SELECTION = [
         ('draft', 'DRAFT'),
@@ -182,6 +182,16 @@ class technical_support_order(models.Model):
     def force_parts_reservation(self):
         self.write({'state': 'ready'})
         return True
+
+    def _track_subtype(self, init_values):
+        # init_values contains the modified fields' values before the changes
+        #
+        # the applied values can be accessed on the record as they are already
+        # in cache
+        self.ensure_one()
+        if 'state' in init_values and self.state == 'done':
+            return 'technical_support.mt_state_change'  # Full external id
+        return super(technical_support_order, self)._track_subtype(init_values)
 
     @api.model
     def create(self, vals):
