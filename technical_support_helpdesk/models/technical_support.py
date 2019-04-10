@@ -12,4 +12,4 @@ class TechnicalSupportRequest(models.Model):
 class TechnicalSupportOrder(models.Model):
     _inherit = 'technical_support.order'
 
-    ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket')
+    tickets_id = fields.Many2one('helpdesk.ticket', string='Ticket')
