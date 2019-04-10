@@ -156,14 +156,10 @@ class technical_support_order(models.Model):
         self.write({'state': 'ready'})
         return True
 
-    def action_done_stage(self):
-        self.write({'stage_id': 2})
-        return True
-
     def action_done(self):
         self.write({'state': 'done', 'date_execution': time.strftime('%Y-%m-%d %H:%M:%S')})
         for order in self:
-            if order.ticket_id: order.ticket_id.action_done_stage()
+            if order.ticket_id: order.ticket_id.self.write({'stage_id': 2})
         return True
 
     def action_cancel(self):
