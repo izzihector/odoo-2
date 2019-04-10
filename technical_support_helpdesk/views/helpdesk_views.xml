@@ -21,10 +21,13 @@
                       <page string="Equipo">
                         <group>
                           <group>
-
+                            <field name="modality_id" widget="manyone"/>
+                            <field name="parent_id" widget="manyone"/>
+                            <field name="zone_id" widget="manyone"/>
                           </group>
                           <group>
-
+                            <field name="brand_id" widget="manyone"/>
+                            <field name="model_id" widget="manyone"/>
                           </group>
                         </group>
                       </page>

@@ -25,6 +25,12 @@ class HelpdeskTicket(models.Model):
     equipment_id=fields.Many2one('equipment.equipment', u'Equipment')
     technical_support_count = fields.Integer(compute='_technical_support_count', string='# Reports')
 
+    brand_id=fields.Many2one('equipment.brand', related='equipment_id.brand_id', string='Brand', readonly=True)
+    zone_id=fields.Many2one('equipment.zone', related='equipment_id.zone_id', string='Zone', readonly=True)
+    model_id=fields.Many2one('equipment.model', related='equipment_id.model_id', string='Model', readonly=True)
+    parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
+    modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
+
     def action_confirm_main(self):
         order = self.env['technical_support.order']
         order_id = False
