@@ -17,8 +17,8 @@
                    </button>
                 </xpath>
                 <xpath expr="//field[@name='description']" position="after">
-                      <separator string="Informations"/>
-                      <page string="Equipo">
+
+                      <page string="Equipo" class="field_description">
                         <group>
                           <group>
 
@@ -28,12 +28,13 @@
                           </group>
                         </group>
                       </page>
-                      <page string="Suscripción">
+                      <page string="Suscripción" class="field_description">
                           <separator string="Description Subscription"/>
                       </page>
-                      <page string="Cliente">
+                      <page string="Cliente" class="field_description">
                           <separator string="Description Client"/>
                       </page>
+
                 </xpath>
             </field>
         </record>
