@@ -55,7 +55,7 @@ class technical_support_order(models.Model):
             order.parts_move_lines = available_line_ids
             order.parts_moved_lines = done_line_ids
 
-    name = fields.Char(track_visibility='always', 'Reference', size=64)
+    name = fields.Char('Reference', size=64)
     origin = fields.Char('Source Document', size=64, readonly=True, states={'draft': [('readonly', False)]},
         help="Reference of the document that generated this maintenance order.")
     state = fields.Selection(STATE_SELECTION, 'Status', readonly=True, track_visibility='onchange',
