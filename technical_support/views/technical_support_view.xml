@@ -144,6 +144,8 @@
             parent="menu_technical_support_maintenance"
             sequence="1"/>
 
+
+
         <!-- Maintenance order menu -->
         <record id="technical_support_order_tree_view" model="ir.ui.view">
             <field name="name">technical_support.order.tree</field>
@@ -156,6 +158,7 @@
                     <field name="equipment_id"/>
                     <field name="maintenance_type"/>
                     <field name="description"/>
+										<field name="ticket_id" widget="many2one"/>
                     <field name="state"/>
                 </tree>
             </field>
@@ -165,7 +168,7 @@
             <field name="name">technical_support.order.calendar</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
-                <calendar color="equipment_id" date_start="date_execution" string="Technical Support Orders">
+                <calendar color="user_id" date_start="date_scheduled" string="Technical Support Orders">
                     <field name="name"/>
                     <field name="description"/>
                 </calendar>
@@ -208,7 +211,7 @@
                                 <field name="date_scheduled"/>
                                 <field name="date_execution"/>
                                 <field name="user_id"/>
-																<field name="request_id"/>
+																<field name="ticket_id" widget="many2one"/>
                             </group>
                             <group groups="stock.group_locations">
                             </group>
