@@ -55,10 +55,10 @@ class technical_support_order(models.Model):
             order.parts_move_lines = available_line_ids
             order.parts_moved_lines = done_line_ids
 
-    name = fields.Char('Reference', size=64)
+    name = fields.Char(track_visibility='always', 'Reference', size=64)
     origin = fields.Char('Source Document', size=64, readonly=True, states={'draft': [('readonly', False)]},
         help="Reference of the document that generated this maintenance order.")
-    state = fields.Selection(STATE_SELECTION, 'Status', readonly=True,
+    state = fields.Selection(STATE_SELECTION, 'Status', readonly=True, track_visibility='onchange',
         help="When the maintenance order is created the status is set to 'Draft'.\n\
         If the order is confirmed the status is set to 'Waiting Parts'.\n\
         If the stock is available then the status is set to 'Ready to Maintenance'.\n\
@@ -67,9 +67,9 @@ class technical_support_order(models.Model):
     task_id = fields.Many2one('technical_support.task', 'Task', readonly=True, states={'draft': [('readonly', False)]})
     description = fields.Char('Description', size=64, translate=True, required=True, readonly=True, states={'draft': [('readonly', False)]})
     equipment_id = fields.Many2one('equipment.equipment', 'Equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
-    date_planned = fields.Datetime('Planned Date', required=True, readonly=True, states={'draft':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
-    date_scheduled = fields.Datetime('Scheduled Date', required=True, readonly=True, states={'draft':[('readonly',False)],'released':[('readonly',False)],'ready':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
-    date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'))
+    date_planned = fields.Datetime('Planned Date', required=True, readonly=True, states={'draft':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
+    date_scheduled = fields.Datetime('Scheduled Date', required=True, readonly=True, states={'draft':[('readonly',False)],'released':[('readonly',False)],'ready':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
+    date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
     parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned parts',
         readonly=True, states={'draft':[('readonly',False)]})
     parts_ready_lines = fields.One2many('stock.move', compute='_get_available_parts')
@@ -80,13 +80,13 @@ class technical_support_order(models.Model):
     operations_description = fields.Text('Operations Description',translate=True)
     documentation_description = fields.Text('Documentation Description',translate=True)
     problem_description = fields.Text('Problem Description')
-    user_id = fields.Many2one('res.users', 'Responsible', default=lambda self: self._uid)
+    user_id = fields.Many2one('res.users', 'Responsible', track_visibility='onchange', default=lambda self: self._uid)
     company_id = fields.Many2one('res.company','Company',required=True, readonly=True, states={'draft':[('readonly',False)]}, default=lambda self: self.env['res.company']._company_default_get('technical_support.order'))
     procurement_group_id = fields.Many2one('procurement.group', 'Procurement group', copy=False)
     category_ids = fields.Many2many(related='equipment_id.category_ids', string='equipment Category', readonly=True)
     wo_id = fields.Many2one('technical_support.workorder', 'Work Order', ondelete='cascade')
     request_id = fields.Many2one('technical_support.request', 'Request')
-    ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket')
+    ticket_id = fields.Many2one('helpdesk.ticket', string='Ticket', track_visibility='onchange')
 
     client_id=fields.Many2one('res.partner', related='equipment_id.client_id', string='Client', store=True, readonly=True)
     brand_id=fields.Many2one('equipment.brand', related='equipment_id.brand_id', string='Brand', readonly=True)
