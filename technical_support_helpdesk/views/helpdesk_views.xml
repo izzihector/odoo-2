@@ -16,7 +16,7 @@
                      <field string="Reports" name="technical_support_count" widget="statinfo"/>
                    </button>
                 </xpath>
-                <xpath expr="//button[@name='open_customer_tickets']" position="before">
+                <xpath expr="//field[@name='description']" position="after">
                   <notebook>
                       <page string="Information">
                         <group>
