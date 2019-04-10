@@ -156,7 +156,6 @@
                     <field name="equipment_id"/>
                     <field name="maintenance_type"/>
                     <field name="description"/>
-                    <field name="ticket_id" widget="many2one"/>
                     <field name="state"/>
                 </tree>
             </field>

@@ -12,11 +12,22 @@
     	</record>
 
         <record id="technical_support_ticket_form_view_inherit" model="ir.ui.view">
-            <field name="name">Ticket</field>
+            <field name="name">Ticket From View</field>
             <field name="model">technical_support.order</field>
             <field name="inherit_id" ref="technical_support.technical_support_order_form_view"/>
             <field name="arch" type="xml">
                 <field name="date_execution" position="after">
+                    <field name="ticket_id" widget="many2one"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="technical_support_ticket_tree_view_inherit" model="ir.ui.view">
+            <field name="name">Ticket Tree View</field>
+            <field name="model">technical_support.order</field>
+            <field name="inherit_id" ref="technical_support.technical_support_order_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="state" position="before">
                     <field name="ticket_id" widget="many2one"/>
                 </field>
             </field>
