@@ -37,6 +37,7 @@ class HelpdeskTicket(models.Model):
     dealer_warranty_start_date = fields.Date('Dealer Warranty Start', related='equipment_id.dealer_warranty_start_date')
     dealer_warranty_end_date = fields.Date('Dealer Warranty End', related='equipment_id.dealer_warranty_end_date')
 
+    equipment_number = fields.Char('Equipment Number', related='equipment_id.equipment_number')
     serial = fields.Char('Serial no.', related='equipment_id.serial')
     location = fields.Char('Location', related='equipment_id.location')
 
