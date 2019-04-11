@@ -23,17 +23,19 @@
                           <group>
                             <field name="modality_id" widget="manyone"/>
                             <field name="parent_id" widget="manyone"/>
+                            <field name="locaion"/>
                             <field name="zone_id" widget="manyone"/>
                           </group>
                           <group>
                             <field name="brand_id" widget="manyone"/>
                             <field name="model_id" widget="manyone"/>
+                            <field name="serial"/>
                           </group>
                         </group>
                         <group>
                           <group>
                             <field name="warranty_start_date"/>
-                            <field name="warranty_end_date"/>                            
+                            <field name="warranty_end_date"/>
                           </group>
                           <group>
                             <field name="dealer_warranty_start_date"/>

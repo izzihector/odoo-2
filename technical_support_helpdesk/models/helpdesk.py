@@ -33,9 +33,12 @@ class HelpdeskTicket(models.Model):
     technical_support_count = fields.Integer(compute='_technical_support_count', string='# Reports')
 
     warranty_start_date = fields.Date('Warranty Start', related='equipment_id.warranty_start_date')
-    warranty_end_date = fields.Date('Warranty End')
-    dealer_warranty_start_date = fields.Date('Dealer Warranty Start')
-    dealer_warranty_end_date = fields.Date('Dealer Warranty End')
+    warranty_end_date = fields.Date('Warranty End', related='equipment_id.warranty_end_date')
+    dealer_warranty_start_date = fields.Date('Dealer Warranty Start', related='equipment_id.dealer_warranty_start_date')
+    dealer_warranty_end_date = fields.Date('Dealer Warranty End', related='equipment_id.dealer_warranty_end_date')
+
+    serial = fields.Char('Serial no.', related='equipment_id.serial')
+    location = fields.Char('Location', related='equipment_id.location')
 
     def action_confirm_main(self):
         order = self.env['technical_support.order']
