@@ -30,6 +30,16 @@
                             <field name="model_id" widget="manyone"/>
                           </group>
                         </group>
+                        <group>
+                          <group>
+                            <field name="warranty_start_date"/>
+                            <field name="warranty_end_date"/>                            
+                          </group>
+                          <group>
+                            <field name="dealer_warranty_start_date"/>
+                            <field name="dealer_warranty_end_date"/>
+                          </group>
+                        </group>
                       </page>
                       <page string="Suscripción">
                           <separator string="Description Subscription"/>
