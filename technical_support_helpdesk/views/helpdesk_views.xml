@@ -23,7 +23,7 @@
                           <group>
                             <field name="modality_id" widget="manyone"/>
                             <field name="parent_id" widget="manyone"/>
-
+                            <field name="locaion"/>
                             <field name="zone_id" widget="manyone"/>
                           </group>
                           <group>
