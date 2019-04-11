@@ -38,7 +38,7 @@ class HelpdeskTicket(models.Model):
     dealer_warranty_end_date = fields.Date('Dealer Warranty End', related='equipment_id.dealer_warranty_end_date')
 
     serial = fields.Char('Serial no.', related='equipment_id.serial')
-    location = fields.Char('Location', related='equipment_id.location')
+
 
     def action_confirm_main(self):
         order = self.env['technical_support.order']
