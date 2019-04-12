@@ -9,9 +9,9 @@
                   <button name="action_confirm_main" string="New Order" type="object" class="oe_highlight" attrs="{'invisible':  [('user_id', '=', False)]}" groups="technical_support.group_technical_support_user"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
-                    <field name="client_id"/>
-                    <field name="equipment_number" domain="[('client_id','=',commercial_partner_id)]"/>
-                    <field name="equipment_id" domain="[('client_id','=',commercial_partner_id)]"/>
+                    <field name="client_id" widget="manyone"/>
+                    <field name="equipment_number" domain="[('client_id','=',client_id)]"/>
+                    <field name="equipment_id" domain="[('client_id','=',client_id)]"/>
                 </xpath>
                 <xpath expr="//button[@name='open_customer_tickets']" position="before">
                    <button class="oe_stat_button" name="action_view_report" type="object" icon="fa-file-pdf-o">
@@ -51,7 +51,7 @@
                       <page string="Cliente">
                         <group>
                           <group>
-                            <field name="commercial_partner_id"/>
+                            
                           </group>
                           <group>
 
