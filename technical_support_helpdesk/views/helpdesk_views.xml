@@ -49,7 +49,14 @@
                           <separator string="Description Subscription"/>
                       </page>
                       <page string="Cliente">
-                          <separator string="Description Client"/>
+                        <group>
+                          <group>
+                            <field name="commercial_partner_id"/>
+                          </group>
+                          <group>
+
+                          </group>
+                        </group>
                       </page>
                   </notebook>
                 </xpath>
