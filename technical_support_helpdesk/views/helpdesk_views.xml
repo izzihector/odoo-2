@@ -9,6 +9,7 @@
                   <button name="action_confirm_main" string="New Order" type="object" class="oe_highlight" attrs="{'invisible':  [('user_id', '=', False)]}" groups="technical_support.group_technical_support_user"/>
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="contact_id"/>
                     <field name="equipment_number" domain="[('client_id','=',partner_id)]"/>
                     <field name="equipment_id" domain="[('client_id','=',partner_id)]"/>
                 </xpath>
