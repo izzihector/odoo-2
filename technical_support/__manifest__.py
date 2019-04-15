@@ -35,7 +35,7 @@ Required modules:
     'website': 'http://www.electronicamedica.com',
     'category': 'Industries',
     'sequence': 0,
-    'depends': ['equipment','purchase','helpdesk'],
+    'depends': ['asset','equipment','purchase','helpdesk'],
     'demo': ['data/technical_support_demo.xml'],
     'data': [
         'security/technical_support_security.xml',
