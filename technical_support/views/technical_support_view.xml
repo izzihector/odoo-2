@@ -218,6 +218,7 @@
                                 <field name="date_planned"/>
                                 <field name="date_scheduled"/>
                                 <field name="date_execution"/>
+																<field name="date_finish"/>
                                 <field name="user_id"/>
 																<field name="ticket_id" widget="many2one"/>
                             </group>

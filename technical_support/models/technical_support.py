@@ -64,22 +64,27 @@ class technical_support_order(models.Model):
         If the stock is available then the status is set to 'Ready to Maintenance'.\n\
         When the maintenance is over, the status is set to 'Done'.", default='draft')
     maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='bm')
-    task_id = fields.Many2one('technical_support.task', 'Task', readonly=True, states={'draft': [('readonly', False)]})
     description = fields.Char('Description', size=64, translate=True, required=True, readonly=True, states={'draft': [('readonly', False)]})
-    equipment_id = fields.Many2one('equipment.equipment', 'Equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
+
     date_planned = fields.Datetime('Planned Date', required=True, readonly=True, states={'draft':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
     date_scheduled = fields.Datetime('Scheduled Date', required=True, readonly=True, states={'draft':[('readonly',False)],'released':[('readonly',False)],'ready':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
     date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
+    date_finish = fields.Datetime('Finish Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
+
     parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned parts',
         readonly=True, states={'draft':[('readonly',False)]})
     parts_ready_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
+
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
     operations_description = fields.Text('Operations Description',translate=True)
     documentation_description = fields.Text('Documentation Description',translate=True)
     problem_description = fields.Text('Problem Description')
+
+    task_id = fields.Many2one('technical_support.task', 'Task', readonly=True, states={'draft': [('readonly', False)]})
+    equipment_id = fields.Many2one('equipment.equipment', 'Equipment', required=True, readonly=True, states={'draft': [('readonly', False)]})
     user_id = fields.Many2one('res.users', 'Responsible', track_visibility='onchange', default=lambda self: self._uid)
     company_id = fields.Many2one('res.company','Company',required=True, readonly=True, states={'draft':[('readonly',False)]}, default=lambda self: self.env['res.company']._company_default_get('technical_support.order'))
     procurement_group_id = fields.Many2one('procurement.group', 'Procurement group', copy=False)
@@ -149,11 +154,11 @@ class technical_support_order(models.Model):
 
     def action_confirm(self):
         for order in self:
-            order.write({'state':'released'})
+            order.write({'state':'ready'})
         return 0
 
     def action_ready(self):
-        self.write({'state': 'ready'})
+        self.write({'state': 'released'})
         return True
 
     def action_done(self):
