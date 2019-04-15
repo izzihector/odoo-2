@@ -71,11 +71,11 @@ class technical_support_order(models.Model):
     date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
     date_finish = fields.Datetime('Finish Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
 
-    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned parts',
-        readonly=True, states={'draft':[('readonly',False)]})
+    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned parts', readonly=True, states={'draft':[('readonly',False)]})
     parts_ready_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
+    assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'draft':[('readonly',False)]})
 
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
@@ -413,3 +413,12 @@ class technical_support_request(models.Model):
         if vals.get('name','/')=='/':
             vals['name'] = self.env['ir.sequence'].next_by_code('technical_support.request') or '/'
         return super(technical_support_request, self).create(vals)
+
+
+class technical_support_order_assets_line(models.Model):
+    _name = 'technical_support.order.assets.line'
+    _description = 'Maintenance Planned Assets'
+
+    name = fields.Char('Description', size=64)
+    assets_id = fields.Many2one('asset.asset', 'Assets', required=True)
+    maintenance_id = fields.Many2one('technical_support.order', 'Maintenance Order')

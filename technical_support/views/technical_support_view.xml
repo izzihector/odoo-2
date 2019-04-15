@@ -285,6 +285,14 @@
                                     </group>
                             </page>
                             <page string="Tools">
+															<group string="Tools" states="draft,done,released,parts_except,cancel">
+																	<field name="assets_lines">
+																			<tree string="Tools" editable="bottom">
+																					<field name="assets_id"/>
+																					<field name="name"/>
+																			</tree>
+																	</field>
+															</group>
                                 <separator string="Description for Tools"/>
                                 <field name="tools_description" placeholder="Specify the tools and mechanisms needed for execute this order..."/>
                             </page>
