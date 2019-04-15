@@ -158,8 +158,6 @@ class technical_support_order(models.Model):
 
     def action_done(self):
         self.write({'state': 'done', 'date_execution': time.strftime('%Y-%m-%d %H:%M:%S')})
-        for order in self:
-            if order.ticket_id: order.ticket_id.write({'stage_id': 3})
         return True
 
     def ticket_done(self):
@@ -180,8 +178,6 @@ class technical_support_order(models.Model):
 
     def force_done(self):
         self.write({'state': 'done', 'date_execution': time.strftime('%Y-%m-%d %H:%M:%S')})
-        for order in self:
-            if order.ticket_id: order.ticket_id.write({'stage_id': 3})
         return True
 
     def force_parts_reservation(self):
