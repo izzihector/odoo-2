@@ -22,8 +22,8 @@ class technical_support_order(models.Model):
 
     STATE_SELECTION = [
         ('draft', 'DRAFT'),
-        ('released', 'WAITING PARTS'),
         ('ready', 'IN PROCESS'),
+        ('released', 'WAITING PARTS'),
         ('done', 'DONE'),
         ('cancel', 'CANCELED')
     ]
@@ -158,6 +158,11 @@ class technical_support_order(models.Model):
 
     def action_done(self):
         self.write({'state': 'done', 'date_execution': time.strftime('%Y-%m-%d %H:%M:%S')})
+        for order in self:
+            if order.ticket_id: order.ticket_id.write({'stage_id': 3})
+        return True
+
+    def ticket_done(self):
         for order in self:
             if order.ticket_id: order.ticket_id.write({'stage_id': 3})
         return True

@@ -195,6 +195,7 @@
                         <button name="button_recreate_picking_parts" states="parts_except" string="Recreate Picking" type="object" class="oe_highlight"/>
                         <button name="action_cancel" type="object" states="draft,ready,parts_except" string="Cancel"/>
                         <button name="action_cancel" type="object" states="released" string="Cancel"/>
+												<button name="ticket_done" type="object" states="ready,parts_except" string="Ticket Done"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,ready,done" statusbar_colors='{"parts_except":"red","released":"blue"}'/>
                     </header>
                     <sheet>
