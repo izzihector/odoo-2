@@ -588,7 +588,7 @@
 
 					 <!-- maintenance checklist -->
 				        <record id="technical_support_checklist_form_view" model="ir.ui.view">
-				            <field name="name"technical_support.checklist.form</field>
+				            <field name="name">technical_support.checklist.form</field>
 				            <field name="model">technical_support.checklist</field>
 				            <field name="type">form</field>
 				            <field name="arch" type="xml">
@@ -656,7 +656,7 @@
 				      <menuitem
 								id="menu_maintenance_checklist_all"
 								name="Lista Completa de Mantenimiento"
-								action="technical_support_checklist_history_action" 
+								action="technical_support_checklist_history_action"
 								parent="menu_technical_support_checklist_history"
 								sequence="5" />
 
