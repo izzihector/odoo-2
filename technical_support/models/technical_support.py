@@ -71,11 +71,11 @@ class technical_support_order(models.Model):
     date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
     date_finish = fields.Datetime('Finish Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
 
-    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned parts', readonly=True, states={'draft':[('readonly',False)]})
+    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned Parts', readonly=True, states={'draft':[('readonly',False)]})
     parts_ready_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
-    assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'draft':[('readonly',False)]})
+    assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'done':[('readonly',True)]})
 
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
@@ -100,6 +100,7 @@ class technical_support_order(models.Model):
     parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
     modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
 
+    order_id = fields.Many2one('technical_support.checklist.history', 'Control List')
 
     _order = 'date_execution'
 
@@ -422,3 +423,100 @@ class technical_support_order_assets_line(models.Model):
     name = fields.Char('Description', size=64)
     assets_id = fields.Many2one('asset.asset', 'Assets', required=True)
     maintenance_id = fields.Many2one('technical_support.order', 'Maintenance Order')
+
+
+class TechnicalSupportChecklistHistory(models.Model):
+    _name="technical_support.checklist.history"
+    _description= "Checklist History"
+    _inherit = ['mail.thread']
+    _order = 'name desc'
+
+    @api.onchange('checklist_id')
+    def onchange_checklist_id(self):
+        if self.checklist_id:
+            liste = self.env['technical_support.question'].search([('checklist_id', '=', self.id)])
+            #enrs = self.env['technical_support.question'].name_get(liste)
+            res = []
+            for id, name in liste:
+                obj = {'name': name}
+                res.append(obj)
+            return {'value':{'answers_ids': res}}
+
+
+    @api.one
+    def action_done(self):
+        self.state='done'
+        return True
+
+    @api.one
+    def action_confirmed(self):
+        self.state='confirmed'
+        return True
+
+    @api.one
+    def action_draft(self):
+        self.state='draft'
+        return True
+
+
+    name=fields.Char("Nom", default=lambda x: x.env['ir.sequence'].get('technical_support.checklist.history'))
+    zone_id=fields.Many2one('technical_support.zone',u'Zone')
+    checklist_id=fields.Many2one('technical_support.checklist', 'Control List')
+    answers_ids=fields.One2many("technical_support.answer.history","checklist_history_id","Answers")
+    ot_ids=fields.One2many('technical_support.order','order_id',"Order")
+    date_planned=fields.Datetime("Scheduled Date")
+    date_end=fields.Datetime("End Date")
+    models_id=fields.Many2one('equipment.model', u'Model')
+    user_id=fields.Many2one('res.users', 'Responsible')
+    state=fields.Selection([('draft', 'Rough draft'), ('confirmed', 'confirmado'),('done', 'Done')], "Status",track_visibility='always', default='draft')
+
+
+class TechnicalSupportChecklist(models.Model):
+    _name="technical_support.checklist"
+    _description= "Checklist"
+    _order = 'sequence, id'
+
+    name=fields.Char("Title", required=True)
+    active=fields.Boolean("Active", default=1)
+    planned_date=fields.Float("Expected Duration")
+    sequence=fields.Integer('Sequence')
+    description=fields.Text('Description')
+    questions_ids=fields.One2many("technical_support.question","checklist_id","Questions")
+    models_id=fields.Many2one('equipment.model', u'Model')
+
+
+    @api.multi
+    def copy(self, default=None):
+        if default is None:
+            default = {}
+        context = {}
+        if not default.get('name'):
+            default.update(name=("%s (copy)") % (self.name))
+        res = super(TechnicalSupportChecklist, self).copy(default)
+        return res
+
+CHOICE_MAINT = [
+    ('fait','Made'),
+    ('bon','Good'),
+    ('mauvais','Bad'),
+    ('inapplicable','Inapplicable')]
+
+class TechnicalSupportAnswerHistory(models.Model):
+    _name="technical_support.answer.history"
+    _description= "Answers"
+    _order = 'sequence, id'
+
+    name=fields.Char(u"Acción a realizar",required=True)
+    sequence=fields.Integer('Sequence')
+    checklist_history_id=fields.Many2one('technical_support.checklist.history', u'Control List')
+    answer=fields.Selection(CHOICE_MAINT, u"State")
+    detail=fields.Char(u"Detail")
+
+class TechnicalSupportQuestion(models.Model):
+    _name = "technical_support.question"
+    _description = "Question"
+    _order = 'sequence'
+
+    name=fields.Char("Question", required=True)
+    sequence=fields.Integer('Sequence')
+    checklist_id=fields.Many2one('technical_support.checklist', 'Control List', required=True)
