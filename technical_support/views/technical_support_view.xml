@@ -556,7 +556,6 @@
 					                    <field name="ot_ids">
 						                    <tree>
 										            <field name="name"/>
-								                    <field name="priority"/>
 								                    <field name="partner_id"/>
 								                    <field name="user_id"/>
 								                    <field name="date"/>
