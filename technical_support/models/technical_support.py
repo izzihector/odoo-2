@@ -460,7 +460,6 @@ class TechnicalSupportChecklistHistory(models.Model):
 
 
     name=fields.Char("Nom", default=lambda x: x.env['ir.sequence'].get('technical_support.checklist.history'))
-    zone_id=fields.Many2one('technical_support.zone',u'Zone')
     checklist_id=fields.Many2one('technical_support.checklist', 'Control List')
     answers_ids=fields.One2many("technical_support.answer.history","checklist_history_id","Answers")
     ot_ids=fields.One2many('technical_support.order','order_id',"Order")
