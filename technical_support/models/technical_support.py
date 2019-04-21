@@ -260,13 +260,15 @@ class technical_support_task(models.Model):
     _description = 'Maintenance Task'
 
     MAINTENANCE_TYPE_SELECTION = [
+        ('bm', 'Breakdown'),
+        ('pm', 'Preventive'),
         ('cm', 'Corrective')
     ]
 
     name = fields.Char('Description', size=64, required=True, translate=True)
     category_id = fields.Many2one('equipment.category', 'Category', ondelete='restrict', required=True)
     model_id = fields.Many2one('equipment.model', 'Model', ondelete='restrict', required=True)
-    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='cm')
+    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='pm')
     parts_lines = fields.One2many('technical_support.task.parts.line', 'task_id', 'Parts')
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
