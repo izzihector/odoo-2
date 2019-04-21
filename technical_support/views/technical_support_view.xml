@@ -421,8 +421,8 @@
             <field name="model">technical_support.task</field>
             <field name="arch" type="xml">
                 <tree string="Maintenance Tasks">
-                    <field name="category_id"/>
                     <field name="name"/>
+										<field name="model_id"/>
                     <field name="maintenance_type"/>
                 </tree>
             </field>
