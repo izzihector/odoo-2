@@ -507,6 +507,7 @@ class TechnicalSupportAnswerHistory(models.Model):
 
     name=fields.Char(u"Acción a realizar",required=True)
     sequence=fields.Integer('Sequence')
+    question_id=fields.Many2one('technical_support.question', u'Question')
     checklist_history_id=fields.Many2one('technical_support.checklist.history', u'Control List')
     answer=fields.Selection(CHOICE_MAINT, u"State")
     detail=fields.Char(u"Detail")
