@@ -441,6 +441,7 @@
                     </div>
                     <group>
                         <field name="category_id"/>
+												<field name="model_id"/>
                         <field name="maintenance_type"/>
                         <field name="active"/>
                     </group>
