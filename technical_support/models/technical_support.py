@@ -107,8 +107,8 @@ class technical_support_order(models.Model):
     @api.onchange('equipment_id','maintenance_type')
     def onchange_equipment(self):
         if self.equipment_id:
-            self.category_ids = self.equipment_id.category_ids
-        return {'domain': {'task_id': [('category_id', 'in', self.category_ids.ids),('maintenance_type','=',self.maintenance_type)]}}
+            self.model_id = self.equipment_id.model_id
+        return {'domain': {'task_id': [('model_id', 'in', self.model_id.ids),('maintenance_type','=',self.maintenance_type)]}}
 
     @api.onchange('date_planned')
     def onchange_planned_date(self):
@@ -265,6 +265,7 @@ class technical_support_task(models.Model):
 
     name = fields.Char('Description', size=64, required=True, translate=True)
     category_id = fields.Many2one('equipment.category', 'equipment Category', ondelete='restrict', required=True)
+    model_id = fields.Many2one('equipment.model', 'Model', ondelete='restrict', required=True)
     maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='cm')
     parts_lines = fields.One2many('technical_support.task.parts.line', 'task_id', 'Parts')
     tools_description = fields.Text('Tools Description',translate=True)
