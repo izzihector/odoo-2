@@ -70,7 +70,7 @@ class technical_support_order(models.Model):
     date_execution = fields.Datetime('Execution Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
     date_finish = fields.Datetime('Finish Date', required=True, states={'done':[('readonly',True)],'cancel':[('readonly',True)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
 
-    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned Parts', states={'done':[('readonly',True)]})
+    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned Parts')
     parts_ready_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
