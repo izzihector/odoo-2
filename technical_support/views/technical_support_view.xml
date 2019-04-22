@@ -465,8 +465,15 @@
                             <field name="labor_description" placeholder="Specify the specialists needed for execute this order..."/>
                         </page>
                         <page string="Operations">
-                            <separator string="Description for Operations"/>
-                            <field name="operations_description" placeholder="Specify the jobs that need execute..."/>
+													<field name="checklist_lines" nolabel="1">
+														<tree string="Checklist" editable="bottom">
+															<field name="question_id"/>
+															<field name="answer"/>
+															<field name="name"/>
+														</tree>
+													</field>
+                          <separator string="Description for Operations"/>
+                          <field name="operations_description" placeholder="Operations Description..."/>
                         </page>
                         <page string="Documentation">
                             <separator string="Description for Documentation"/>

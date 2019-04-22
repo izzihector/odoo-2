@@ -75,6 +75,7 @@ class technical_support_order(models.Model):
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
     assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'done':[('readonly',True)]})
+    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned Parts', readonly=True, states={'draft':[('readonly',False)]})
 
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
@@ -268,6 +269,7 @@ class technical_support_task(models.Model):
     model_id = fields.Many2one('equipment.model', 'Model', ondelete='restrict', required=True)
     maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='pm')
     parts_lines = fields.One2many('technical_support.task.parts.line', 'task_id', 'Parts')
+    checklist_lines = fields.One2many('technical_support.task.checklist.line', 'task_id', 'CheckList')
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
     operations_description = fields.Text('Operations Description',translate=True)
@@ -305,6 +307,25 @@ class technical_support_task_parts_line(models.Model):
             ids[0].write(values)
             return ids[0]
         return super(technical_support_task_parts_line, self).create(values)
+
+
+class TechnicalSupportTaskChecklistLine(models.Model):
+    _name = 'technical_support.task.checklist.line'
+    _description = 'Maintenance Planned CheckList'
+
+    CHOICE_MAINTASK = [
+        ('done','Done'),
+        ('notdone','Not Done'),
+        ('na','N/A')]
+
+    name = fields.Char('Description', size=64)
+    question_id=fields.Many2one('technical_support.question', u'Question', required=True)
+    answer=fields.Selection(CHOICE_MAINTASK, u"State")
+    task_id = fields.Many2one('technical_support.task', 'Maintenance Task')
+
+    def unlink(self):
+        self.write({'task_id': False})
+        return True
 
 
 class technical_support_request(models.Model):
