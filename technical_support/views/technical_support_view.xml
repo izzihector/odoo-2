@@ -288,7 +288,7 @@
 													  </group>
 												</page>
                             <page string="Parts">
-                                    <group string="Planned Parts" states="done,cancel">
+                                    <group string="Planned Parts">
                                         <field name="parts_lines" nolabel="1">
                                             <tree string="Planned Parts" editable="bottom">
                                                 <field name="parts_id" domain="[('isParts','=',True)]"/>
