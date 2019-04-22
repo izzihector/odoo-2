@@ -54,7 +54,7 @@ class HelpdeskTicket(models.Model):
                 'origin': request.id,
                 'user_id': request.user_id.id,
                 'state': 'draft',
-                'maintenance_type': 'bm',
+                'maintenance_type': 'cm',
                 'equipment_id': request.equipment_id.id,
                 'description': request.name,
                 'problem_description': request.description,
