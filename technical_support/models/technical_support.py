@@ -268,7 +268,7 @@ class TechnicalSupportOrderChecklistLine(models.Model):
         ('na','N/A')]
 
     name = fields.Char('Description', size=64)
-    question_id = fields.Many2one('product.product', 'Parts', required=True)
+    question_id = fields.Many2one('product.product', 'Question', required=True)
     answer=fields.Selection(CHOICE_MAINTASK, u"State")
     maintenance_id = fields.Many2one('technical_support.order', 'Maintenance Order')
 
