@@ -308,7 +308,7 @@
                                             </tree>
                                         </field>
                                     </group>
-                                    <group string="Parts to Consume" states="ready">
+                                    <group string="Parts to Consume">
                                         <field name="parts_move_lines" nolabel="1">
                                             <tree string="Parts to Consume">
                                                 <field name="product_id" string="Parts"/>
@@ -318,7 +318,7 @@
                                             </tree>
                                         </field>
                                     </group>
-                                    <group string="Consumed Parts" states="ready,done">
+                                    <group string="Consumed Parts" >
                                         <field name="parts_moved_lines" nolabel="1" >
                                            <tree string="Consumed Parts">
                                                <field name="product_id" readonly="1" string="Parts"/>
