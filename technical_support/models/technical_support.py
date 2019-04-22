@@ -74,7 +74,7 @@ class technical_support_order(models.Model):
     parts_ready_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
-    assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'done':[('readonly',True)]})
+    assets_lines = fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', states={'done':[('readonly',True)]})
     checklist_lines = fields.One2many('technical_support.order.checklist.line', 'maintenance_id', 'Planned CheckList', readonly=True, states={'draft':[('readonly',False)]})
 
     tools_description = fields.Text('Tools Description')
