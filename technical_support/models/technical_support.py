@@ -77,10 +77,10 @@ class technical_support_order(models.Model):
     assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'done':[('readonly',True)]})
     checklist_lines = fields.One2many('technical_support.order.checklist.line', 'maintenance_id', 'Planned CheckList', readonly=True, states={'draft':[('readonly',False)]})
 
-    tools_description = fields.Text('Tools Description',translate=True)
-    labor_description = fields.Text('Labor Description',translate=True)
-    operations_description = fields.Text('Operations Description',translate=True)
-    documentation_description = fields.Text('Documentation Description',translate=True)
+    tools_description = fields.Text('Tools Description')
+    labor_description = fields.Text('Labor Description')
+    operations_description = fields.Text('Operations Description')
+    documentation_description = fields.Text('Documentation Description')
     problem_description = fields.Text('Problem Description')
 
     task_id = fields.Many2one('technical_support.task', 'Task', readonly=True, states={'draft': [('readonly', False)]})
@@ -289,16 +289,19 @@ class technical_support_task(models.Model):
     ]
 
     name = fields.Char('Description', size=64, required=True, translate=True)
+    active = fields.Boolean('Active', default=True)
+    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='pm')
+
     category_id = fields.Many2one('equipment.category', 'Category', ondelete='restrict', required=True)
     model_id = fields.Many2one('equipment.model', 'Model', ondelete='restrict', required=True)
-    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, default='pm')
+
     parts_lines = fields.One2many('technical_support.task.parts.line', 'task_id', 'Parts')
     checklist_lines = fields.One2many('technical_support.task.checklist.line', 'task_id', 'CheckList')
-    tools_description = fields.Text('Tools Description',translate=True)
-    labor_description = fields.Text('Labor Description',translate=True)
-    operations_description = fields.Text('Operations Description',translate=True)
-    documentation_description = fields.Text('Documentation Description',translate=True)
-    active = fields.Boolean('Active', default=True)
+
+    tools_description = fields.Text('Tools Description')
+    labor_description = fields.Text('Labor Description')
+    operations_description = fields.Text('Operations Description')
+    documentation_description = fields.Text('Documentation Description')
 
 class technical_support_task_parts_line(models.Model):
     _name = 'technical_support.task.parts.line'

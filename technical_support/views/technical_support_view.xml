@@ -2,44 +2,100 @@
 <odoo>
 	<data>
 
-		<!-- Equipment menu Icon-->
-		<menuitem
-				name="Technical Support"
+		<!-- Technical Support Menu Icon-->
+		<menuitem name="Technical Support"
 				id="base.menu_technical_support_root"
 				groups="technical_support.group_technical_support_customer"
 				web_icon="technical_support,static/description/icon.png"
 				sequence="80"/>
 
-        <!-- Maintenance menu -->
-    <menuitem
-				name="Maintenance"
-        id="menu_technical_support_maintenance"
-        parent="base.menu_technical_support_root"
-        sequence="1"/>
+    <!-- Technical Support Menu -->
+		<menuitem name="Maintenance"
+			id="menu_technical_support_maintenance"
+			parent="base.menu_technical_support_root"
+			sequence="1"/>
 
-        <!-- Maintenance request menu -->
-        <record id="technical_support_request_tree_view" model="ir.ui.view">
-            <field name="name">technical_support.request.tree</field>
-            <field name="model">technical_support.request</field>
-            <field name="arch" type="xml">
-                <tree fonts="bold:message_unread==True" string="Technical Support Requests">
-                    <field name="message_unread" invisible="1"/>
-                    <field name="name"/>
-                    <field name="execution_date" string="Date"/>
-                    <field name="equipment_id"/>
-                    <field name="cause"/>
-                    <field name="state"/>
-                </tree>
-            </field>
-        </record>
+		<!-- Technical Support Menu
+		<menuitem
+			name="Technical Support Requests"
+			action="action_requests"
+			id="menu_technical_support_request"
+			parent="menu_technical_support_maintenance"
+			sequence="1"/>    -->
 
-        <record id="technical_support_request_form_view" model="ir.ui.view">
-            <field name="name">technical_support.request.form</field>
-            <field name="model">technical_support.request</field>
-            <field name="arch" type="xml">
-                <form string="Technical Support Request" version="1.0">
-                    <header>
-                        <button name="action_send" states="draft" string="Send Request" type="object" class="oe_highlight"/>
+    <!-- Technical Support Orders Menu -->
+		<menuitem name="Technical Support Orders"
+			action="action_orders"
+			id="menu_technical_support_order"
+			parent="menu_technical_support_maintenance"
+			sequence="10"/>
+
+		<!-- Technical Support Parts menu -->
+		<menuitem name="Parts"
+			id="menu_maintenance_parts"
+			parent="base.menu_technical_support_root"
+			groups="technical_support.group_technical_support_user"
+			sequence="9"/>
+
+		<menuitem name="Parts"
+			action="part_action"
+			id="menu_maintenance_parts_parts"
+			parent="menu_maintenance_parts"
+			sequence="100"/>
+
+		<!-- Technical Support Tasks menu -->
+		<menuitem name="Tasks"
+			id="menu_maintenance_tasks"
+			parent="base.menu_technical_support_root"
+			sequence="9"/>
+
+		<menuitem name="Tasks"
+			action="action_tasks"
+			id="menu_maintenance_tasks_tasks"
+			parent="menu_maintenance_tasks"
+			sequence="100"/>
+
+		<!-- liste controle
+		<menuitem name="Checklist"
+			id="menu_technical_support_checklist_history"
+			parent="base.menu_technical_support_root"
+			sequence="7"/>
+
+		<menuitem name="Lista de control"
+			id="technical_support_action_view_checklis_id"
+			parent="menu_technical_support_checklist_history"
+			action="technical_support_checklist_action"/>
+
+		<menuitem name="Lista Completa de Mantenimiento"
+			id="menu_maintenance_checklist_all"
+			action="technical_support_checklist_history_action"
+			parent="menu_technical_support_checklist_history"
+			sequence="5" />   -->
+
+		<!-- Technical Support Request Tree View -->
+    <record id="technical_support_request_tree_view" model="ir.ui.view">
+    	<field name="name">technical_support.request.tree</field>
+      <field name="model">technical_support.request</field>
+      <field name="arch" type="xml">
+      	<tree fonts="bold:message_unread==True" string="Technical Support Requests">
+        	<field name="message_unread" invisible="1"/>
+          <field name="name"/>
+          <field name="execution_date" string="Date"/>
+          <field name="equipment_id"/>
+          <field name="cause"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+		<!-- Technical Support Request Form View -->
+    <record id="technical_support_request_form_view" model="ir.ui.view">
+    	<field name="name">technical_support.request.form</field>
+    	<field name="model">technical_support.request</field>
+      <field name="arch" type="xml">
+      	<form string="Technical Support Request" version="1.0">
+        	<header>
+	        	<button name="action_send" states="draft" string="Send Request" type="object" class="oe_highlight"/>
                         <button name="action_confirm" states="claim" string="Confirm Request" type="object" class="oe_highlight" groups="technical_support.group_technical_support_user"/>
                         <button name="%(action_request_reject)d" states="claim" string="Reject Request" type="action" groups="technical_support.group_technical_support_user"/>
                         <button name="action_cancel" states="draft" string="Cancel" type="object"/>
@@ -106,9 +162,9 @@
                     </div>
                 </form>
             </field>
-        </record>
+				</record>
 
-        <record id="technical_support_request_search" model="ir.ui.view">
+    <record id="technical_support_request_search" model="ir.ui.view">
             <field name="name">technical_support.request.search</field>
             <field name="model">technical_support.request</field>
             <field name="arch" type="xml">
@@ -129,7 +185,7 @@
             </field>
         </record>
 
-        <record id="action_requests" model="ir.actions.act_window">
+    <record id="action_requests" model="ir.actions.act_window">
             <field name="name">Technical Support Requests</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">technical_support.request</field>
@@ -138,16 +194,8 @@
             <field name="context">{'search_default_open': 1}</field>
         </record>
 
-        <menuitem name="Technical Support Requests"
-            action="action_requests"
-            id="menu_technical_support_request"
-            parent="menu_technical_support_maintenance"
-            sequence="1"/>
-
-
-
-        <!-- Maintenance order menu -->
-        <record id="technical_support_order_tree_view" model="ir.ui.view">
+    <!-- Maintenance order menu -->
+    <record id="technical_support_order_tree_view" model="ir.ui.view">
             <field name="name">technical_support.order.tree</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
@@ -164,14 +212,14 @@
             </field>
         </record>
 
-				<record id="mt_state_change" model="mail.message.subtype">
+		<record id="mt_state_change" model="mail.message.subtype">
 					<field name="name">Ticket Cerrado</field>
 					<field name="res_model">technical_support.order</field>
 					<field name="default" eval="True"/>
 					<field name="description">Orden Cerrado!</field>
 				</record>
 
-        <record id="technical_support_order_calendar_view" model="ir.ui.view">
+    <record id="technical_support_order_calendar_view" model="ir.ui.view">
             <field name="name">technical_support.order.calendar</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
@@ -182,7 +230,7 @@
             </field>
         </record>
 
-        <record id="technical_support_order_form_view" model="ir.ui.view">
+    <record id="technical_support_order_form_view" model="ir.ui.view">
             <field name="name">technical_support.order.form</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
@@ -329,7 +377,7 @@
             </field>
         </record>
 
-        <record id="technical_support_order_search" model="ir.ui.view">
+    <record id="technical_support_order_search" model="ir.ui.view">
             <field name="name">technical_support.order.search</field>
             <field name="model">technical_support.order</field>
             <field name="arch" type="xml">
@@ -366,7 +414,7 @@
             </field>
         </record>
 
-        <record id="action_orders" model="ir.actions.act_window">
+    <record id="action_orders" model="ir.actions.act_window">
             <field name="name">Technical Support Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">technical_support.order</field>
@@ -375,22 +423,7 @@
             <field name="context" eval="{'default_categ_id': ref('technical_support.product_category_technical_support')}"/>
         </record>
 
-        <menuitem
-						name="Technical Support Orders"
-            action="action_orders"
-            id="menu_technical_support_order"
-            parent="menu_technical_support_maintenance"
-            sequence="10"/>
-
-        <!-- Parts menu -->
-        <menuitem
-						name="Parts"
-            id="menu_maintenance_parts"
-            parent="base.menu_technical_support_root"
-            groups="technical_support.group_technical_support_user"
-            sequence="9"/>
-
-        <record id="part_search_form_view" model="ir.ui.view">
+    <record id="part_search_form_view" model="ir.ui.view">
             <field name="name">product.template.search.technical_support</field>
             <field name="model">product.template</field>
             <field name="mode">primary</field>
@@ -402,7 +435,7 @@
             </field>
         </record>
 
-        <record id="part_action" model="ir.actions.act_window">
+    <record id="part_action" model="ir.actions.act_window">
             <field name="name">Part</field>
             <field name="res_model">product.template</field>
             <field name="view_mode">tree,form,kanban</field>
@@ -416,33 +449,27 @@
             </field>
         </record>
 
-        <menuitem name="Parts"
-            action="part_action"
-            id="menu_maintenance_parts_parts"
-            parent="menu_maintenance_parts"
-            sequence="100"/>
+    <!-- Tasks menu -->
+    <record id="technical_support_task_tree_view" model="ir.ui.view">
+    	<field name="name">technical_support.task.tree</field>
+      <field name="model">technical_support.task</field>
+      <field name="arch" type="xml">
+      	<tree string="Maintenance Tasks">
+      		<field name="name"/>
+					<field name="model_id"/>
+        	<field name="maintenance_type"/>
+      	</tree>
+      </field>
+    </record>
 
-        <!-- Tasks menu -->
-        <record id="technical_support_task_tree_view" model="ir.ui.view">
-            <field name="name">technical_support.task.tree</field>
-            <field name="model">technical_support.task</field>
-            <field name="arch" type="xml">
-                <tree string="Maintenance Tasks">
-                    <field name="name"/>
-										<field name="model_id"/>
-                    <field name="maintenance_type"/>
-                </tree>
-            </field>
-        </record>
-
-        <record id="technical_support_task_form_view" model="ir.ui.view">
-            <field name="name">technical_support.task.form</field>
-            <field name="model">technical_support.task</field>
-            <field name="arch" type="xml">
-                <form string="Tasks" version="7.0">
-                <header>
-                </header>
-                <sheet>
+    <record id="technical_support_task_form_view" model="ir.ui.view">
+    	<field name="name">technical_support.task.form</field>
+      <field name="model">technical_support.task</field>
+      <field name="arch" type="xml">
+      	<form string="Tasks" version="7.0">
+      		<header>
+          </header>
+        	<sheet>
                     <div class="oe_title">
                         <h1>Task Name <field name="name" class="oe_inline"/></h1>
                     </div>
@@ -490,46 +517,34 @@
                 </sheet>
                 </form>
             </field>
-        </record>
+    </record>
 
-        <record id="action_tasks" model="ir.actions.act_window">
-            <field name="name">Maintenance Tasks</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">technical_support.task</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="context" eval="{'default_categ_id': ref('technical_support.product_category_technical_support')}"/>
-        </record>
+    <record id="action_tasks" model="ir.actions.act_window">
+    	<field name="name">Maintenance Tasks</field>
+    	<field name="type">ir.actions.act_window</field>
+      <field name="res_model">technical_support.task</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context" eval="{'default_categ_id': ref('technical_support.product_category_technical_support')}"/>
+    </record>
 
-        <menuitem name="Tasks"
-            id="menu_maintenance_tasks"
-            parent="base.menu_technical_support_root"
-            sequence="9"/>
+		<!-- list maintenenace -->
+		<record model="ir.ui.view" id="technical_support_checklist_history_tree_view">
+			<field name="name">technical_support.checklist.history.tree</field>
+			<field name="model">technical_support.checklist.history</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Checklist"  colors="red:date_planned&lt;=current_date and state=='draft';orange:date_planned&lt;=current_date and state=='confirmed'">
+					<field name="name" />
+				  <field name="user_id" />
+				  <field name="date_planned"/>
+				  <field name="date_end"/>
+				  <field name="state"/>
+				</tree>
+			</field>
+		</record>
 
-        <menuitem name="Tasks"
-            action="action_tasks"
-            id="menu_maintenance_tasks_tasks"
-            parent="menu_maintenance_tasks"
-            sequence="100"/>
-
-
-						<!-- list maintenenace -->
-      <record model="ir.ui.view" id="technical_support_checklist_history_tree_view">
-				<field name="name">technical_support.checklist.history.tree</field>
-				<field name="model">technical_support.checklist.history</field>
-				<field name="type">tree</field>
-				<field name="arch" type="xml">
-					<tree string="Checklist"  colors="red:date_planned&lt;=current_date and state=='draft';orange:date_planned&lt;=current_date and state=='confirmed'">
-				  	<field name="name" />
-				    <field name="user_id" />
-				    <field name="date_planned"/>
-				    <field name="date_end"/>
-				    <field name="state"/>
-				  </tree>
-				</field>
-		 </record>
-
-		  <record model="ir.ui.view" id="technical_support_checklist_history_form_view">
+		<record model="ir.ui.view" id="technical_support_checklist_history_form_view">
 			<field name="name">technical_support.checklist.history.form</field>
 			<field name="model">technical_support.checklist.history</field>
 			<field name="type">form</field>
@@ -581,93 +596,69 @@
 				                	</div>
 				                </form>
 				            </field>
-				        </record>
+		</record>
 
+		<record id="technical_support_checklist_history_action" model="ir.actions.act_window">
+			<field name="name">CheckList</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">technical_support.checklist.history</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
 
-				        <record id="technical_support_checklist_history_action" model="ir.actions.act_window">
-				            <field name="name">CheckList</field>
-				            <field name="type">ir.actions.act_window</field>
-				            <field name="res_model">technical_support.checklist.history</field>
-				            <field name="view_type">form</field>
-				            <field name="view_mode">tree,form</field>
-				        </record>
+		<!-- maintenance checklist -->
+		<record id="technical_support_checklist_form_view" model="ir.ui.view">
+			<field name="name">technical_support.checklist.form</field>
+			<field name="model">technical_support.checklist</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="">
+					<sheet>
+				  	<group>
+							<group>
+								<field name="name"/>
+								<field name="active"/>
+							</group>
+							<group>
+					    	<field name="models_id"/>
+					      <field name="planned_date" widget="float_time"/>
+					    </group>
+				    </group>
+				    <field name="description" placeholder="Description"/>
+				    <notebook>
+				    	<page string="Questions">
+					    	<field name="questions_ids">
+							  	<tree editable="bottom" >
+							  		<field name="sequence" widget="handle"/>
+						      	<field name="name"  />
+						    	</tree>
+						    </field>
+					    </page>
+				    </notebook>
+				 </sheet>
+				</form>
+			</field>
+		</record>
 
+		<record id="technical_support_checklist_tree_view" model="ir.ui.view">
+			<field name="name">technical_support.checklist.tree</field>
+			<field name="model">technical_support.checklist</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Control List">
+					<field name="sequence" widget="handle"/>
+				  <field name="name" />
+				  <field name="models_id" />
+				</tree>
+			</field>
+		</record>
 
-
-
-					 <!-- maintenance checklist -->
-				        <record id="technical_support_checklist_form_view" model="ir.ui.view">
-				            <field name="name">technical_support.checklist.form</field>
-				            <field name="model">technical_support.checklist</field>
-				            <field name="type">form</field>
-				            <field name="arch" type="xml">
-				                <form string="">
-				                    <sheet>
-				                    <group>
-					                    <group>
-					                    <field name="name"/>
-					                    <field name="active"/>
-					                    </group>
-					                    <group>
-					                    <field name="models_id"/>
-					                    <field name="planned_date" widget="float_time"/>
-					                    </group>
-				                    </group>
-				                    <field name="description" placeholder="Description"/>
-				                    <notebook>
-				                    	 <page string="Questions">
-					                    	<field name="questions_ids">
-							                   	<tree editable="bottom" >
-							                   		<field name="sequence" widget="handle"/>
-						                            <field name="name"  />
-						                        </tree>
-						                     </field>
-					                     </page>
-				                    </notebook>
-				                    </sheet>
-				                </form>
-				            </field>
-				        </record>
-				        <record id="technical_support_checklist_tree_view" model="ir.ui.view">
-				            <field name="name">technical_support.checklist.tree</field>
-				            <field name="model">technical_support.checklist</field>
-				            <field name="type">tree</field>
-				            <field name="arch" type="xml">
-				                <tree string="Control List">
-				                     <field name="sequence" widget="handle"/>
-				                    <field name="name" />
-				                    <field name="models_id" />
-				                </tree>
-				            </field>
-				        </record>
-
-
-				        <record id="technical_support_checklist_action" model="ir.actions.act_window">
-				            <field name="name">Control List</field>
-				            <field name="res_model">technical_support.checklist</field>
-				            <field name="view_type">form</field>
-				            <field name="view_mode">tree,form</field>
-				        </record>
-
-								<!-- liste controle -->
-				        <menuitem
-									id="menu_technical_support_checklist_history"
-									name="Checklist"
-									parent="base.menu_technical_support_root"
-									sequence="7"/>
-
-				 			 <menuitem
-								 id="technical_support_action_view_checklis_id"
-								 name="Lista de control"
-								 parent="menu_technical_support_checklist_history"
-								 action="technical_support_checklist_action"/>
-
-				      <menuitem
-								id="menu_maintenance_checklist_all"
-								name="Lista Completa de Mantenimiento"
-								action="technical_support_checklist_history_action"
-								parent="menu_technical_support_checklist_history"
-								sequence="5" />
+		<record id="technical_support_checklist_action" model="ir.actions.act_window">
+			<field name="name">Control List</field>
+			<field name="res_model">technical_support.checklist</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
 
  	</data>
 </odoo>
