@@ -75,7 +75,7 @@ class technical_support_order(models.Model):
     parts_move_lines = fields.One2many('stock.move', compute='_get_available_parts')
     parts_moved_lines = fields.One2many('stock.move', compute='_get_available_parts')
     assets_lines=fields.One2many('technical_support.order.assets.line', 'maintenance_id', 'Planned Tools', readonly=True, states={'done':[('readonly',True)]})
-    parts_lines = fields.One2many('technical_support.order.parts.line', 'maintenance_id', 'Planned Parts', readonly=True, states={'draft':[('readonly',False)]})
+    checklist_lines = fields.One2many('technical_support.order.checklist.line', 'maintenance_id', 'Planned CheckList', readonly=True, states={'draft':[('readonly',False)]})
 
     tools_description = fields.Text('Tools Description',translate=True)
     labor_description = fields.Text('Labor Description',translate=True)
@@ -129,6 +129,7 @@ class technical_support_order(models.Model):
     def onchange_task(self):
         task = self.task_id
         new_parts_lines = []
+        new_checklist_lines = []
         for line in task.parts_lines:
             new_parts_lines.append([0,0,{
                 'name': line.name,
@@ -136,7 +137,14 @@ class technical_support_order(models.Model):
                 'parts_qty': line.parts_qty,
                 'parts_uom': line.parts_uom.id,
                 }])
+        for line in task.checklist_lines:
+            new_checklist_lines.append([0,0,{
+                'name': line.name,
+                'question_id': line.question_id.id,
+                'answer': line.answer,
+                }])
         self.parts_lines = new_parts_lines
+        self.checklist_lines = new_checklist_lines
         self.description = task.name
         self.tools_description = task.tools_description
         self.labor_description = task.labor_description
@@ -219,7 +227,6 @@ class technical_support_order(models.Model):
                 else: del vals['date_execution']
         return super(technical_support_order, self).write(vals)
 
-
 class technical_support_order_parts_line(models.Model):
     _name = 'technical_support.order.parts.line'
     _description = 'Maintenance Planned Parts'
@@ -251,6 +258,23 @@ class technical_support_order_parts_line(models.Model):
             return ids[0]
         return super(technical_support_order_parts_line, self).create(values)
 
+class TechnicalSupportOrderChecklistLine(models.Model):
+    _name = 'technical_support.order.checklist.line'
+    _description = 'Maintenance Planned Checklist'
+
+    CHOICE_MAINTASK = [
+        ('done','Done'),
+        ('notdone','Not Done'),
+        ('na','N/A')]
+
+    name = fields.Char('Description', size=64)
+    question_id = fields.Many2one('product.product', 'Parts', required=True)
+    answer=fields.Selection(CHOICE_MAINTASK, u"State")
+    maintenance_id = fields.Many2one('technical_support.order', 'Maintenance Order')
+
+    def unlink(self):
+        self.write({'maintenance_id': False})
+        return True
 
 class technical_support_task(models.Model):
     """
@@ -275,7 +299,6 @@ class technical_support_task(models.Model):
     operations_description = fields.Text('Operations Description',translate=True)
     documentation_description = fields.Text('Documentation Description',translate=True)
     active = fields.Boolean('Active', default=True)
-
 
 class technical_support_task_parts_line(models.Model):
     _name = 'technical_support.task.parts.line'
@@ -308,7 +331,6 @@ class technical_support_task_parts_line(models.Model):
             return ids[0]
         return super(technical_support_task_parts_line, self).create(values)
 
-
 class TechnicalSupportTaskChecklistLine(models.Model):
     _name = 'technical_support.task.checklist.line'
     _description = 'Maintenance Planned CheckList'
@@ -326,7 +348,6 @@ class TechnicalSupportTaskChecklistLine(models.Model):
     def unlink(self):
         self.write({'task_id': False})
         return True
-
 
 class technical_support_request(models.Model):
     _name = 'technical_support.request'
@@ -437,7 +458,6 @@ class technical_support_request(models.Model):
             vals['name'] = self.env['ir.sequence'].next_by_code('technical_support.request') or '/'
         return super(technical_support_request, self).create(vals)
 
-
 class technical_support_order_assets_line(models.Model):
     _name = 'technical_support.order.assets.line'
     _description = 'Maintenance Planned Assets'
@@ -445,7 +465,6 @@ class technical_support_order_assets_line(models.Model):
     name = fields.Char('Description', size=64)
     assets_id = fields.Many2one('asset.asset', 'Assets', required=True)
     maintenance_id = fields.Many2one('technical_support.order', 'Maintenance Order')
-
 
 class TechnicalSupportChecklistHistory(models.Model):
     _name="technical_support.checklist.history"
@@ -491,7 +510,6 @@ class TechnicalSupportChecklistHistory(models.Model):
     user_id=fields.Many2one('res.users', 'Responsible')
     state=fields.Selection([('draft', 'Rough draft'), ('confirmed', 'confirmado'),('done', 'Done')], "Status",track_visibility='always', default='draft')
 
-
 class TechnicalSupportChecklist(models.Model):
     _name="technical_support.checklist"
     _description= "Checklist"
@@ -516,16 +534,16 @@ class TechnicalSupportChecklist(models.Model):
         res = super(TechnicalSupportChecklist, self).copy(default)
         return res
 
-CHOICE_MAINT = [
-    ('fait','Made'),
-    ('bon','Good'),
-    ('mauvais','Bad'),
-    ('inapplicable','Inapplicable')]
-
 class TechnicalSupportAnswerHistory(models.Model):
     _name="technical_support.answer.history"
     _description= "Answers"
     _order = 'sequence, id'
+
+    CHOICE_MAINT = [
+        ('fait','Made'),
+        ('bon','Good'),
+        ('mauvais','Bad'),
+        ('inapplicable','Inapplicable')]
 
     name=fields.Char(u"Acción a realizar",required=True)
     sequence=fields.Integer('Sequence')
