@@ -461,13 +461,14 @@ class technical_support_request(models.Model):
             vals['name'] = self.env['ir.sequence'].next_by_code('technical_support.request') or '/'
         return super(technical_support_request, self).create(vals)
 
-class technical_support_order_assets_line(models.Model):
+class TechnicalSupportOrderAssetsLine(models.Model):
     _name = 'technical_support.order.assets.line'
     _description = 'Maintenance Planned Assets'
 
     name = fields.Char('Description', size=64)
     assets_id = fields.Many2one('asset.asset', 'Assets', required=True)
     maintenance_id = fields.Many2one('technical_support.order', 'Maintenance Order')
+    maintenance_state_id = fields.Many2one('asset.state', related='assets_id.maintenance_state_id', string='State')
 
 class TechnicalSupportChecklistHistory(models.Model):
     _name="technical_support.checklist.history"

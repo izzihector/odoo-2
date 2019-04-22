@@ -335,6 +335,7 @@
 																			<tree editable="bottom">
 																					<field name="assets_id"/>
 																					<field name="name"/>
+																					<field name="maintenance_state_id"/>
 																			</tree>
 																	</field>
 															</group>
