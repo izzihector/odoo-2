@@ -29,7 +29,6 @@ class technical_support_order(models.Model):
     ]
 
     MAINTENANCE_TYPE_SELECTION = [
-        ('bm', 'Breakdown'),
         ('pm', 'Preventive'),
         ('cm', 'Corrective')
     ]
@@ -63,7 +62,7 @@ class technical_support_order(models.Model):
         If the order is confirmed the status is set to 'Waiting Parts'.\n\
         If the stock is available then the status is set to 'Ready to Maintenance'.\n\
         When the maintenance is over, the status is set to 'Done'.", default='draft')
-    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='bm')
+    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='cm')
     description = fields.Char('Description', size=64, translate=True, required=True, readonly=True, states={'draft': [('readonly', False)]})
 
     date_planned = fields.Datetime('Planned Date', required=True, readonly=True, states={'draft':[('readonly',False)]}, default=time.strftime('%Y-%m-%d %H:%M:%S'), track_visibility='onchange')
@@ -260,7 +259,6 @@ class technical_support_task(models.Model):
     _description = 'Maintenance Task'
 
     MAINTENANCE_TYPE_SELECTION = [
-        ('bm', 'Breakdown'),
         ('pm', 'Preventive'),
         ('cm', 'Corrective')
     ]
@@ -324,7 +322,7 @@ class technical_support_request(models.Model):
     ]
 
     MAINTENANCE_TYPE_SELECTION = [
-        ('bm', 'Breakdown'),
+
         ('pm', 'Preventive'),
         ('cm', 'Corrective')
     ]
@@ -362,7 +360,7 @@ class technical_support_request(models.Model):
     model_id=fields.Many2one('equipment.model', related='equipment_id.model_id', string='Model', readonly=True)
     parent_id=fields.Many2one('equipment.equipment', related='equipment_id.parent_id', string='Equipment Relation', readonly=True)
     modality_id=fields.Many2one('equipment.modality', related='equipment_id.modality_id', string='Modality', readonly=True)
-    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='bm')
+    maintenance_type = fields.Selection(MAINTENANCE_TYPE_SELECTION, 'Maintenance Type', required=True, readonly=True, states={'draft': [('readonly', False)]}, default='cm')
 
 
     @api.onchange('requested_date')
@@ -391,7 +389,7 @@ class technical_support_request(models.Model):
                 'date_execution':request.requested_date,
                 'origin': request.name,
                 'state': 'draft',
-                'maintenance_type': 'bm',
+                'maintenance_type': 'cm',
                 'equipment_id': request.equipment_id.id,
                 'description': request.cause,
                 'problem_description': request.description,

@@ -32,7 +32,7 @@ class technical_support_convert_order(models.TransientModel):
             values = {
                 'name': order.description,
                 'category_id': category_id,
-                'maintenance_type': order.maintenance_type if order.maintenance_type != 'bm' else 'cm',
+                'maintenance_type': order.maintenance_type if order.maintenance_type != 'pm' else 'cm',
                 'parts_lines': new_parts_lines,
                 'tools_description': order.tools_description,
                 'labor_description': order.labor_description,

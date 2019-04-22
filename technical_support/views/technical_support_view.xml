@@ -208,9 +208,9 @@
 																<field name="client_id"/>
                                 <field name="category_ids" invisible="1"/>
                                 <field name="maintenance_type"/>
-                                <label for="task_id" attrs="{'invisible':[('maintenance_type','=','bm')]}"/>
-                                <div attrs="{'invisible':[('maintenance_type','=','bm')]}">
-                                    <field name="task_id" attrs="{'required':[('maintenance_type','!=','bm')]}"/>
+                                <label for="task_id"/>
+                                <div>
+                                    <field name="task_id"/>
                                 </div>
                                 <field name="description"/>
                             </group>
