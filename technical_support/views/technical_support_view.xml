@@ -330,8 +330,8 @@
                                     </group>
                             </page>
                             <page string="Tools">
-															<group string="Tools" states="draft,done,released,parts_except,cancel">
-																	<field name="assets_lines">
+															<group string="Tools">
+																	<field name="assets_lines" nolabel="1">
 																			<tree editable="bottom">
 																					<field name="assets_id"/>
 																					<field name="name"/>
