@@ -24,7 +24,7 @@
             <field name="arch" type="xml">
                 <form string="Assets" version="7.0">
                     <header>
-                        <field name="maintenance_state_id" widget="statusbar" clickable="True" groups="asset.group_mro_user"/>
+                        <field name="maintenance_state_id" widget="statusbar" clickable="True" groups="asset.group_asset_manager"/>
                     </header>
                     <sheet>
                         <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
