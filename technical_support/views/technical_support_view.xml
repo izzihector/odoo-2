@@ -231,65 +231,62 @@
         </record>
 
     <record id="technical_support_order_form_view" model="ir.ui.view">
-            <field name="name">technical_support.order.form</field>
-            <field name="model">technical_support.order</field>
-            <field name="arch" type="xml">
-                <form string="Technical Support Orders" version="7.0">
-                    <header>
-                        <button name="action_confirm" states="draft" string="Confirm Maintenance" type="object" class="oe_highlight"/>
-                        <button name="action_done" states="ready" string="Done" type="object" class="oe_highlight"/>
-                        <button name="force_done" states="released" string="Done" type="object" class="oe_highlight"/>
-                        <button name="force_parts_reservation" states="released" string="Force Reservation" type="object"/>
-                        <button name="button_recreate_picking_parts" states="parts_except" string="Recreate Picking" type="object" class="oe_highlight"/>
-                        <button name="action_cancel" type="object" states="draft,ready,parts_except" string="Cancel"/>
-                        <button name="action_cancel" type="object" states="released" string="Cancel"/>
-												<button name="ticket_done" type="object" states="ready,parts_except" string="Ticket Done"  class="oe_highlight"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,ready,done" statusbar_colors='{"parts_except":"red","released":"blue"}'/>
-                    </header>
-                    <sheet>
-                        <div class="oe_title">
-                            <h1># <field name="name" class="oe_inline" readonly="1"/></h1>
-                        </div>
-                        <group>
-                            <group>
-                                <field name="equipment_id"/>
-																<field name="client_id"/>
-                                <field name="category_ids" invisible="1"/>
-                                <field name="maintenance_type"/>
-                                <label for="task_id"/>
-                                <div>
-                                    <field name="task_id"/>
-                                </div>
-                                <field name="description"/>
-                            </group>
-                            <group>
-                                <field name="date_planned"/>
-                                <field name="date_scheduled"/>
-                                <field name="date_execution"/>
-																<field name="date_finish"/>
-                                <field name="user_id"/>
-																<field name="ticket_id" widget="many2one"/>
-                            </group>
-                            <group groups="stock.group_locations">
-                            </group>
-                            <group>
-                                <field name="company_id" groups="base.group_multi_company" widget="selection"/>
-                            </group>
+    		<field name="name">technical_support.order.form</field>
+        <field name="model">technical_support.order</field>
+        <field name="arch" type="xml">
+        		<form string="Technical Support Orders" version="7.0">
+            		<header>
+                		<button name="action_confirm" states="draft" string="Confirm Maintenance" type="object" class="oe_highlight"/>
+                    <button name="action_done" states="ready" string="Done" type="object" class="oe_highlight"/>
+                    <button name="force_done" states="released" string="Done" type="object" class="oe_highlight"/>
+                    <button name="force_parts_reservation" states="released" string="Force Reservation" type="object"/>
+                    <button name="button_recreate_picking_parts" states="parts_except" string="Recreate Picking" type="object" class="oe_highlight"/>
+                    <button name="action_cancel" type="object" states="draft,ready,parts_except" string="Cancel"/>
+                    <button name="action_cancel" type="object" states="released" string="Cancel"/>
+										<button name="ticket_done" type="object" states="ready,parts_except" string="Ticket Done"  class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,ready,done" statusbar_colors='{"parts_except":"red","released":"blue"}'/>
+                </header>
+                <sheet>
+										<div class="oe_title">
+                    		<h1># <field name="name" class="oe_inline" readonly="1"/></h1>
+                    </div>
+                    <group>
+                    		<group>
+														<field name="equipment_id"/>
+														<field name="client_id"/>
+                            <field name="category_ids" invisible="1"/>
+                            <field name="maintenance_type"/>
+                            <field name="task_id" domain="[('maintenance_type','=',True)]" widget="many2one"/>
+                            <field name="description"/>
                         </group>
-                        <notebook>
-														<page string="Information">
-															<group>
+                        <group>
+														<field name="date_planned"/>
+                            <field name="date_scheduled"/>
+                          	<field name="date_execution"/>
+														<field name="date_finish"/>
+                            <field name="user_id"/>
+														<field name="ticket_id" widget="many2one"/>
+                        </group>
+                        <group groups="stock.group_locations">
+                        </group>
+                        <group>
+                        		<field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                    </group>
+                    <notebook>
+												<page string="Information">
+														<group>
 																<group>
-																	<field name="modality_id" widget="manyone"/>
-																	<field name="parent_id" widget="manyone"/>
-																	<field name="zone_id" widget="manyone"/>
+																		<field name="modality_id" widget="manyone"/>
+																		<field name="parent_id" widget="manyone"/>
+																		<field name="zone_id" widget="manyone"/>
 																</group>
 																<group>
-																	<field name="brand_id" widget="manyone"/>
-	                                <field name="model_id" widget="manyone"/>
+																		<field name="brand_id" widget="manyone"/>
+	                                	<field name="model_id" widget="manyone"/>
 																</group>
-															</group>
-														</page>
+													  </group>
+												</page>
                             <page string="Parts">
                                     <group string="Planned Parts" states="draft,released,done,parts_except,cancel">
                                         <field name="parts_lines" nolabel="1" context="{'default_categ_id': context.get('default_categ_id')}">
