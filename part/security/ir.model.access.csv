@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_part_fee_user,Part Fee user,model_part_fee,stock.group_stock_user,1,1,1,1
+access_part_user,Part user,model_part_order,stock.group_stock_user,1,1,1,1
+access_stock_production_lot_user,stock.production.lot user,stock.model_stock_production_lot,stock.group_stock_user,1,1,1,1
+access_part_line_user,part.line user,model_part_line,stock.group_stock_user,1,1,1,1
+access_account_tax_user,account.tax,account.model_account_tax,stock.group_stock_user,1,1,1,1

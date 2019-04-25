@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!--  Cancel part -->
+        
+        <record id="view_cancel_part" model="ir.ui.view">
+            <field name="name">Cancel p¿Part</field>
+            <field name="model">part.cancel</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Part Order">
+                    <group>
+                        <span class="o_form_label">This operation will cancel the Part process, but will not cancel it's Invoice. Do you want to continue?</span>
+                    </group>
+                    <footer>
+                        <button name="cancel_part" string="Yes" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>         
+
+        <record id="action_cancel_part" model="ir.actions.act_window">
+            <field name="name">Cancel Part Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">part.cancel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record> 
+        
+    </data>
+</odoo>    

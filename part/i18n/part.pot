@@ -1,0 +1,1116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* part
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server saas~11.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-21 13:18+0000\n"
+"PO-Revision-Date: 2018-09-21 13:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: part
+#: model:mail.template,report_name:part.mail_template_part_quotation
+msgid "${(object.name or '').replace('/','_')}"
+msgstr ""
+
+#. module: part
+#: model:mail.template,subject:part.mail_template_part_quotation
+msgid "${object.partner_id.name} part Orders (Ref ${object.name or 'n/a' })"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "(<i>Remove</i>)"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "(update)"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__state
+msgid "* The 'Draft' status is used when a user is encoding a new and unconfirmed part order.\n"
+"* The 'Confirmed' status is used when a user confirms the part order.\n"
+"* The 'Ready to part' status is used to start to parting, user can start parting only after part order is confirmed.\n"
+"* The 'To be Invoiced' status is used to generate the invoice before or after parting done.\n"
+"* The 'Done' status is set when parting is completed.\n"
+"* The 'Cancelled' status is used when user cancel part order."
+msgstr ""
+
+#. module: part
+#: model:mail.template,body_html:part.mail_template_part_quotation
+msgid "<?xml version=\"1.0\"?>\n"
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px;font-size: 13px;\">\n"
+"        Hello ${object.partner_id.name},<br/>\n"
+"        Here is your part order ${doc_name} <strong>${object.name}</strong>\n"
+"        % if object.origin:\n"
+"            (with reference: ${object.origin} )\n"
+"        % endif\n"
+"        % if object.invoice_method != 'none':\n"
+"            amounting in <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}.</strong><br/>\n"
+"        % else:\n"
+"            .<br/>\n"
+"        % endif\n"
+"        You can reply to this email if you have any questions.\n"
+"        <br/><br/>\n"
+"        Thank you,\n"
+"    </p>\n"
+"</div>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<i>(Add)</i>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_cancel_part
+msgid "<span class=\"o_form_label\">This operation will cancel the part process, but will not cancel it's Invoice. Do you want to continue?</span>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Lot/Serial Number:</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Operations</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Parts</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Printing Date:</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Product to part:</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Shipping address :</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Total Without Taxes</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "<strong>Warranty:</strong>"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: part
+#: selection:part.line,type:0
+msgid "Add"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Add internal notes..."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Add quotation notes..."
+msgstr ""
+
+#. module: part
+#: selection:part.order,invoice_method:0
+msgid "After part"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: part
+#: selection:part.order,invoice_method:0
+msgid "Before part"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_cancel_part
+#: model_terms:ir.ui.view,arch_db:part.view_make_invoice
+msgid "Cancel"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_part_cancel
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Cancel part"
+msgstr ""
+
+#. module: part
+#: model:ir.actions.act_window,name:part.action_cancel_part
+#: model_terms:ir.ui.view,arch_db:part.view_cancel_part
+msgid "Cancel part Order"
+msgstr ""
+
+#. module: part
+#: selection:part.line,state:0
+#: selection:part.order,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:244
+#, python-format
+msgid "Cannot cancel completed parts."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__partner_id
+msgid "Choose partner for whom the order will be invoiced and delivered. You can find a partner by its Name, TIN, Email or Internal Reference."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__company_id
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Company"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Confirm part"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+#: selection:part.line,state:0
+#: selection:part.order,state:0
+msgid "Confirmed"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:607
+#: code:addons/part/models/part.py:667
+#, python-format
+msgid "Couldn't find a pricelist line matching this product and quantity.\n"
+"You have to change either the product, the quantity or the pricelist."
+msgstr ""
+
+#. module: part
+#: model:ir.actions.act_window,name:part.act_part_invoice
+#: model_terms:ir.ui.view,arch_db:part.view_make_invoice
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Create Invoice"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_part_order_make_invoice
+msgid "Create Mass Invoice (part)"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.actions.act_window,help:part.action_part_order_tree
+msgid "Create a new reparation order"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_make_invoice
+msgid "Create invoices"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel__create_uid
+#: model:ir.model.fields,field_description:part.field_part_fee__create_uid
+#: model:ir.model.fields,field_description:part.field_part_line__create_uid
+#: model:ir.model.fields,field_description:part.field_part_order__create_uid
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__create_uid
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel__create_date
+#: model:ir.model.fields,field_description:part.field_part_fee__create_date
+#: model:ir.model.fields,field_description:part.field_part_line__create_date
+#: model:ir.model.fields,field_description:part.field_part_order__create_date
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__create_date
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__partner_id
+msgid "Customer"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__default_address_id
+msgid "Default Address"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__address_id
+msgid "Delivery Address"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__name
+#: model:ir.model.fields,field_description:part.field_part_line__name
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Description"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_line__location_dest_id
+msgid "Dest. Location"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel__display_name
+#: model:ir.model.fields,field_description:part.field_part_fee__display_name
+#: model:ir.model.fields,field_description:part.field_part_line__display_name
+#: model:ir.model.fields,field_description:part.field_part_order__display_name
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__display_name
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_make_invoice
+msgid "Do you really want to create the invoice(s)?"
+msgstr ""
+
+#. module: part
+#: selection:part.line,state:0
+msgid "Done"
+msgstr ""
+
+#. module: part
+#: selection:part.line,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "End part"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__tracking
+msgid "Ensure the traceability of a storable product in your warehouse."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Extra Info"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Fees"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Future Activities"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Group By"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__group
+msgid "Group by partner invoice address"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "History"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel__id
+#: model:ir.model.fields,field_description:part.field_part_fee__id
+#: model:ir.model.fields,field_description:part.field_part_line__id
+#: model:ir.model.fields,field_description:part.field_part_order__id
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__id
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__id
+msgid "ID"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__message_unread
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.actions.act_window,help:part.action_part_order_tree
+msgid "In a part order, you can detail the components you remove,\n"
+"                add or replace and record the time you spent on the different\n"
+"                operations."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:210
+#, python-format
+msgid "Insufficient Quantity"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__internal_notes
+msgid "Internal Notes"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_line__move_id
+msgid "Inventory Move"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__invoice_id
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Invoice"
+msgstr ""
+
+#. module: part
+#: selection:part.order,state:0
+msgid "Invoice Exception"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__invoice_line_id
+#: model:ir.model.fields,field_description:part.field_part_line__invoice_line_id
+msgid "Invoice Line"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__invoice_method
+msgid "Invoice Method"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Invoice address:"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Invoice and shipping address:"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:385
+#, python-format
+msgid "Invoice created"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__invoiced
+#: model:ir.model.fields,field_description:part.field_part_line__invoiced
+#: model:ir.model.fields,field_description:part.field_part_order__invoiced
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Invoiced"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__partner_invoice_id
+msgid "Invoicing Address"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel____last_update
+#: model:ir.model.fields,field_description:part.field_part_fee____last_update
+#: model:ir.model.fields,field_description:part.field_part_line____last_update
+#: model:ir.model.fields,field_description:part.field_part_order____last_update
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice____last_update
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel__write_uid
+#: model:ir.model.fields,field_description:part.field_part_fee__write_uid
+#: model:ir.model.fields,field_description:part.field_part_line__write_uid
+#: model:ir.model.fields,field_description:part.field_part_order__write_uid
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__write_uid
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_cancel__write_date
+#: model:ir.model.fields,field_description:part.field_part_fee__write_date
+#: model:ir.model.fields,field_description:part.field_part_line__write_date
+#: model:ir.model.fields,field_description:part.field_part_order__write_date
+#: model:ir.model.fields,field_description:part.field_part_order_make_invoice__write_date
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Late Activities"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__location_id
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__location_id
+msgid "Location"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_line__lot_id
+#: model:ir.model.fields,field_description:part.field_part_order__lot_id
+msgid "Lot/Serial"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__move_id
+msgid "Move"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__move_id
+msgid "Move created by the part order"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "My Activities"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: part
+#: selection:part.order,invoice_method:0
+msgid "No Invoice"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:308
+#, python-format
+msgid "No account defined for partner \"%s\"."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:334
+#: code:addons/part/models/part.py:362
+#, python-format
+msgid "No account defined for product \"%s\"."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:598
+#: code:addons/part/models/part.py:658
+#, python-format
+msgid "No pricelist found."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:355
+#, python-format
+msgid "No product defined on fees."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:605
+#: code:addons/part/models/part.py:665
+#, python-format
+msgid "No valid pricelist line found."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Notes"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_has_error_counter
+msgid "Number of error"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:232
+#, python-format
+msgid "Only draft parts can be confirmed."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__fees_lines
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Operations"
+msgstr ""
+
+#. module: part
+#: selection:part.order,activity_state:0
+msgid "Overdue"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Partner"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__operations
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Parts"
+msgstr ""
+
+#. module: part
+#: selection:part.order,activity_state:0
+msgid "Planned"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Price"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__pricelist_id
+msgid "Pricelist"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__pricelist_id
+msgid "Pricelist of the selected partner."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Print Quotation"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__product_id
+#: model:ir.model.fields,field_description:part.field_part_line__product_id
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__product_id
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Product"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__product_qty
+msgid "Product Quantity"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__product_uom
+#: model:ir.model.fields,field_description:part.field_part_line__product_uom
+#: model:ir.model.fields,field_description:part.field_part_order__product_uom
+msgid "Product Unit of Measure"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__product_id
+msgid "Product to part"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__lot_id
+msgid "Products parted are all belonging to this lot"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__quant_ids
+msgid "Quant"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__product_uom_qty
+#: model:ir.model.fields,field_description:part.field_part_line__product_uom_qty
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Quantity"
+msgstr ""
+
+#. module: part
+#: selection:part.order,state:0
+msgid "Quotation"
+msgstr ""
+
+#. module: part
+#: model:ir.actions.report,name:part.action_report_part_order
+msgid "Quotation / Order"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__quotation_notes
+msgid "Quotation Notes"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Quotations"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Ready To part"
+msgstr ""
+
+#. module: part
+#: selection:part.order,state:0
+msgid "Ready to part"
+msgstr ""
+
+#. module: part
+#: selection:part.line,type:0
+msgid "Remove"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_stock_move__part_id
+#: model:ir.model.fields,field_description:part.field_stock_warn_insufficient_qty_part__part_id
+msgid "part"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_part_fee
+msgid "part Fees"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "part Line"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_part_line
+msgid "part Line (parts)"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_part_order
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "part Order"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "part Order #:"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__part_id
+#: model:ir.model.fields,field_description:part.field_part_line__part_id
+msgid "part Order Reference"
+msgstr ""
+
+#. module: part
+#: model:ir.actions.act_window,name:part.action_part_order_tree
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "part Orders"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "part Quotation #:"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__name
+msgid "part Reference"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:196
+#, python-format
+msgid "part must be canceled in order to reset it to draft."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:404
+#, python-format
+msgid "part must be confirmed before starting reparation."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:432
+#, python-format
+msgid "part must be parted in order to make the product moves."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:415
+#, python-format
+msgid "part must be under part in order to end reparation."
+msgstr ""
+
+#. module: part
+#: code:addons/part/wizard/part_cancel.py:20
+#, python-format
+msgid "part order is not invoiced."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__parted
+#: selection:part.order,state:0
+msgid "parted"
+msgstr ""
+
+#. module: part
+#: model:ir.ui.menu,name:part.menu_part_order
+msgid "parts"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_tree
+msgid "parts order"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Search part Orders"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__invoice_method
+msgid "Selecting 'Before part' or 'After part' will allow you to generate invoice before or after the part is done respectively. 'No invoice' means you don't want to generate invoice for this part order."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Send Quotation"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:545
+#, python-format
+msgid "Serial number is required for operation line with product '%s'"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Show all records which has next action date is before today"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_line__location_id
+msgid "Source Location"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Start part"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_line__state
+#: model:ir.model.fields,field_description:part.field_part_order__state
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Status"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__price_subtotal
+#: model:ir.model.fields,field_description:part.field_part_line__price_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Tax"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__tax_id
+#: model:ir.model.fields,field_description:part.field_part_line__tax_id
+#: model:ir.model.fields,field_description:part.field_part_order__amount_tax
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Taxes"
+msgstr ""
+
+#. module: part
+#: sql_constraint:part.order:0
+msgid "The name of the part Order must be unique!"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:172
+#, python-format
+msgid "The product unit of measure you chose has a different category than the product unit of measure."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:246
+#, python-format
+msgid "The part order is already invoiced."
+msgstr ""
+
+#. module: part
+#: model_terms:ir.actions.act_window,help:part.action_part_order_tree
+msgid "The part order uses the warranty date on the Serial Number in\n"
+"                order to know if whether the part should be invoiced to the\n"
+"                customer or not."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_line__state
+msgid "The status of a part line is set automatically to the one of the linked part order."
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__location_id
+msgid "This is the location where the product to part is located."
+msgstr ""
+
+#. module: part
+#: selection:part.order,state:0
+msgid "To be Invoiced"
+msgstr ""
+
+#. module: part
+#: selection:part.order,activity_state:0
+msgid "Today"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Today Activities"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__amount_total
+msgid "Total"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Total amount"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_stock_traceability_report
+msgid "Traceability Report"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__tracking
+msgid "Tracking"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_line__type
+msgid "Type"
+msgstr ""
+
+#. module: part
+#: selection:part.order,state:0
+msgid "Under part"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_fee__price_unit
+#: model:ir.model.fields,field_description:part.field_part_line__price_unit
+#: model_terms:ir.ui.view,arch_db:part.report_partorder
+msgid "Unit Price"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__amount_untaxed
+msgid "Untaxed Amount"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form
+msgid "Untaxed amount"
+msgstr ""
+
+#. module: part
+#: model:ir.model,name:part.model_stock_warn_insufficient_qty_part
+msgid "Warn Insufficient part Quantity"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:172
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__guarantee_limit
+#: model_terms:ir.ui.view,arch_db:part.view_part_order_form_filter
+msgid "Warranty Expiration"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,field_description:part.field_part_order__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: part
+#: model:ir.model.fields,help:part.field_part_order__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: part
+#: model_terms:ir.ui.view,arch_db:part.view_cancel_part
+msgid "Yes"
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:600
+#: code:addons/part/models/part.py:660
+#, python-format
+msgid "You have to select a pricelist in the part form !\n"
+" Please set one before choosing a product."
+msgstr ""
+
+#. module: part
+#: code:addons/part/models/part.py:296
+#, python-format
+msgid "You have to select an invoice address in the part form."
+msgstr ""
